@@ -87,3 +87,28 @@
 - 参赛队伍提交的所有参赛资料的知识产权归参赛队伍所有，参赛资料仅用于本次大赛评奖与宣发。
 - **本次活动的最终解释权归 OneBlock&Parity 官方所有。**
 
+## 联络
+
+对黑客松有任何疑问，可以下方法联系我们:
+
+* [Github 讨论区](https://github.com/ParityAsia/hackathon-2022-winter/discussions)
+
+* email: hackathon.asia@parity.io
+
+* wechat: 15810880107
+
+* [黑客松比赛 Discord](https://discord.gg/KsCEKvqU4p)
+
+## 其他
+
+- [参赛项目](./docs/categories.md)
+- [技术资源](./docs/technical-resources.md)
+
+### 合法合规性
+
+本次黑客松为符合国内法规，我们不会触碰以下任何有关题目
+
+- 和发币 (Initial Coin Offering) 相关。
+- 和数字资产交易相关
+- 任何币价的讨论 (Decentralized Exchange 主题可讨论技术，不涉及币价)
+- 和博彩相关和有博彩成分的游戏
