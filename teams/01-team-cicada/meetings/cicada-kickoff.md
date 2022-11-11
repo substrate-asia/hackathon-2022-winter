@@ -16,7 +16,7 @@
   - 项目情况：名称-cicada, 队长-陈华
   - 沟通
     - 例会：每周四 7:30pm
-    - 腾讯会议：
+    - 腾讯会议：https://meeting.tencent.com/dm/GHhvsb2apNsk
   - 项目 idea：区块链版本的维基百科，内容平行链，做成公链，把区块链项目信息进行收集和筛选。
 <img width="1663" alt="image" src="https://user-images.githubusercontent.com/40650475/201346306-bdb77c71-a8a9-4a8f-9364-29b3bd6e25b8.png">
 
