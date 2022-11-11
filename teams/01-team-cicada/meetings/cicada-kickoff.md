@@ -1,7 +1,3 @@
-# [hackathon-2022-winter](https://github.com/ParityAsia/hackathon-2022-winter)
-
-https://github.com/ParityAsia/hackathon-2022-winter/blob/main/docs/technical-resources.md
-
 ## cicade 黑客松战队
 
 ### kickoff meeting
@@ -23,7 +19,8 @@ https://github.com/ParityAsia/hackathon-2022-winter/blob/main/docs/technical-res
     - 腾讯会议：
   - 项目 idea：区块链版本的维基百科，内容平行链，做成公链，把区块链项目信息进行收集和筛选。
 <img width="1663" alt="image" src="https://user-images.githubusercontent.com/40650475/201346306-bdb77c71-a8a9-4a8f-9364-29b3bd6e25b8.png">
-    - 项目整个 hackathon deadline： 12 月 27 日
+
+    - 项目最终 deadline： 12 月 27 日
     - 讨论：
       - 项目的整体框架：
         - MVP：文本
