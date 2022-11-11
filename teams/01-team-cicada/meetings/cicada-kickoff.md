@@ -17,14 +17,13 @@ https://github.com/ParityAsia/hackathon-2022-winter/blob/main/docs/technical-res
     - 饶显栋：传统前端，有黑客松经验
     - 张冬：UI，有夏季黑客松经验
     - yota: java 后端
+  - 项目情况：名称-cicada, 队长-陈华
   - 沟通
     - 例会：每周四 7:30pm
     - 腾讯会议：
   - 项目 idea：区块链版本的维基百科，内容平行链，做成公链，把区块链项目信息进行收集和筛选。
 <img width="1663" alt="image" src="https://user-images.githubusercontent.com/40650475/201346306-bdb77c71-a8a9-4a8f-9364-29b3bd6e25b8.png">
-
-  - 项目 idea：区块链版本的维基百科，内容平行链，做成公链，把区块链项目信息进行收集和筛选。
-    - deadline： 12 月 27 日
+    - 项目整个 hackathon deadline： 12 月 27 日
     - 讨论：
       - 项目的整体框架：
         - MVP：文本
@@ -39,4 +38,4 @@ https://github.com/ParityAsia/hackathon-2022-winter/blob/main/docs/technical-res
     - 目标：先跑通最简单 MVP 逻辑
       - 梳理产品逻辑，UI 交互 —— 老陈，张冬
       - substrate 链 build 以及如何和前端交互 —— Bella, 邓冰冰，饶显栋 （yota，老刘 - optional）
-    - deadline: 11.17
+    - deadline: 11.17 周四晚7:30pm
