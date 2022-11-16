@@ -49,8 +49,9 @@ Lightm optimized the RMRK contract using ERC2535:
 **客户端**
 - [ ] 支持Nesting（嵌套，即NFT持有NFT）特性，已**基本（仍有细节优化工作，需要跟随可能发生的智能合约的改动）** 于黑客松前完成：
 	- [ ] 针对移动端UI优化
+	- [ ] 支持多选批量（通过LightmInit继承的multicall方法做到）操作Children列表
 - [ ] 支持MultiResource（多资源，即NFT可以包含多个输出）特性，已**基本（仍有细节优化工作，需要跟随可能发生的智能合约的改动）** 于黑客松前完成：
-	- [ ] 支持指定资源覆盖(overwrites)
+	- [ ] 支持在提交Resource Proposal时指定资源覆盖(overwrites)
 - [ ] 支持Equippable（可装备，即NFT A持有NFT B情况下，NFT A可以装备NFT B，客户端能够基于链上关系渲染出NFT A装备NFT B的图像或其他表现形式）特性：
 	- [ ] UI
 	- [ ] 支持Base创建与配置
@@ -93,3 +94,7 @@ Lightm optimized the RMRK contract using ERC2535:
 [@WhiskeyRomeoTango](https://github.com/WhiskeyRomeoTango)
 职责：
 - 前端开发
+
+[@BoynChan](https://github.com/BoynChan)
+职责：
+- 合约开发
