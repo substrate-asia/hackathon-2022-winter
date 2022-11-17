@@ -15,7 +15,7 @@
         * subquery —— 老陈
         * 前端——饶显栋，邓冰冰
     * 产品原型：老陈，张冬
-* ddl: 周二 11.22 8:00pm
+* ddl: 周二 11.22 8:00pm 腾讯会议链接：https://meeting.tencent.com/dm/GHhvsb2apNsk
 * Reference
 
 <img width="2881" alt="WechatIMG264" src="https://user-images.githubusercontent.com/40650475/202451940-532f4ab7-c1a0-4c10-b55e-7e1fc763cf3c.png">
