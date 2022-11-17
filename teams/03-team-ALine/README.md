@@ -18,8 +18,25 @@
   - Allow developers to deploy and publish Dapp contracts through simple operations and provide a user-friendly interface to speed up developers' development
   - (让开发者通过简单的操作进行Dapp的部署与合约的发布，并提供友好的界面来加速开发者的研发速度)
 - 项目介绍
-  - 一个自动化的智能合约/Dapp的部署区块链工具包。开发者可以根据自己的需求选取相应的功能（检出/合约检查/.../部署）配置自己的pipeline，并链接远程链，最终实现一键将自己开发的合约部署到想要部署的链上。
+  - web3.0全生态的部署工具包。根据自己的需求选取相应的功能（检出/合约检查/.../部署）配置自己的pipeline，同样的也提供相应的模版供开发者选择，最终实现一键将自己开发的合约部署到想要部署的链上。
+- 项目愿景 
+  - 开发者可以通过我们的工具包可以将本地/github的项目，通过我们提供的模版，进行部署。适用于智能合约，DApp，Substrate（我们会提供去中心化的算力，进行部署）,以太坊，Aptos，Sui等
+  - 我们参赛的Demo计划完成将将本地的代码，根据我们提供的pipeline模版，将智能合约/DApp部署到Substrate/Truffle。
 - 项目Demo
+- [原型链接](https://www.figma.com/file/0y9eFYgoGPhlSbR0U2U5LR/DevOps-SaaS?node-id=0%3A1&t=DnJ9uwJfpSa1PH8V-0)
+- pipeline列表  
+  ![原型图](./docs/demo/pipeline_list.png)  
+- pipeline执行历史列表  
+  ![原型图](./docs/demo/exec_list.png)  
+- pipeline执行进程
+  ![原型图](./docs/demo/exec_process.png)  
+  ![原型图](./docs/demo/exec_process_1.png)  
+- pipeline模版
+  ![原型图](./docs/demo/tmp.png)  
+- pipeline
+  ![原型图](./docs/demo/pipeline.png)  
+- 自定义的pipeline
+  ![原型图](./docs/demo/pipeline_custom.png)
 - 技术架构  
 ![技术架构图](./docs/TechnicalArchitectureDiagram.png)  
 - 项目 logo (如有)，这 logo 会印制在文宣，会场海报或贴子上。
@@ -71,12 +88,13 @@
 - 放一段不长于 **5 分钟** 的产品 DEMO 展示视频, 命名为 `团队目录/docs/demo.mp4`。初审时这视频是可选，demo day 这是计分项。
 
 ## 队员信息
-（包含参赛者名称及介绍/在团队中担任的角色/GitHub 帐号/微信账号（如有请留下，方便及时联系））  
-- 梁腾 项目负责人 https://github.com/ltmuyuan
+（包含参赛者名称及介绍/在团队中担任的角色/GitHub 帐号/微信账号（如有请留下，方便及时联系））
+- 王炳鉴 团队负责人 https://github.com/abing258/
+- 梁腾 前端 https://github.com/ltmuyuan
 - 莫海江 技术架构工程师 https://github.com/mohaijiang
-- 张翔 产品经理 
+- 张翔 产品经理 https://github.com/lindaZX
 - 孙建国 全栈开发工程师 https://github.com/jian-guo-s
 - 叶巧钰 前端开发工程师 https://github.com/yuliaye
 - 郭智浩 链开发工程师 https://github.com/CoderfishGzh
 - 姜志辉 后端开发工程师 https://github.com/jlvihv
-- 王炳鉴 后端开发工程师 https://github.com/abing258/
+- 王泽汛 UI https://github.com/1294615306
