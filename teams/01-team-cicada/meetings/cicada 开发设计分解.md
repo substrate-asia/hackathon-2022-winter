@@ -17,5 +17,4 @@
     * 产品原型：老陈，张冬
 * ddl: 周二 11.22 8:00pm 腾讯会议链接：https://meeting.tencent.com/dm/GHhvsb2apNsk
 * Reference
-
-<img width="2881" alt="WechatIMG264" src="https://user-images.githubusercontent.com/40650475/202451940-532f4ab7-c1a0-4c10-b55e-7e1fc763cf3c.png">
+<img width="2995" alt="cicada开发设计分解V1 1" src="https://user-images.githubusercontent.com/40650475/202644726-d94a7aed-b387-4bca-82cc-7fdc2e745ca7.png">
