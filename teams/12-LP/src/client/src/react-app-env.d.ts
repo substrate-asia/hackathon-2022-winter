@@ -1,6 +1,18 @@
+/* eslint-disable */
+import {MetaMaskInpageProvider} from '@metamask/providers';
+import {Contract, providers} from 'ethers';
+
 /// <reference types="node" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
+
+declare global {
+  interface Window {
+    ethereum?: MetaMaskInpageProvider;
+    provider?: providers.Web3Provider;
+    contract?: Contract;
+  }
+}
 
 declare namespace NodeJS {
   interface ProcessEnv {
