@@ -29,20 +29,24 @@
 
 ## Workshop 及 Office Hour 时间表
 - 开幕式：2022年11月12日
+
+  1. 2022下半年波卡最新进展 Helena Parity亚洲负责人
+  2. 2022冬季黑客松赛事规则详解 周俊 Parity工程师
 - Workshop#1：2022年11月26日 周六 15:00-17:00
   
   1. 平行链应用方向之DID 
 
       王大锤 Parity 工程师
+
   2. 波卡明星项目赛前指导 
 
-      Godot Manta Network 核心贡献者
+        Godot Manta Network 核心贡献者
 
-      Henry Web3Games 业务负责人
+        Henry Web3Games 业务负责人
 
-      Jiang PNS 技术负责人
+        Jiang PNS 技术负责人
 
-      Jessie Dai CESS 联合创始人&COO
+        Jessie Dai CESS 联合创始人&COO
 - Workshop#2：2022年12月3日 周六 15:00-17:00
 - Workshop#3：2022年12月10日 周六 15:00-17:00
 - Workshop#4：2022年12月17日 周六 15:00-17:00
