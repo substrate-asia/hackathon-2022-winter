@@ -1,6 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {message, Button, Spin} from 'antd';
 import {apiWrapper} from '@/utils';
+import {ethers} from 'ethers';
+import {ExternalProvider} from '@ethersproject/providers/src.ts/web3-provider';
+
+const ABI: string[] = []; // test
+const AuctionContractAddress = '0xBa5bF3b645Fe778c44e698812ac181Da39EC88C4'; // test
 
 const Home: React.FC = () => {
     const [currentAccount, setCurrentAccount] = useState<string | undefined>('');
@@ -28,6 +33,15 @@ const Home: React.FC = () => {
             setInitLoad(false);
         });
     };
+
+    async function initializeProvider() {
+        if (!ethereum) {
+            return;
+        }
+        const provider = new ethers.providers.Web3Provider(ethereum as unknown as ExternalProvider);
+        const signer = provider.getSigner();
+        return new ethers.Contract(AuctionContractAddress, ABI, signer);
+    }
 
     const handleLogin = () => {
         const {ethereum} = window;
@@ -76,9 +90,9 @@ const Home: React.FC = () => {
     const renderLoggedInContent = () => {
         return (
             <div>
-                <span>
-                    hello {currentAccount}
-                </span>
+                <div>
+                    Hello {currentAccount} !
+                </div>
             </div>
         );
     };
