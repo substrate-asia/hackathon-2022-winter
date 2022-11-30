@@ -133,12 +133,12 @@ pub mod pallet {
 				None => {
 					Self::get_category(&parent).ok_or(Error::<T>::CategoryNotExist)?;
 					<Categories<T>>::insert(hash, (&sender, false));
-					Self::deposit_event(Event::CategoryCreated{hash: hash, name: name, parent: parent, who: sender, verified: false});
-					
 					#[cfg(feature = "std")]{
 						println!("category: {:?}", &name);
 					}
-
+					Self::deposit_event(Event::CategoryCreated{hash: hash, name: name, parent: parent, who: sender, verified: false});
+					
+					28,229,136,134,231,177,187,49 
 					Ok(())
 				},
 				Some(_old) => {
