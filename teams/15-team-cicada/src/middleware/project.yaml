@@ -1,0 +1,49 @@
+specVersion: 1.0.0
+name: cicada
+version: 1.0.0
+runner:
+  node:
+    name: "@subql/node"
+    version: ">=1.0.0"
+  query:
+    name: "@subql/query"
+    version: "*"
+description: "data query from cicada services"
+repository: "https://github.com/zengbing15/hackathon-2022-winter"
+schema:
+  file: ./schema.graphql
+network:
+  genesisHash: "0x6c9b5baffe075c85d508761a62f33868677f7537160a6b48060d0fcec8de9411"
+  endpoint: "ws://127.0.0.1:9944"
+dataSources:
+  - name: runtime
+    kind: substrate/Runtime
+    startBlock: 1
+    mapping:
+      file: ./dist/index.js
+      handlers:
+        - handler: handleCategoryCreatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: CategoryCreated
+        - handler: handleLabelCreatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: LabelCreated
+        - handler: handleSubjectCreatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: SubjectCreated
+        - handler: handleDimensionCreatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: DimensionCreated
+        - handler: handleContentCreatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: ContentCreated

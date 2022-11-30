@@ -1,5 +1,5 @@
 // This component will simply add utility functions to your developer console.
-import { useSubstrateState } from '../'
+import { useSubstrateState } from '..'
 
 export default function DeveloperConsole(props) {
   const { api, apiState, keyring, keyringState } = useSubstrateState()

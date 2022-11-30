@@ -1,6 +1,8 @@
 # compiled output
 /dist
 /node_modules
+/teams/15-team-cicada/src/frontend-react-test/build
+/teams/15-team-cicada/src/chain/target
 
 # Logs
 logs
