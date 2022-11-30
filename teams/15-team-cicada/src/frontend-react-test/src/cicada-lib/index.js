@@ -95,6 +95,7 @@ export class CicadaApi {
         const palletRpc = 'cicadaModule'
         const callable = 'createCategory'
         const succEvent = 'CategoryCreated'
+        console.log('createCategory', name,)
         await signedTx(this.account, this.api, palletRpc, callable, [name, arr], succEvent, processCallback, succCallback, failCallback)
     }
 

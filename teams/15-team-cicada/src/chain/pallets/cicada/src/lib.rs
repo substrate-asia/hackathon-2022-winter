@@ -90,10 +90,10 @@ pub mod pallet {
 	#[pallet::event]
 	#[pallet::generate_deposit(pub(super) fn deposit_event)]
 	pub enum Event<T: Config> {
-		CategoryCreated{ hash: [u8; 32], parent: [u8; 32], name: Vec<u8>, who: T::AccountId, verified: bool },
-		LabelCreated{ hash: [u8; 32], category: [u8; 32], name: Vec<u8>, who: T::AccountId, verified: bool  },
-		SubjectCreated{ hash: [u8; 32], category: [u8; 32], name: Vec<u8>, who: T::AccountId, verified: bool  },
-		DimensionCreated{ hash: [u8; 32], subject: [u8; 32], name: Vec<u8>, who: T::AccountId, verified: bool  },
+		CategoryCreated{ hash: [u8; 32], name: Vec<u8>, parent: [u8; 32], who: T::AccountId, verified: bool },
+		LabelCreated{ hash: [u8; 32], name: Vec<u8>, category: [u8; 32], who: T::AccountId, verified: bool  },
+		SubjectCreated{ hash: [u8; 32], name: Vec<u8>, category: [u8; 32], who: T::AccountId, verified: bool  },
+		DimensionCreated{ hash: [u8; 32], name: Vec<u8>, subject: [u8; 32], who: T::AccountId, verified: bool  },
 
 		ContentCreated{ hash: [u8; 32], category: [u8; 32], label: [u8; 32], subject: [u8; 32], dimension: [u8; 32], content: Vec<u8>, who: T::AccountId, verified: bool },
 	}
@@ -128,13 +128,17 @@ pub mod pallet {
 			// 保证长度
 			ensure!(name.len() >= T::CategoryMinLength::get() as usize, Error::<T>::TooShort);
 			ensure!(name.len() <= T::CategoryMaxLength::get() as usize, Error::<T>::TooLong);
-
 			let hash = Self::hash_value(name.clone(), parent.clone());
 			match Self::get_category(&hash) {
 				None => {
 					Self::get_category(&parent).ok_or(Error::<T>::CategoryNotExist)?;
 					<Categories<T>>::insert(hash, (&sender, false));
-					Self::deposit_event(Event::CategoryCreated{hash: hash, name: name, parent:parent, who: sender, verified: false});
+					Self::deposit_event(Event::CategoryCreated{hash: hash, name: name, parent: parent, who: sender, verified: false});
+					
+					#[cfg(feature = "std")]{
+						println!("category: {:?}", &name);
+					}
+
 					Ok(())
 				},
 				Some(_old) => {

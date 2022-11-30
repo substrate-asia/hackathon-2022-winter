@@ -1,0 +1,57 @@
+type Category @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  name: String!
+  parent: String
+  creator: String
+  createDate: Date
+  lastModifier: String
+  lastmodifyDate: Date
+}
+
+type Label @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  name: String!
+  category: Category!
+  creator: String
+  createDate: Date
+  lastModifier: String
+  lastmodifyDate: Date
+}
+
+type Subject @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  name: String!
+  category: Category!
+  creator: String
+  createDate: Date
+  lastModifier: String
+  lastmodifyDate: Date
+}
+
+type Dimension @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  name: String!
+  subject: Subject!
+  creator: String
+  createDate: Date
+  lastModifier: String
+  lastmodifyDate: Date
+}
+
+type Content @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  content: String!
+  category: Category!
+  label: String
+  dimension: Dimension!
+  creator: String
+  createDate: Date
+  lastModifier: String
+  lastmodifyDate: Date
+}
+
