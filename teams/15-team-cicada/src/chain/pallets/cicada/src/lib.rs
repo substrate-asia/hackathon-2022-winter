@@ -138,7 +138,6 @@ pub mod pallet {
 					}
 					Self::deposit_event(Event::CategoryCreated{hash: hash, name: name, parent: parent, who: sender, verified: false});
 					
-					28,229,136,134,231,177,187,49 
 					Ok(())
 				},
 				Some(_old) => {
