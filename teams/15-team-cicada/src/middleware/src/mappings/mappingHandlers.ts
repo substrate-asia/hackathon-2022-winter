@@ -8,9 +8,8 @@ export async function handleCategoryCreatedEvent(event: SubstrateEvent): Promise
   record.blockHash = event.block.block.header.hash.toString();
 
   // record.name = Uint8ArrayToStr(name.toU8a());
-  record.name = new TextDecoder().decode(name.toU8a());
+  record.name = new TextDecoder().decode(name.toU8a().slice(1));
   logger.info(name.toU8a().toString());
-  logger.info(name.toString());
   logger.info(record.name);
   record.parent = parent.toString();
   record.lastModifier = who.toString();
@@ -26,7 +25,7 @@ export async function handleLabelCreatedEvent(event: SubstrateEvent): Promise<vo
     record.blockHash = event.block.block.header.hash.toString();
 
     // record.name = Uint8ArrayToStr(name.toU8a());
-    record.name = new TextDecoder().decode(name.toU8a());
+    record.name = new TextDecoder().decode(name.toU8a().slice(1));
     logger.info(record.name);
     record.categoryId = category.toString();
     record.lastModifier = who.toString();
@@ -43,7 +42,7 @@ export async function handleSubjectCreatedEvent(event: SubstrateEvent): Promise<
     record.blockHash = event.block.block.header.hash.toString();
 
     // record.name = Uint8ArrayToStr(name.toU8a());
-    record.name = new TextDecoder().decode(name.toU8a());
+    record.name = new TextDecoder().decode(name.toU8a().slice(1));
     logger.info(record.name);
     record.categoryId = category.toString();
     record.lastModifier = who.toString();
@@ -60,7 +59,7 @@ export async function handleDimensionCreatedEvent(event: SubstrateEvent): Promis
     record.blockHash = event.block.block.header.hash.toString();
 
     // record.name = Uint8ArrayToStr(name.toU8a());
-    record.name = new TextDecoder().decode(name.toU8a());
+    record.name = new TextDecoder().decode(name.toU8a().slice(1));
     logger.info(record.name);
     record.subjectId = subject.toString();
     record.lastModifier = who.toString();
@@ -79,8 +78,8 @@ export async function handleContentCreatedEvent(event: SubstrateEvent): Promise<
 
     // record.content = Uint8ArrayToStr(content.toU8a());
     // record.label = Uint8ArrayToStr(label.toU8a());
-    record.content = new TextDecoder().decode(content.toU8a());
-    record.label = new TextDecoder().decode(label.toU8a());
+    record.content = new TextDecoder().decode(content.toU8a().slice(1));
+    record.label = new TextDecoder().decode(label.toU8a().slice(1));
     logger.info(record.content);
     logger.info(record.label);
     record.categoryId = category.toString();
