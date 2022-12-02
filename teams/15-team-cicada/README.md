@@ -1,8 +1,8 @@
 ## 基本资料
 
-项目名称：
+项目名称：cicada
 
-项目立项日期 (哪年哪月)：
+项目立项日期：2022-11
 
 ## 项目整体简介
 
@@ -11,7 +11,28 @@
 - 项目背景/原由/要解决的问题 (如有其他附件，可放到 `docs` 目录内。英文提交)。
 - 项目介绍
 - 项目Demo
+  demo视频制作思路
+  首页-》我的-》关联资料、抵押、捐赠、订阅-》数据录入-》token奖励-》信息展示-》替代、投诉、申诉-》治理-》token奖励处罚-》信息展示
+  演讲ppt制作思路
+  项目介绍-》团队介绍-》要解决的痛点-》用户群体-》竞争分析-》经济模型-》demo演示-》发展路线图
+
 - 技术架构
+  - 输入展示层
+    - react：用于用户操作和页面数据展示
+    - polkadot.jssdk：用于与链上业务逻辑进行数据交互
+    - ipfs.jssdk：用于与IPFS存储进行文件交互
+  - 区块链层
+    - substrate：用于链的实现，业务逻辑包括资料绑定、抵押代币、订阅资料、捐赠、数据录入、代币奖励、灵魂绑定、数据替代、代币处罚、数据投诉和数据申诉
+    - substrate.gov2：用于治理的实现，业务逻辑包括发起提案、治理投票和提案执行
+  - 存储层
+    - chain：用于数据（非文件）存储，处理输入展示层提交的数据
+    - IPFS：用于文件存储，处理输入展示层提交的文件
+  - 数据中间层
+    - subquery：用于链上数据的缓存，从链上拉取数据缓存到数据库，并提供数据接口服务
+    - java：用于订阅的推送，从subquery中获取数据并加工数据格式，并定时推送给订阅用户
+  - 业务流程简述(数据录入)
+    前端用户录入数据并提交到链上，链端逻辑处理后反馈结果给用户并触发链上存储事件，前端用户获取链上结果，中间层监听链上事件，从链上拉取并缓存数据，前端从中间层获取缓存数据并展示。这里的链端逻辑处理包括灵魂绑定和代币奖励，如果是数据替换、投诉和申诉还涉及到治理功能。
+
 - 项目 logo (如有)，这 logo 会印制在文宣，会场海报或贴子上。
 
 ## 黑客松期间计划完成的事项
@@ -19,23 +40,27 @@
 - 请团队在报名那一周 git clone 这个代码库并创建团队目录，在 readme 里列出黑客松期间内打算完成的代码功能点。并提交 PR 到本代码库。例子如下 (这只是一个 nft 项目的例子，请根据团队项目自身定义具体工作)：
 
 **区块链端**
-
-- `pallet-nft`
-  - [ ] NFT 创建及数据结构定义 (`fn create_nft()`)
-  - [ ] NFT 转帐函数 (`fn transfer()`)
-  - [ ] NFT 销毁函数 (`fn burn_token()`)
+- `pallet-cicada`
+  - [ ] cicada 创建及数据结构定义 (`fn create_category()``fn create_label()``fn create_subject()``fn create_dimension()``fn create_content()`)
+  - [ ] cicada 变更函数 (`fn modify_category()``fn modify_label()``fn modify_subject()``fn modify_dimension()``fn modify_content()`)
+  - [ ] cicada 转账函数 (`fn transfer()`)
+  - [ ] cicada 销毁函数 (`fn burn()`)
 
 **客户端**
-
 - web 端
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
+  - [ ] 首页
+  - [ ] 用户页面
+  - [ ] 查询展示页面
+  - [ ] 数据录入页面
+  - [ ] 数据治理页面
 
-- hybrid (react-native)
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
+**中间层**
+- subquery 端
+  - [ ] 侦听链上存储事件，拉取并缓存(`function handleCategoryCreatedEvent()``function handleLabelCreatedEvent()``function handleSubjectCreatedEvent()``function handleDimensionCreatedEvent()``function handleContentCreatedEvent()`)
+  - [ ] 为客户端和java端提供数据接口服务
+- java 端
+  - [ ] 获取订阅用户 (`function get_subscribe()`)
+
 
 
 ## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
