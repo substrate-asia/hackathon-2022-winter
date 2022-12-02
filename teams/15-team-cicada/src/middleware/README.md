@@ -60,6 +60,7 @@ Run this command under the project directory.
 ```
 yarn codegen
 ```
+WARNING: Executing this command may lose code using the code you change here if the type already exists.
 
 ## Build the project
 
@@ -70,7 +71,7 @@ Run pack command from root directory of your project will automatically generate
 yarn build
 ```
 
-## Indexing and Query
+## Indexing and Query(Two ways)
 
 #### Run required systems in docker
 
@@ -78,6 +79,33 @@ Under the project directory run following command:
 
 ```
 docker-compose pull && docker-compose up
+```
+
+#### Run required systems in command line
+
+install database
+Requirements: Postgres database (version 12 or higher). 
+Download link: https://www.postgresql.org/
+You can run the following SQL query: CREATE EXTENSION IF NOT EXISTS btree_gist;
+
+Under the project directory run following command:
+```
+npm install -g @subql/node
+
+export DB_USER=postgres
+export DB_PASS=postgres
+export DB_DATABASE=postgres
+export DB_HOST=localhost
+export DB_PORT=5432
+
+subql-node -f .
+```
+
+Under the project directory run following command:
+```
+npm install -g @subql/query
+
+subql-query --name=project-name --playground
 ```
 
 #### Query the project
