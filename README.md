@@ -47,7 +47,18 @@
         Jiang PNS 技术负责人
 
         Jessie Dai CESS 联合创始人&COO
-- Workshop#2：2022年12月3日 周六 15:00-17:00
+- Workshop#2：2022年12月3日 周六 20:00-22:00
+
+  主题： 智能合约的应用和发展
+  1. Moonbeam 与 XCM 间的互操作性
+
+      Alberto Viera Moobeam & PureStake 开发者关系经理
+
+      Yuki Moonbeam 中文社区经理
+  2. Gear 合约入门介绍
+
+      Hangbiao Gear Validator Manager
+
 - Workshop#3：2022年12月10日 周六 15:00-17:00
 - Workshop#4：2022年12月17日 周六 15:00-17:00
 
