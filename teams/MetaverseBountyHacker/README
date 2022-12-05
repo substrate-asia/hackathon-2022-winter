@@ -1,0 +1,40 @@
+# MetaverseBountyHacker
+
+## Project Name
+
+Metaverse Hacker Pager
+
+## Introduction
+
+A pager for Metaverse Hacker, inspired by the Captain Marvel's Pager.
+
+This is just the name for our idea.
+
+The idea is simple, use LibP2P to build a Web3 Chat platform for Web3 users;) (yet, another Web3 Chat platform)
+
+## Demo (TBD)
+
+## Tech
+
+* LibP2P
+* Vue3
+* Plasmo
+* Vite
+
+## Logo
+
+![](./logo.png)
+
+## Plan to be done during the Hackathon
+
+* service
+  * [ ] connect to other peer by address
+
+* UI/UX
+  * [ ] login by metamask
+  * [ ] show chat peer list
+  * [ ] show chat message list
+
+## Team
+
+Bruce, founder/full stack web3 builder, <https://github.com/NftTopBest>, wechat: Web3Hacker
