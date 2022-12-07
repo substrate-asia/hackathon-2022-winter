@@ -26,26 +26,21 @@ export class Category implements Entity {
 
     public createDate?: Date;
 
-    public lastModifier?: string;
-
-    public lastmodifyDate?: Date;
+    public flag?: boolean;
 
 
     async save(): Promise<void>{
         let id = this.id;
         assert(id !== null, "Cannot save Category entity without an ID");
-
-        const record = await Category.get(id.toString());
-        if (record){
-            this.creator = record.creator;
-            this.createDate = record.createDate;
-            await store.bulkUpdate('Category', [this]);
-        }else{
-            this.creator = this.lastModifier;
-            this.createDate = this.lastmodifyDate;
-            await store.set('Category', id.toString(), this);
-        }
+        await store.set('Category', id.toString(), this);
     }
+
+    async update(): Promise<void>{
+        let id = this.id;
+        assert(id !== null, "Cannot update Category entity without an ID");
+        await store.bulkUpdate('Category', [this]);
+    }
+
     static async remove(id:string): Promise<void>{
         assert(id !== null, "Cannot remove Category entity without an ID");
         await store.remove('Category', id.toString());
