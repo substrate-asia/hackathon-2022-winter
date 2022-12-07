@@ -5,8 +5,7 @@ type Category @entity {
   parent: String
   creator: String
   createDate: Date
-  lastModifier: String
-  lastmodifyDate: Date
+  flag: Boolean
 }
 
 type Label @entity {
@@ -16,8 +15,7 @@ type Label @entity {
   category: Category!
   creator: String
   createDate: Date
-  lastModifier: String
-  lastmodifyDate: Date
+  flag: Boolean
 }
 
 type Subject @entity {
@@ -27,8 +25,7 @@ type Subject @entity {
   category: Category!
   creator: String
   createDate: Date
-  lastModifier: String
-  lastmodifyDate: Date
+  flag: Boolean
 }
 
 type Dimension @entity {
@@ -38,8 +35,7 @@ type Dimension @entity {
   subject: Subject!
   creator: String
   createDate: Date
-  lastModifier: String
-  lastmodifyDate: Date
+  flag: Boolean
 }
 
 type Content @entity {
@@ -51,7 +47,14 @@ type Content @entity {
   dimension: Dimension!
   creator: String
   createDate: Date
-  lastModifier: String
-  lastmodifyDate: Date
+  flag: Boolean
 }
 
+type Subscribe @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  subscriber: String!
+  subscribeDate: Date
+  subject: Subject!
+  flag: Boolean
+}

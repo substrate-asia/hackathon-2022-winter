@@ -1,6 +1,6 @@
 import { SubstrateEvent } from "@subql/types";
 import { TextDecoder } from "@polkadot/x-textdecoder";
-import { Category,Label,Subject,Dimension,Content } from "../types";
+import { Category,Label,Subject,Dimension,Content,Subscribe } from "../types";
 
 export async function handleCategoryCreatedEvent(event: SubstrateEvent): Promise<void> {
   const { event: { data: [hash, name, parent, who] } } = event;
@@ -12,14 +12,15 @@ export async function handleCategoryCreatedEvent(event: SubstrateEvent): Promise
   logger.info(name.toU8a().toString());
   logger.info(record.name);
   record.parent = parent.toString();
-  record.lastModifier = who.toString();
-  record.lastmodifyDate = new Date();
+  record.creator = who.toString();
+  record.createDate = new Date();
+  record.flag = true;
   await record.save();
 }
 
 export async function handleLabelCreatedEvent(event: SubstrateEvent): Promise<void> {
   const { event: { data: [hash, name, category, who] } } = event;
-  const parent = Category.get(category.toString());
+  const parent = await Category.get(category.toString());
   if(parent){
     const record = new Label(hash.toString());
     record.blockHash = event.block.block.header.hash.toString();
@@ -28,15 +29,16 @@ export async function handleLabelCreatedEvent(event: SubstrateEvent): Promise<vo
     record.name = new TextDecoder().decode(name.toU8a().slice(1));
     logger.info(record.name);
     record.categoryId = category.toString();
-    record.lastModifier = who.toString();
-    record.lastmodifyDate = new Date();
+    record.creator = who.toString();
+    record.createDate = new Date();
+    record.flag = true;
     await record.save();
   }
 }
 
 export async function handleSubjectCreatedEvent(event: SubstrateEvent): Promise<void> {
   const { event: { data: [hash, name, category, who] } } = event;
-  const parent = Category.get(category.toString());
+  const parent = await Category.get(category.toString());
   if(parent){
     const record = new Subject(hash.toString());
     record.blockHash = event.block.block.header.hash.toString();
@@ -45,15 +47,16 @@ export async function handleSubjectCreatedEvent(event: SubstrateEvent): Promise<
     record.name = new TextDecoder().decode(name.toU8a().slice(1));
     logger.info(record.name);
     record.categoryId = category.toString();
-    record.lastModifier = who.toString();
-    record.lastmodifyDate = new Date();
+    record.creator = who.toString();
+    record.createDate = new Date();
+    record.flag = true;
     await record.save();
   }
 }
 
 export async function handleDimensionCreatedEvent(event: SubstrateEvent): Promise<void> {
   const { event: { data: [hash, name, subject, who] } } = event;
-  const parent = Subject.get(subject.toString());
+  const parent = await Subject.get(subject.toString());
   if(parent){
     const record = new Dimension(hash.toString());
     record.blockHash = event.block.block.header.hash.toString();
@@ -62,16 +65,17 @@ export async function handleDimensionCreatedEvent(event: SubstrateEvent): Promis
     record.name = new TextDecoder().decode(name.toU8a().slice(1));
     logger.info(record.name);
     record.subjectId = subject.toString();
-    record.lastModifier = who.toString();
-    record.lastmodifyDate = new Date();
+    record.creator = who.toString();
+    record.createDate = new Date();
+    record.flag = true;
     await record.save();
   }
 }
 
 export async function handleContentCreatedEvent(event: SubstrateEvent): Promise<void> {
   const { event: { data: [hash, category, label, subject, dimension, content, who] } } = event;
-  const pCategory = Category.get(category.toString());
-  const pDimension = Dimension.get(dimension.toString());
+  const pCategory = await Category.get(category.toString());
+  const pDimension = await Dimension.get(dimension.toString());
   if(pCategory && pDimension) {
     const record = new Content(hash.toString());
     record.blockHash = event.block.block.header.hash.toString();
@@ -84,10 +88,147 @@ export async function handleContentCreatedEvent(event: SubstrateEvent): Promise<
     logger.info(record.label);
     record.categoryId = category.toString();
     record.dimensionId = dimension.toString();
-    record.lastModifier = who.toString();
-    record.lastmodifyDate = new Date();
+    record.creator = who.toString();
+    record.createDate = new Date();
+    record.flag = true;
     await record.save();
   }
+}
+
+export async function handleCategoryUpdatedEvent(event: SubstrateEvent): Promise<void> {
+  const { event: { data: [hash, oldhash, name, parent, who] } } = event;
+  const old = await Category.get(oldhash.toString());
+  if(old){
+    old.flag = false;
+    await old.update();
+    const record = new Category(hash.toString());
+    record.blockHash = event.block.block.header.hash.toString();
+  
+    // record.name = Uint8ArrayToStr(name.toU8a());
+    record.name = new TextDecoder().decode(name.toU8a().slice(1));
+    logger.info(name.toU8a().toString());
+    logger.info(record.name);
+    record.parent = parent.toString();
+    record.creator = who.toString();
+    record.createDate = new Date();
+    record.flag = true;
+    await record.save();
+  }
+}
+
+export async function handleLabelUpdatedEvent(event: SubstrateEvent): Promise<void> {
+  const { event: { data: [hash, oldhash, name, category, who] } } = event;
+  const old = await Label.get(oldhash.toString());
+  const parent = await Category.get(category.toString());
+  if(old && parent){
+    old.flag = false;
+    await old.update();
+    const record = new Label(hash.toString());
+    record.blockHash = event.block.block.header.hash.toString();
+
+    // record.name = Uint8ArrayToStr(name.toU8a());
+    record.name = new TextDecoder().decode(name.toU8a().slice(1));
+    logger.info(record.name);
+    record.categoryId = category.toString();
+    record.creator = who.toString();
+    record.createDate = new Date();
+    record.flag = true;
+    await record.save();
+  }
+}
+
+export async function handleSubjectUpdatedEvent(event: SubstrateEvent): Promise<void> {
+  const { event: { data: [hash, oldhash, name, category, who] } } = event;
+  const old = await Subject.get(oldhash.toString());
+  const parent = await Category.get(category.toString());
+  if(old && parent){
+    old.flag = false;
+    await old.update();
+    const record = new Subject(hash.toString());
+    record.blockHash = event.block.block.header.hash.toString();
+
+    // record.name = Uint8ArrayToStr(name.toU8a());
+    record.name = new TextDecoder().decode(name.toU8a().slice(1));
+    logger.info(record.name);
+    record.categoryId = category.toString();
+    record.creator = who.toString();
+    record.createDate = new Date();
+    record.flag = true;
+    await record.save();
+  }
+}
+
+export async function handleDimensionUpdatedEvent(event: SubstrateEvent): Promise<void> {
+  const { event: { data: [hash, oldhash, name, subject, who] } } = event;
+  const old = await Dimension.get(oldhash.toString());
+  const parent = await Subject.get(subject.toString());
+  if(old && parent){
+    old.flag = false;
+    await old.update();
+    const record = new Dimension(hash.toString());
+    record.blockHash = event.block.block.header.hash.toString();
+
+    // record.name = Uint8ArrayToStr(name.toU8a());
+    record.name = new TextDecoder().decode(name.toU8a().slice(1));
+    logger.info(record.name);
+    record.subjectId = subject.toString();
+    record.creator = who.toString();
+    record.createDate = new Date();
+    record.flag = true;
+    await record.save();
+  }
+    
+}
+
+export async function handleContentUpdatedEvent(event: SubstrateEvent): Promise<void> {
+  const { event: { data: [hash, oldhash, category, label, subject, dimension, content, who] } } = event;
+  const old = await Content.get(oldhash.toString());
+  const pCategory = await Category.get(category.toString());
+  const pDimension = await Dimension.get(dimension.toString());
+  if(old && pCategory && pDimension) {
+    old.flag = false;
+    await old.update();
+    const record = new Content(hash.toString());
+    record.blockHash = event.block.block.header.hash.toString();
+
+    // record.content = Uint8ArrayToStr(content.toU8a());
+    // record.label = Uint8ArrayToStr(label.toU8a());
+    record.content = new TextDecoder().decode(content.toU8a().slice(1));
+    record.label = new TextDecoder().decode(label.toU8a().slice(1));
+    logger.info(record.content);
+    logger.info(record.label);
+    record.categoryId = category.toString();
+    record.dimensionId = dimension.toString();
+    record.creator = who.toString();
+    record.createDate = new Date();
+    record.flag = true;
+    await record.save();
+  }
+}
+
+export async function handleSubscribeEvent(event: SubstrateEvent): Promise<void> {
+  const { event: { data: [hash, subject, who] } } = event;
+  const parent = await Subject.get(subject.toString());
+  if(parent){
+    const record = new Subscribe(hash.toString());
+    record.blockHash = event.block.block.header.hash.toString();
+    record.subjectId = subject.toString();
+    record.subscriber = who.toString();
+    record.subscribeDate = new Date();
+    record.flag = true;
+    await record.save();
+  }
+    
+}
+
+export async function handleSubscribeCancelEvent(event: SubstrateEvent): Promise<void> {
+  const { event: { data: [hash, who] } } = event;
+  const record = await Subscribe.get(hash.toString());
+  if(record){
+    record.flag = false;
+    await record.save();
+  }
+    
 }
 
 // function Uint8ArrayToStr(array) {
