@@ -60,7 +60,7 @@ Run this command under the project directory.
 ```
 yarn codegen
 ```
-WARNING: Executing this command may lose code using the code you change here if the type already exists.
+WARNING: Executing this command may lose custom code if "src -》types" already exists.
 
 ## Build the project
 
