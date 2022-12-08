@@ -1,5 +1,7 @@
 import Index from "./views/index";
 import Create from "./Create";
+import List from "./views/list";
+import Picture from "./views/picture";
 import { Link, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -11,6 +13,8 @@ function App() {
       {/* </p>
         <p> */}
       <Route exact component={Create} path="/Create"></Route>
+      <Route exact component={List} path="/List"></Route>
+      <Route exact component={Picture} path="/Picture"></Route>
       {/* </p>
       </div> */}
       {/* <hr /> */}

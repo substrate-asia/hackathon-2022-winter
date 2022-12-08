@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState, useEffect } from "react";
 
 import {
@@ -19,12 +20,13 @@ function Main(props) {
       tabular
       style={{
         backgroundColor: "#000",
-
+        marginTop:'0',
+        marginbBottom:'0',
         // paddingTop: "1em",
         // paddingBottom: "1em",
         width: "100%",
 
-        height: "230px",
+        height: "180px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between", //中间留白
