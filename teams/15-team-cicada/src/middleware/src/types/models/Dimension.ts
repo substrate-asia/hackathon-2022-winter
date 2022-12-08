@@ -22,9 +22,9 @@ export class Dimension implements Entity {
 
     public subjectId: string;
 
-    public creator?: string;
+    public lastAuthor?: string;
 
-    public createDate?: Date;
+    public lastDate?: Date;
 
     public flag?: boolean;
 

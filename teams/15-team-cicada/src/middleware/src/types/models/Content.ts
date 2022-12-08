@@ -26,9 +26,9 @@ export class Content implements Entity {
 
     public dimensionId: string;
 
-    public creator?: string;
+    public lastAuthor?: string;
 
-    public createDate?: Date;
+    public lastDate?: Date;
 
     public flag?: boolean;
 
