@@ -61,9 +61,9 @@ function Main(props) {
         // borderColor: "#fff",
         // paddingTop: "1em",
         // paddingBottom: "1em",
-        borderBottom:'0',
+        borderBottom: "0",
         width: "100%",
-        height: "210px",
+        height: "150px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between", //中间留白
