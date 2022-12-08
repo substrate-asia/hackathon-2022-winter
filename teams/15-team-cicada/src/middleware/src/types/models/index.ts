@@ -12,3 +12,5 @@ export {Dimension} from "./Dimension"
 
 export {Content} from "./Content"
 
+export {Subscribe} from "./Subscribe"
+

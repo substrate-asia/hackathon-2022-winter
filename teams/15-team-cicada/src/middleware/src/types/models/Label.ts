@@ -22,29 +22,25 @@ export class Label implements Entity {
 
     public categoryId: string;
 
-    public creator?: string;
+    public lastAuthor?: string;
 
-    public createDate?: Date;
+    public lastDate?: Date;
 
-    public lastModifier?: string;
-
-    public lastmodifyDate?: Date;
+    public flag?: boolean;
 
 
     async save(): Promise<void>{
         let id = this.id;
         assert(id !== null, "Cannot save Label entity without an ID");
-        const record = await Label.get(id.toString());
-        if (record){
-            this.creator = record.creator;
-            this.createDate = record.createDate;
-            await store.bulkUpdate('Label', [this]);
-        }else{
-            this.creator = this.lastModifier;
-            this.createDate = this.lastmodifyDate;
-            await store.set('Label', id.toString(), this);
-        }
+        await store.set('Label', id.toString(), this);
     }
+
+    async update(): Promise<void>{
+        let id = this.id;
+        assert(id !== null, "Cannot update Label entity without an ID");
+        await store.bulkUpdate('Label', [this]);
+    }
+
     static async remove(id:string): Promise<void>{
         assert(id !== null, "Cannot remove Label entity without an ID");
         await store.remove('Label', id.toString());
