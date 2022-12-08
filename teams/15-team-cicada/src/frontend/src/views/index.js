@@ -103,6 +103,7 @@ function Main() {
             >
               Let people learn blockchain easily
             </div>
+
             <div
               class="ui action input"
               style={{
@@ -116,28 +117,31 @@ function Main() {
                 type="text"
                 placeholder="Search blockchain knowledge based on subject"
               />
-              <button
-                class="ui icon button"
-                style={{
-                  width: "140px",
-                  height: "60px",
-                  backgroundColor: "#FFE178",
-                  fontSize: "21px",
-
-                  color: "#091323",
-                  lineHeight: "60px",
-                }}
-              >
-                <i
-                  class="search icon"
+              <Link to="/List" style={{ color: "black" }}>
+                <button
+                  class="ui icon button"
                   style={{
+                    width: "140px",
+                    height: "60px",
+                    backgroundColor: "#FFE178",
                     fontSize: "21px",
-                    lineHeight: "20px",
+
+                    color: "#091323",
+                    lineHeight: "60px",
                   }}
-                ></i>
-                <span>Search</span>
-              </button>
+                >
+                  <i
+                    class="search icon"
+                    style={{
+                      fontSize: "21px",
+                      lineHeight: "20px",
+                    }}
+                  ></i>
+                  <span>Search</span>
+                </button>
+              </Link>
             </div>
+
             <div style={{}}>
               Hot：Parallel chain, Slot auction, Substrate, Subquery, Polkadot
             </div>

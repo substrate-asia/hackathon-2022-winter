@@ -35,6 +35,7 @@
     "@polkadot/util": "^8.4.1",
     "@polkadot/util-crypto": "^8.4.1",
     "antd": "^5.0.4",
+    "axios": "^1.2.1",
     "jquery": "^3.6.1",
     "node-polyfill-webpack-plugin": "^1.1.4",
     "prop-types": "^15.8.1",
