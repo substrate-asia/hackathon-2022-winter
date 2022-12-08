@@ -22,9 +22,9 @@ export class Category implements Entity {
 
     public parent?: string;
 
-    public creator?: string;
+    public lastAuthor?: string;
 
-    public createDate?: Date;
+    public lastDate?: Date;
 
     public flag?: boolean;
 

@@ -3,8 +3,8 @@ type Category @entity {
   blockHash: String!
   name: String!
   parent: String
-  creator: String
-  createDate: Date
+  lastAuthor: String
+  lastDate: Date
   flag: Boolean
 }
 
@@ -13,8 +13,8 @@ type Label @entity {
   blockHash: String!
   name: String!
   category: Category!
-  creator: String
-  createDate: Date
+  lastAuthor: String
+  lastDate: Date
   flag: Boolean
 }
 
@@ -23,8 +23,8 @@ type Subject @entity {
   blockHash: String!
   name: String!
   category: Category!
-  creator: String
-  createDate: Date
+  lastAuthor: String
+  lastDate: Date
   flag: Boolean
 }
 
@@ -33,8 +33,8 @@ type Dimension @entity {
   blockHash: String!
   name: String!
   subject: Subject!
-  creator: String
-  createDate: Date
+  lastAuthor: String
+  lastDate: Date
   flag: Boolean
 }
 
@@ -45,8 +45,8 @@ type Content @entity {
   category: Category!
   label: String
   dimension: Dimension!
-  creator: String
-  createDate: Date
+  lastAuthor: String
+  lastDate: Date
   flag: Boolean
 }
 

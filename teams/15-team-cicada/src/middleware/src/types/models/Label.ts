@@ -22,9 +22,9 @@ export class Label implements Entity {
 
     public categoryId: string;
 
-    public creator?: string;
+    public lastAuthor?: string;
 
-    public createDate?: Date;
+    public lastDate?: Date;
 
     public flag?: boolean;
 
