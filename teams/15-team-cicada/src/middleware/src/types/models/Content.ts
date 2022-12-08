@@ -26,30 +26,25 @@ export class Content implements Entity {
 
     public dimensionId: string;
 
-    public creator?: string;
+    public lastAuthor?: string;
 
-    public createDate?: Date;
+    public lastDate?: Date;
 
-    public lastModifier?: string;
-
-    public lastmodifyDate?: Date;
+    public flag?: boolean;
 
 
     async save(): Promise<void>{
         let id = this.id;
         assert(id !== null, "Cannot save Content entity without an ID");
-
-        const record = await Content.get(id.toString());
-        if (record){
-            this.creator = record.creator;
-            this.createDate = record.createDate;
-            await store.bulkUpdate('Content', [this]);
-        }else{
-            this.creator = this.lastModifier;
-            this.createDate = this.lastmodifyDate;
-            await store.set('Content', id.toString(), this);
-        }
+        await store.set('Content', id.toString(), this);
     }
+
+    async update(): Promise<void>{
+        let id = this.id;
+        assert(id !== null, "Cannot update Content entity without an ID");
+        await store.bulkUpdate('Content', [this]);
+    }
+
     static async remove(id:string): Promise<void>{
         assert(id !== null, "Cannot remove Content entity without an ID");
         await store.remove('Content', id.toString());

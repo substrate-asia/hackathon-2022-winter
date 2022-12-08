@@ -22,29 +22,25 @@ export class Dimension implements Entity {
 
     public subjectId: string;
 
-    public creator?: string;
+    public lastAuthor?: string;
 
-    public createDate?: Date;
+    public lastDate?: Date;
 
-    public lastModifier?: string;
-
-    public lastmodifyDate?: Date;
+    public flag?: boolean;
 
 
     async save(): Promise<void>{
         let id = this.id;
         assert(id !== null, "Cannot save Dimension entity without an ID");
-        const record = await Dimension.get(id.toString());
-        if (record){
-            this.creator = record.creator;
-            this.createDate = record.createDate;
-            await store.bulkUpdate('Dimension', [this]);
-        }else{
-            this.creator = this.lastModifier;
-            this.createDate = this.lastmodifyDate;
-            await store.set('Dimension', id.toString(), this);
-        }
+        await store.set('Dimension', id.toString(), this);
     }
+
+    async update(): Promise<void>{
+        let id = this.id;
+        assert(id !== null, "Cannot update Dimension entity without an ID");
+        await store.bulkUpdate('Dimension', [this]);
+    }
+
     static async remove(id:string): Promise<void>{
         assert(id !== null, "Cannot remove Dimension entity without an ID");
         await store.remove('Dimension', id.toString());

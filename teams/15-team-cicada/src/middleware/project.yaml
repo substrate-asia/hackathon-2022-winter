@@ -47,3 +47,38 @@ dataSources:
           filter:
             module: cicadaModule
             method: ContentCreated
+        - handler: handleCategoryUpdatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: CategoryUpdated
+        - handler: handleLabelUpdatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: LabelUpdated
+        - handler: handleSubjectUpdatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: SubjectUpdated
+        - handler: handleDimensionUpdatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: DimensionUpdated
+        - handler: handleContentUpdatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: ContentUpdated
+        - handler: handleSubscribeEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: Subscribe
+        - handler: handleSubscribeCancelEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: SubscribeCancel

@@ -22,29 +22,25 @@ export class Subject implements Entity {
 
     public categoryId: string;
 
-    public creator?: string;
+    public lastAuthor?: string;
 
-    public createDate?: Date;
+    public lastDate?: Date;
 
-    public lastModifier?: string;
-
-    public lastmodifyDate?: Date;
+    public flag?: boolean;
 
 
     async save(): Promise<void>{
         let id = this.id;
         assert(id !== null, "Cannot save Subject entity without an ID");
-        const record = await Subject.get(id.toString());
-        if (record){
-            this.creator = record.creator;
-            this.createDate = record.createDate;
-            await store.bulkUpdate('Subject', [this]);
-        }else{
-            this.creator = this.lastModifier;
-            this.createDate = this.lastmodifyDate;
-            await store.set('Subject', id.toString(), this);
-        }
+        await store.set('Subject', id.toString(), this);
     }
+
+    async update(): Promise<void>{
+        let id = this.id;
+        assert(id !== null, "Cannot upate Subject entity without an ID");
+        await store.bulkUpdate('Subject', [this]);
+    }
+
     static async remove(id:string): Promise<void>{
         assert(id !== null, "Cannot remove Subject entity without an ID");
         await store.remove('Subject', id.toString());
