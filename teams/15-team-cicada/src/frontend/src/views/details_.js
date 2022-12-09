@@ -21,10 +21,11 @@ import Floor from "../Floor";
 // 获取数据方法函数
 
 function Main() {
+  const [data, setData] = useState([]);
   const getApiData = async () => {
     try {
-      let list = await getList();
-      console.log(list);
+      let res = await getList();
+      setData(res.data.categories.nodes);
     } catch (error) {
       console.log(error);
     }
@@ -101,7 +102,9 @@ function Main() {
           textAlign: "center",
         }}
       >
-        <div style={{ color: "#fff" }}>sadasdasdasdasdas</div>
+        {data.map((i) => (
+          <div key={i.id}>{i.blockHash}</div>
+        ))}
       </Container>
       {/* <Sticky context={contextRef}>
       </Sticky> */}

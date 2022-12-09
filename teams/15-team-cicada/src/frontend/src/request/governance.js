@@ -92,9 +92,54 @@ import http from "../request/index";
 //   });
 // }
 
+// function getList() {
+//   let arr = [
+//     "query {",
+//     "    dropings (",
+//     "      filter:{",
+//     '        to:{equalToInsensitive:"0x1EDbd6d0beEC7c372AEeF8fc5d3b3706043e3B0B"}',
+//     "      }",
+//     "      first: 5) {",
+//     "        nodes {",
+//     "            id",
+//     "            value",
+//     "            to",
+//     "            from",
+//     "            contractAddress",
+//     "        }",
+//     "    }",
+//     "}",
+//   ];
+//   return new Promise((resolve, reject) => {
+//     http("post", "/makefriendwithtime/stafidao-airdrop", arr.join()).then(
+//       (res) => {
+//         resolve(res);
+//       },
+//       (error) => {
+//         console.log("网络异常~", error);
+//         reject(error);
+//       }
+//     );
+//   });
+// }
 function getList() {
+  let arr = [
+    "query {",
+    "    categories(filter:{flag:{equalTo:true}},first: 10,offset:0,orderBy:BLOCK_HASH_ASC) {",
+    "      nodes {",
+    "        id,",
+    "     blockHash,",
+    "     name,",
+    "     parent,",
+    "     lastAuthor,",
+    "     lastDate,",
+    "     flag",
+    "      }",
+    "    }",
+    "}",
+  ];
   return new Promise((resolve, reject) => {
-    http("get", "api/productlist").then(
+    http("post", "", { query: arr.join() }).then(
       (res) => {
         resolve(res);
       },
@@ -105,5 +150,4 @@ function getList() {
     );
   });
 }
-
 export { getList };
