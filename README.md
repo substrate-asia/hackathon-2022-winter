@@ -60,6 +60,16 @@
       Hangbiao Gear Validator Manager
 
 - Workshop#3：2022年12月10日 周六 15:00-17:00
+
+  构建Web3世界的最佳工具
+
+  1.构建一个面向用户的Polkadot钱包
+
+    Nam Pham SubWallet高级软件工程师
+
+  2.面向Substrate链的数据索引与分析
+
+    Yakio Liu Subscan负责人
 - Workshop#4：2022年12月17日 周六 15:00-17:00
 
 ## 项目报名
