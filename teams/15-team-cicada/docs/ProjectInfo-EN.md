@@ -7,11 +7,8 @@ Project approval date：2022-11
 ## Project Intro
 
 ### Intoduction
-- 项目Demo
-  demo视频制作思路
-  首页-》我的-》关联资料、抵押、捐赠、订阅-》数据录入-》token奖励-》信息展示-》替代、投诉、申诉-》治理-》token奖励处罚-》信息展示
-  演讲ppt制作思路
-  项目介绍-》团队介绍-》要解决的痛点-》用户群体-》竞争分析-》经济模型-》demo演示-》发展路线图
+- A blockchain project knowledge base that designs a reasonable economic model to solve the problem of invalid, scattered, and unsystematic project information, provides rewards for information creators, and provides convenience and efficiency for information queriers.
+Technical framework: Substrate framework, VUE.
 
 ### The main highlights of the project are:
 
@@ -42,6 +39,7 @@ Project approval date：2022-11
   * Front-end users input data and submit it to the chain, the on-chain logic processes the result and returns it to the user and triggers a chain storage event, the front-end user obtains the on-chain result, the middle layer listens to the chain event, pulls and caches the data from the chain, and the front-end obtains the cached data from the middle layer for display. Here, the on-chain logic processing includes soul binding and token rewards, and if it is data replacement, complaint, and appeal, it also involves governance functions.
 
 - Project logo
+
 ![project-logo](https://user-images.githubusercontent.com/40650475/206896925-6228d89f-31f2-4226-aa0b-82a29f71aa83.png)
 
 
