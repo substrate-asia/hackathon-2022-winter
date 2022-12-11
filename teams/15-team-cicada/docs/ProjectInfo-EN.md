@@ -19,29 +19,30 @@ Project approval date：2022-11
  * Using soul tokens to establish user growth and credit systems, and using economic incentives to solve the problem of data collection and user content contributions.
  * Using on-chain governance and rewards to solve the problem of data quality.
 
-###Technical Architecture
+### Technical Architecture
 
 * Input and Display Layer
 
- * react: Used for user interaction and page data display
- * polkadot.jssdk: Used for data interaction with on-chain business logic
- * ipfs.jssdk: Used for file interaction with IPFS storage
+  * react: Used for user interaction and page data display
+  * polkadot.jssdk: Used for data interaction with on-chain business logic
+  * ipfs.jssdk: Used for file interaction with IPFS storage
 * Blockchain Layer
 
- * Substrate: Used for the implementation of the chain, with business logic including data binding, mortgage token, subscription data, donation, data input, token reward, soul binding, data substitution, token penalty, data complaint, and data appeal
- * Substrate.gov2: Used for the implementation of governance, with business logic including proposal initiation, governance voting, and proposal execution
+  * Substrate: Used for the implementation of the chain, with business logic including data binding, mortgage token, subscription data, donation, data input, token reward, soul binding, data substitution, token penalty, data complaint, and data appeal
+  * Substrate.gov2: Used for the implementation of governance, with business logic including proposal initiation, governance voting, and proposal execution
 * Storage Layer
 
- * Chain: Used for data (not files) storage, processing data submitted by the input and display layer
- * IPFS: Used for file storage, processing files submitted by the input and display layer
+  * Chain: Used for data (not files) storage, processing data submitted by the input and display layer
+  * IPFS: Used for file storage, processing files submitted by the input and display layer
 * Data Middle Layer
 
- * Subquery: Used for caching of on-chain data, pulling data from the chain and caching it in the database, and providing data interface services
- * Java: Used for subscription push, getting data from subquery and processing the data format, and regularly pushing to subscribed users
+  * Subquery: Used for caching of on-chain data, pulling data from the chain and caching it in the database, and providing data interface services
+  * Java: Used for subscription push, getting data from subquery and processing the data format, and regularly pushing to subscribed users
 * Brief Description of Business Process (Data Input)
- * Front-end users input data and submit it to the chain, the on-chain logic processes the result and returns it to the user and triggers a chain storage event, the front-end user obtains the on-chain result, the middle layer listens to the chain event, pulls and caches the data from the chain, and the front-end obtains the cached data from the middle layer for display. Here, the on-chain logic processing includes soul binding and token rewards, and if it is data replacement, complaint, and appeal, it also involves governance functions.
+  * Front-end users input data and submit it to the chain, the on-chain logic processes the result and returns it to the user and triggers a chain storage event, the front-end user obtains the on-chain result, the middle layer listens to the chain event, pulls and caches the data from the chain, and the front-end obtains the cached data from the middle layer for display. Here, the on-chain logic processing includes soul binding and token rewards, and if it is data replacement, complaint, and appeal, it also involves governance functions.
 
 - Project logo
+![project-logo](https://user-images.githubusercontent.com/40650475/206896925-6228d89f-31f2-4226-aa0b-82a29f71aa83.png)
 
 
 ## Planned tasks to be completed during the hackathon
