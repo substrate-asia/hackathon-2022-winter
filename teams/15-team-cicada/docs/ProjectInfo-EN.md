@@ -49,10 +49,10 @@ Technical framework: Substrate framework, VUE.
 **Blockchain End**
 
 * `pallet-cicada`
- * Cicada creation and data structure definition (`fn create_category()` `fn create_label()` `fn create_subject()` `fn create_dimension()` `fn create_content()`)
- * Cicada change functions (`fn modify_category()` `fn modify_label()` `fn modify_subject()``fn modify_dimension()` `fn modify_content()`)
- * Cicada transfer function (`fn transfer()`)
- * Cicada destruction function (`fn burn()`)
+  * Cicada creation and data structure definition (`fn create_category()` `fn create_label()` `fn create_subject()` `fn create_dimension()` `fn create_content()`)
+  * Cicada change functions (`fn modify_category()` `fn modify_label()` `fn modify_subject()``fn modify_dimension()` `fn modify_content()`)
+  * Cicada transfer function (`fn transfer()`)
+  * Cicada destruction function (`fn burn()`)
 
 **Web End**
 
@@ -65,10 +65,10 @@ Technical framework: Substrate framework, VUE.
 **Middle Layer**
 
 * Subquery End
- * Listen to chain storage events and pull and cache (·function handleCategoryCreatedEvent()` `function handleLabelCreatedEvent()` `function handleSubjectCreatedEvent()` `function handleDimensionCreatedEvent()` `function handleContentCreatedEvent()`)
- * Provide data interface services for clients and Java end
+  * Listen to chain storage events and pull and cache (`function handleCategoryCreatedEvent()` `function handleLabelCreatedEvent()` `function handleSubjectCreatedEvent()` `function handleDimensionCreatedEvent()` `function handleContentCreatedEvent()`)
+  * Provide data interface services for clients and Java end
 * Java End
- * Get subscribed users (`function get_subscribe()`)
+  * Get subscribed users (`function get_subscribe()`)
 
 
 ## Team Member Information
