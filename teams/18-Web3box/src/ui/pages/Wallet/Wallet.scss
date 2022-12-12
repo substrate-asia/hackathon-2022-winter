@@ -1,0 +1,74 @@
+.wallet{
+    // width: 80%;
+    // margin: 0 auto;
+
+    padding-bottom: 40px;
+    .spile {
+        margin-left:150px;
+    }
+    .proy{
+       margin-right:25px;
+    }
+    .login_wallet{
+        margin: 0 50px;
+        // width: 80%;
+        // width:900px;
+        // height: 280px;
+        padding-top: 40px;
+        background-size: 100% 100%;
+    }   
+    h6{
+        margin: 0 auto;
+        font-size: 32px;
+        color: #FFFFFF;
+        padding-top: 25px;
+        padding-bottom: 18px;
+
+        // padding-left: 40px;
+    }
+    ul{
+        margin: 0 auto;
+        display: flex;
+        justify-content:space-between;
+        li{
+            justify-content:inherit;
+            background: #1D2126;
+            box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.16);
+            border-radius: 10px 10px 10px 10px;
+            opacity: 1;
+            border: 1px solid #33383D;
+            display: flex;
+            width: 47%;
+            // width: 438px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            &:hover{
+                border:1px solid #3CDFDD;
+            }
+
+            img{
+                width: 40px;
+                height: 40px;
+                margin-left: 24px;
+                margin-right: 10px;
+                margin-top: 17px;
+            }
+            p{
+               display: flex;
+               span{
+                width: 100%;
+                font-size: 20px;
+                color: #FFFFFF;
+                display: block;
+                padding-top: 20px;
+               } 
+               a{
+                font-size: 14px;
+                color: #AAAAAA; 
+                display: block;
+               }
+            }
+        }
+
+    }
+}
