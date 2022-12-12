@@ -1,6 +1,10 @@
-import React, { createRef } from "react";
+import React, { createRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Pagination } from "antd";
+import { getList } from "../request/governance";
+import moment from "moment";
+import { useParams, useLocation } from "react-router-dom";
+import qs from "qs";
 import {
   Container,
   Dimmer,
@@ -17,10 +21,37 @@ import { SubstrateContextProvider, useSubstrateState } from "../substrate-lib";
 import { DeveloperConsole } from "../substrate-lib/components";
 
 import Floor from "../Floor";
-
+import myContext from "../createContext";
 function Main() {
   const { apiState, apiError, keyringState } = useSubstrateState();
+  const getPageQuery = () => parse(window.location.href.split("?")[1]);
+  const [data, setData] = useState();
+  const { search, state = {} } = useLocation();
+  // 获取location.search中的参数
+  const { val } = qs.parse(search.replace(/^\?/, ""));
+  console.log(val);
+  const getApiData = async () => {
+    try {
+      let res = await getList();
+      setData(res.data.contents.nodes);
+    } catch (error) {
+      console.log(error);
+    }
 
+    // request.getList
+    //   .then((res) => {
+    //     console.log(res.data.result);
+    //     this.setState({
+    //       list: res.data.result, //获取的数据保存到list数组
+    //     });
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //   });
+  };
+  useEffect(() => {
+    getApiData([]);
+  }, []);
   const loader = (text) => (
     <Dimmer active>
       <Loader size="small">{text}</Loader>
@@ -55,7 +86,9 @@ function Main() {
   return (
     <div ref={contextRef}>
       <Sticky context={contextRef}>
-        <AccountSelector />
+        <myContext.Provider value={val}>
+          <AccountSelector />
+        </myContext.Provider>
         <div
           style={{
             justifyContent: "center",
@@ -121,86 +154,89 @@ function Main() {
           }}
         >
           <Menu.Menu style={{}}>
-            <Link to="/Details" style={{ color: "black" }}>
-              <div>
-                <text
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "23px",
-                  }}
-                >
-                  An Overview of Blockchain Technology: Architecture, Consensus,
-                  and Future Trends
-                </text>
-                <div
-                  style={{
-                    marginTop: "20px",
-                    fontSize: "20px",
-                    color: "#ADADAD",
-                  }}
-                >
-                  An overview of blockchain architechture is provided and some
-                  typical consensus algorithms used in diferent block.chains are
-                  compared and possible future trends for blockchain are laid
-                  out
-                </div>
-                <div
-                  class="user"
-                  style={{
-                    width: "100%",
-                    height: "20px",
-                  }}
-                >
+            {data.map((i) => (
+              // <div key={i.id}>{i.blockHash}</div>
+              <Link to="/Details" style={{ color: "black" }}>
+                <div>
+                  <div style={{ margin: "30px 0" }}>
+                    <text
+                      style={{
+                        fontWeight: "bold",
+                        fontSize: "23px",
+                      }}
+                    >
+                      An Overview of Blockchain Technology: Architecture,
+                      Consensus, and Future Trends
+                    </text>
+                  </div>
+                  <div>
+                    <span>{i.category.name}</span>
+                    <span>{i.dimension.name}</span>
+                  </div>
                   <div
                     style={{
-                      marginTop: "10px",
+                      marginTop: "20px",
+                      fontSize: "20px",
+                      color: "#ADADAD",
                     }}
                   >
-                    <img
-                      src={`${process.env.PUBLIC_URL}/assets/headimg.png`}
+                    {i.content}
+                  </div>
+                  <div
+                    class="user"
+                    style={{
+                      width: "100%",
+                      height: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      marginTop: "30px",
+                      // justifyContent: "center", //中间留白
+                    }}
+                  >
+                    <div
+                      style={{
+                        marginTop: "10px",
+                      }}
+                    >
+                      <img
+                        src={`${process.env.PUBLIC_URL}/assets/headimg.png`}
+                        style={{
+                          display: "flex",
+                          width: "30px",
+                          height: "30px",
+                          // float: " left",
+                        }}
+                      />
+                    </div>
+                    <div
                       style={{
                         display: "flex",
-                        width: "30px",
+                        width: "950px",
                         height: "30px",
-                        float: " left",
+                        // float: " left",
+                        marginLeft: "30px",
+                        lineHeight: "30px",
+                        color: "#ADADAD",
+                        fontSize: "19px",
                       }}
-                    />
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "150px",
-                      height: "30px",
-                      float: " left",
-                      marginLeft: "30px",
-                      lineHeight: "30px",
-                      color: "#ADADAD",
-                      fontSize: "19px",
-                    }}
-                  >
-                    0x6804...be5c
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      width: "150px",
-                      height: "30px",
-                      float: " left",
-                      marginLeft: "30px",
-                      lineHeight: "30px",
-                      color: "#ADADAD",
-                      fontSize: "19px",
-                    }}
-                  >
-                    2022-12-5 15:34
+                    >
+                      <span>
+                        {i.lastAuthor.substr(0, 10) +
+                          "...." +
+                          i.lastAuthor.substr(38)}
+                      </span>
+                      <span style={{ marginLeft: "20px" }}>
+                        {moment(i.lastDate).format("YYYY-MM-DD")}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
 
             {/* 第二个 */}
 
-            <div
+            {/* <div
               style={{
                 marginTop: "80px",
               }}
@@ -281,11 +317,11 @@ function Main() {
                   2022-12-5 15:34
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* 第3个 */}
 
-            <div
+            {/* <div
               style={{
                 marginTop: "80px",
               }}
@@ -366,11 +402,11 @@ function Main() {
                   2022-12-5 15:34
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* 第4个 */}
 
-            <div
+            {/* <div
               style={{
                 marginTop: "80px",
               }}
@@ -441,11 +477,11 @@ function Main() {
                   2022-12-5 15:34
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* 第5个 */}
 
-            <div
+            {/* <div
               style={{
                 marginTop: "80px",
               }}
@@ -526,7 +562,7 @@ function Main() {
                   2022-12-5 15:34
                 </div>
               </div>
-            </div>
+            </div> */}
           </Menu.Menu>
           {/* 中数据 */}
           <Menu.Menu

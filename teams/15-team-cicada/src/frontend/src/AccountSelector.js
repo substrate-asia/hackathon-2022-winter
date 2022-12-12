@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
+import myContext from "./createContext";
 import {
   Menu,
   Button,
@@ -48,7 +48,9 @@ function Main(props) {
   const onChange = (addr) => {
     setCurrentAccount(keyring.getPair(addr));
   };
-
+  // const [val, setval] = useState("");
+  const val = useContext(myContext);
+  console.log(val);
   return (
     <Menu
       // attached="top"
@@ -108,6 +110,10 @@ function Main(props) {
             <input
               type="text"
               placeholder="Search blockchain knowledge based on subject"
+              value={val}
+              onChange={(e) => {
+                setInputValue(e.target.value);
+              }}
             />
             <button
               class="ui icon button"

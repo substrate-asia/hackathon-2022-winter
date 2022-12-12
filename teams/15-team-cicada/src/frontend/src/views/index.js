@@ -1,4 +1,4 @@
-import React, { createRef } from "react";
+import React, { createRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -20,7 +20,9 @@ import Floor from "../Floor";
 
 function Main() {
   const { apiState, apiError, keyringState } = useSubstrateState();
-
+  const [inputValue, setInputValue] = useState("");
+  // const onChange = (_, data) =>
+  //   setinputVal((prev) => ({ ...prev, [data.state]: data.value }));
   const loader = (text) => (
     <Dimmer active>
       <Loader size="small">{text}</Loader>
@@ -116,8 +118,12 @@ function Main() {
               <input
                 type="text"
                 placeholder="Search blockchain knowledge based on subject"
+                value={inputValue}
+                onChange={(e) => {
+                  setInputValue(e.target.value);
+                }}
               />
-              <Link to="/List" style={{ color: "black" }}>
+              <Link to={`/List?val=${inputValue}`} style={{ color: "black" }}>
                 <button
                   class="ui icon button"
                   style={{

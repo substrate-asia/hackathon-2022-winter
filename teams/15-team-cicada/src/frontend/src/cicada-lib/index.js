@@ -129,7 +129,7 @@ export class CicadaApi {
     succCallback = null,
     failCallback = null
   ) {
-    console.log("label");
+    console.log(category);
     const arr = toUint8Arr(category);
     const palletRpc = "cicadaModule";
     const callable = "createLabel";
