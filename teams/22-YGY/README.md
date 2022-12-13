@@ -1,10 +1,5 @@
-## Project
+## Project Background
 
-Project Name: DeSign
-
-Start Time: 2022.11
-
-## Introduction
 The scene of contract signing is widespread in all walks of life. Contracts interweaves into our business world, promoting the legitimate and stable development of business.
 When signing a contract, both parties usually sign, seal, or fingerprint, which aims to provide the court with a proof of the legal identity of both parties and their willingness to sign the contract when a contract dispute arises.
 
@@ -19,7 +14,27 @@ What's more serious is that as some large enterprises attach importance to priva
 
 The DeSign e-signature platform aims to realize the vision that users' value assets (identity information, digital certificates, contract documents) belong to users based on the web3.0 ecology and the contract signing scenario, on the basis of the traditional advantages of web2.0, such as efficiency, low cost and environmental protection.
 
+## Project Target
 DeSign aims to provide customers with decentralized e-signature and contract management services. As a new generation of e-signature technology, on the basis of retaining the traditional advantages of web2.0 in efficiency, low cost and environmental protection, it realizes the vision that users' value assets (identity information, digital certificates, contract documents) belong to users.
+
+## Tasks to be completed during Hackathon
+
+#### Account Generation
+1. Account Generation based on Polkadot.js, 
+2. Polkadot.js Connection & Authentication,
+3. Email binding 
+4. Index Page, Home Page
+5. Log out
+
+#### Individual Certificate Acquisition
+1. VerifyTask Submission & Individual Identity material stored on Dss,
+2. VerifyTask payment & authentication,
+4. Individual certificate acquisition from Kilt DID.
+
+#### Personal Signing
+1. SignTask creation & initiation & processing & conclusion,
+2. SignTask invition & receiving & view & Sign & Payment.
+3. SignTask Docs Mgt. in Dss.
 
 ## Architecture
 
