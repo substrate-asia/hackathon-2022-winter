@@ -18,13 +18,12 @@ import http from "../request/index";
 //     "}",
 //   ];
 
-// content:{equalToInsensitive:"' +
-//       val +
-//       '"}
 function getList(val) {
   let arr = [
     "query {",
-    "contents(filter:{flag:{equalTo:true}  },first: 10,offset:0,orderBy:BLOCK_HASH_ASC){",
+    'contents(filter:{flag:{equalTo:true} content:{equalToInsensitive:"' +
+      val +
+      '"} },first: 10,offset:0,orderBy:BLOCK_HASH_ASC){',
     "nodes{",
     "id,",
     "blockHash,",
