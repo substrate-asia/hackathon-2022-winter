@@ -23,6 +23,10 @@ DeSign aims to provide customers with decentralized e-signature and contract man
 
 ## Architecture
 
+## Logo
+![logo-透明](https://user-images.githubusercontent.com/120092281/207235913-b0bc1641-cab5-4efb-b5ce-551b6f813cb9.png)
+
+
 ## Team
 <table>
   <tr>
