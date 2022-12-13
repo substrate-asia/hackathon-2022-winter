@@ -20,16 +20,8 @@ import ReactDOM from "react-dom";
 import App from "./App";
 
 ReactDOM.render(
-<<<<<<< HEAD
   <React.StrictMode>
       <App />
   </React.StrictMode>,
-=======
-  
-    <HashRouter>
-      <App />
-    </HashRouter>,
-  
->>>>>>> 40fd283826b2af44dbbd14fba4bd50730977e68a
   document.getElementById("root")
 );

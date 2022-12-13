@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { createRef } from "react";
 import {
   Container,
@@ -9,13 +8,6 @@ import {
   Message,
 } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
-=======
-import Index from "./views/index";
-import Create from "./Create";
-import List from "./views/list";
-import Picture from "./views/picture";
-import { Link, Route, Switch } from "react-router-dom";
->>>>>>> 40fd283826b2af44dbbd14fba4bd50730977e68a
 
 import { SubstrateContextProvider, useSubstrateState } from "./substrate-lib";
 import { DeveloperConsole } from "./substrate-lib/components";
@@ -67,7 +59,6 @@ function Main() {
 
   const contextRef = createRef();
   return (
-<<<<<<< HEAD
     <div ref={contextRef}>
       {/* <Sticky context={contextRef}> */}
       <AccountSelector />
@@ -98,31 +89,6 @@ function Main() {
       {/* <Sticky context={contextRef}>
       </Sticky> */}
       <Floor />
-=======
-    <div>
-      {/* <div>
-        <p> */}
-      <Route exact component={Index} path="/"></Route>
-      {/* </p>
-        <p> */}
-      <Route exact component={Create} path="/Create"></Route>
-      <Route exact component={List} path="/List"></Route>
-      <Route exact component={Picture} path="/Picture"></Route>
-      {/* </p>
-      </div> */}
-      {/* <hr /> */}
-      {/* <div>
-        <Switch>
-          <Route exact component={Index} path="/"></Route>
-
-          <Route
-            exact
-            component={Create}
-            path="/substrate-front-end-template/Create"
-          ></Route>
-        </Switch>
-      </div> */}
->>>>>>> 40fd283826b2af44dbbd14fba4bd50730977e68a
     </div>
   );
 }
