@@ -103,8 +103,8 @@ pub mod pallet {
 		SubjectUpdated{ hash: [u8; 32], name: Vec<u8>, category: [u8; 32], who: T::AccountId, verified: bool  },
 		DimensionCreated{ hash: [u8; 32], name: Vec<u8>, subject: [u8; 32], who: T::AccountId, verified: bool  },
 		DimensionUpdated{ hash: [u8; 32], name: Vec<u8>, subject: [u8; 32], who: T::AccountId, verified: bool  },
-		ContentCreated{ hash: [u8; 32], category: [u8; 32], label: [u8; 32], subject: [u8; 32], dimension: [u8; 32], content: Vec<u8>, who: T::AccountId, verified: bool },
-		ContentUpdated{ hash: [u8; 32], category: [u8; 32], label: [u8; 32], subject: [u8; 32], dimension: [u8; 32], content: Vec<u8>, who: T::AccountId, verified: bool },
+		ContentCreated{ hash: [u8; 32], category: [u8; 32], label: Vec<u8>, subject: [u8; 32], dimension: [u8; 32], content: Vec<u8>, who: T::AccountId, verified: bool },
+		ContentUpdated{ hash: [u8; 32], category: [u8; 32], label: Vec<u8>, subject: [u8; 32], dimension: [u8; 32], content: Vec<u8>, who: T::AccountId, verified: bool },
 		Subscribe{hash: [u8; 32], subject: [u8; 32], who: T::AccountId, verified: bool},
 		SubscribeCancel{hash: [u8; 32], who: T::AccountId, verified: bool},
 	}
@@ -314,7 +314,7 @@ pub mod pallet {
 		}
 
 		#[pallet::weight(10_000 + T::DbWeight::get().writes(1))]
-		pub fn create_content(origin: OriginFor<T>, category: [u8; 32], label: [u8; 32], subject: [u8; 32], dimension: [u8; 32], content: Vec<u8>) -> DispatchResult {
+		pub fn create_content(origin: OriginFor<T>, category: [u8; 32], label: Vec<u8>, subject: [u8; 32], dimension: [u8; 32], content: Vec<u8>) -> DispatchResult {
 			let sender = ensure_signed(origin)?;
 
 			ensure!(content.len() >= T::ContentMinLength::get() as usize, Error::<T>::TooShort);
@@ -332,7 +332,7 @@ pub mod pallet {
 				None => {
 					// 检查category、label、subject、dimension是否存在，如果不存在则报错
 					Self::get_category(&category).ok_or(Error::<T>::CategoryNotExist)?;
-					Self::get_label(&label).ok_or(Error::<T>::LabelNotExist)?;
+					// Self::get_label(&label).ok_or(Error::<T>::LabelNotExist)?;
 					Self::get_subject(&subject).ok_or(Error::<T>::SubjectNotExist)?;
 					Self::get_dimension(&dimension).ok_or(Error::<T>::DimensionNotExist)?;
 					<Contents<T>>::insert(hash, (&sender, false));
@@ -348,7 +348,7 @@ pub mod pallet {
 		}
 		
 		#[pallet::weight(10_000 + T::DbWeight::get().writes(1))]
-		pub fn update_content(origin: OriginFor<T>, category: [u8; 32], label: [u8; 32], subject: [u8; 32], dimension: [u8; 32], content: Vec<u8>, hash: [u8; 32]) -> DispatchResult {
+		pub fn update_content(origin: OriginFor<T>, category: [u8; 32], label: Vec<u8>, subject: [u8; 32], dimension: [u8; 32], content: Vec<u8>, hash: [u8; 32]) -> DispatchResult {
 			let sender = ensure_signed(origin)?;
 
 			ensure!(content.len() >= T::ContentMinLength::get() as usize, Error::<T>::TooShort);
@@ -361,7 +361,7 @@ pub mod pallet {
 				Some(_old) => {
 					// 检查category、label、subject、dimension是否存在，如果不存在则报错
 					Self::get_category(&category).ok_or(Error::<T>::CategoryNotExist)?;
-					Self::get_label(&label).ok_or(Error::<T>::LabelNotExist)?;
+					// Self::get_label(&label).ok_or(Error::<T>::LabelNotExist)?;
 					Self::get_subject(&subject).ok_or(Error::<T>::SubjectNotExist)?;
 					Self::get_dimension(&dimension).ok_or(Error::<T>::DimensionNotExist)?;
 					Self::deposit_event(Event::ContentUpdated {
