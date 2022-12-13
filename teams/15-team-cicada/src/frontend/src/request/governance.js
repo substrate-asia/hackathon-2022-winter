@@ -21,9 +21,9 @@ import http from "../request/index";
 function getList(val) {
   let arr = [
     "query {",
-    'contents(filter:{flag:{equalTo:true} content:{equalToInsensitive:"' +
+    'contents(filter:{flag:{equalTo:true} content:{like:"%' +
       val +
-      '"} },first: 10,offset:0,orderBy:BLOCK_HASH_ASC){',
+      '%"} },first: 10,offset:0,orderBy:BLOCK_HASH_ASC){',
     "nodes{",
     "id,",
     "blockHash,",
