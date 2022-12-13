@@ -36,6 +36,18 @@ DeSign aims to provide customers with decentralized e-signature and contract man
 2. SignTask invition & receiving & view & Sign & Payment.
 3. SignTask Docs Mgt. in Dss.
 
+## Problems to be solved during Hackathon
+
+####Issues related to certificate application
+1. How to safely and reliably store the real name information submitted by users in a decentralized way?
+2. After the authentication task submitted by the user is linked, how to audit it through the management background?
+3. How to generate DID format digital certificates for users on the Kilt chain based on the real name information submitted by users and approved by the background?
+
+####Issues related to signing tasks
+1. A signing task may contain multiple documents to be signed, and there may be multiple signers. Each person who signs a document will generate a new document. When each document is uploaded to the DSS, costs will be incurred. How to minimize user costs and operating costs while meeting the principle of decentralization?
+2. After a signing task is initiated, multiple signers will receive a signing notice. When each signer opens the task and completes signing, it will output the corresponding products (new signature documents, signature Hash and other information). How to organize multiple parties on the blockchain to complete signing once and finally complete the signing task?
+
+
 ## Architecture
 
 ## Logo
