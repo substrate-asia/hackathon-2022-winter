@@ -32,7 +32,7 @@ function Main() {
   console.log(val);
   const getApiData = async () => {
     try {
-      let res = await getList();
+      let res = await getList(val);
       setData(res.data.contents.nodes);
     } catch (error) {
       console.log(error);
@@ -168,13 +168,13 @@ function Main() {
                         fontSize: "23px",
                       }}
                     >
-                      An Overview of Blockchain Technology: Architecture,
-                      Consensus, and Future Trends
+                      {/* 标题 */}
                     </text>
                   </div>
                   <div>
-                    <span>{i.category.name}</span>
-                    <span>{i.dimension.name}</span>
+                    <span>{i.category.name}</span>&nbsp;&nbsp;&nbsp;
+                    <span>{i.dimension.name}</span>&nbsp;&nbsp;&nbsp;
+                    <span>{i.label}</span>
                   </div>
                   <div
                     style={{
