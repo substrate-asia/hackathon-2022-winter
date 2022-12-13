@@ -156,7 +156,10 @@ function Main() {
           <Menu.Menu style={{}}>
             {data.map((i) => (
               // <div key={i.id}>{i.blockHash}</div>
-              <Link to="/Details" style={{ color: "black" }}>
+              <Link
+                to={`/Details?item=${JSON.stringify(i)}`}
+                style={{ color: "black" }}
+              >
                 <div>
                   <div style={{ margin: "30px 0" }}>
                     <text

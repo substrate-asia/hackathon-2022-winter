@@ -1,6 +1,9 @@
 import React, { createRef } from "react";
 import { Link } from "react-router-dom";
 import { Collapse } from "antd";
+import { useParams, useLocation } from "react-router-dom";
+import qs from "qs";
+
 import {
   Container,
   Dimmer,
@@ -20,7 +23,10 @@ import Floor from "../Floor";
 import AccountSelector from "../AccountSelector";
 function Main() {
   const { apiState, apiError, keyringState } = useSubstrateState();
-
+  const { search, state = {} } = useLocation();
+  // 获取location.search中的参数
+  const { item } = qs.parse(search.replace(/^\?/, ""));
+  const obj = JSON.parse(item);
   const loader = (text) => (
     <Dimmer active>
       <Loader size="small">{text}</Loader>
@@ -77,102 +83,17 @@ function Main() {
           fontFamily: "Arial",
           textAlign: "left",
           display: "flex",
+          minHeight: "700px",
         }}
       >
-        <Menu.Menu style={{ with: "700px", margin: "20px 0" }}>
+        <Menu.Menu style={{ width: "780px", margin: "20px 0" }}>
           <div style={{ fontWeight: "bold", fontSize: "34px" }}>
-            Rchitecture, Consensus, and Future Trends
-          </div>
-          <div style={{ fontWeight: "bold", margin: "10px 0" }}>Origin</div>
-          <div>
-            Blockchain originated from Bitcoin. On November 1, 2008, a person
-            who called himself Satoshi Nakamoto published the article Bitcoin: A
-            Peer to Peer Electronic Cash System, which described the
-            architecture concept of the electronic cash system based on P2P
-            network technology, encryption technology, timestamp technology,
-            blockchain technology, etc., marking the birth of Bitcoin. Two
-            months later, the theory was put into practice, and the first
-            Genesis block with serial number 0 was born on January 3, 2009. A
-            few days later, on January 9, 2009, a block with a serial number of
-            1 appeared and was connected with the Genesis block with a serial
-            number of 0 to form a chain, marking the birth of the blockchain.
+            {obj.category.name}
           </div>
           <div style={{ fontWeight: "bold", margin: "10px 0" }}>
-            Concept definition
+            {obj.dimension.name}
           </div>
-          <div>
-            Blockchain originated from Bitcoin. On November 1, 2008, a person
-            who called himself Satoshi Nakamoto published the article Bitcoin: A
-            Peer to Peer Electronic Cash System, which described the
-            architecture concept of the electronic cash system based on P2P
-            network technology, encryption technology, timestamp technology,
-            blockchain technology, etc., marking the birth of Bitcoin. Two
-            months later, the theory was put into practice, and the first
-            Genesis block with serial number 0 was born on January 3, 2009. A
-            few days later, on January 9, 2009, a block with a serial number of
-            1 appeared and was connected with the Genesis block with a serial
-            number of 0 to form a chain, marking the birth of the blockchain.
-          </div>
-          <div style={{ fontWeight: "bold", margin: "10px 0" }}>
-            Development history
-          </div>
-          <div>
-            Blockchain originated from Bitcoin. On November 1, 2008, a person
-            who called himself Satoshi Nakamoto published the article Bitcoin: A
-            Peer to Peer Electronic Cash System, which described the
-            architecture concept of the electronic cash system based on P2P
-            network technology, encryption technology, timestamp technology,
-            blockchain technology, etc., marking the birth of Bitcoin. Two
-            months later, the theory was put into practice, and the first
-            Genesis block with serial number 0 was born on January 3, 2009. A
-            few days later, on January 9, 2009, a block with a serial number of
-            1 appeared and was connected with the Genesis block with a serial
-            number of 0 to form a chain, marking the birth of the blockchain.
-          </div>
-          <div style={{ fontWeight: "bold", margin: "10px 0" }}>Origin</div>
-          <div>
-            Blockchain originated from Bitcoin. On November 1, 2008, a person
-            who called himself Satoshi Nakamoto published the article Bitcoin: A
-            Peer to Peer Electronic Cash System, which described the
-            architecture concept of the electronic cash system based on P2P
-            network technology, encryption technology, timestamp technology,
-            blockchain technology, etc., marking the birth of Bitcoin. Two
-            months later, the theory was put into practice, and the first
-            Genesis block with serial number 0 was born on January 3, 2009. A
-            few days later, on January 9, 2009, a block with a serial number of
-            1 appeared and was connected with the Genesis block with a serial
-            number of 0 to form a chain, marking the birth of the blockchain.
-          </div>
-          <div style={{ fontWeight: "bold", margin: "10px 0" }}>
-            Architecture model
-          </div>
-          <div>
-            Blockchain originated from Bitcoin. On November 1, 2008, a person
-            who called himself Satoshi Nakamoto published the article Bitcoin: A
-            Peer to Peer Electronic Cash System, which described the
-            architecture concept of the electronic cash system based on P2P
-            network technology, encryption technology, timestamp technology,
-            blockchain technology, etc., marking the birth of Bitcoin. Two
-            months later, the theory was put into practice, and the first
-            Genesis block with serial number 0 was born on January 3, 2009. A
-            few days later, on January 9, 2009, a block with a serial number of
-            1 appeared and was connected with the Genesis block with a serial
-            number of 0 to form a chain, marking the birth of the blockchain.
-          </div>
-          <div style={{ fontWeight: "bold", margin: "10px 0" }}>Origin</div>
-          <div>
-            Blockchain originated from Bitcoin. On November 1, 2008, a person
-            who called himself Satoshi Nakamoto published the article Bitcoin: A
-            Peer to Peer Electronic Cash System, which described the
-            architecture concept of the electronic cash system based on P2P
-            network technology, encryption technology, timestamp technology,
-            blockchain technology, etc., marking the birth of Bitcoin. Two
-            months later, the theory was put into practice, and the first
-            Genesis block with serial number 0 was born on January 3, 2009. A
-            few days later, on January 9, 2009, a block with a serial number of
-            1 appeared and was connected with the Genesis block with a serial
-            number of 0 to form a chain, marking the birth of the blockchain.
-          </div>
+          <div style={{ textIndent: "2em" }}>{obj.content}</div>
         </Menu.Menu>
         <Menu.Menu>
           <div
@@ -207,7 +128,11 @@ function Main() {
                 alignItems: "center",
               }}
             >
-              <div>0x6804...be5c</div>
+              <div>
+                {obj.lastAuthor.substr(0, 10) +
+                  "...." +
+                  obj.lastAuthor.substr(38)}
+              </div>
               <div
                 style={{
                   width: "166px",
