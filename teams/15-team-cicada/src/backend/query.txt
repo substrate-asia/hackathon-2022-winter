@@ -1,0 +1,105 @@
+# 查询参数
+{
+  query {
+    #行业分类查询
+    categories(filter:{flag:{equalTo:true}},first: 10,offset:0,orderBy:BLOCK_HASH_ASC) {
+      nodes {
+        id,
+     blockHash,
+     name,
+     parent,
+     lastAuthor,
+     lastDate,
+     flag
+      }
+    }
+    #标签查询
+    labels(filter:{flag:{equalTo:true}},first: 10,offset:0,orderBy:BLOCK_HASH_ASC) {
+      nodes {
+        id,
+     blockHash,
+     name,
+     categoryId,
+        category{
+          name
+        },
+     lastAuthor,
+     lastDate,
+     flag
+      }
+    }
+    #主题查询
+    subjects(filter:{flag:{equalTo:true}},first: 10,offset:0,orderBy:BLOCK_HASH_ASC) {
+      nodes{
+        id,
+        blockHash,
+        name,
+     categoryId,
+        category{
+          name
+        },
+        lastAuthor,
+        lastDate,
+        flag
+      }
+    }
+    #维度查询
+    dimensions(filter:{flag:{equalTo:true}},first: 10,offset:0,orderBy:BLOCK_HASH_ASC){
+      nodes{
+        id,
+     blockHash,
+     name,
+        subjectId
+     subject{
+          name
+        },
+     lastAuthor,
+     lastDate,
+     flag
+      }
+    }
+    #内容查询
+    contents(filter:{flag:{equalTo:true}},first: 10,offset:0,orderBy:BLOCK_HASH_ASC){
+      nodes{
+        id,
+     blockHash,
+     content,
+        categoryId
+     category{
+          name
+        },
+     label,
+        dimensionId,
+     dimension{
+          name
+        },
+     lastAuthor,
+     lastDate,
+     flag
+      }
+    }
+    #订阅查询
+    subscribes(filter:{flag:{equalTo:true}},first: 10,offset:0,orderBy:BLOCK_HASH_ASC){
+      nodes{
+        id,
+     blockHash,
+     subscriber,
+     subscribeDate,
+        subjectId
+     subject{
+          name
+        },
+     flag
+      }
+    }
+  }
+}
+
+这个是subquery的查询参数，url为http://192.168.31.97:3007，端口号后面会变
+
+post提交格式参考如下：
+{
+  "operationName": null,
+  "variables": {},
+  "query": "{\n  query {\n    categories(\n      filter: {flag: {equalTo: true}}\n      first: 10\n      offset: 0\n      orderBy: BLOCK_HASH_ASC\n    ) {\n      nodes {\n        id\n        blockHash\n        name\n        parent\n        lastAuthor\n        lastDate\n        flag\n      }\n    }\n  }\n}\n"
+}
