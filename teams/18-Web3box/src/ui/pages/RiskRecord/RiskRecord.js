@@ -33,7 +33,7 @@ const RiskRecord = (props) => {
     const [record, setRecord] = useState([])
 
     const Navigate = useNavigate();
-    const RishDetailRouter = () => {
+    const RiskDetailRouter = () => {
     //   console.log(props)
       Navigate('/RiskDetail')
     };
@@ -64,7 +64,7 @@ const RiskRecord = (props) => {
                        <p className='rank'>1</p> 
                        <p className='projectname'><img src={risk_moonbean} ></img></p> 
                        <p className='score'>98</p> 
-                       <p className='Status' onClick={RishDetailRouter}>
+                       <p className='Status' onClick={RiskDetailRouter}>
                             <img src={point}></img>
                         </p> 
                     </li>
@@ -74,7 +74,7 @@ const RiskRecord = (props) => {
                        <p className='projectname'><img src={risk_acala} ></img></p> 
                        <p className='score'>98</p> 
                        <p className='Status'>
-                            <img src={point} onClick={RishDetailRouter}></img>
+                            <img src={point} onClick={RiskDetailRouter}></img>
                         </p> 
                     </li>
 
@@ -83,7 +83,7 @@ const RiskRecord = (props) => {
                        <p className='projectname'><img src={risk_astar} ></img></p> 
                        <p className='score'>98</p> 
                        <p className='Status'>
-                            <img src={point} onClick={RishDetailRouter}></img>
+                            <img src={point} onClick={RiskDetailRouter}></img>
                         </p> 
                     </li>
 
@@ -92,7 +92,7 @@ const RiskRecord = (props) => {
                        <p className='projectname'><img src={risk_centrifuge} ></img></p> 
                        <p className='score'>98</p> 
                        <p className='Status'>
-                            <img src={point} onClick={RishDetailRouter}></img>
+                            <img src={point} onClick={RiskDetailRouter}></img>
                         </p> 
                     </li>
                     <li className="line">
@@ -100,7 +100,7 @@ const RiskRecord = (props) => {
                        <p className='projectname'><img src={risk_phala} ></img></p> 
                        <p className='score'>98</p> 
                        <p className='Status'>
-                            <img src={point} onClick={RishDetailRouter}></img>
+                            <img src={point} onClick={RiskDetailRouter}></img>
                         </p> 
                     </li>
                     <li className="line">
@@ -108,7 +108,7 @@ const RiskRecord = (props) => {
                        <p className='projectname'><img src={risk_efinity} ></img></p> 
                        <p className='score'>98</p> 
                        <p className='Status'>
-                            <img src={point} onClick={RishDetailRouter}></img>
+                            <img src={point} onClick={RiskDetailRouter}></img>
                         </p> 
                     </li>
                     <li className="line">
@@ -116,7 +116,7 @@ const RiskRecord = (props) => {
                        <p className='projectname'><img src={risk_kilt} ></img></p> 
                        <p className='score'>98</p> 
                        <p className='Status'>
-                            <img src={point} onClick={RishDetailRouter}></img>
+                            <img src={point} onClick={RiskDetailRouter}></img>
                         </p> 
                     </li>
                     <li className="line">
@@ -124,7 +124,7 @@ const RiskRecord = (props) => {
                        <p className='projectname'><img src={risk_litentry} ></img></p> 
                        <p className='score'>98</p> 
                        <p className='Status'>
-                            <img src={point} onClick={RishDetailRouter}></img>
+                            <img src={point} onClick={RiskDetailRouter}></img>
                         </p> 
                     </li>
                     <li className="line">
@@ -132,7 +132,7 @@ const RiskRecord = (props) => {
                        <p className='projectname'><img src={risk_darwinia} ></img></p> 
                        <p className='score'>98</p> 
                        <p className='Status'>
-                            <img src={point} onClick={RishDetailRouter}></img>
+                            <img src={point} onClick={RiskDetailRouter}></img>
                         </p> 
                     </li>
                     <li className="line">
@@ -140,7 +140,7 @@ const RiskRecord = (props) => {
                        <p className='projectname'><img src={risk_kylir} ></img></p> 
                        <p className='score'>98</p> 
                        <p className='Status'>
-                            <img src={point} onClick={RishDetailRouter}></img>
+                            <img src={point} onClick={RiskDetailRouter}></img>
                         </p> 
                     </li>
 

@@ -1,5 +1,5 @@
 import {
-  RishIcon,
+  RiskIcon,
   WalletIcon,
 } from '../../style/iconfont';
 import { Button, Menu } from 'antd';
@@ -14,7 +14,7 @@ const SiderMenu = (props) => {
   // console.log(account)
   const items = [
     { label: 'Wallet', key: '/Wallet', icon: <WalletIcon /> },
-    { label: 'Rish', key: '/RiskRecord', icon: <RishIcon /> },
+    { label: 'Risk', key: '/RiskRecord', icon: <RiskIcon /> },
   ];
   const Navigate = useNavigate();
   const Location = useLocation();

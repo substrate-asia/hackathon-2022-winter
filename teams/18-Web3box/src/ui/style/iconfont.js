@@ -24,6 +24,6 @@ const SearchSvg = () => (
 
 export const WalletIcon = (props) => <Icon component={WalletSvg} {...props} />;
 
-export const RishIcon = (props) => <Icon component={BrowserSvg} {...props} />;
+export const RiskIcon = (props) => <Icon component={BrowserSvg} {...props} />;
 
 
