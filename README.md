@@ -65,12 +65,26 @@
 
   1.构建一个面向用户的Polkadot钱包
 
-    Nam Pham SubWallet高级软件工程师
+      Nam Pham SubWallet高级软件工程师
 
   2.面向Substrate链的数据索引与分析
 
-    Yakio Liu Subscan负责人
+      Yakio Liu Subscan负责人
 - Workshop#4：2022年12月17日 周六 15:00-17:00
+
+  如何做一份 Web3 Startup 的 Pitchdeck
+
+      Alan Li Ausvic Capital 区块链投资负责人
+  
+  深熊视角下的 Web3 投资观
+
+      Frost QimingVC 投资人
+
+      Alan Li Ausvic Capital 区块链投资负责人
+
+      Zixi Matrix Partners 投资人
+
+      Ray IOSG Ventures 高级总监
 
 ## 项目报名
 1. 由即日起，fork 这个代码仓库，到你们团队成员 repo 里。
