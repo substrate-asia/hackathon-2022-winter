@@ -4,7 +4,7 @@ import './RiskDetail.scss';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { setAccount, setSeed ,setethAddress} from '../../store/action';
 import SuperChain from '../SuperChain/SuperChain';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import Top from '../../images/spile_left.png';
 import high from '../../images/high.png';
 import middle from '../../images/middle.png';
@@ -19,25 +19,36 @@ import Warring from '../../images/warring.png';
 import CreatWalletFile from '../CreatWalletFile/CreatWalletFile'
 import Pc from '../../images/pc.png';
 import { Button, Select, message } from 'antd';
+const { list, detail } = require('../../../substrate/risk');
 const { Option } = Select;
 // const {   knownGenesis,handle,cryptoWaitReady } = require('../../api/polkadot');
 export const RiskDetailContext = createContext({});
 
 function RiskDetail(props) {
+    const params = useLocation();
     const { setAccount,setethAddress, dispatch } = props
+    const [record, setRecord] = useState({}) 
+  
+
     const Navigate = useNavigate();
     const outWalletRouter = (props) => {
-        console.log(props)
         Navigate('/RiskRecord')
     };
+
+
+    useEffect(() => {
+        detail(params.state.id).then(res=>{ 
+            setRecord(res.data);
+        });
+    }, []);
 
     return (
         <div className="RiskDetail" >
             <div className='top_'>
                 <img onClick={outWalletRouter} src={Top}></img>
                 <span>
-                    <p className="mm">Kylin Network Score</p>
-                    <p className="po">79</p>
+                    <p className="mm">{params.state.id}</p>
+                    <p className="po">{params.state.score}</p>
                 </span>
             </div>
 
@@ -73,35 +84,103 @@ easily-coordinated data sources and data analytics.</p>
                     </li>
 
                     <li className="line">
-                       <p className='left'>Major holders' wallet assets distribution</p> 
+                       <p className='left'>Percentage of Top20 Holders</p> 
                        <p className='right'>
-                        <div className="red"></div>
+                        <div className={record.wallet_distribution}></div>
                        </p> 
                     </li>
 
                     <li className="line">
-                       <p className='left'>Market Cap</p> 
+                       <p className='left'>Changes of Whale Wallets </p> 
                        <p className='right'>
-                        <div className="yerrow"></div>
+                       <div className={record.whale_anomalie_activities}></div>
                        </p> 
                     </li>
 
                     <li className="line">
-                       <p className='left'>Twitter followers increasing rate</p> 
+                       <p className='left'>Unlocking Token</p> 
                        <p className='right'>
-                        <div className="green"></div>
+                       <div className={record.locked_period}></div>
                        </p> 
                     </li>
 
                     <li className="">
-                       <p className='left'>GitHub updating rate</p> 
+                       <p className='left'>Operating Duration</p> 
                        <p className='right'>
-                        <div className="green"></div>
+                       <div className={record.operation_duration}></div>
+                       </p> 
+                    </li>
+
+                    <li className="">
+                       <p className='left'>Percentage of DEX Transactions</p> 
+                       <p className='right'>
+                       <div className={record.decentralized_transaction}></div>
+                       </p> 
+                    </li>
+
+                    <li className="">
+                       <p className='left'>Growth Rate of Twitter Followers</p> 
+                       <p className='right'>
+                       <div className={record.twitter_followers_growthrate}></div>
+                       </p> 
+                    </li>
+
+                    <li className="">
+                       <p className='left'>Growth Rate of Addresses</p> 
+                       <p className='right'>
+                       <div className={record.address_growthrate}></div>
                        </p> 
                     </li>
 
                     </ul>
 
+
+                <div className='rug_pull'>
+                    <img src={crash}></img>
+                </div>
+
+                <ul className='Assets_record'>
+                    <li className='line'>
+                       <p className='left'>Indicator Type</p> 
+                       <p className='right'> Risk Status</p> 
+                    </li>
+
+                    <li className="line">
+                       <p className='left'>Token Price </p> 
+                       <p className='right'>
+                       <div className={record.token_price}></div>
+                       </p> 
+                    </li>
+
+                    <li className="">
+                       <p className='left'>7-Day Moving Volatility of Token Price Relative to DOT</p> 
+                       <p className='right'>
+                       <div className={record.token_voltality_overDot}></div>
+                       </p> 
+                    </li>
+
+                    <li className="">
+                       <p className='left'>Growth Rate of 7-Day Moving Average Trading Volume</p> 
+                       <p className='right'>
+                       <div className={record.week_transaction_growthrate}></div>
+                       </p> 
+                    </li>
+
+                    <li className="">
+                       <p className='left'>Twitter Sentiment Index</p> 
+                       <p className='right'>
+                       <div className={record.wallet_distribution}></div>
+                       </p> 
+                    </li>
+
+                    <li className="">
+                       <p className='left'>KOL Comments</p> 
+                       <p className='right'>
+                       <div className={record.kol_comments}></div>
+                       </p> 
+                    </li>
+
+                    </ul>
 
                 <div className='rug_pull'>
                     <img src={attacking}></img>
@@ -114,84 +193,16 @@ easily-coordinated data sources and data analytics.</p>
                     </li>
 
                     <li className="line">
-                       <p className='left'>Audit Report </p> 
+                       <p className='left'>Audit Report  </p> 
                        <p className='right'>
-                        <div className="red"></div>
+                       <div className={record.code_review_report}></div>
                        </p> 
                     </li>
 
                     <li className="">
-                       <p className='left'>Security Vulnerability</p> 
+                       <p className='left'>Github Update</p> 
                        <p className='right'>
-                        <div className="yerrow"></div>
-                       </p> 
-                    </li>
-
-                    </ul>
-
-                <div className='rug_pull'>
-                    <img src={risky_projects}></img>
-                </div>
-
-                <ul className='Assets_record'>
-                    <li className='line'>
-                       <p className='left'>Indicator Type</p> 
-                       <p className='right'> Risk Status</p> 
-                    </li>
-
-                    <li className="line">
-                       <p className='left'>Investment and financing report </p> 
-                       <p className='right'>
-                        <div className="red"></div>
-                       </p> 
-                    </li>
-
-                    <li className="">
-                       <p className='left'>Cooperations with other projects </p> 
-                       <p className='right'>
-                        <div className="yerrow"></div>
-                       </p> 
-                    </li>
-
-                    </ul>
-
-
-
-                    <div className='rug_pull'>
-                    <img src={crash}></img>
-                </div>
-
-                <ul className='Assets_record '>
-                    <li className='line'>
-                       <p className='left'>Indicator Type</p> 
-                       <p className='right'> Risk Status</p> 
-                    </li>
-
-                    <li className="line">
-                       <p className='left'>Token price volatility</p> 
-                       <p className='right'>
-                        <div className="red"></div>
-                       </p> 
-                    </li>
-
-                    <li className="line">
-                       <p className='left'>Rate of change in transactions volume </p> 
-                       <p className='right'>
-                        <div className="red"></div>
-                       </p> 
-                    </li>
-
-                    <li className="line">
-                       <p className='left'>Token price volatility </p> 
-                       <p className='right'>
-                        <div className="yerrow"></div>
-                       </p> 
-                    </li>
-
-                    <li className="">
-                       <p className='left'>User sentiment index</p> 
-                       <p className='right'>
-                        <div className="green"></div>
+                       <div className={record.github_update}></div>
                        </p> 
                     </li>
 

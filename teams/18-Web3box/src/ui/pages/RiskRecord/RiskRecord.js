@@ -10,8 +10,7 @@ import status_s from '../../images/status_s.png';
 import status_fail from '../../images/status_fail.png';
 import point from '../../images/point.png';
 import RiskHead from '../../images/risk_head.png';
-
-
+import tip from '../../images/tip.png';
 import risk_moonbean from '../../images/risk_moonbean.png';
 import risk_acala from '../../images/risk_acala.png';
 import risk_astar from '../../images/risk_astar.png';
@@ -24,6 +23,8 @@ import risk_darwinia from '../../images/risk_darwinia.png';
 import risk_kylir from '../../images/risk_kylir.png';
 
 import { Button ,message} from 'antd';
+
+const { list, detail } = require('../../../substrate/risk');
 const handleChange = (value) => {
     console.log(`selected ${value}`);
   };
@@ -31,23 +32,22 @@ const handleChange = (value) => {
 const RiskRecord = (props) => {
     const {account,keys} = props
     const [record, setRecord] = useState([])
+    const [chooseProject, setChooseProject] = useState()
+    const [chooseScore, setChooseScore] = useState(0);
 
     const Navigate = useNavigate();
-    const RiskDetailRouter = () => {
-    //   console.log(props)
-      Navigate('/RiskDetail')
+    const RishDetailRouter = (projectName,scoreValue) => {
+      setChooseProject(projectName);
+      setChooseScore(scoreValue)
+      Navigate('/RiskDetail',{state:{id:projectName,score:scoreValue} })
     };
 
-    const copyHash=(hash)=>{
-        let copyContent = hash;
-        var input = document.createElement("input");
-        input.value = copyContent;
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand("Copy");
-        document.body.removeChild(input);
-        message.success('Copy success message');
-    }
+    useEffect(() => {
+        list().then(res=>{ 
+            setRecord(res.data)
+        });
+    }, []);
+
     return (
         <div className="RiskRecord" >
             <div className='RiskRecord_c'>
@@ -57,109 +57,34 @@ const RiskRecord = (props) => {
                     <li className='title line'>
                        <p className='rank'>Rank</p> 
                        <p className='projectname'>Project Name</p> 
-                       <p className='score'>Score</p> 
+                       <p className='score'>
+                        Score
+                        <img src={tip} title='Weekly Update'></img>
+                       </p> 
                     </li>
 
-                    <li className="line">
-                       <p className='rank'>1</p> 
-                       <p className='projectname'><img src={risk_moonbean} ></img></p> 
-                       <p className='score'>98</p> 
-                       <p className='Status' onClick={RiskDetailRouter}>
-                            <img src={point}></img>
-                        </p> 
-                    </li>
-
-                    <li className="line">
-                       <p className='rank'>2</p> 
-                       <p className='projectname'><img src={risk_acala} ></img></p> 
-                       <p className='score'>98</p> 
-                       <p className='Status'>
-                            <img src={point} onClick={RiskDetailRouter}></img>
-                        </p> 
-                    </li>
-
-                    <li className="line">
-                       <p className='rank'>3</p> 
-                       <p className='projectname'><img src={risk_astar} ></img></p> 
-                       <p className='score'>98</p> 
-                       <p className='Status'>
-                            <img src={point} onClick={RiskDetailRouter}></img>
-                        </p> 
-                    </li>
-
-                    <li className="line">
-                       <p className='rank'>4</p> 
-                       <p className='projectname'><img src={risk_centrifuge} ></img></p> 
-                       <p className='score'>98</p> 
-                       <p className='Status'>
-                            <img src={point} onClick={RiskDetailRouter}></img>
-                        </p> 
-                    </li>
-                    <li className="line">
-                       <p className='rank'>5</p> 
-                       <p className='projectname'><img src={risk_phala} ></img></p> 
-                       <p className='score'>98</p> 
-                       <p className='Status'>
-                            <img src={point} onClick={RiskDetailRouter}></img>
-                        </p> 
-                    </li>
-                    <li className="line">
-                       <p className='rank'>6</p> 
-                       <p className='projectname'><img src={risk_efinity} ></img></p> 
-                       <p className='score'>98</p> 
-                       <p className='Status'>
-                            <img src={point} onClick={RiskDetailRouter}></img>
-                        </p> 
-                    </li>
-                    <li className="line">
-                       <p className='rank'>7</p> 
-                       <p className='projectname'><img src={risk_kilt} ></img></p> 
-                       <p className='score'>98</p> 
-                       <p className='Status'>
-                            <img src={point} onClick={RiskDetailRouter}></img>
-                        </p> 
-                    </li>
-                    <li className="line">
-                       <p className='rank'>8</p> 
-                       <p className='projectname'><img src={risk_litentry} ></img></p> 
-                       <p className='score'>98</p> 
-                       <p className='Status'>
-                            <img src={point} onClick={RiskDetailRouter}></img>
-                        </p> 
-                    </li>
-                    <li className="line">
-                       <p className='rank'>9</p> 
-                       <p className='projectname'><img src={risk_darwinia} ></img></p> 
-                       <p className='score'>98</p> 
-                       <p className='Status'>
-                            <img src={point} onClick={RiskDetailRouter}></img>
-                        </p> 
-                    </li>
-                    <li className="line">
-                       <p className='rank'>10</p> 
-                       <p className='projectname'><img src={risk_kylir} ></img></p> 
-                       <p className='score'>98</p> 
-                       <p className='Status'>
-                            <img src={point} onClick={RiskDetailRouter}></img>
-                        </p> 
-                    </li>
-
-                    {/* {
+                    {
                         record.map((item,index)=>{
                         
-                        return  <li key={index}>
-                        <p className='token'>{item.symbols}</p> 
-                        <p className='Amount'>{item.balance}</p> 
-                        <p className='Hash' onClick={()=>copyHash(item.hash)}>{item.hash}</p> 
-                        <p className='Date'>{new Date(parseInt((item.createTime).getTime())).toLocaleString()}</p> 
-                        <p className='Status'><img src={item.status==1?status_s:status_fail}></img></p> 
+                        return  <li key={index} className='line'>
+                        <p className='rank'>{index + 1}</p> 
+                        <p className={item.projectName === 'Moonbeam' ? 'projectname':'tokenHidden'}><img src={risk_moonbean} ></img></p> 
+                        <p className={item.projectName === 'Acala' ? 'projectname':'tokenHidden'}><img src={risk_acala} ></img></p> 
+                        <p className={item.projectName === 'Astar' ? 'projectname':'tokenHidden'}><img src={risk_astar} ></img></p> 
+                        <p className={item.projectName === 'Centrifuge' ? 'projectname':'tokenHidden'}><img src={risk_centrifuge} ></img></p> 
+                        <p className={item.projectName === 'Phala Network' ? 'projectname':'tokenHidden'}><img src={risk_phala} ></img></p> 
+                        <p className={item.projectName === 'Efinity' ? 'projectname':'tokenHidden'}><img src={risk_efinity} ></img></p> 
+                        <p className={item.projectName === 'KILT' ? 'projectname':'tokenHidden'}><img src={risk_kilt} ></img></p> 
+                        <p className={item.projectName === 'Litentry' ? 'projectname':'tokenHidden'}><img src={risk_litentry} ></img></p> 
+                        <p className={item.projectName === 'Darwinia' ? 'projectname':'tokenHidden'}><img src={risk_darwinia} ></img></p> 
+                        <p className={item.projectName === 'Kylin' ? 'projectname':'tokenHidden'}><img src={risk_kylir} ></img></p>
+                        <p className='score' >{item.score}</p> 
+                        <p className='Status' onClick={() => RishDetailRouter(item.projectName,item.score)} >
+                            <img src={point}></img>
+                        </p>  
                      </li>
                         })
-                    } */}
-               
-             
-                 
-
+                    }
                 </ul>
                 </div>
             </div>
