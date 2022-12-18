@@ -132,38 +132,26 @@ const AssetsTab = (props) => {
             return ;
         }
       }
-      const GetBlance =  ( value ) =>{
-        setTokenBalance(0);
-        var chains = [];
-        var addres = [];
-        var balans = [];
 
-        console.log(account);
-        console.log(value)
-        var indexdb = new UserService();
-        var query = indexdb.getUserTokenByAC(account,value).then(async(res) =>  {
-            res.map(async (item) => {
-                chains.push(item.chainid);
-                addres.push(item.address);
-            })
-            await Talisman.connect({chains:chains});
-            let balances = await Talisman.balances(addres);
-            console.log(balances);
-            balances.map(async (b) => {
-                balans.push(b.total / res.decimals)
-            })
-            console.log(balans);
-            if(balans.length === 0){
-                setTokenBalance(0);
-            }else{
-                setTokenBalance(`${balans[0]}`/res.decimals );
-            }
-            setDecimal(res.decimals);
-            setRpc(res.rpc);
-            setTokenName(res.symbols[0]);
-
-           
-        })
+      const GetBlance =  (value) =>{
+        knownSubstrate.map( async(item)=>{
+            if(value == item.prefix){
+                const ps3 = {
+                    'address':account,
+                    'prefix':item.prefix
+                }
+                postWallet(1,'pol.formatAddressByChain',ps3).then(async(data)=>{
+                      const ps2 = {
+                        address:data,
+                        chain:item.rpc
+                      }
+                      setDecimal(item.decimals);
+                      setRpc(item.rpc);
+                      setTokenName(item.symbols[0]);
+                      let { data: { free: previousFree }, nonce: previousNonce } = await postWallet(1,'pol.balance',ps2);
+                      setTokenBalance(`${previousFree}`/item.decimals);
+                })
+            }})
     }
 
     
