@@ -38,7 +38,6 @@ const WalletHome = (props) => {
     const [record, setRecord] = useState([])
     const Navigate = useNavigate();
     const Recieve_click = (send,address,prefix) => {
-        console.log(prefix);
         setAddress(address);
         // setAccount(address);
         setSeed(prefix);
@@ -59,66 +58,44 @@ const WalletHome = (props) => {
           setUserimg(url)
     }
     
-    const GetBlance = async() => {
-        
+    const GetBlance = async() => { 
+        var data = [];
         var _address = account;
-        console.log(keys);
-        console.log(account);
-        console.log(address);
         var chains = [];
         var addres = [];
-        var balans = [];
         setLodingL(true)
         var indexdb = new UserService();
         if(keys !== '' && keys !== 0){
             _address = address;
         }
         var query = indexdb.getUserTokenByChainid(_address,keys).then(async(res) =>  {
+            addres.push(_address);
             res.map(async (item) => {
                 chains.push(item.chainid);
-                addres.push(item.address);
             })
             await Talisman.connect({chains:chains});
             let balances = await Talisman.balances(addres);
-            balances.map(async (b) => {
-                balans.push(b.total / 10)
+            knownSubstrate.map( (item) => {
+                var r = {};
+                var f = false;
+                balances.map( (b) => {
+                    if(item.prefix === b.chainId * 1){
+                        f = true;
+                        r.chainid = item.prefix;
+                        r.balance = (b.total / item.decimals).toFixed(2);
+                        data.push(r);
+                    }
+                })
+                if(!f){
+                    r.chainid = item.prefix;
+                    r.balance = 0;
+                    data.push(r);
+                }
+                
             })
-            setbalances(balans)
-            setRecord(res);
+            setRecord(data);
             setLodingL(false)
         })
-       
-        // console.log(` 余额` + JSON.stringify(previousFree) );
-        // knownSubstrate.map(async (item) => {
-        //     if (keys == item.prefix) {
-        //         setTokenName(item.displayName)
-        //         if(keys==1284){
-        //             const ps2 = {
-        //                 address: ethAddress,
-        //                 chain: item.rpc
-        //             }
-        //             setLodingL(true)
-        //             let { data: { free: previousFree }, nonce: previousNonce } = await postWallet(1, 'pol.balance', ps2)
-        //              console.log(`${previousFree}`)
-        //             setLodingL(false)
-        //             setTokenNumber(`${previousFree}`)
-        //             // setPreviousFrees(`${previousFree}` / item.decimals)
-        //         }else{
-
-        //         const ps2 = {
-        //             address: account,
-        //             chain: item.rpc
-        //         }
-        //         setLodingL(true)
-        //         let { data: { free: previousFree }, nonce: previousNonce } = await postWallet(1, 'pol.balance', ps2)
-        //          console.log(`${previousFree}`)
-        //         setLodingL(false)
-        //         setTokenNumber(`${previousFree}`)
-        //         setPreviousFrees(`${previousFree}` / item.decimals)
-        //         //    })
-        //     }
-        //     }
-        // })
     
     }
   
@@ -159,7 +136,7 @@ const WalletHome = (props) => {
                         <p className={item.chainid=='172'?'':'tokenHidden'} >< img src={Ksm_Img}></img></p >
 
                         <p>
-                                {balances[index]?balances[index] .toFixed(4):0}
+                                {item.balance}
                                 <img onClick={GetBlance} src={refresh} className='refresh'></img>
                         </p >
                         <p>
