@@ -127,9 +127,9 @@ function LoginWallet(props){
                         'address':res.address,
                         'prefix':item.prefix
                     }
-                    postWallet(1,'pol.formatAddressByChain',ps3).then(data=>{
-                        let r =  indexdb.getUser(data);
-                        if(JSON.stringify(r) === '{}'){
+                    postWallet(1,'pol.formatAddressByChain',ps3).then(async(data)=>{
+                        let r = await indexdb.getUser(data);
+                        if(r.length === 0){
                             var obj = {
                                 address:data,
                                 paret:res.address,
@@ -148,8 +148,8 @@ function LoginWallet(props){
                         CreatWallet(item.genesisHash, 'xxx', res.seed,data, newpasswords)
                     });  
                 }else if(item.prefix === 1284){
-                    let r =  indexdb.getUser(res.ethaddress);
-                    if(JSON.stringify(r) === '{}'){
+                    let r = await indexdb.getUser(res.ethaddress);
+                    if(r.length === 0){
                         var obj = {
                             address:res.ethaddress,
                             paret:res.address,
@@ -167,9 +167,9 @@ function LoginWallet(props){
                         'address':res.address,
                         'prefix':item.prefix
                     }
-                    postWallet(1,'pol.formatAddressByChain',ps3).then(data=>{
-                        let r =  indexdb.getUser(data);
-                        if(JSON.stringify(r) === '{}'){
+                    postWallet(1,'pol.formatAddressByChain',ps3).then( async(data) =>{
+                        let r = await indexdb.getUser(data);
+                        if(r.length === 0){
                             var obj = {
                                 address:data,
                                 paret:res.address,
