@@ -60,16 +60,16 @@ export const knownSubstrate = [
       genesis: ['0x9eb76c5184c4ab8679d2d5d819fdf90b9c001403e9e17da2e14b6d8aec4029c6'],
       rpc:'wss://rpc.astar.network'
     },
-    {
-      decimals: 1000000000000,
-      displayName: 'Rococo Test',
-      network: 'rococo',
-      prefix: 172,
-      standardAccount: '*25519',
-      symbols: ['ROC'],
-      website: 'https://rococo.subscan.io/',
-      genesis: [],
-      rpc:'wss://rococo-rpc.polkadot.io',
-      exdeposit:1
-    },
+    // {
+    //   decimals: 1000000000000,
+    //   displayName: 'Rococo Test',
+    //   network: 'rococo',
+    //   prefix: 172,
+    //   standardAccount: '*25519',
+    //   symbols: ['ROC'],
+    //   website: 'https://rococo.subscan.io/',
+    //   genesis: [],
+    //   rpc:'wss://rococo-rpc.polkadot.io',
+    //   exdeposit:1
+    // },
   ]

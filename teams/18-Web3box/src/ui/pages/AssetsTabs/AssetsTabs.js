@@ -164,23 +164,6 @@ const AssetsTab = (props) => {
 
            
         })
-
-        // knownSubstrate.map( async(item)=>{
-        //     if(keys==item.prefix || value == item.prefix){
-        //         // postWallet(1,'pol.openConnnect',item.rpc).then(async (res)=>{
-        //           const ps2 = {
-        //             address:account,
-        //             chain:item.rpc
-        //           }
-        //           setDecimal(item.decimals);
-        //           setRpc(item.rpc);
-        //           setTokenName(item.symbols[0]);
-        //           setDepositBalnce(item.exdeposit);
-        //          let { data: { free: previousFree }, nonce: previousNonce } = await postWallet(1,'pol.balance',ps2);
-        //          setTokenBalance(`${previousFree}`/item.decimals);
-               
-        //     //    })
-        //     }})
     }
 
     
