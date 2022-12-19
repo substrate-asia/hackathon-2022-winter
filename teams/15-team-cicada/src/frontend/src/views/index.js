@@ -1,4 +1,4 @@
-import React, { createRef } from "react";
+import React, { createRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -20,7 +20,9 @@ import Floor from "../Floor";
 
 function Main() {
   const { apiState, apiError, keyringState } = useSubstrateState();
-
+  const [inputValue, setInputValue] = useState("");
+  // const onChange = (_, data) =>
+  //   setinputVal((prev) => ({ ...prev, [data.state]: data.value }));
   const loader = (text) => (
     <Dimmer active>
       <Loader size="small">{text}</Loader>
@@ -103,6 +105,7 @@ function Main() {
             >
               Let people learn blockchain easily
             </div>
+
             <div
               class="ui action input"
               style={{
@@ -115,29 +118,36 @@ function Main() {
               <input
                 type="text"
                 placeholder="Search blockchain knowledge based on subject"
-              />
-              <button
-                class="ui icon button"
-                style={{
-                  width: "140px",
-                  height: "60px",
-                  backgroundColor: "#FFE178",
-                  fontSize: "21px",
-
-                  color: "#091323",
-                  lineHeight: "60px",
+                value={inputValue}
+                onChange={(e) => {
+                  setInputValue(e.target.value);
                 }}
-              >
-                <i
-                  class="search icon"
+              />
+              <Link to={`/List?val=${inputValue}`} style={{ color: "black" }}>
+                <button
+                  class="ui icon button"
                   style={{
+                    width: "140px",
+                    height: "60px",
+                    backgroundColor: "#FFE178",
                     fontSize: "21px",
-                    lineHeight: "20px",
+
+                    color: "#091323",
+                    lineHeight: "60px",
                   }}
-                ></i>
-                <span>Search</span>
-              </button>
+                >
+                  <i
+                    class="search icon"
+                    style={{
+                      fontSize: "21px",
+                      lineHeight: "20px",
+                    }}
+                  ></i>
+                  <span>Search</span>
+                </button>
+              </Link>
             </div>
+
             <div style={{}}>
               Hot：Parallel chain, Slot auction, Substrate, Subquery, Polkadot
             </div>
