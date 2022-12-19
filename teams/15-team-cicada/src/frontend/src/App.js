@@ -2,6 +2,10 @@ import Index from "./views/index";
 import Create from "./Create";
 import List from "./views/list";
 import Picture from "./views/picture";
+import Err from "./views/err";
+import Record from "./views/record";
+import Proposed from "./views/proposed";
+import Governance from "./views/governance";
 import { Link, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -15,6 +19,10 @@ function App() {
       <Route exact component={Create} path="/Create"></Route>
       <Route exact component={List} path="/List"></Route>
       <Route exact component={Picture} path="/Picture"></Route>
+      <Route exact component={Err} path="/Err"></Route>
+      <Route exact component={Record} path="/Record"></Route>
+      <Route exact component={Proposed} path="/Proposed"></Route>
+      <Route exact component={Governance} path="/Governance"></Route>
       {/* </p>
       </div> */}
       {/* <hr /> */}
