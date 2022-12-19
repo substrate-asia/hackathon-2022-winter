@@ -126,7 +126,7 @@ export class CicadaApi {
     
     async createContent(category, label, subject, dimension, content, processCallback=null, succCallback=null, failCallback=null){
         category = toUint8Arr(category)
-        label = toUint8Arr(label)
+        // label = toUint8Arr(label)
         subject = toUint8Arr(subject)
         dimension = toUint8Arr(dimension)
         const palletRpc = 'cicadaModule'

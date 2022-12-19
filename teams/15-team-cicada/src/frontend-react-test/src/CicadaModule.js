@@ -309,7 +309,7 @@ export default function Main(props) {
               };
               cicadaApi.createContent(
                 categoryHash,
-                labelHash,
+                labelName,
                 subjectHash,
                 dimensionHash,
                 content,
