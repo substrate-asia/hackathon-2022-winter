@@ -16,9 +16,7 @@ import "semantic-ui-css/semantic.min.css";
 import AccountSelector from "../AccountSelector";
 import { SubstrateContextProvider, useSubstrateState } from "../substrate-lib";
 import { DeveloperConsole } from "../substrate-lib/components";
-import '../rxd/css.css';
 import Floor from "../Floor";
-import "../rxd/tp.js";
 function Main() {
   const { apiState, apiError, keyringState } = useSubstrateState();
   
@@ -70,7 +68,7 @@ function Main() {
           width: "100%",
           height: "579px",
         //   marginRight: "-20px",
-          backgroundColor:'#40454E',
+        //   backgroundColor:'#40454E',
           display: "flex",
         //   alignItems: "center",
           justifyContent: "center", //中间留白
@@ -81,38 +79,24 @@ function Main() {
         }}
       >
         {/* 头 */}
-        <div id="carousel">
-						<ul className="picture">
-							<li><img
-                            src={`${process.env.PUBLIC_URL}/assets/Cicada.png`}   /></li>
-							<li><img src={`${process.env.PUBLIC_URL}/assets/bjt.jpg`} /></li>
-							<li><img src={`${process.env.PUBLIC_URL}/assets/Cicada.png`} /></li>
-							<li><img src={`${process.env.PUBLIC_URL}/assets/bjt.jpg`} /></li>
-							<li><img src={`${process.env.PUBLIC_URL}/assets/Cicada.png`} /></li>
-							<li><img src={`${process.env.PUBLIC_URL}/assets/bjt.jpg`} /></li>
-							<li><img src={`${process.env.PUBLIC_URL}/assets/Cicada.png`} /></li>
-						</ul>
-						<span className="pre">
-							<div className="info_sprite"></div>
-						</span>
-						<span className="next">
-							<div className="info_sprite"></div>
-						</span>
-						<span className="banner_bg"></span>
-						<div className=" breviary">
-							<ul className="follow">
-								<li className="hover"><img src={`${process.env.PUBLIC_URL}/assets/Cicada.png`} /></li>
-								<li><img src={`${process.env.PUBLIC_URL}/assets/bjt.jpg`} /></li>
-								<li><img src={`${process.env.PUBLIC_URL}/assets/Cicada.png`} /></li>
-								<li><img src={`${process.env.PUBLIC_URL}/assets/bjt.jpg`} /></li>
-								<li><img src={`${process.env.PUBLIC_URL}/assets/Cicada.png`} /></li>
-								<li><img src={`${process.env.PUBLIC_URL}/assets/bjt.jpg`} /></li>
-								<li><img src={`${process.env.PUBLIC_URL}/assets/Cicada.png`} /></li>
-							</ul>
-						</div>
-					</div>
-
-       
+         
+        <div style={{
+        
+         width:'73%'}}>
+		<div style={{float:'left',
+         fontWeight:'bold',
+         fontSize:'30px',
+         marginTop:'60px',
+         
+         width:'100%'}}>BROWSE  RECORDS</div>
+         <div style={{float:'left',
+         fontWeight:'bold',
+         fontSize:'50px',
+         marginTop:'60px',
+         color:'#E2E2E2',
+         width:'100%'}}>NO  DATA  AT  PRESENT</div>
+		</div>
+        
       </Container>
       {/* <Sticky context={contextRef}>
       </Sticky> */}
