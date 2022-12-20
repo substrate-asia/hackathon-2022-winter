@@ -36,6 +36,7 @@
     "@polkadot/util-crypto": "^8.4.1",
     "antd": "^5.0.4",
     "axios": "^1.2.1",
+    "html-to-draftjs": "^1.5.0",
     "http-proxy-middleware": "^2.0.6",
     "jquery": "^3.6.1",
     "moment": "^2.29.4",
@@ -52,12 +53,15 @@
     "stream-browserify": "^3.0.0"
   },
   "devDependencies": {
+    "draft-js": "^0.11.7",
+    "draftjs-to-html": "^0.9.1",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-config-react-app": "^7.0.0",
     "gh-pages": "^3.2.3",
     "prettier": "2.5.1",
     "react-app-rewired": "^2.2.1",
+    "react-draft-wysiwyg": "^1.15.0",
     "semistandard": "^16.0.1"
   },
   "resolutions": {
