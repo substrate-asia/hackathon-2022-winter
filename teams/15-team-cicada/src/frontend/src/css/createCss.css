@@ -12,6 +12,42 @@
     margin-top: 40px;
 }
 
+.btnArr {
+    display: flex;
+    width: 550px;
+    justify-content: space-between;
+}
+
+.redbtnStyle {
+    width: 154px;
+    height: 55px;
+    font-size: 22px;
+    font-family: Microsoft YaHei;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 15px;
+    border-top-left-radius: 0;
+    margin-top: 40px;
+    background-color: #F10E00;
+    color: #Fff;
+}
+
+.btnStyle_ {
+    color: #000;
+    width: 154px;
+    height: 55px;
+    font-size: 22px;
+    font-family: Microsoft YaHei;
+    background-color: #FFE179;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 15px;
+    border-top-left-radius: 0;
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+
+
 .inputStyle {
     background: none;
     outline: none;
@@ -26,7 +62,7 @@
 }
 
 .categoryList {
-    border: 1px solid #0E2044;
+
     display: flex;
     flex-wrap: wrap;
     height: auto;
@@ -48,11 +84,22 @@
     align-items: center;
     margin: 0 25px 25px 0;
     border-radius: 15px;
+    font-size: 18px;
+    font-family: Arial;
+    font-weight: 400;
+    color: #000000;
+
+}
+
+.active_category {
+    background-color: #FFE179;
+    border: 1px solid #0E2142;
 
 }
 
 .threeBall {
-    border: 1px solid #FFE178;
+    margin-top: 70px;
+    margin-bottom: 70px;
     width: 900px;
     position: relative;
 
@@ -60,7 +107,7 @@
 
 .line {
     width: 100%;
-    height: 1px;
+    height: .5px;
     position: absolute;
     bottom: 75px;
     z-index: -1;
@@ -122,4 +169,47 @@
     font-family: Arial;
     font-weight: 400;
     color: #000000;
+}
+
+.buttondiv {
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+    background-color: yellow;
+    color: #0f0;
+}
+
+.lodingdiv {
+    width: 100%;
+    height: 40px;
+    background-color: #666;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.loding {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 3px solid hsla(185, 100%, 62%, 0.2);
+    border-top-color: #3cefff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
