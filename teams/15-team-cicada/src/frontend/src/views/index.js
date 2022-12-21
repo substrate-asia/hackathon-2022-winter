@@ -196,7 +196,7 @@ function Main() {
               </div>
             </div>
 
-            <Link to="/Create" style={{ color: "black" }}>
+            <Link to="/Create_" style={{ color: "black" }}>
               <div
                 style={{
                   width: "255px",

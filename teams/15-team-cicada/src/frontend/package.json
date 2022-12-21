@@ -39,6 +39,7 @@
     "html-to-draftjs": "^1.5.0",
     "http-proxy-middleware": "^2.0.6",
     "jquery": "^3.6.1",
+    "js-cookie": "^3.0.1",
     "moment": "^2.29.4",
     "node-polyfill-webpack-plugin": "^1.1.4",
     "prop-types": "^15.8.1",
