@@ -40,7 +40,7 @@ We just record the expression of *Equation 1* on-chain, calculate $b$ and $C$ ev
 The way to make out *Equation 1* is somewhat mathematical skilled, but I don't want to explain the details at this stage because we decided to participate in this hackathon so late that there might not be enough time for us. I will give a detailed idea in the future. In short, it is a combination of two equations that are inverse functions of each other.  
 
 ## Implementation
-In this hackathon, we have designed and made the simulation of our Omniverse AMM algorithm, but until now the on-chain version of O9P is the simplest, that is, we temperarily uses $x\cdot y=k$ as the AMM mechanism to prove the Omniverse Protocols.  
+In this hackathon, we have designed and made the simulation of our Omniverse AMM algorithm, but until now the on-chain version of O9P is the simplest, that is, we temperarily uses $x\cdot y=k$ as the AMM mechanism to **prove the Omniverse Protocols**.  
 * [Detailed explanation of Simple AMM](https://github.com/xiyu1984/Blog/blob/main/docs/AMM/uniswap%20explanation.md)
 
 ## Key points
