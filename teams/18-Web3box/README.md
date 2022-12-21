@@ -31,7 +31,9 @@ More, Risk Protocol will directly export the client product for investors of Pol
 # 3.Architecture
 
 Upper Layer: Desktop Client with Wallet and Risk Modules
+
 Middleware: Risk Protocol API
+
 Underlayer: Polkadot Eco Assets Integration, Machine Learning Analytics, AI Algorithms
 
 # 4.Github
