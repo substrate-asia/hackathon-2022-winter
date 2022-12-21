@@ -6,8 +6,8 @@ The `Uniswap` and `Curve` have done two typical cases. `Uniswap`<sup>[1]</sup> p
 `Curve`<sup>[2]</sup> walks another way, and they have done a great job for the exchanging of price-stable coins. The ideal strategy for stablecoin trading is that one token $X$ always exchange a fixed amount of token $Y$. But in Web3 world the "stable" coin does not always stable at all, so when the pool slopes too much, there needs to be suitable mechanism to solve it. In general, `Curve` provides an ingenous curve that closes to $x+y=\text{const}$ but very steep on the edges of both sides.  
 
 ### O-AMM solution
-Our solution is different from the above.  
-Firstly, we want to make a trading pair's "smoothly trading range" wider than Uniswap. As we know, the marketing curve $xy=k$ is easily going into the steep area.  
+Our solution is different from the above. I will explain our solution just in the case of tokens pair, as it's not very hard to extend to multi-tokens.   
+Firstly, we want to make a trading pair's "smoothly trading range" wider than Uniswap. As we know, the marketing curve $xy=k$ is very easy to go into the steep area.  
 Secondly, we want the marketing curve can be dynamically adapt to different situations, that is, when $x\approx y$ the marketing curve is closing to `Curve` and when $x$ differs from $y$ much we hope the curve is closing to `Uniswap`.  
 The *equation 1* of the `O-AMM` algorithm is as follows:  
 $$\alpha(-(x^2+y^2)+bx+by)+(1-\alpha)C=2xy$$  
