@@ -1,0 +1,366 @@
+.WalletHome{
+    .refresh{
+        width: 20px !important;height: 20px;margin-left: 5px;cursor: pointer;
+    }
+    .x{
+        display: none;
+    }
+    // padding-top: 20px;
+    // max-height: 82vh;
+    overflow-y:scroll;
+    .LoginWallet_c{
+        // height: 222px;
+        margin: 0 50px;
+        p{
+            font-size: 24px;
+            font-weight: 400;
+            color: #FFFFFF;
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 28px;
+            padding-bottom: 10px;
+        }
+        .key{
+            display: none;
+            
+     
+        }
+        .tabs{
+        display: flex;
+        justify-content:flex-start;
+        // border-bottom: 1px solid #707070;
+        margin: 0 auto;
+        position: relative;
+        .RecordBtn{
+            position: absolute;
+            right: 0;
+            top: 30px;
+            width: 103px;
+            height: 40px;
+            border: 1px solid #3CDFDD;
+            opacity: 1;
+            border-radius: 16px;
+            background: #3CDFDD;
+            color: #fff;
+        }
+        li{
+            font-size: 20px;
+            font-weight: 400;
+            color: #AAAAAA;  
+            padding-top: 28px;
+            padding-bottom: 24px;
+            width: 104px;
+            text-align: center;
+            margin-right: 40px;
+            position: relative;
+            cursor: pointer;
+            img{
+                width: 100%;
+                position: absolute;
+                bottom: 0px;
+                left:0px;
+                display: none;
+
+            }
+            .active{
+                color: #fff;
+                display: block;
+
+
+            }
+            
+        }
+        }
+        .Confirm_c{
+            display: flex;
+            justify-content: center;
+            padding-bottom: 30px;
+            padding-top: 60px;
+           
+        }
+        ._password{
+            width: 90%;
+            margin: 0 auto;
+            span{
+            font-size: 20px;
+            color: #FFFFFF;
+            display: block;
+            padding: 20px 0;
+            }
+            input{
+                width: 100%;
+                background: rgba(17,19,21,0.39);
+                height: 60px;
+                border:none;
+                border-radius: 16px;
+
+            }
+        }
+
+
+        .Assets_record{
+            border-radius: 16px;
+            border: 1px solid #666666;
+            padding-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            .Spin_modal{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.4);
+                text-align: center;
+                z-index: 99;
+                padding-top: 80px;
+                .ant-spin-dot{
+                    width: 1.4em;
+                    height: 1.4em;
+                }
+                .ant-spin-dot-item{
+                    background-color: #3CDFDD;
+                    height: 14px;
+                    width: 14px;
+                }
+            }
+            li{
+                overflow: hidden;
+                background:#272C31;
+                height: 58px;
+                width: 90%;
+                margin: 0 auto;
+                margin-bottom: 12px;
+                border-radius: 5px;
+                .tokenHidden{
+                    display: none;
+                }
+                p{
+                     width: 30%; 
+                     padding-top: 15px;
+                    font-size: 16px;
+                    color: #fff;
+                    float: left;
+                    text-align: center;
+
+                }
+                .button{
+                height: 37px;
+                background: #14191D;
+                box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+                opacity: 1;
+                color: #fff;
+                border-radius: 15px;
+                border:none;
+                margin-left: 20px;
+                margin-top: -10px;
+                }
+                .recieve{
+                    height: 37px;
+                    color: #FFD271;
+                    border-radius: 15px;
+                    border:none;
+                    margin-left: 20px;
+                    margin-top: -10px;
+                    background: #272C31;
+                    border-radius: 6px 6px 6px 6px;
+                    opacity: 1;
+                    border: 1px solid #FFD271;
+                    }
+                    .send{
+                        height: 37px;
+                        color: #fff;
+                        background: #272C31;
+                        border-radius: 15px;
+                        border:none;
+                        margin-left: 20px;
+                        margin-top: -10px;
+                        border-radius: 6px 6px 6px 6px;
+                        opacity: 1;
+                        border: 1px solid #FE5266;
+                        }
+                img{
+                    width: 75px;
+                    // height: 33px;
+                }
+            }
+            .title{
+            font-size: 20px;
+            background: rgba(0,0,0,0);
+            p{
+               width: 30%; 
+               font-size: 20px;
+                color: #AAAAAA;
+            }
+            }
+        }
+        .Nft{
+            .nftTab{
+                width:80px;
+                height: 30px;
+                border: 1px solid #3CDFDD;
+                color: #3CDFDD;
+                font-size: 14px;
+                background: rgba(0,0,0,0);
+                margin-top: 10px;
+                margin-bottom: 10px;
+                border-radius:16px;
+                margin-right: 10px;
+                margin-left: 10px;
+                
+            }
+            .olds{
+                width:80px;
+                height: 30px;
+                border: 1px solid #aaaaaa;
+                color: #aaaaaa;
+                background: rgba(0,0,0,0);
+                font-size: 14px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                border-radius:16px;
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+            .pages{
+                text-align: center;
+                .ant-pagination-item-ellipsis{
+                    color: #fff;
+                }
+                .ant-pagination-options{
+                    display: none;
+                }
+                button{
+                border: 1px solid rgba(0,0,0,0);
+                background: rgba(60, 223, 221, 0.3) !important;
+                color: #fff;
+                border-radius: 6px;
+                }
+                .ant-pagination-item-active{
+                    background: rgba(60, 223, 221, 0.3);
+                    border-color: #3CDFDD;
+                    a{
+                        color: #3CDFDD !important;
+                    }
+                }
+                .ant-pagination-item{
+                    a{
+                        color: #fff;
+                    }
+                    border-radius: 6px;
+                    border: 1px solid rgba(0,0,0,0);
+                    background: rgba(60, 223, 221, 0.3) !important;
+                }
+
+            }
+        }
+        .Nft_ul{
+            padding-top: 20px;
+            border-radius: 16px;
+            border: 1px solid #666666;
+            padding-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            // justify-content: space-around;
+            padding-left: 20px;
+            padding-right: 20px;
+            flex-wrap: wrap;
+            li{
+                width: 23%;
+                height: 254px;
+                position: relative;
+                margin-bottom: 20px;
+                &:not(:nth-child(4n)){
+                    margin-right:calc(4%/1.5);
+                }
+                &:hover .seting_btn{
+                    opacity: 1;
+                    transition: .5s;
+                    
+                }
+                .setings{
+                    position:absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 1;
+                    text-align: right;
+                    cursor: pointer;
+                    &:hover .setting_l{
+                        display: block;
+                    }
+                    img{
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 10px;
+                        margin-top: 10px;
+                 
+                    }
+                    .setting_l{
+                        width: 120px;
+                        height: 70px;
+                        border: 0px solid #AAAAAA;
+                        opacity: 1;
+                        background: rgba(0,0,0,0.4);
+                        border-radius: 10px 0px 10px 10px;
+                        margin-right: 10px;
+                        display: none;
+
+                    }
+                    p{
+                        width: 100%;
+                        text-align: center;
+                        font-size: 12px;
+                        padding-top: 10px;
+                        padding-bottom: 0;
+                        cursor: pointer;
+                        color: #fff;
+                        &:hover{
+                          color:   #3CDFDD;
+                        }
+                    }
+
+                }
+                .bg{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    z-index: 0;
+                    left: 0;
+                    top: 0;
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100%;
+                    max-height: 100%;
+                    object-fit: cover;
+              
+                }
+                .seting_btn{
+                    background: rgba(26,28,30,0.5);
+                    opacity: 1;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    opacity:0;
+                
+                    .btn{
+                        width: 80px;
+                        height: 30px;
+                        border: 1px solid #7D75FF;
+                        opacity: 1;
+                        border-radius: 16px;
+                        background: rgba(0,0,0,0);
+                        color: #fff;
+                        font-size: 12px;
+                        margin: 0;
+                    }
+                    .Recieve{
+                        background: #7D75FF;
+                    }
+                }
+            }
+        }
+    }
+}

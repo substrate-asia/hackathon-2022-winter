@@ -36,3 +36,6 @@ lerna-debug.log*
 
 # Local config - .env
 .env
+
+# Auto history
+.history/
