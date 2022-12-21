@@ -37,7 +37,7 @@ Genaral VC (verifiable computaion) is complex, but in our situation we provide a
 We just record the expression of *Equation 1* on-chain, calculate $b$ and $C$ every time the liquidity changes. When someone makes swap bwteen token $X$ and token $Y$, he makes `Omniverse Transfer` of one kind of token (take token $X$ for instance) to the contract-account of the Omniverse Swap, who records the value of $\Delta{x}$. Some off-chain VC nodes are listenning the event of the swaps, they calculate $\Delta{y}$ and submit it to the on-chain `Omniverse Swap`. The verification of $\Delta{x}$ and $\Delta{y}$ within *Equation 1* is very easy and cheap, and the off-chain VC node whose submission is accepted will be rewarded.  
 
 ### How O-AMM Comes Out
-The way to make out *Equation 1* is somewhat mathematical skilled, but I don't want to explain the details at this stage because we decided to participate in this hackathon so late that there might not be enough time for us to build. I will give a detailed idea in the future. In short, it is a combination of two equations that are inverse functions of each other.  
+The way to make out *Equation 1* is somewhat mathematical skilled, but I don't want to explain the details at this stage because we decided to participate in this hackathon so late that there might not be enough time for us. I will give a detailed idea in the future. In short, it is a combination of two equations that are inverse functions of each other.  
 
 ## Implementation
 In this hackathon, we have designed and made the simulation of our Omniverse AMM algorithm, but until now we implemented the simplest version of O9P, that is, we temperarily uses $x\cdot y=k$ as the AMM mechanism to prove the Omniverse Protocols.  
