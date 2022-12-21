@@ -1,0 +1,11 @@
+[submodule "teams/10-Tenet/src/cmps"]
+	path = teams/10-Tenet/src/cmps
+	url = https://github.com/0xdadaking/cmps.git
+	branch = dev
+[submodule "teams/10-Tenet/src/videown-server"]
+	path = teams/10-Tenet/src/videown-server
+	url = https://github.com/Jiuqu3239/videown-server
+	branch = dev
+[submodule "teams/10-Tenet/src/videown-nft"]
+	path = teams/10-Tenet/src/videown-nft
+	url = https://github.com/lost-inwind/videown-nft
