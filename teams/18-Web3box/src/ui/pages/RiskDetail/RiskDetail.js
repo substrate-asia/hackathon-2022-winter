@@ -55,9 +55,7 @@ function RiskDetail(props) {
             <div className='RiskDetail_title'>
                 <div className='title'>
                     <p>
-                        Kylin Network aims to build a cross-chain platform powering the data economy on Polkadot. It will be the data infrastructure for
-the future DeFi and Web 3.0 powered by Polkadot. Kylin Network will provide valid, reliable, secure, cost-effective, and
-easily-coordinated data sources and data analytics.</p>
+                        {record.brief}</p>
                 </div>
             </div>
 
