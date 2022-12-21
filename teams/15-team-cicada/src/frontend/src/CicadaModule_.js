@@ -166,7 +166,7 @@ export default function Main(props) {
   });
 
   return (
-    <Spin spinning={isLoading} tip="加载中......" size="large">
+    <Spin spinning={isLoading} tip="Loading......" size="large">
       <Grid.Column width={8}>
         <div style={{ minHeight: "700px" }}>
           {/* 圆球 */}
