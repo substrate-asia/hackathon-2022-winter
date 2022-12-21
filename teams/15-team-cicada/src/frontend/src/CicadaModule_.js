@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { EditorState, convertToRaw, ContentState } from "draft-js";
 import Cookies from "js-cookie";
-
+import { useHistory } from "react-router-dom";
 import { Button, notification, Space, Modal, Spin } from "antd";
 import { Editor } from "react-draft-wysiwyg";
 
@@ -61,7 +61,7 @@ export default function Main(props) {
   const cicadaApi = new CicadaApi(currentAccount, api);
   const onChange = (_, data) =>
     setCicadaState((prev) => ({ ...prev, [data.state]: data.value }));
-
+  let history = useHistory();
   let {
     isModal,
     isLoading,
@@ -82,14 +82,13 @@ export default function Main(props) {
   } = cicadaState;
   // 弹窗
   const showModal = () => {
-    Spin.setDefaultIndicator();
-    // setCicadaState((el) => {
-    //   return {
-    //     ...el,
-    //     content: draftToHtml(convertToRaw(editorState.getCurrentContent())),
-    //     isModal: 1,
-    //   };
-    // });
+    setCicadaState((el) => {
+      return {
+        ...el,
+        content: draftToHtml(convertToRaw(editorState.getCurrentContent())),
+        isModal: 1,
+      };
+    });
   };
   const handleOk = () => {
     setCicadaState((el) => {
@@ -366,6 +365,9 @@ export default function Main(props) {
                     notification.error({
                       description: "come to nothing",
                     });
+                    setTimeout(() => {
+                      history.push("/");
+                    }, 1500);
                     console.log("failCallback data:", data);
                   };
                   getRichText();

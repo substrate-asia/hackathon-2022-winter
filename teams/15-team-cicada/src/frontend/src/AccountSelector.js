@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import myContext from "./createContext";
+import { Link } from "react-router-dom";
+
 import {
   Menu,
   Button,
@@ -80,23 +82,25 @@ function Main(props) {
         }}
       >
         <Menu.Menu>
-          <Image
-            src={`${process.env.PUBLIC_URL}/assets/Cicada.png`}
-            style={{
-              width: "163px",
-              height: "35px",
-            }}
-          />
-          <div
-            style={{
-              fontSize: "17px",
-              fontFamily: "Arial",
-              fontWeight: "400",
-              color: " #FFFFFF",
-            }}
-          >
-            Let people learn blockchain easily
-          </div>
+          <Link to="/">
+            <Image
+              src={`${process.env.PUBLIC_URL}/assets/Cicada.png`}
+              style={{
+                width: "163px",
+                height: "35px",
+              }}
+            />
+            <div
+              style={{
+                fontSize: "17px",
+                fontFamily: "Arial",
+                fontWeight: "400",
+                color: " #FFFFFF",
+              }}
+            >
+              Let people learn blockchain easily
+            </div>
+          </Link>
         </Menu.Menu>
         <Menu.Menu>
           <div
