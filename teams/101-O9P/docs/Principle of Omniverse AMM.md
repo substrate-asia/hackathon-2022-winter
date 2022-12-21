@@ -13,7 +13,9 @@ The *equation 1* of the `O-AMM` algorithm is as follows:
 $$\alpha(-(x^2+y^2)+bx+by)+(1-\alpha)C=2xy$$  
 <p align="center">Equation.1 the equation of O-AMM</p>  
 where,  
-$$\alpha=\frac{xy}{(\frac{x+y}{2})^2}$$  
+
+$$\alpha =\frac{xy}{(\frac{x+y}{2})^2}$$  
+
 The expression of $\alpha$ is the quotient of the geometric mean over arithmetic mean, which is a way to quantify the degree of the difference between $x$ and $y$.  
 $b$ and $C$ is determined by the liquidity size of the initial pool, and every time the liquidity changes (put in or fetch out), they will be re-calculated.  
 
