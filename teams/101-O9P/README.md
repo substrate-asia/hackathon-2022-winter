@@ -1,41 +1,47 @@
 ## 基本资料
 
-项目名称：
+项目名称：O9P (Omniverse Swap)
 
-项目立项日期 (哪年哪月)：
+项目立项日期 (哪年哪月)：2022.12
 
 ## 项目整体简介
 
-项目简介，英文提交。包括但不限于：
+### Background
 
-- 项目背景/原由/要解决的问题 (如有其他附件，可放到 `docs` 目录内。英文提交)。
-- 项目介绍
-- 项目Demo
-- 技术架构
-- 项目 logo (如有)，这 logo 会印制在文宣，会场海报或贴子上。
+### Introduction
+
+### Demo
+
+### Technical Architecture
+
+### logo
 
 ## 黑客松期间计划完成的事项
 
-- 请团队在报名那一周 git clone 这个代码库并创建团队目录，在 readme 里列出黑客松期间内打算完成的代码功能点。并提交 PR 到本代码库。例子如下 (这只是一个 nft 项目的例子，请根据团队项目自身定义具体工作)：
+**On-Chain**
 
-**区块链端**
-
-- `pallet-nft`
+- `pallet-OmniverseProtocol`
   - [ ] NFT 创建及数据结构定义 (`fn create_nft()`)
   - [ ] NFT 转帐函数 (`fn transfer()`)
   - [ ] NFT 销毁函数 (`fn burn_token()`)
 
-**客户端**
+- `pallet-OmniverseToken`
+  - [ ] NFT 创建及数据结构定义 (`fn create_nft()`)
+  - [ ] NFT 转帐函数 (`fn transfer()`)
+  - [ ] NFT 销毁函数 (`fn burn_token()`)
 
-- web 端
+- `pallet-OmniverseSwap`
+  - [ ] NFT 创建及数据结构定义 (`fn create_nft()`)
+  - [ ] NFT 转帐函数 (`fn transfer()`)
+  - [ ] NFT 销毁函数 (`fn burn_token()`)
+
+**Client**
+
+- Command Line
   - [ ] 用户注册页面
   - [ ] NFT 产品创建流程
   - [ ] NFT 产品购买流程
 
-- hybrid (react-native)
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
 
 
 ## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
