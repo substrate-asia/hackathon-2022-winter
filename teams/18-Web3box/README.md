@@ -46,7 +46,7 @@ Risk Protocol Client Demo (Mac/Win Desktop)
 
 - Wallet Module
   Supports asset management for Polkadot(DOT), Kusama(KSM), Acala(ACA), Astar(ASTR), and Moonbeam(GLMR) networks, including sending assets, receiving assets, viewing asset records, etc.
-- Risk Module
+- Risk Module 
   The first phase of the Risk module will support risk scoring and corresponding indicators report display for 10 Parachains, including Moonbeam, Acala, Astar, Centrifuge, Phala, Efinity, KILT, Litentry, Darwinia, Kylin, etc., and will be updated weekly.
 
 > Note: Wallet and Risk modules are interlinked and can be linked in the future for risk assessment of assets, contracts and accounts in Polkadot ecosystem.
