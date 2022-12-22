@@ -60,6 +60,10 @@ The core workflow of `O20k` is driven by a Substrate Parachain we will build, wh
   - [ ] NFT 转帐函数 (`fn transfer()`)
   - [ ] NFT 销毁函数 (`fn burn_token()`)
 
+**Algorithm**
+- `O-AMM`
+  - [ ] The ptototype of O-AMM (Omniverse AMM) algorithm.
+
 **Client**
 
 - Command Line
