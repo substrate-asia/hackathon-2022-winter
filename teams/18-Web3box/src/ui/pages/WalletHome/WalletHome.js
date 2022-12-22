@@ -38,10 +38,7 @@ const WalletHome = (props) => {
     const [record, setRecord] = useState([])
     const Navigate = useNavigate();
     const Recieve_click = (send,address,prefix) => {
-        setAddress(address);
-        // setAccount(address);
-        setSeed(prefix);
-        Navigate('/AssetsTabs', { state: { datas: send}, replace: true })
+        Navigate('/AssetsTabs', { state: { datas: send,ethAddress:ethAddress }, replace: true })
     };
     const RecordBtn = () => {
         Navigate('/sendRecord')
@@ -58,43 +55,37 @@ const WalletHome = (props) => {
           setUserimg(url)
     }
     
-    const GetBlance = async() => { 
-        var data = [];
-        var _address = account;
-        var chains = [];
-        var addres = [];
-        setLodingL(true)
-        var indexdb = new UserService();
-        if(keys !== '' && keys !== 0){
-            _address = address;
-        }
-        var query = indexdb.getUserTokenByChainid(_address,keys).then(async(res) =>  {
-            addres.push(_address);
-            res.map(async (item) => {
-                chains.push(item.chainid);
-            })
-            await Talisman.connect({chains:chains});
-            let balances = await Talisman.balances(addres);
-            knownSubstrate.map( (item) => {
-                var r = {};
-                var f = false;
-                balances.map( (b) => {
-                    if(item.prefix === b.chainId * 1){
-                        f = true;
-                        r.chainid = item.prefix;
-                        r.balance = (b.total / item.decimals).toFixed(2);
-                        data.push(r);
+    const GetBlance = () => {
+        knownSubstrate.map(async (item) => {
+            if (keys == item.prefix) {
+                setTokenName(item.displayName)
+                if(keys==1284){
+                    const ps2 = {
+                        address: ethAddress,
+                        chain: item.rpc
                     }
-                })
-                if(!f){
-                    r.chainid = item.prefix;
-                    r.balance = 0;
-                    data.push(r);
+                    setLodingL(true)
+                    let { data: { free: previousFree }, nonce: previousNonce } = await postWallet(1, 'pol.balance', ps2)
+                    //  console.log(`${previousFree}`)
+                    setLodingL(false)
+                    setTokenNumber(`${previousFree}`)
+                    setPreviousFrees(`${previousFree}` / item.decimals)
+                }else{
+
+                const ps2 = {
+                    address: account,
+                    chain: item.rpc
                 }
-                
-            })
-            setRecord(data);
-            setLodingL(false)
+                //   =
+                setLodingL(true)
+                let { data: { free: previousFree }, nonce: previousNonce } = await postWallet(1, 'pol.balance', ps2)
+                //  console.log(`${previousFree}`)
+                setLodingL(false)
+                setTokenNumber(`${previousFree}`)
+                setPreviousFrees(`${previousFree}` / item.decimals)
+                //    })
+            }
+            }
         })
     
     }
@@ -123,97 +114,22 @@ const WalletHome = (props) => {
                             <p>Amount</p >
                             <p></p >
                         </li>
-
-                        {
-                        record.map((item,index)=>{
-                        
-                        return  <li key={index}>
-                        <p className={item.chainid=='0'?'':'tokenHidden'}>< img src={Dot_IMF}></img></p >
-                        <p className={item.chainid=='2'?'':'tokenHidden'} >< img src={Ksm_Img}></img></p >
-                        <p className={item.chainid=='10'?'':'tokenHidden'} >< img src={aca_Img}></img></p >
-                        <p className={item.chainid=='5'?'':'tokenHidden'} >< img src={astr_Img}></img></p >
-                        <p className={item.chainid=='1284'?'':'tokenHidden'} >< img src={gkmr_Img}></img></p >
-                        <p className={item.chainid=='172'?'':'tokenHidden'} >< img src={Ksm_Img}></img></p >
-
-                        <p>
-                                {item.balance}
-                                <img onClick={GetBlance} src={refresh} className='refresh'></img>
-                        </p >
-                        <p>
-                                <Button onClick={()=>Recieve_click('1',item.address,item.prefix)} className='recieve'>Receive</Button>
-                                <Button onClick={()=>Recieve_click('2',item.address,item.prefix)} className='send'>Send</Button>
-                            </p >
-                     </li>
-                        })
-                    }
-
-{/* 
                         <li>
-                            <p>< img src={Dot_IMF}></img></p >
+                            <p className={keys=='0'?'':'tokenHidden'}>< img src={Dot_IMF}></img></p >
+                            <p className={keys=='2'?'':'tokenHidden'} >< img src={Ksm_Img}></img></p >
+                            <p className={keys=='10'?'':'tokenHidden'} >< img src={aca_Img}></img></p >
+                            <p className={keys=='5'?'':'tokenHidden'} >< img src={astr_Img}></img></p >
+                            <p className={keys=='1284'?'':'tokenHidden'} >< img src={gkmr_Img}></img></p >
+                            <p className={keys=='172'?'':'tokenHidden'} >< img src={Ksm_Img}></img></p >
                             <p>
                                 {previousFrees && previousFrees.toFixed(4)}
                                 <img onClick={GetBlance} src={refresh} className='refresh'></img>
                             </p >
                             <p>
-                                <Button onClick={()=>Recieve_click('1')} className='recieve'>Receive</Button>
-                                <Button onClick={()=>Recieve_click('2')} className='send'>Send</Button>
+                                <Button onClick={()=>Recieve_click('1')} className='button'>Receive</Button>
+                                <Button onClick={()=>Recieve_click('2')} className='button'>Send</Button>
                             </p >
                         </li>
-                        <li>
-                            <p>< img src={Ksm_Img}></img></p >
-                            <p>
-                                {previousFrees && previousFrees.toFixed(4)}
-                                <img onClick={GetBlance} src={refresh} className='refresh'></img>
-                            </p >
-                            <p>
-                                <Button onClick={()=>Recieve_click('1')} className='recieve'>Receive</Button>
-                                <Button onClick={()=>Recieve_click('2')} className='send'>Send</Button>
-                            </p >
-                        </li>
-                        <li>
-                            <p>< img src={aca_Img}></img></p >
-                            <p>
-                                {previousFrees && previousFrees.toFixed(4)}
-                                <img onClick={GetBlance} src={refresh} className='refresh'></img>
-                            </p >
-                            <p>
-                                <Button onClick={()=>Recieve_click('1')} className='recieve'>Receive</Button>
-                                <Button onClick={()=>Recieve_click('2')} className='send'>Send</Button>
-                            </p >
-                        </li>
-                        <li>
-                            <p>< img src={astr_Img}></img></p >
-                            <p>
-                                {previousFrees && previousFrees.toFixed(4)}
-                                <img onClick={GetBlance} src={refresh} className='refresh'></img>
-                            </p >
-                            <p>
-                                <Button onClick={()=>Recieve_click('1')} className='recieve'>Receive</Button>
-                                <Button onClick={()=>Recieve_click('2')} className='send'>Send</Button>
-                            </p >
-                        </li>
-                        <li>
-                            <p>< img src={gkmr_Img}></img></p >
-                            <p>
-                                {previousFrees && previousFrees.toFixed(4)}
-                                <img onClick={GetBlance} src={refresh} className='refresh'></img>
-                            </p >
-                            <p>
-                                <Button onClick={()=>Recieve_click('1')} className='recieve'>Receive</Button>
-                                <Button onClick={()=>Recieve_click('2')} className='send'>Send</Button>
-                            </p >
-                        </li>
-                        <li>
-                            <p>< img src={Ksm_Img}></img></p >
-                            <p>
-                                {previousFrees && previousFrees.toFixed(4)}
-                                <img onClick={GetBlance} src={refresh} className='refresh'></img>
-                            </p >
-                            <p>
-                                <Button onClick={()=>Recieve_click('1')} className='recieve'>Receive</Button>
-                                <Button onClick={()=>Recieve_click('2')} className='send'>Send</Button>
-                            </p >
-                        </li> */}
                     </ul>
                 </div>
                 

@@ -110,8 +110,7 @@ function LoginWallet(props){
           console.log(e.target.value)
           setSeedValue(e.target.value)
       }
-    const Secret=async()=>{
-        var indexdb = new UserService();
+      const Secret=async()=>{
         if(!newpasswords){
             message.error(`Wrong Password！`);
             return;
@@ -120,79 +119,11 @@ function LoginWallet(props){
             mnemonic:seedValue,
           } 
         postWallet(1,'pol.seedCreateAddress',ps2).then(res=>{
-
-            knownSubstrate.map(async (item) => {
-                if(item.prefix === 0){
-                    const ps3 = {
-                        'address':res.address,
-                        'prefix':item.prefix
-                    }
-                    postWallet(1,'pol.formatAddressByChain',ps3).then(async(data)=>{
-                        let r = await indexdb.getUser(data);
-                        if(r.length === 0){
-                            var obj = {
-                                address:data,
-                                paret:res.address,
-                                network:item.network,
-                                chainid:item.prefix,
-                                symbol:item.symbols[0],
-                                rpc:item.rpc,
-                                decimas:item.decimals,
-                                createTime:new Date(),
-                            }
-                            indexdb.add(obj);
-                        }
-                        dispatch(setAccount(res.address))
-                        dispatch(setAddress(data));
-                        dispatch(setethAddress(res.ethaddress))
-                        CreatWallet(item.genesisHash, 'xxx', res.seed,data, newpasswords)
-                    });  
-                }else if(item.prefix === 1284){
-                    let r = await indexdb.getUser(res.ethaddress);
-                    if(r.length === 0){
-                        var obj = {
-                            address:res.ethaddress,
-                            paret:res.address,
-                            network:item.network,
-                            chainid:item.prefix,
-                            symbol:item.symbols[0],
-                            rpc:item.rpc,
-                            decimas:item.decimals,
-                            createTime:new Date(),
-                        }
-                        indexdb.add(obj);
-                    }
-                }else{
-                    const ps3 = {
-                        'address':res.address,
-                        'prefix':item.prefix
-                    }
-                    postWallet(1,'pol.formatAddressByChain',ps3).then( async(data) =>{
-                        let r = await indexdb.getUser(data);
-                        if(r.length === 0){
-                            var obj = {
-                                address:data,
-                                paret:res.address,
-                                network:item.network,
-                                chainid:item.prefix,
-                                symbol:item.symbols[0],
-                                rpc:item.rpc,
-                                decimas:item.decimals,
-                                createTime:new Date(),
-                            }
-                            indexdb.add(obj);
-                        }
-                        CreatWallet(item.genesisHash, 'xxx', res.seed,data, newpasswords)
-                    });  
-                }
-            })
-
-
-            // let genesisHash = '';
-            // CreatWallet(genesisHash, 'xxx', res.seed, res.address, newpasswords)
-            // dispatch(setAccount(res.address))
-            // dispatch(setAddress(res.address))
-            // dispatch(setethAddress(res.ethaddress))
+            let genesisHash = '';
+            CreatWallet(genesisHash, 'xxx', res.seed, res.address, newpasswords)
+            dispatch(setAccount(res.address))
+            dispatch(setAddress(res.address))
+            dispatch(setethAddress(res.ethaddress))
 
         });
     }
@@ -207,8 +138,6 @@ function LoginWallet(props){
                     <p><img src={Pc}></img><span>Select Networks</span></p>
                     <Select className='select_main' defaultValue="Polkadot">
                         <Option value="jack">Polkadot</Option>
-                        <Option value="jack">Meonbeam</Option>
-
                     </Select>
                 </div>
 
