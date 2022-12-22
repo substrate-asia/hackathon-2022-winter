@@ -10,7 +10,7 @@ import Proposed from "./views/proposed";
 import Governance from "./views/governance";
 import Subscription from "./views/Subscription";
 
-import { Link, Route, Switch } from "react-router-dom";
+import { Router, Route, Routes, Link } from "react-router-dom";
 
 function App() {
   return (

@@ -44,6 +44,11 @@ function Main() {
     </Grid>
   );
   let history = useHistory();
+  // /解决要二次刷新才会有页面bug
+  if (location.href.indexOf("#reloaded") == -1) {
+    location.href = location.href + "#reloaded";
+    location.reload();
+  }
   if (apiState === "ERROR") return message(apiError);
   else if (apiState !== "READY") return loader("Connecting to Substrate");
 
