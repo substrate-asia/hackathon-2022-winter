@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import myContext from "./createContext";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 import {
   Menu,
   Button,
@@ -25,6 +28,7 @@ function Main(props) {
     setCurrentAccount,
     state: { keyring, currentAccount },
   } = useSubstrate();
+  let history = useHistory();
 
   // Get the list of accounts we possess the private key for
   const keyringOptions = keyring.getPairs().map((account) => ({
@@ -36,9 +40,13 @@ function Main(props) {
 
   const initialAddress =
     keyringOptions.length > 0 ? keyringOptions[0].value : "";
+  const val = useContext(myContext);
+  const [val_, setval] = useState("");
 
+  console.log(val);
   // Set the initial address
   useEffect(() => {
+    setval(val);
     // `setCurrentAccount()` is called only when currentAccount is null (uninitialized)
     !currentAccount &&
       initialAddress.length > 0 &&
@@ -48,9 +56,6 @@ function Main(props) {
   const onChange = (addr) => {
     setCurrentAccount(keyring.getPair(addr));
   };
-  // const [val, setval] = useState("");
-  const val = useContext(myContext);
-  console.log(val);
   return (
     <Menu
       // attached="top"
@@ -80,23 +85,25 @@ function Main(props) {
         }}
       >
         <Menu.Menu>
-          <Image
-            src={`${process.env.PUBLIC_URL}/assets/Cicada.png`}
-            style={{
-              width: "163px",
-              height: "35px",
-            }}
-          />
-          <div
-            style={{
-              fontSize: "17px",
-              fontFamily: "Arial",
-              fontWeight: "400",
-              color: " #FFFFFF",
-            }}
-          >
-            Let people learn blockchain easily
-          </div>
+          <Link to="/">
+            <Image
+              src={`${process.env.PUBLIC_URL}/assets/Cicada.png`}
+              style={{
+                width: "163px",
+                height: "35px",
+              }}
+            />
+            <div
+              style={{
+                fontSize: "17px",
+                fontFamily: "Arial",
+                fontWeight: "400",
+                color: " #FFFFFF",
+              }}
+            >
+              Let people learn blockchain easily
+            </div>
+          </Link>
         </Menu.Menu>
         <Menu.Menu>
           <div
@@ -110,9 +117,9 @@ function Main(props) {
             <input
               type="text"
               placeholder="Search blockchain knowledge based on subject"
-              value={val}
+              value={val_}
               onChange={(e) => {
-                setInputValue(e.target.value);
+                setval(e.target.value);
               }}
             />
             <button
@@ -135,7 +142,13 @@ function Main(props) {
                   lineHeight: "20px",
                 }}
               ></i>
-              <span>Search</span>
+              <span
+                onClick={function () {
+                  history.push(`/List?val=${val_}`);
+                }}
+              >
+                Search
+              </span>
             </button>
           </div>
         </Menu.Menu>
