@@ -23,6 +23,14 @@ import { DeveloperConsole } from "../substrate-lib/components";
 import Floor from "../Floor";
 import myContext from "../createContext";
 function Main() {
+  const Utf8ArrayToStr = (fileData) => {
+    var dataString = "";
+    for (var i = 0; i < fileData.length; i++) {
+      dataString += String.fromCharCode(fileData[i]);
+    }
+    console.log(dataString);
+    return dataString;
+  };
   const { apiState, apiError, keyringState } = useSubstrateState();
   const getPageQuery = () => parse(window.location.href.split("?")[1]);
   const [data, setData] = useState();
@@ -33,6 +41,7 @@ function Main() {
   const getApiData = async () => {
     try {
       let res = await getList(val);
+      // Utf8ArrayToStr(res.data.contents.nodes[0].label);
       setData(res.data.contents.nodes);
     } catch (error) {
       console.log(error);
@@ -119,7 +128,10 @@ function Main() {
                 color: "black",
               }}
             >
-              sdaddasd
+              Fields of Study&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date
+              Range&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Journals & Conferences
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sort by Relevance
             </a>
           </div>
         </div>
@@ -349,7 +361,8 @@ function Main() {
               style={{
                 backgroundColor: "#ADADAD",
                 width: "100%",
-                height: "2px",
+                height: ".5px",
+                marginTop: "25px",
               }}
             >
               {" "}

@@ -206,9 +206,10 @@ export class CicadaApi {
     succCallback = null,
     failCallback = null
   ) {
+    content = content.replace(/<\/?.+?\/?>/g, "");
     console.log(content);
     category = toUint8Arr(category);
-    label = toUint8Arr(label);
+    // label = toUint8Arr(label);
     subject = toUint8Arr(subject);
     dimension = toUint8Arr(dimension);
     const palletRpc = "cicadaModule";
