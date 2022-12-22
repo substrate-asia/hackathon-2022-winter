@@ -13,7 +13,7 @@ repository: "https://github.com/zengbing15/hackathon-2022-winter"
 schema:
   file: ./schema.graphql
 network:
-  genesisHash: "0x6c9b5baffe075c85d508761a62f33868677f7537160a6b48060d0fcec8de9411"
+  genesisHash: "0xdc92d75f958c9c0096ab65a699c8c21472f04f88501d06c21bc0a8a52d190aff"
   endpoint: "ws://127.0.0.1:9944"
 dataSources:
   - name: runtime
