@@ -49,7 +49,7 @@ Suppose there are token X and token Y, and the price of X means how many Ys of a
 
 $$P_{X|Y}(x,y)=\frac{y}{x}$$
 
-### Add pool
+### Liquidity Deposit
 Keep the price not change.  
 $$\frac{y+\Delta{y}}{x+\Delta{x}}=\frac{y}{x}$$  
 
@@ -62,6 +62,20 @@ The key point of the implementation of the interface `add pool` is that given $x
 * The on-chain Omniverse Swap updates and records the new state of the pool.
 * The on-chain swap sends the two encapsulated Omniverse Transactions to the related on-chain Omniverse token.
 * The Omniverse tokens of $X$ and $Y$ processes the transfers.
+
+#### Note
+We can also provide a liquidity value $\ell$ to calculate $\Delta{X}$ and $\Delta{Y}$:  
+$$\left \{ \begin {array}{lcl}
+\frac{y+\Delta{y}}{x+\Delta{x}}=\frac{y}{x}\\
+(x+\Delta{x})(y+\Delta{y})=xy+\ell
+\end{array}\right.$$  
+Solving this system of equations yields:  
+$$\left \{ \begin {array}{lcl}
+\Delta{x}=\sqrt{\frac{x}{y}(xy+\ell)}-x\\
+\Delta{y}=\sqrt{\frac{y}{x}(xy+\ell)}-y
+\end{array}\right.$$
+
+###  Liquidity Withdraw
 
 ### Swap
 Keep the liquidity $xy=k$ not change.  
