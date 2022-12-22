@@ -141,6 +141,8 @@ export default function Main(props) {
   };
 
   useEffect(() => {
+    console.log("asdasdad");
+
     const html = "<p>Edit Content</p>";
     // 数据回显函数，将html转换为富文本文字
     const contentBlock = htmlToDraft(html);
@@ -152,8 +154,6 @@ export default function Main(props) {
       console.log(editorState);
       setEditorState(editorState);
     }
-
-    // window.location.reload();
   }, []);
 
   accounts.map((account) => {
