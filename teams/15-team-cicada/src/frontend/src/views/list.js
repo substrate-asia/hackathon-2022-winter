@@ -71,7 +71,11 @@ function Main() {
       </Grid.Column>
     </Grid>
   );
-
+  // /解决要二次刷新才会有页面bug
+  if (location.href.indexOf("#reloaded") == -1) {
+    location.href = location.href + "#reloaded";
+    location.reload();
+  }
   if (apiState === "ERROR") return message(apiError);
   else if (apiState !== "READY") return loader("Connecting to Substrate");
 
@@ -361,7 +365,7 @@ function Main() {
           >
             No relevant topics found?
           </div>
-          <Link to="/Create" style={{ color: "black" }}>
+          <Link to="/Create_" style={{ color: "black" }}>
             <div
               style={{
                 width: "255px",
