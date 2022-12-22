@@ -28,7 +28,7 @@ The core workflow of `O20k` is driven by a Substrate Parachain we will build, wh
   * `OSP` is a decentralized DEX platform for Omniveser Tokens. Omniverse token $X$ can be exchanged with Omniverse token $Y$ through `OSP`. Similiar to `OTP`, the swap happens as a whole on Polkadot and other blockchains. If someone initiate a swap of $X$ with $Y$, he will give out some amount of $X$ and get related amount of $Y$ on Polkadot and all blockchains where `O20k` deployed.  
   * `OSP` is based on an AMM mechanism called `O-AMM`, which is driven by `O20k` Parachain. The related underlying mechanism is somewhat mathematical skilled, and the principle details of the [O-AMM](./docs/Principle%20of%20Omniverse%20AMM.md) can be found here.
   * The Omniverse account of `OSP` is managed by the consensus of the `O20k` Parachain.
-  * The `OSP` works as below:
+  * The `OSP` works as below:  
 ![img](./docs/assets/OSP.png)
 <p align="center">Figure.2 Workflow of OSP</p>
 
