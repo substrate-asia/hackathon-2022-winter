@@ -34,7 +34,13 @@ export default function Main(props) {
     isLoading: false, //控制显示隐藏加载
     subjectName: "",
     subjectHash: "",
-    list: ["Create Subject", "Select Category", "Edit Content"],
+    list: [
+      "Select Category",
+      "Label Name",
+      "Create Subject",
+      "Dimension Name",
+      "Edit Content",
+    ],
     dimensionName: "维度1",
     dimensionHash: "",
     content: "这是一篇测试内容",
@@ -143,7 +149,7 @@ export default function Main(props) {
   useEffect(() => {
     console.log("asdasdad");
 
-    const html = "<p>Edit Content</p>";
+    const html = "<p>EditContent</p>";
     // 数据回显函数，将html转换为富文本文字
     const contentBlock = htmlToDraft(html);
     if (contentBlock) {
@@ -182,8 +188,143 @@ export default function Main(props) {
               ))}
             </div>
           </div>
-          {/* 创建一 */}
+          {/* 创建- 分类*/}
           <div style={{ display: active == 1 ? "block" : "none" }}>
+            <div className="categoryList">
+              {categoryList.map((i) => (
+                <div
+                  className={
+                    i == categoryName ? "category active_category" : "category"
+                  }
+                  onClick={() => clickCategory(i)}
+                >
+                  {i}
+                </div>
+              ))}
+            </div>
+            <Form.Field>
+              <Label basic color="teal">
+                <Icon name="hand point right" />
+                categoryHase: {categoryHash}
+              </Label>
+            </Form.Field>
+            <div
+              className="btnStyle"
+              onClick={function () {
+                setCicadaState((prev) => ({
+                  ...prev,
+                  isLoading: 1,
+                }));
+                const processCallback = (result) => {
+                  console.log(`processCallback status:${result.status}`);
+                };
+                const succCallback = (data) => {
+                  notification.success({
+                    message: "success",
+                    description: `Hash:${data.data[0]}`,
+                  });
+                  console.log("succCallback data:", data);
+                  setCicadaState((prev) => ({
+                    ...prev,
+                    categoryHash: data.data[0],
+                    isLoading: 0,
+                    active: 2,
+                  }));
+                };
+                const failCallback = (data) => {
+                  notification.error({
+                    description: "come to nothing",
+                  });
+                  setCicadaState((prev) => ({
+                    ...prev,
+                    isLoading: 0,
+                  }));
+                  console.log("failCallback data:", data);
+                };
+                cicadaApi.createCategory(
+                  categoryName,
+                  categoryParent,
+                  processCallback,
+                  succCallback,
+                  failCallback
+                );
+              }}
+            >
+              CREATE
+            </div>
+          </div>
+
+          {/* 创建二 标签 label */}
+          <div style={{ display: active == 2 ? "block" : "none" }}>
+            <div>
+              <input
+                type="text"
+                className="inputStyle"
+                placeholder="Please enter label"
+                value={labelName}
+                state="subjectName"
+                onChange={(e) => {
+                  setCicadaState((prev) => ({
+                    ...prev,
+                    labelName: e.target.value,
+                  }));
+                }}
+              />
+            </div>
+            <Form.Field style={{ marginTop: "20px" }}>
+              <Label basic color="teal">
+                <Icon name="hand point right" />
+                labelHash: {labelHash}
+              </Label>
+            </Form.Field>
+            <div
+              className="btnStyle"
+              onClick={function () {
+                setCicadaState((prev) => ({
+                  ...prev,
+                  isLoading: 1,
+                }));
+                const processCallback = (result) => {
+                  console.log(`processCallback status:${result.status}`);
+                };
+                const succCallback = (data) => {
+                  notification.success({
+                    message: "success",
+                    description: `Hash:${data.data[0]}`,
+                  });
+                  console.log("succCallback data:", data);
+                  setCicadaState((prev) => ({
+                    ...prev,
+                    labelHash: data.data[0],
+                    isLoading: 0,
+
+                    active: 3,
+                  }));
+                };
+                const failCallback = (data) => {
+                  notification.error({
+                    description: "come to nothing",
+                  });
+                  setCicadaState((prev) => ({
+                    ...prev,
+                    isLoading: 0,
+                  }));
+                  console.log("failCallback data:", data);
+                };
+                cicadaApi.createLabel(
+                  labelName,
+                  categoryHash,
+                  processCallback,
+                  succCallback,
+                  failCallback
+                );
+              }}
+            >
+              CREATE
+            </div>
+          </div>
+          {/* 创建三 主题*/}
+          <div style={{ display: active == 3 ? "block" : "none" }}>
             <div>
               <input
                 type="text"
@@ -225,8 +366,7 @@ export default function Main(props) {
                     ...prev,
                     subjectHash: data.data[0],
                     isLoading: 0,
-
-                    active: 2,
+                    active: 4,
                   }));
                 };
                 const failCallback = (data) => {
@@ -251,24 +391,28 @@ export default function Main(props) {
               CREATE
             </div>
           </div>
-          {/* 创建二 */}
-          <div style={{ display: active == 2 ? "block" : "none" }}>
-            <div className="categoryList">
-              {categoryList.map((i) => (
-                <div
-                  className={
-                    i == categoryName ? "category active_category" : "category"
-                  }
-                  onClick={() => clickCategory(i)}
-                >
-                  {i}
-                </div>
-              ))}
+
+          {/* 创建4维度 */}
+          <div style={{ display: active == 4 ? "block" : "none" }}>
+            <div>
+              <input
+                type="text"
+                className="inputStyle"
+                placeholder="Please enter dimension"
+                value={dimensionName}
+                state="dimensionName"
+                onChange={(e) => {
+                  setCicadaState((prev) => ({
+                    ...prev,
+                    dimensionName: e.target.value,
+                  }));
+                }}
+              />
             </div>
-            <Form.Field>
+            <Form.Field style={{ marginTop: "20px" }}>
               <Label basic color="teal">
                 <Icon name="hand point right" />
-                categoryHase: {categoryHash}
+                dimensionHash: {dimensionHash}
               </Label>
             </Form.Field>
             <div
@@ -289,10 +433,10 @@ export default function Main(props) {
                   console.log("succCallback data:", data);
                   setCicadaState((prev) => ({
                     ...prev,
-                    categoryHash: data.data[0],
+                    dimensionHash: data.data[0],
                     isLoading: 0,
 
-                    active: 3,
+                    active: 5,
                   }));
                 };
                 const failCallback = (data) => {
@@ -305,9 +449,9 @@ export default function Main(props) {
                   }));
                   console.log("failCallback data:", data);
                 };
-                cicadaApi.createCategory(
-                  categoryName,
-                  categoryParent,
+                cicadaApi.createDimension(
+                  dimensionName,
+                  subjectHash,
                   processCallback,
                   succCallback,
                   failCallback
@@ -317,9 +461,9 @@ export default function Main(props) {
               CREATE
             </div>
           </div>
-          {/* 创建三 */}
 
-          <div style={{ display: active == 3 ? "block" : "none" }}>
+          {/* 创建五 内容 */}
+          <div style={{ display: active == 5 ? "block" : "none" }}>
             <Editor
               wrapperClassName="demo-wrapper"
               editorClassName="demo-editor"
@@ -356,6 +500,9 @@ export default function Main(props) {
                       contentHash: data.data[0],
                       isLoading: 0,
                     }));
+                    setTimeout(() => {
+                      history.push("/");
+                    }, 1500);
                   };
                   const failCallback = (data) => {
                     setCicadaState((prev) => ({
@@ -365,9 +512,7 @@ export default function Main(props) {
                     notification.error({
                       description: "come to nothing",
                     });
-                    setTimeout(() => {
-                      history.push("/");
-                    }, 1500);
+
                     console.log("failCallback data:", data);
                   };
                   getRichText();
@@ -404,7 +549,10 @@ export default function Main(props) {
           onCancel={handleOk}
         >
           <p>{subjectName}</p>
+          <p>{labelName}</p>
           <p>{categoryName}</p>
+          <p>{dimensionName}</p>
+
           <p>{content}</p>
         </Modal>
       </Grid.Column>
