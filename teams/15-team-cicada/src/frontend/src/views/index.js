@@ -1,9 +1,13 @@
 import React, { createRef, useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
 import { Link } from "react-router-dom";
 import "../../src/css/index.css";
 import { useHistory } from "react-router-dom";
 
 import {
+  Button,
+  Dropdown,
   Container,
   Dimmer,
   Loader,
@@ -11,13 +15,19 @@ import {
   Sticky,
   Message,
   Menu,
-  Input,
+  Icon,
+  Label,
 } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
-import { SubstrateContextProvider, useSubstrateState } from "../substrate-lib";
+import {
+  SubstrateContextProvider,
+  useSubstrateState,
+  useSubstrate,
+} from "../substrate-lib";
 import { DeveloperConsole } from "../substrate-lib/components";
 import Floor from "../Floor";
+import AccountSelector_ from "../AccountSelector_";
 
 function Main() {
   const { apiState, apiError, keyringState } = useSubstrateState();
@@ -63,7 +73,7 @@ function Main() {
   return (
     <div ref={contextRef}>
       {/* <Sticky context={contextRef}> */}
-      {/* <AccountSelector /> */}
+      <AccountSelector_ />
       {/* </Sticky> */}
 
       <Container
@@ -73,40 +83,12 @@ function Main() {
           fontWeight: "400",
           textAlign: "center",
           width: "100%",
-          height: "1500px",
+          height: "1100px",
           backgroundSize: "100% 100%",
           backgroundImage:
             "url(" + `${process.env.PUBLIC_URL}/assets/bg2.png` + ")",
         }}
       >
-        <div
-          className="headBox"
-          style={{
-            height: "150px",
-          }}
-        >
-          <div
-            className="head_text"
-            style={{ color: "#FFE178" }}
-            onClick={function () {
-              history.push("/Record");
-            }}
-          >
-            Browse Records
-          </div>
-          <div className="head_text">Mortgage</div>
-          <div className="head_text">Subscription</div>
-          <div className="headimg_zh">
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/headimg.png`}
-              alt=""
-              width="50px"
-              height="50px"
-            />
-            <span>0x6804...be5c</span>
-          </div>
-          <div className="ConnectWallet"> Connect Wallet</div>
-        </div>
         <div
           style={{
             //图片的路径
@@ -176,6 +158,8 @@ function Main() {
                       fontSize: "21px",
                       cursor: "pointer",
                       color: "#091323",
+                      borderTopLeftRadius: "0",
+                      borderBottomLeftRadius: "0",
                     }}
                   >
                     <i
@@ -317,7 +301,7 @@ function Main() {
                   height: "47px",
                   backgroundColor: "#000",
                   border: "1px solid #8188BF",
-                  marginTop: "120px",
+                  marginTop: "20px",
                 }}
               >
                 <input
@@ -325,6 +309,7 @@ function Main() {
                   placeholder="Your E-mail Address"
                   style={{
                     backgroundColor: "#000",
+                    color: "#fff",
                   }}
                 />
                 <i class="search icon"></i>
@@ -353,7 +338,33 @@ function Main() {
     </div>
   );
 }
+function BalanceAnnotation(props) {
+  const { api, currentAccount } = useSubstrateState();
+  const [accountBalance, setAccountBalance] = useState(0);
 
+  // When account address changes, update subscriptions
+  useEffect(() => {
+    let unsubscribe;
+
+    // If the user has selected an address, create a new subscription
+    currentAccount &&
+      api.query.system
+        .account(acctAddr(currentAccount), (balance) =>
+          setAccountBalance(balance.data.free.toHuman())
+        )
+        .then((unsub) => (unsubscribe = unsub))
+        .catch(console.error);
+
+    return () => unsubscribe && unsubscribe();
+  }, [api, currentAccount]);
+
+  return currentAccount ? (
+    <Label pointing="left">
+      <Icon name="money" color="green" />
+      {accountBalance}
+    </Label>
+  ) : null;
+}
 export default function App() {
   return (
     <SubstrateContextProvider>

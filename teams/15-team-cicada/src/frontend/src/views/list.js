@@ -23,6 +23,14 @@ import { DeveloperConsole } from "../substrate-lib/components";
 import Floor from "../Floor";
 import myContext from "../createContext";
 function Main() {
+  const Utf8ArrayToStr = (fileData) => {
+    var dataString = "";
+    for (var i = 0; i < fileData.length; i++) {
+      dataString += String.fromCharCode(fileData[i]);
+    }
+    console.log(dataString);
+    return dataString;
+  };
   const { apiState, apiError, keyringState } = useSubstrateState();
   const getPageQuery = () => parse(window.location.href.split("?")[1]);
   const [data, setData] = useState();
@@ -33,6 +41,17 @@ function Main() {
   const getApiData = async () => {
     try {
       let res = await getList(val);
+      res.data.contents.nodes.map((item, index) => {
+        if (val) {
+          let replaceReg = new RegExp(val, "ig");
+          let replaceString = `<span style="color: orange">${val}</span>`;
+          res.data.contents.nodes[index].content = item.content.replace(
+            replaceReg,
+            replaceString
+          );
+        }
+      });
+      Utf8ArrayToStr(res.data.contents.nodes[0].label);
       setData(res.data.contents.nodes);
     } catch (error) {
       console.log(error);
@@ -119,7 +138,10 @@ function Main() {
                 color: "black",
               }}
             >
-              sdaddasd
+              Fields of Study&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date
+              Range&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Journals & Conferences
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sort by Relevance
             </a>
           </div>
         </div>
@@ -134,15 +156,10 @@ function Main() {
           // paddingBottom: "1em",
           width: "100%",
           height: "1600px",
-          //   marginRight: "-20px",
-
           display: "flex",
-          //   alignItems: "center",
           justifyContent: "center", //中间留白
-          //   color: "#fff",
           fontFamily: "Arial",
           fontWeight: "400",
-          //   textAlign: "center",
         }}
       >
         {/* 头 */}
@@ -154,12 +171,10 @@ function Main() {
             flexDirection: "column",
             padding: "30px",
             marginTop: "30px",
-            // justifyContent: "space-between", //中间留白
           }}
         >
           <Menu.Menu style={{}}>
             {data.map((i) => (
-              // <div key={i.id}>{i.blockHash}</div>
               <Link
                 to={`/Details?item=${JSON.stringify(i)}`}
                 style={{ color: "black" }}
@@ -178,7 +193,7 @@ function Main() {
                   <div>
                     <span>{i.category.name}</span>&nbsp;&nbsp;&nbsp;
                     <span>{i.dimension.name}</span>&nbsp;&nbsp;&nbsp;
-                    <span>{i.label}</span>
+                    {/* <span>{i.label}</span> */}
                   </div>
                   <div
                     style={{
@@ -186,8 +201,9 @@ function Main() {
                       fontSize: "20px",
                       color: "#ADADAD",
                     }}
+                    dangerouslySetInnerHTML={{ __html: i.content }}
                   >
-                    {i.content}
+                    {}
                   </div>
                   <div
                     class="user"
@@ -349,7 +365,8 @@ function Main() {
               style={{
                 backgroundColor: "#ADADAD",
                 width: "100%",
-                height: "2px",
+                height: ".5px",
+                marginTop: "25px",
               }}
             >
               {" "}
