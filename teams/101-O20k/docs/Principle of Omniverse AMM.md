@@ -76,6 +76,7 @@ $$\left \{ \begin {array}{lcl}
 \end{array}\right.$$
 
 ###  Liquidity Withdraw
+(to be updated)
 
 ### Swap
 Keep the liquidity $xy=k$ not change.  
