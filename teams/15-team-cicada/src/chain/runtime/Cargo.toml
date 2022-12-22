@@ -12,11 +12,6 @@ repository = 'https://github.com/substrate-developer-hub/substrate-node-template
 [package.metadata.docs.rs]
 targets = ['x86_64-unknown-linux-gnu']
 
-[dependencies.pallet-template]
-default-features = false
-path = '../pallets/template'
-version = '4.0.0-dev'
-
 [dependencies.pallet-cicada]
 default-features = false
 path = '../pallets/cicada'
@@ -203,7 +198,6 @@ runtime-benchmarks = [
     'frame-system/runtime-benchmarks',
     'hex-literal',
     'pallet-balances/runtime-benchmarks',
-    'pallet-template/runtime-benchmarks',
     'pallet-timestamp/runtime-benchmarks',
     'sp-runtime/runtime-benchmarks',
 ]
@@ -219,7 +213,6 @@ std = [
     'pallet-grandpa/std',
     'pallet-randomness-collective-flip/std',
     'pallet-sudo/std',
-    'pallet-template/std',
 	'pallet-cicada/std',
     'pallet-timestamp/std',
     'pallet-transaction-payment-rpc-runtime-api/std',
