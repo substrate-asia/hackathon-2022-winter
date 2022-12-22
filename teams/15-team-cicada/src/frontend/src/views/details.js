@@ -13,6 +13,9 @@ import {
   Message,
   Menu,
   Input,
+  Form,
+  Icon,
+  Label,
 } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
@@ -27,6 +30,7 @@ function Main() {
   // 获取location.search中的参数
   const { item } = qs.parse(search.replace(/^\?/, ""));
   const obj = JSON.parse(item);
+  console.log(obj);
   const loader = (text) => (
     <Dimmer active>
       <Loader size="small">{text}</Loader>
@@ -90,7 +94,15 @@ function Main() {
           minHeight: "700px",
         }}
       >
+        <Menu.Menu></Menu.Menu>
+
         <Menu.Menu style={{ width: "780px", margin: "20px 0" }}>
+          <Form.Field style={{ margin: "20px 0 " }}>
+            <Label basic color="teal">
+              <Icon name="hand point right" />
+              blockHash: {obj.blockHash}
+            </Label>
+          </Form.Field>
           <div style={{ fontWeight: "bold", fontSize: "34px" }}>
             {obj.category.name}
           </div>
