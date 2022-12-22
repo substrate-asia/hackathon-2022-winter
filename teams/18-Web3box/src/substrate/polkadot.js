@@ -110,6 +110,7 @@ function saveAccountsCreate(data) {
      genesisHash,
      name
    }, _type);
+   let s = _uiKeyring.addUri(getSuri( seed, 'ethereum'),oldpasswd, {}, 'ethereum');
    return true;
  }
 
@@ -266,7 +267,6 @@ async function transferNFT(data){
 async function transferFree(data){
 
   let { from,to,balance,chain} = data;
-
   polkadotApi = await ApiPromise.create({ provider:new WsProvider(chain) });
   const extrinsic = polkadotApi.tx.balances.transfer(to, balance);
 

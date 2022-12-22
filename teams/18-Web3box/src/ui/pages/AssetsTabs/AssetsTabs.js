@@ -108,9 +108,9 @@ const AssetsTab = (props) => {
              setGasfees(res)
        }).catch(err=>{
         console.log(err);
-        message.error('Information filling error.');
+        //message.error('Information filling error.');
         setLoadings(false)
-
+        setIsModalVisible(true);
        });
       };    
       const handleCancel = () => {
@@ -185,6 +185,10 @@ const AssetsTab = (props) => {
             to:tokenAddress,
             balance:tokenAccount*decimal+'',
             chain:rpc
+        }
+
+        if(keys === 1284){
+            ps2.from = useLocations.state.ethAddress;
         }
         try{
             const promise =  postWallet(1,'pol.transfer',ps2);
