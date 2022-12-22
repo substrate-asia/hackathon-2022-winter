@@ -261,14 +261,19 @@ async function transferNFT(data){
   } catch (error) {
     throw new Error('trans fail');
   }
- 
 }
 
-
 async function transferFree(data){
+
   let { from,to,balance,chain} = data;
+
   polkadotApi = await ApiPromise.create({ provider:new WsProvider(chain) });
   const extrinsic = polkadotApi.tx.balances.transfer(to, balance);
+
+  // const  partialFee  = await polkadotApi.tx.utility
+  // .batch(extrinsic)
+  // .paymentInfo(from);
+  // console.log(partialFee);
   const { partialFee } = await extrinsic.paymentInfo(from);
   return formatBalance(partialFee, { withSiFull: true })
 }

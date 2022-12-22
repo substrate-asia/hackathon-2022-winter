@@ -38,7 +38,7 @@ const WalletHome = (props) => {
     const [record, setRecord] = useState([])
     const Navigate = useNavigate();
     const Recieve_click = (send,address,prefix) => {
-        Navigate('/AssetsTabs', { state: { datas: send,ethAddress:ethAddress }, replace: true })
+        Navigate('/AssetsTabs', { state: { datas: send,ethAddress:ethAddress,token:keys }, replace: true })
     };
     const RecordBtn = () => {
         Navigate('/sendRecord')

@@ -95,7 +95,6 @@ function CreatWallte(props) {
                     <p><img src={Pc}></img><span>Select Networks</span></p>
                     <Select className='select_main' defaultValue="Polkadot">
                         <Option value="Polkadot">Polkadot</Option>
-                        <Option value="Meonbeam">Meonbeam</Option>
 
                     </Select>
                 </div>

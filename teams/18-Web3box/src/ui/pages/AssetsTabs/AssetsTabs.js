@@ -103,7 +103,7 @@ const AssetsTab = (props) => {
             chain:rpc
         }
        await postWallet(1,'pol.transferFree',ps1).then(res=>{
-            setLoadings(false)
+             setLoadings(false)
              setIsModalVisible(true);
              setGasfees(res)
        }).catch(err=>{
@@ -170,6 +170,7 @@ const AssetsTab = (props) => {
         }else{
             setTabType(false)
         }
+        handleChange(keys);
         GetBlance(keys);
     }, [keys])
       const SendToken= async()=>{
@@ -287,7 +288,7 @@ const AssetsTab = (props) => {
 
                             <div className='top_'>
                                 <img className='avatar' src={userImg}></img>
-                                <Select className='select_main' defaultValue='DOT' style={{ width: 200 }} onChange={handleChange}>
+                                <Select className='select_main' defaultValue={useLocations.state.token} style={{ width: 200 }} onChange={handleChange}>
                                 {
                                     knownSubstrate.map(item=>{
                                     return <Option value={item.prefix} key={item.prefix}>{item.symbols[0]}</Option>
