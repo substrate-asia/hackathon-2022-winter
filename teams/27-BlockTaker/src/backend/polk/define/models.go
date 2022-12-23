@@ -1,8 +1,8 @@
 package define
 
 type BaseModel struct {
-	CreatedAt int `json:"created_at" gorm:"autoCreateTime"` // 在创建时，如果该字段值为零值，则使用当前时间填充
-	UpdatedAt int `json:"updated_at" gorm:"autoUpdateTime"` // 在创建时该字段值为零值或者在更新时，使用当前时间戳秒数填充
+	CreatedAt int `json:"created_at" gorm:"autoCreateTime"`
+	UpdatedAt int `json:"updated_at" gorm:"autoUpdateTime"`
 }
 
 type ModelNominator struct {

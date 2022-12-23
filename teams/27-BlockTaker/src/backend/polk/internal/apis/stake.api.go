@@ -26,7 +26,7 @@ func (a *ApiStake) SaveStake(c *gin.Context) {
 		TxHash:       req.TxHash,
 		Status:       0,
 	}).Error; err != nil {
-		c.JSON(200, resp.Error(0, errors.New("信息保存失败")))
+		c.JSON(200, resp.Error(0, errors.New("save fail")))
 		return
 	}
 	c.JSON(200, resp.Success(0))
@@ -40,7 +40,7 @@ func (a *ApiStake) GetStake(c *gin.Context) {
 	}
 	var res []define.ModelBonded
 	if err := define.Db.Where("stash_address = ? and status = 1", req.StashAddress).Find(&res).Error; err != nil {
-		c.JSON(200, resp.Error(0, errors.New("信息保存失败")))
+		c.JSON(200, resp.Error(0, errors.New("save fail")))
 		return
 	}
 	total := "0"
@@ -62,7 +62,7 @@ func (a *ApiStake) DelWithdrawBonded(c *gin.Context) {
 	}
 	t := time.Now().Add(-12 * time.Hour).Unix()
 	if err := define.Db.Where("created_at <= ? and stash_address = ? and status = 1", t, req.StashAddress).Delete(&define.ModelBonded{}).Error; err != nil {
-		c.JSON(200, resp.Error(0, errors.New("删除信息失败")))
+		c.JSON(200, resp.Error(0, errors.New("del fail")))
 		return
 	}
 	c.JSON(200, resp.Success(0))

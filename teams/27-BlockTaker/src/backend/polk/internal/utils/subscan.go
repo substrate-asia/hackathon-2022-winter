@@ -19,7 +19,7 @@ type SubScan struct {
 // 读取所有验证者并完成推荐排序
 func (t *SubScan) GetValidators(balance float64) ([]define.CustomValidator, error) { //查询页数
 	defer ihelp.ErrCatch()
-	//等待从限流桶中取出令牌
+	//Waiting for the token to be taken out of the throttling bucket
 	err := define.Limiter.Wait(context.Background())
 	if err != nil {
 		ilog.Logger.Error(err)
@@ -95,7 +95,6 @@ func (t *SubScan) GetValidators(balance float64) ([]define.CustomValidator, erro
 }
 
 // GetNominators
-// 读取验证者下所有提名者
 func (t *SubScan) GetNominators(validatorAddress string, page, limit int) ([]define.PolkNominatorItem, error) {
 	defer ihelp.ErrCatch()
 
@@ -131,7 +130,6 @@ func (t *SubScan) GetNominators(validatorAddress string, page, limit int) ([]def
 }
 
 // GetNominatorInfo
-// 读取提名者信息
 func (t *SubScan) GetNominatorInfo(address string) (define.PolkNominatorInfoData, error) {
 	defer ihelp.ErrCatch()
 
@@ -156,11 +154,10 @@ func (t *SubScan) GetNominatorInfo(address string) (define.PolkNominatorInfoData
 }
 
 // GetValidatorInfo
-// 读取验证者详情
 func (t *SubScan) GetValidatorInfo(address string) (define.PolkValidatorInfoDetail, error) {
 	defer ihelp.ErrCatch()
 
-	//等待从限流桶中取出令牌
+	//Waiting for the token to be taken out of the throttling bucket
 	err := define.Limiter.Wait(context.Background())
 	if err != nil {
 		ilog.Logger.Error(err)
@@ -213,7 +210,7 @@ func (t *SubScan) GetTxStatus(txHash string) (define.PolkExtrinsicInfoResData, e
 	return out.Data, nil
 }
 
-// Decimal 保留两位小数
+// Decimal
 func (t *SubScan) decimal(value float64) float64 {
 	value, _ = strconv.ParseFloat(fmt.Sprintf("%.8f", value), 64)
 	return value
