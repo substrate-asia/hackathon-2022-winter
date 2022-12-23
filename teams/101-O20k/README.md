@@ -1,6 +1,6 @@
 ## 基本资料
 
-项目名称：O9P (Omniverse Swap)
+项目名称：O20k (Omniverse Protocol Stack)
 
 项目立项日期 (哪年哪月)：2022.12
 
@@ -46,7 +46,6 @@ We will build a Substrate Parachain to make out `O20k`, which can connect the ot
 ### Architecture
 ![img](./docs/assets/OmniverseProtocolStack.png)  
 <p align="center">Figure.4 Architecture of Omniverse Protocol Stack</p>  
-
 
 ### logo
 
