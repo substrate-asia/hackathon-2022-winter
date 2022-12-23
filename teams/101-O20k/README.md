@@ -47,6 +47,12 @@ We will build a Substrate Parachain to make out `O20k`, which can connect the ot
 ![img](./docs/assets/OmniverseProtocolStack.png)  
 <p align="center">Figure.4 Architecture of Omniverse Protocol Stack</p>  
 
+The full protocol stack of `O20k` includes several layers. From the top to the bottom, they are `OSP`(Omniverse Swap Protocol), `OTP`(Omniverse Token Protocol), Omniverse Account and Transaction Protocol, verification and consensus layer, and Trust-Free Off-Chain Synchronizers.  
+
+The `OSP`(Omniverse Swap Protocol) is a direct swap platform for exchanges of Omniverse tokens. The calculation of the transaction amount is done by an `O-AMM` model we create. The details of the underlying mechanisms can be found in the [Principle of Omniverse-AMMM](./docs/Principle%20of%20Omniverse%20AMM.md). An omniverse swap operation can be initiated based on the `OTP`(Omniverse Token Protocol). `OSP` is implemented as a `substrate pallet`, and a mechanism similar to [EIP-4337](https://eips.ethereum.org/EIPS/eip-4337) is made out to operate an abstract account for the omniverse swap along with the substrate consensus.     
+
+The `OTP`(Omniverse Token Protocol) is implemented as a `substrate pallet` on Polkadot, and as a smart contract on other chains(EVM chains for instance). 
+
 ### logo
 ![img](./docs/assets/logo.png)  
 
