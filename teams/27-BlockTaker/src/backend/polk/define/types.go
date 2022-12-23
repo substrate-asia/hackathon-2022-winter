@@ -65,14 +65,14 @@ type PolkValidatorItem struct {
 }
 
 type CustomValidator struct {
-	Address             string  `json:"address"`               //质押账户
-	BondedTotal         float64 `json:"bonded_total"`          //质押总额
-	Identity            bool    `json:"identity"`              //是否认证
-	ValidatorPrefsValue float64 `json:"validator_prefs_value"` //佣金
-	CountNominators     int     `json:"count_nominators"`      //提名人数量
-	NominatorsMin       float64 `json:"nominators_min"`        //最小提名人质押
-	RewardPoint         int     `json:"reward_point"`          //评分
-	Reward              float64 `json:"reward"`                //收益算法
+	Address             string  `json:"address"`
+	BondedTotal         float64 `json:"bonded_total"`
+	Identity            bool    `json:"identity"`
+	ValidatorPrefsValue float64 `json:"validator_prefs_value"`
+	CountNominators     int     `json:"count_nominators"`
+	NominatorsMin       float64 `json:"nominators_min"`
+	RewardPoint         int     `json:"reward_point"`
+	Reward              float64 `json:"reward"`
 }
 
 type PolkNominatorRes struct {

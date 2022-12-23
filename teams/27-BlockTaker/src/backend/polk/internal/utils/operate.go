@@ -20,8 +20,8 @@ func (t *Operate) MyNominator(stash string) (tarAddress string, nmRank int, nm25
 		return
 	}
 
-	vnMap := make(map[string]int) //验证者地址:提名数量
-	vnMapLock := sync.Mutex{}     //并发锁
+	vnMap := make(map[string]int) //Verifier address: number of nominations
+	vnMapLock := sync.Mutex{}     //concurrent lock
 	validators := strings.Split(data.ValidatorAddress, ",")
 
 	wg := sync.WaitGroup{}
@@ -43,7 +43,7 @@ func (t *Operate) MyNominator(stash string) (tarAddress string, nmRank int, nm25
 	}
 	wg.Wait()
 
-	//遍历vnMap通过提名者数量计算出每个验证者需要请求几次接口
+	//Traversing vnMap calculates how many times each verifier needs to request the interface through the number of nominators
 	for valiAddr, count := range vnMap {
 		cut := 100
 		index := count / cut
@@ -51,7 +51,7 @@ func (t *Operate) MyNominator(stash string) (tarAddress string, nmRank int, nm25
 			index++
 		}
 
-		var over bool //是否终止
+		var over bool
 
 		wg = sync.WaitGroup{}
 		wg.Add(index)
