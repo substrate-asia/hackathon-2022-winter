@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".ui.create.CreateSuccessActivity">
+    <include
+        android:id="@+id/baseTitle"
+        layout="@layout/base_title"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/backup_bg"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_success"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:textColor="@color/primary_text_color"
+        android:textStyle="bold"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="42dp"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        android:background="@drawable/corners5_white"
+        android:elevation="3dp"
+        >
+        <TextView
+            android:id="@+id/tvTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/color_tips"
+            android:textSize="13sp"
+            android:text="@string/tips"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTips"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:text="@string/tips_content"
+            android:textColor="@color/color_tips"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/tvNow"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:text="@string/backup_now"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_selector"
+        android:enabled="true"/>
+    <TextView
+        android:id="@+id/tvLater"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/primary_text_color"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:text="@string/backup_later"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"/>
+
+</LinearLayout>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="618dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="15dp"
+            android:text="@string/transaction_details"
+            android:textColor="@color/primary_text_color"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="18dp"
+            android:padding="2dp"
+            android:src="@drawable/wallet_close" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/mainlink_icon_polkadot1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:text="申请DOT转账授权"
+                android:textColor="@color/primary_text_color"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_faf6f0_corner_4_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="9dp">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/ic_tips"
+                    app:tint="#B6915B" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="授予此权限后，将会把你的DOT转账到质押合约中！"
+                    android:textColor="#B6915B"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="42dp"
+                android:text="付款地址"
+                android:textColor="#656569"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="12B5B96A56c39366f2962DC35ddd170DbDeC6a8Bc2"
+                android:textColor="@color/primary_text_color"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="授权合约"
+                android:textColor="#656569"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_contract"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="1510ed43c718714eb63d5aa57b78654704e256024e"
+                android:textColor="@color/primary_text_color"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="授权数量"
+                android:textColor="#656569"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="1234.234842345 DOT"
+                android:textColor="@color/primary_text_color"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="矿工费"
+                android:textColor="#656569"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_gas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="0.00012332 DOT"
+                android:textColor="@color/primary_text_color"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_comfirm"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="42dp"
+                android:background="@drawable/corners5_primary"
+                android:gravity="center"
+                android:text="确认"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

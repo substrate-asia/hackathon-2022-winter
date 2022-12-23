@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp">
+
+    <com.polkadot.bt.custom.AppToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/detail" />
+
+    <com.polkadot.bt.ui.view.CircleImageView
+        android:id="@+id/logo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/packing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/packing"
+        android:textColor="@color/colorTitle"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#FF97979C"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status"
+        tools:text=" 2021-04-28 20:20:29" />
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/time"
+        app:normalContentText="-0 ETH"
+        app:normalTitleText="@string/amount" />
+
+    <View
+        android:id="@+id/amount_filter"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="15dp"
+        android:background="#FFF5F5F5"
+        app:layout_constraintTop_toBottomOf="@id/amount" />
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/absenteeism_fee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/amount_filter"
+        app:normalContentText=""
+        app:normalTitleText="@string/absenteeism_fee" />
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/payee_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/absenteeism_fee"
+        app:normalContentText=""
+        app:normalRightDrawable="@drawable/copy"
+        app:normalTitleText="@string/payee_address" />
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/payment_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/payee_address"
+        app:normalContentText=""
+        app:normalRightDrawable="@drawable/copy"
+        app:normalTitleText="@string/payment_address" />
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/remark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/payment_address"
+        app:normalTitleText="@string/memo" />
+
+    <View
+        android:id="@+id/detail_filter"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="15dp"
+        android:background="#FFF5F5F5"
+        app:layout_constraintTop_toBottomOf="@id/remark" />
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/hash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/detail_filter"
+        app:normalContentText=""
+        app:normalRightDrawable="@drawable/copy"
+        app:normalTitleText="@string/hash_address" />
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/query_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/hash"
+        app:normalContentTextVisibility="gone"
+        app:normalRightDrawable="@drawable/arrow_right_gray"
+        app:normalTitleText="@string/query_detail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

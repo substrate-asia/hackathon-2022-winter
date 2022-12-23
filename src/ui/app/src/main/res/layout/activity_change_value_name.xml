@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.polkadot.bt.custom.AppToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/change_wallet_name" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/value_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:inputType="text"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:textColor="@color/colorTitle"
+        android:textColorHint="@color/color_bc"
+        android:hint="@string/input_wallet_name"
+        android:textSize="14sp"
+        android:background="@null"
+        />
+    <View
+        android:id="@+id/transfer_amount_filter"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="#FFDCDCE0"
+        app:layout_constraintTop_toBottomOf="@id/input_transfer_amount" />
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/tvCreate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:text="@string/save"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_selector"
+        android:enabled="false"/>
+</LinearLayout>

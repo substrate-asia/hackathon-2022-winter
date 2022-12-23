@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="55dp">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="55dp"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:padding="15dp"
+        android:src="@drawable/nav_back_left_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="55dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="@color/colorTitle"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/app_name" />
+
+    <ImageView
+        android:id="@+id/more"
+        android:layout_width="55dp"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:padding="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/nav_add_black" />
+
+    <TextView
+        android:id="@+id/right"
+        android:layout_width="55dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/colorTitle"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/save" />
+
+    <View
+        android:id="@+id/filter"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3D000000"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</merge>

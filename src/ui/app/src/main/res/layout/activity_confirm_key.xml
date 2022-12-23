@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.backup.ConfirmKeyActivity">
+
+    <include
+        android:id="@+id/baseTitle"
+        layout="@layout/base_title"/>
+
+    <TextView
+        android:id="@+id/tvKey"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:textSize="13sp"
+        android:textColor="@color/primary_text_color"
+        android:textStyle="bold"
+        android:layout_margin="15dp"
+        android:background="@drawable/corners5_graye"
+        android:padding="20dp"
+        tools:text="0449313cc5ca2dce29116a325a5dddef3bbc53424150e51cd7acea 3692c19e82"/>
+
+    <TextView
+        android:id="@+id/tvCopy"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:text="@string/copy"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/btn_selector"/>
+</LinearLayout>

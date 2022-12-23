@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_white_stoke_1_corner_5_bg"
+    android:backgroundTint="@color/white"
+    android:paddingBottom="25dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bg"
+        android:layout_width="290dp"
+        android:layout_height="130dp"
+        android:src="@drawable/update_version"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/update_version"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/update_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:text="1、[直播] 首充超值大礼包限时活动！\n\n2、[首页] 新增侧边栏,睡眠定时、听歌识曲等功能一键触达！\n\n3、[视频] 更多热门频道上线，总有一款适合你！"
+        android:textColor="#3E3E40"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/bg"
+        app:layout_constraintStart_toStartOf="@id/bg"
+        app:layout_constraintTop_toBottomOf="@id/bg" />
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/shape_white_stoke_1_corner_5_bg"
+        android:gravity="center"
+        android:text="@string/cancel"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/confirm"
+        app:layout_constraintStart_toStartOf="@id/bg"
+        app:layout_constraintTop_toBottomOf="@id/update_content" />
+
+    <TextView
+        android:id="@+id/confirm"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/shape_1b1b1c_corner_5_bg"
+        android:gravity="center"
+        android:text="@string/update_immediately"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/bg"
+        app:layout_constraintStart_toEndOf="@id/cancel"
+        app:layout_constraintTop_toBottomOf="@id/update_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_white_stoke_1_corner_5_bg"
+    android:backgroundTint="@color/white"
+    android:paddingBottom="25dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textColor="#FF3E3E40"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/update_version" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#3E3E40"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="您的钱包尚未备份，如果出现忘记密码、删除应用或手机丢失等情况将会导致您的资产出现损失，请立即备份钱包!" />
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/shape_white_stoke_1_corner_5_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/confirm"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/content"
+        tools:text="@string/cancel" />
+
+    <TextView
+        android:id="@+id/confirm"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/shape_1b1b1c_corner_5_bg"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/title"
+        app:layout_constraintStart_toEndOf="@id/cancel"
+        app:layout_constraintTop_toBottomOf="@id/content"
+        tools:text="@string/update_immediately" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

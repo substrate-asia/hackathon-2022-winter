@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.create.AddCurrencyActivity">
+    <include
+        android:id="@+id/baseTitle"
+        layout="@layout/base_title"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@color/top_bg"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:textColor="@color/indicator"
+        android:text="@string/plz_wait"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/tvCreate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:text="@string/create"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_selector"/>
+
+</LinearLayout>
