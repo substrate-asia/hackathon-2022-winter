@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="30dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="20dp"
+        android:layout_height="24dp"
+        android:background="@color/color9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/link_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:text="ERC20"
+        android:paddingLeft="8dp"
+        android:paddingRight="10dp"
+        android:gravity="center"
+        android:textColor="@color/indicator"
+        android:background="@drawable/yuanjiao_hei_statement"
+        app:layout_constraintStart_toEndOf="@id/view1"
+        app:layout_constraintTop_toTopOf="@id/view1" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_coin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/link_icon"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/see_more_coin"
+        android:textSize="12sp"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:drawableRight="@drawable/drop_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_coin"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

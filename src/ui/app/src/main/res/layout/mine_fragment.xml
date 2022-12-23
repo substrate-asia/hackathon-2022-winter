@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.polkadot.bt.custom.AppToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/white"
+        app:backVisibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/mine" />
+
+    <com.polkadot.bt.custom.FunctionItem
+        android:id="@+id/address_book"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:drawable="@drawable/address_book"
+        app:itemSubTextVisibility="gone"
+        app:itemText="@string/address_book"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <com.polkadot.bt.custom.FunctionItem
+        android:id="@+id/language"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        app:drawable="@drawable/language"
+        android:visibility="visible"
+        app:itemSubText="@string/simplified_chinese"
+        app:itemText="@string/language_change"
+        app:layout_constraintTop_toBottomOf="@id/address_book" />
+
+    <com.polkadot.bt.custom.FunctionItem
+        android:id="@+id/currency_unit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:drawable="@drawable/currency_unit"
+        android:visibility="visible"
+        app:itemSubText="@string/cny"
+        app:itemText="@string/currency_unit"
+        app:layout_constraintTop_toBottomOf="@id/language" />
+    <LinearLayout
+        android:id="@+id/ll_fingerprint"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:paddingHorizontal="20dp"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/currency_unit">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/about_us"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14dp"
+            android:layout_marginStart="12dp"
+            android:textColor="#1B1B1C"
+            android:text="@string/fingerprint_lock" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchFingerprint"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:thumbTint="#fff"
+            app:track="@drawable/switch_track" />
+    </LinearLayout>
+
+    <com.polkadot.bt.custom.FunctionItem
+        android:id="@+id/about_us"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        app:drawable="@drawable/about_us"
+        app:itemSubTextVisibility="gone"
+        app:itemText="@string/about_us"
+        app:layout_constraintTop_toBottomOf="@id/ll_fingerprint" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
