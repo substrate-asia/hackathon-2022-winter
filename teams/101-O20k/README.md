@@ -48,6 +48,7 @@ We will build a Substrate Parachain to make out `O20k`, which can connect the ot
 <p align="center">Figure.4 Architecture of Omniverse Protocol Stack</p>  
 
 ### logo
+![img](./docs/assets/logo.png)  
 
 ## 黑客松期间计划完成的事项
 
