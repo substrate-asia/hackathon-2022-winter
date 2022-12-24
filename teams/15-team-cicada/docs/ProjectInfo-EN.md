@@ -7,8 +7,16 @@ Project approval date：2022-11
 ## Project Intro
 
 ### Intoduction
-- A blockchain project knowledge base that designs a reasonable economic model to solve the problem of invalid, scattered, and unsystematic project information, provides rewards for information creators, and provides convenience and efficiency for information queriers.
-Technical framework: Substrate framework, VUE.
+Cicada is a decentralized encyclopedia and content distribution system. It aims to address the following pain points:
+
+- The conflict between platform owners and core value contributors in traditional platforms over the distribution of benefits.
+- The governance conflict between platform owners and core value contributors in traditional platforms.
+- The problems of scattered, inaccurate, untimely, and inconvenient information access to blockchain projects.
+
+The ultimate goals of Cicada are:
+- To enable users to access valuable, systematic content in a timely manner.
+- To give participants the right to share benefits, govern, and oversee.
+- To fully community-based, reject officialization of project information, and bind more stakeholders to generate strong consensus.
 
 ### The main highlights of the project are:
 
