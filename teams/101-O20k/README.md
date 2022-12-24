@@ -8,10 +8,13 @@
 
 ### Background
 In current technology state of the art, there are two ways to exchange tokens deployed on different public chains, the one is through CEX, the other is transferring through bridges first and then swapping.  
-In Web3 world, CEX is just a temporary solution because there's no need for Web3 if centralized. We know that CEX has a high speed for exchanges, but a more important thing is that it provides a free way for most kinds of tokens no matter on which blockchain they are published. But now, we will provide an absulotely decentralized way.    
+CEX is very convenient and efficient, but as we all know, it's and very easy to manipulate under the table. As a user of CEX, you don't really control your own assets, FTX is the best case recently. 
+DEX is decentralized，and the assets is on your own hand, we always say that code is law, it means you can handle your assets under the established and transparent rules, no one can manipulate your assets outside of these rules.
+But the fagmentation is a problem that has plagued DEX for a long time, that is, we cannot swap tokens of different chains easily. 
+That's why some token bridges emerge.
 With bridges, the assets should be locked on one chain and minted on another chain so that your assets are cut into different parts on different chains and one part can be only used on one chain at a time. Moreover, many [secure events](https://github.com/xiyu1984/Blog/blob/main/docs/Multi-Chain%20Events.md) happened on current bridges.  
-
-We will provide an absolutely decentralized and cryptographic-based solution to solve these problems, through which the exchange between tokens deployed on different chains can be processed with determining security. Besides, there's no need to divide your assets into different isolated parts, on the contrary, your assets can be accessed from any chain and be treated as a whole.
+The bridge is just like a bank, issue wrapped tokens, anyway, when you ues the bridge, you just deal the wrapped token, not the really token of your own.
+To solve these problems, we will provide an absolutely decentralized and cryptographic-based solution, through which the exchange between tokens deployed on different chains can be processed with determining security. Besides, there's no need to divide your assets into different isolated parts, on the contrary, your assets can be accessed from any chain and be treated as a whole.
 
 ### Introduction
 We are building an absolutely decentralized swap platform called `Omniverse Protocol Stack` (`O20k` for short) to make exchanges for different kinds of tokens distributed all over the Web3 world.  
