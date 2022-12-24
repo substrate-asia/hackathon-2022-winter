@@ -9,8 +9,10 @@
 ### Background
 In current technology state of the art, there are two ways to exchange tokens deployed on different public chains, the one is through CEX, the other is transferring through bridges first and then swapping.  
 CEX is very convenient and efficient, but as we all know, it's and very easy to manipulate under the table. As a user of CEX, you don't really control your own assets, FTX is the best case recently. 
+
 DEX is decentralized，and the assets is on your own hand, we always say that code is law, it means you can handle your assets under the established and transparent rules, no one can manipulate your assets outside of these rules.
 But the fagmentation is a problem that has plagued DEX for a long time, that is, we cannot swap tokens of different chains easily. 
+
 That's why some token bridges emerge.
 With bridges, the assets should be locked on one chain and minted on another chain so that your assets are cut into different parts on different chains and one part can be only used on one chain at a time. Moreover, many [secure events](https://github.com/xiyu1984/Blog/blob/main/docs/Multi-Chain%20Events.md) happened on current bridges.  
 The bridge is just like a bank, issue wrapped tokens, anyway, when you ues the bridge, you just deal the wrapped token, not the really token of your own.
