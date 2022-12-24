@@ -64,7 +64,7 @@ The key point of the implementation of the interface `add pool` is that given $x
 * The Omniverse tokens of $X$ and $Y$ processes the transfers.
 
 #### Note
-We can also provide a liquidity value $\ell$ to calculate $\Delta{X}$ and $\Delta{Y}$:  
+We can also provide a liquidity value $\ell$ to calculate $\Delta{x}$ and $\Delta{y}$:  
 $$\left \{ \begin {array}{lcl}
 \frac{y+\Delta{y}}{x+\Delta{x}}=\frac{y}{x}\\
 (x+\Delta{x})(y+\Delta{y})=xy+\ell
@@ -76,7 +76,19 @@ $$\left \{ \begin {array}{lcl}
 \end{array}\right.$$
 
 ###  Liquidity Withdraw
-(to be updated)
+Given the withdraw amount of the liquidity $\ell$, solve the following system of equations to get $\Delta{x}$ and $\Delta{y}$:  
+$$\left \{ \begin {array}{lcl}
+\frac{y-\Delta{y}}{x-\Delta{x}}=\frac{y}{x}\\
+(x-\Delta{x})(y-\Delta{y})=xy-\ell
+\end{array}\right.$$  
+
+The result is:  
+
+$$\left \{ \begin {array}{lcl}
+\Delta{x}=x-\sqrt{\frac{x}{y}(xy-\ell)}\\
+\Delta{y}=y-\sqrt{\frac{y}{x}(xy-\ell)}
+\end{array}\right.$$  
+
 
 ### Swap
 Keep the liquidity $xy=k$ not change.  
