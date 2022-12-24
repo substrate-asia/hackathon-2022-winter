@@ -12,6 +12,7 @@ import com.polkadot.bt.R
 import com.polkadot.bt.bean.Validators
 import com.polkadot.bt.custom.StatusBarUtil
 import com.polkadot.bt.data.DOTUtils
+import com.polkadot.bt.data.DOTUtils.toStringWithoutScientificNotation
 import com.polkadot.bt.databinding.StakeFragmentBinding
 import com.polkadot.bt.dialog.InputPasswordDialog
 import com.polkadot.bt.dialog.TipsDialog
@@ -41,6 +42,8 @@ class StakeFragment : BaseFragment<StakeFragmentBinding>() {
     var unbindingBalance = 0.0
     var retrievableBalance = 0.0
     var profitBalance = 0.0
+
+
 
     override fun initBinding(container: ViewGroup?) = StakeFragmentBinding.inflate(layoutInflater, container, false)
 
@@ -119,15 +122,15 @@ class StakeFragment : BaseFragment<StakeFragmentBinding>() {
             }
 
             profitBalance = 0.0
-            binding.layoutStakeIn.tvAlreadyStakeAmount.text = boundBalance.toString()
-            binding.layoutStakeIn.tvBalanceValue.text = availableBalance.toString()
+            binding.layoutStakeIn.tvAlreadyStakeAmount.text = boundBalance.toStringWithoutScientificNotation()
+            binding.layoutStakeIn.tvBalanceValue.text = availableBalance.toStringWithoutScientificNotation()
 
             binding.layoutStakeOut.tvAlreadyStakeAmount.text = binding.layoutStakeIn.tvAlreadyStakeAmount.text
             binding.layoutStakeOut.tvBalanceValue.text = binding.layoutStakeIn.tvBalanceValue.text
-            binding.layoutStakeOut.tvRedeemingValue.text = unbindingBalance.toString() + " DOT"
-            binding.layoutStakeOut.tvStakeRetrievableValue.text = retrievableBalance.toString() + " DOT"
-            binding.layoutStakeOut.tvProfitValue.text = profitBalance.toString() + " DOT"
-            binding.layoutStakeOut.tvStakeBalanceAndProfitValue.text = (boundBalance + unbindingBalance + profitBalance).toString() + " DOT"
+            binding.layoutStakeOut.tvRedeemingValue.text = unbindingBalance.toStringWithoutScientificNotation() + " DOT"
+            binding.layoutStakeOut.tvStakeRetrievableValue.text = retrievableBalance.toStringWithoutScientificNotation() + " DOT"
+            binding.layoutStakeOut.tvProfitValue.text = profitBalance.toStringWithoutScientificNotation() + " DOT"
+            binding.layoutStakeOut.tvStakeBalanceAndProfitValue.text = (boundBalance + unbindingBalance + profitBalance).toStringWithoutScientificNotation() + " DOT"
 
             binding.layoutStakeOut.etInput.setText(binding.layoutStakeOut.tvAlreadyStakeAmount.text.toString())
 
@@ -256,21 +259,14 @@ class StakeFragment : BaseFragment<StakeFragmentBinding>() {
         binding.layoutStakeOut.tvExtract.setOnClickListener {
             ToastUtils.showShort("待实现")
         }
-        //tpy
-        binding.layoutStakeIn.ivTips.setOnClickListener {
-            TipsDialog(requireContext(), "质押账户总额说明质押账户总额说明质押账户总额说明质押账户总额说明质押账户总额说明质押账户总额说明质押账户总额说明质押账户总额说明质押账户总额说明质押账户总额说明质押账户总额说明").show()
-        }
         binding.layoutStakeOut.ivTips1.setOnClickListener {
-            binding.layoutStakeIn.ivTips.performClick()
+            TipsDialog(requireContext(), getString(R.string.total_amount_of_bound_accounts_tips)).show()
         }
         binding.layoutStakeOut.ivTips2.setOnClickListener {
-            binding.layoutStakeIn.ivTips.performClick()
+            TipsDialog(requireContext(), getString(R.string.redeeming_tips)).show()
         }
         binding.layoutStakeOut.ivTips3.setOnClickListener {
-            binding.layoutStakeIn.ivTips.performClick()
-        }
-        binding.layoutStakeOut.ivTips4.setOnClickListener {
-            binding.layoutStakeIn.ivTips.performClick()
+            TipsDialog(requireContext(), getString(R.string.retrievable_tips)).show()
         }
 
         binding.layoutStakeIn.ivAdd.setOnClickListener {
@@ -288,9 +284,9 @@ class StakeFragment : BaseFragment<StakeFragmentBinding>() {
                     validators = getValidators()
                 }
                 val fee = if (lockedBalance == 0.0)
-                    DOTUtils.bondAndNomiinateFee(String(linkEntityNew!!.privateKey), linkEntityNew!!.address, availableBalance.toString(), getFormatValidatorsListStr(validators!!))
+                    DOTUtils.bondAndNomiinateFee(String(linkEntityNew!!.privateKey), linkEntityNew!!.address, availableBalance.toStringWithoutScientificNotation(), getFormatValidatorsListStr(validators!!))
                 else
-                    DOTUtils.bondExtraFee(String(linkEntityNew!!.privateKey), linkEntityNew!!.address, availableBalance.toString())
+                    DOTUtils.bondExtraFee(String(linkEntityNew!!.privateKey), linkEntityNew!!.address, availableBalance.toStringWithoutScientificNotation())
 
                 if (fee == "0") {
                     ToastUtils.showShort("get gee error")
@@ -298,7 +294,7 @@ class StakeFragment : BaseFragment<StakeFragmentBinding>() {
                     return@doHttp
                 }
                 val max = availableBalance - fee.toDouble()
-                binding.layoutStakeIn.etInput.setText(max.toString())
+                binding.layoutStakeIn.etInput.setText(max.toStringWithoutScientificNotation())
                 WaitDialog.dismiss()
             }, {
                 WaitDialog.dismiss()

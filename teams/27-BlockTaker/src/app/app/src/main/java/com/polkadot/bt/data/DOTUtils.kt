@@ -25,6 +25,11 @@ object DOTUtils {
         return BuildConfig.FLAVOR == "stageEnv"
     }
 
+    fun Double.toStringWithoutScientificNotation(): String {
+        val pattern = if (isTest()) "0.############" else "0.##########"
+        return DecimalFormat(pattern).format(this)
+    }
+
     fun getDecimals(): Int {
         return if (isTest()) 12 else 10
     }
@@ -140,7 +145,7 @@ object DOTUtils {
                 val generateTransferTx = DOTApiLibrary.INSTANCE.bondAndNominate(getDOTUrl(), "", address, address, conversionAmount, targets, privkey)
                 val fees = DOTApiLibrary.INSTANCE.estimateFeesForTransactionV2(getDOTUrl(), "", generateTransferTx)
                 DecimalFormat("0.########").format(fees.toDouble() / conversion)
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 "0"
             }
         }
@@ -167,7 +172,7 @@ object DOTUtils {
                 val generateTransferTx = DOTApiLibrary.INSTANCE.bondExtra(getDOTUrl(), "", address, conversionAmount, privkey)
                 val fees = DOTApiLibrary.INSTANCE.estimateFeesForTransactionV2(getDOTUrl(), "", generateTransferTx)
                 DecimalFormat("0.########").format(fees.toDouble() / conversion)
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 "0"
             }
         }
@@ -194,7 +199,7 @@ object DOTUtils {
                 val generateTransferTx = DOTApiLibrary.INSTANCE.chillAndUnbond(getDOTUrl(), "", address, conversionAmount, privkey)
                 val fees = DOTApiLibrary.INSTANCE.estimateFeesForTransactionV2(getDOTUrl(), "", generateTransferTx)
                 DecimalFormat("0.########").format(fees.toDouble() / conversion)
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 "0"
             }
         }
@@ -218,7 +223,7 @@ object DOTUtils {
                 val generateTransferTx = DOTApiLibrary.INSTANCE.withDraw(getDOTUrl(), "", address, privkey, 0)
                 val fees = DOTApiLibrary.INSTANCE.estimateFeesForTransactionV2(getDOTUrl(), "", generateTransferTx)
                 DecimalFormat("0.########").format(fees.toDouble() / conversion)
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 "0"
             }
         }
