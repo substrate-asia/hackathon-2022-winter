@@ -28,7 +28,7 @@ We are building an advanced swap platform with features below:
 
 We named it `Omniverse Protocol Stack` (`O20k` for short) , which can do exchanges for different kinds of tokens distributed in diverse chains.  
 First, we provide a brand new token protocol called `Omniverse Token Protocol`(`OTP` for short), whose legality can be synchronized to any chain where `OTP` is deployed so that it to be accessed and operated anywhere at the same time as a whole, which is unlike being divided into isolated parts by token bridges. Besides, `OTP` is able to be compatible with current single-chain token protocols.  
-Second, an `Omniverse Swap Protocol` (`OSP` for short) is provided to make exchanges for different kinds of OTP tokens just like a CEX did but in a decentralized way. One `OTP` token can directly exchange with another `OTP` token on Polkadot, and the related states could be verifiable on other `O20k` deployed ecosystems such as Ethereum, NEAR, Flow, Move chains, etc.
+Second, an `Omniverse Swap Protocol` (`OSP` for short) is provided to make exchanges for different kinds of OTP tokens just like a CEX did but in a decentralized way. One `OTP` token can directly exchange with another `OTP` token on Polkadot, and the related states could be verifiable on other `O20k` deployed ecosystems such as Ethereum, NEAR, Flow, Move chains, etc.  
 Moreover, AMM is used to make calculations for exchanges and we innovatively worked out a new mathematical model called `O-AMM` to implement it, which can provide a wider "smooth trading range" than state of art and still keep the price sensitivity. 
 
 We will build a Substrate Parachain to make out `O20k`, which can connect the other Parachains by `XCM` so that `O20k` could provide services for the whole ecosystem of Polkadot.  
@@ -78,13 +78,16 @@ The bottom is the off-chain synchronizer layer. The synchronizer is a very light
 **On-Chain**
 
 - `pallet-OmniverseProtocol`
-  - [ ] 
+  - [ ] Omniverse Account Management
+  - [ ] Omniverse Nonce Synchronization
+  - [ ] Omniverse Commitment Verification
 
 - `pallet-OmniverseToken`
-  - [ ] 
+  - [ ] Omniverse Token Factory
+  - [ ] Omniverse Token Processor
 
 - `pallet-OmniverseSwap`
-  - [ ] 
+  - [ ] Omniverse Swap Platform
 
 **Algorithm**
 - `O-AMM`
@@ -92,9 +95,9 @@ The bottom is the off-chain synchronizer layer. The synchronizer is a very light
 
 **Client**
 - Command-Line Interface
-  - [ ] 
-
-
+  - [ ] Omniverse Transaction Tools
+  - [ ] Omniverse Swap Tools
+  - [ ] Omniverse Account Tools  
 
 ## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
 
@@ -105,7 +108,10 @@ The bottom is the off-chain synchronizer layer. The synchronizer is a very light
 ## 队员信息
 `Omniverse Labs` was established in December of this year. The first product of our team is [Dante Network](https://github.com/dantenetwork). `O20k` is an Web3 application based on Dante.  
 Our team consists of the following members:  
+|Name|Function|GitHub|Weixin|
+|---------|---------|---------|---------|
+|Jason|CEO|https://github.com/dantenetwork|HopeOfTown|
+|Xiyu|Tech Guy|https://github.com/xiyu1984|xiyu_meta|
+|Virgil|Tech Guy|https://github.com/virgil2019|cherima|
+|kay404|Tech Guy|https://github.com/kay404|linkai528|
 
-在团队中担任的角色
-GitHub 帐号
-微信账号（如有请留下，方便及时联系）
