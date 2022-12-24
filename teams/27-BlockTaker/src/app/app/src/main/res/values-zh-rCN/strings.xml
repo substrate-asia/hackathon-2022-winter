@@ -300,4 +300,7 @@
     <string name="extract">提取</string>
     <string name="unbound_quantity">解绑数量</string>
     <string name="unbind_only">解绑</string>
+    <string name="total_amount_of_bound_accounts_tips">綁定總額=已綁定+解綁中+收益</string>
+    <string name="redeeming_tips">解綁後的DOT有一個28天的解凍期。</string>
+    <string name="retrievable_tips">28天的解綁期結束後，DOT由解綁中變成可取回，此時需要手動贖回到自己錢包中。</string>
 </resources>

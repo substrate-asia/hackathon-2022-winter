@@ -382,15 +382,15 @@
             android:textColor="#1B1B1C"
             android:textSize="12sp" />
 
-        <ImageView
-            android:id="@+id/iv_tips4"
-            android:layout_width="11dp"
-            android:layout_height="11dp"
-            android:layout_marginStart="3dp"
-            android:src="@drawable/ic_tips"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_redeeming_key"
-            app:layout_constraintStart_toEndOf="@+id/tv_redeeming_key"
-            app:layout_constraintTop_toTopOf="@+id/tv_redeeming_key" />
+        <!--        <ImageView-->
+        <!--            android:id="@+id/iv_tips4"-->
+        <!--            android:layout_width="11dp"-->
+        <!--            android:layout_height="11dp"-->
+        <!--            android:layout_marginStart="3dp"-->
+        <!--            android:src="@drawable/ic_tips"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/tv_redeeming_key"-->
+        <!--            app:layout_constraintStart_toEndOf="@+id/tv_redeeming_key"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/tv_redeeming_key" />-->
     </LinearLayout>
 
     <LinearLayout
