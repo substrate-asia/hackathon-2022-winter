@@ -6,7 +6,7 @@ Project approval date：Oct 2022
 
 Project Video: 
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/"8MCJxVEJyII"/0.jpg)](https://www.youtube.com/watch?v="8MCJxVEJyII" "Cumulon Protocol")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/8MCJxVEJyII/0.jpg)](https://www.youtube.com/watch?v=8MCJxVEJyII "Cumulon Protocol")
 
 
 ## Project overall introduction
@@ -31,12 +31,12 @@ It can be seen that Cumulon Protocol not only provides a one-stop asset manageme
 
 **Blockchain side**
 
-- `pallet-staking
+-  pallet-staking
   - [ ] Complete the analysis and research of Staking Pallet related codes, index Moonbeam, Oak and related parachain data
   
 **Client side**
 
-- web 
+- Web 
   - [ ] Staking dashboard, showing basic information such as collator, delegator pledge amount, round amount, total pledge amount, etc.
    - [ ] Provide basic functions such as stake and unstake to facilitate community users to participate in stake activities more conveniently
    - [ ] provides relevant notification functions
