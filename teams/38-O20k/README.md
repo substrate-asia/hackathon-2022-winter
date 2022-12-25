@@ -39,20 +39,20 @@ For implementation, we will build a Substrate Parachain to make out `O20k`, whic
 * The `OTP` has the following features:  
   * The token based on `OTP` deployed on different chains is not separated but as a whole. If someone has one `OTP` based token $X$ on Polkadot, he will have one on Ethereum and other chains at the same time.   
   * The state of the tokens based on `OTP` is synchronous on different chains. If someone sends/receives one token $X$ on Polkadot, he will send/receive one token $X$ on Ethereum and other chains at the same time.  
-  <!-- * The `OTP` works as below, and note that:   -->
+  * The `OTP` works as below. ***Note that in an Omniverse token transaction the user only needs to initiate a sending transaction on whatever blockchain he prefers, and the rest things are all processed by the underlying protocols***.  
 ![img](./docs/assets/OTP.png)
 <p align="center">Figure.1 Workflow of OTP</p>
 
 * The `OSP` has the following features:  
   * `OSP` is a decentralized DEX platform for Omniveser Tokens. Omniverse token $X$ can be exchanged with Omniverse token $Y$ through `OSP`. Similiar to `OTP`, the swap happens as a whole on Polkadot and other blockchains. If someone initiate a swap of $X$ with $Y$, he will give out some amount of $X$ and get related amount of $Y$ on Polkadot and all blockchains where `O20k` deployed.  
   * The Omniverse account of `OSP` is managed by the consensus of the `O20k` Parachain.
-  * The `OSP` works as below:  
+  * The `OSP` works as below. ***Note that in an Omniverse swap operation the user only needs to initiate an exchange transaction of token $X$ to token $Y$ on whatever blockchain he prefers, and the rest things are all processed by the underlying protocols.***  
 ![img](./docs/assets/OSP.png)
 <p align="center">Figure.2 Workflow of OSP</p>
 
-* The [O-AMM](./docs/Principle%20of%20Omniverse%20AMM.md) is the core mechanism supporting the underlying exchanges of the `OSP`, which has the following features:  
+* The `O-AMM` is the core mechanism supporting the underlying exchanges of the `OSP`, which has the following features:  
   * Ability to balance smoothness and price sensitivity at the same time.
-  * The curve is as below:  
+  * The curve is as below, and we have provided a [detailed explanation of it](./docs/Principle%20of%20Omniverse%20AMM.md).  
 ![img](./docs/assets/Figure_1.png)  
 <p align="center">Figure.3 Mathematic Model of `O-AMM`</p>  
 
