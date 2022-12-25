@@ -42,7 +42,11 @@ The Omniverse tokens are also deployed as smart contracts on some EVM chains.
 ## Omniverse Account
 Omniverse operations are all based on the Omniverse account, which is equivalent to the native address on each chain and is interconvertible. When making an operation on a concrete chain(e.g. `O20k` Parachain on Polkadot), we can use the original Polkadot account/address or the Omniverse account. It's transparent for users.  
 Currently, we have made a specific tool to operate Omniverse Account.  
-### Install
+* [Install](#oa-tools-install)
+* [Create Account](#create-account)
+* [Check the Account](#check-the-account)
+
+### OA Tools Install
 The Omniverse account tool can be found [here](to be done).  
 ```sh
 # to be done
@@ -71,6 +75,18 @@ You can check the information of the account with the `secret seed` mentioned at
 
 ## Omniverse Token Protocol
 The operations related to the Omniverse Token Protocol(`OTP`) include `Free Mint/Claim`, `balance of`, and `transfer`.  
+* [Install](#otp-tools-install)
+* [Claim](#free-mintclaim)
+* [Check the balance](#check-the-balance)
+* [Transaction](#make-transaction-of-omniverse-token)
+    * [Initiate on Polkadot](#initiate-transaction-on-polkadot)
+    * [Initiate on EVM chains](#initiate-transaction-on-evm-chains)
+
+### `OTP` Tools Install
+The Omniverse Token tools can be found [here](to be done).  
+```sh
+# to be done
+```
 
 ### Free Mint/Claim
 * `Free Mint/Claim` Token $X$:  
@@ -131,6 +147,15 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Free Mint
 
 ## Omniverse Swap Protocol
 The operations related to the Omniverse Swap Protocol(OSP) include `Swap Token X with Token Y` and `Swap Token Y with Token X`. The operations are **just for testing**, so for convenience temporarily we directly provide the interfaces of `X->Y` and `Y->X`.
+* [Install](#osp-tools-install)
+* [Make exchanges](#make-exchanges)
+* [Check the balance](#check-the-balance-after-exchanges)
+
+### `OSP` Tools Install
+The Omniverse Swap tools can be found [here](to be done).  
+```sh
+# to be done
+```
 
 ### Make exchanges
 * Swap Token X with Token Y:  
@@ -141,7 +166,7 @@ The operations related to the Omniverse Swap Protocol(OSP) include `Swap Token X
 ```sh
 # to be done
 ```
-### Check the Balance
+### Check the Balance after exchanges
 * Check `balance of` Token $X$ of related account on Polkadot:  
 ```sh
 # to be done
