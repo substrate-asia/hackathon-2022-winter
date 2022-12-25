@@ -74,8 +74,9 @@ DeSign aims to provide customers with decentralized e-signature and contract man
 ## Demo
 1. WebSides: www.dsign.site (Only complete Account Generation and Home logining)
 2. Prototype: https://modao.cc/app/gw87XxLUrls3vyzIDnBrl  pwd: apjf5t
-3. Demo Video - account generation: https://youtu.be/uYhOgRlIqz4
-4. Demo Video - Individual Certificate Acquisition:  
+3. Demo Video 1 - account generation: https://youtu.be/uYhOgRlIqz4
+4. Demo Video 2 - Individual Certificate Acquisition: https://youtu.be/PzFXqzD1n9g
+5. Demo Video 3 - SignTask creation & Personal Signing: https://youtu.be/-G_KQB5q_dE
 
 
 ## Architecture
