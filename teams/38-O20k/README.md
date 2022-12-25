@@ -57,6 +57,8 @@ For implementation, we will build a Substrate Parachain to make out `O20k`, whic
 <p align="center">Figure.3 Mathematic Model of `O-AMM`</p>  
 
 ### Demo
+* You can taste everything mannually through this [detailed tutorial](./docs/README.md).
+* The whole workflow also can be found through this [Demo Video](to be done).  
 
 ### Architecture
 ![img](./docs/assets/OmniverseProtocolStack.png)  
