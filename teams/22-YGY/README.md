@@ -72,9 +72,10 @@ DeSign aims to provide customers with decentralized e-signature and contract man
 2. After a signing task is initiated, multiple signers will receive a signing notice. When each signer opens the task and completes signing, it will output the corresponding products (new signature documents, signature Hash and other information). How to organize multiple parties on the blockchain to complete signing once and finally complete the signing task?
 
 ## Demo
-WebSides: www.dsign.site (Only complete Account Generation and Home logining)
-Prototype: https://modao.cc/app/gw87XxLUrls3vyzIDnBrl  pwd: apjf5t
-Demo Video:
+1. WebSides: www.dsign.site (Only complete Account Generation and Home logining)
+2. Prototype: https://modao.cc/app/gw87XxLUrls3vyzIDnBrl  pwd: apjf5t
+3. Demo Video - account generation: https://youtu.be/uYhOgRlIqz4
+4. Demo Video - Individual Certificate Acquisition:  
 
 
 ## Architecture
