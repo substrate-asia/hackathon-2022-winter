@@ -2,11 +2,11 @@
 
 pub use pallet::*;
 
-// #[cfg(test)]
-// mod mock;
+#[cfg(test)]
+mod mock;
 
-// #[cfg(test)]
-// mod tests;
+#[cfg(test)]
+mod tests;
 
 // #[cfg(feature = "runtime-benchmarks")]
 // mod benchmarking;
@@ -313,13 +313,13 @@ pub mod pallet {
 			}
 		}
 
-		#[pallet::weight(10_000 + T::DbWeight::get().writes(1))]
+		#[pallet::weight(10_000 + T::DbWeight::get().reads_writes(4, 1))]
 		pub fn create_content(origin: OriginFor<T>, category: [u8; 32], label: Vec<u8>, subject: [u8; 32], dimension: [u8; 32], content: Vec<u8>) -> DispatchResult {
 			let sender = ensure_signed(origin)?;
 
 			ensure!(content.len() >= T::ContentMinLength::get() as usize, Error::<T>::TooShort);
 			ensure!(content.len() <= T::ContentMaxLength::get() as usize, Error::<T>::TooLong);
-
+			ensure!(label.len() <= T::LabelMaxLength::get() as usize, Error::<T>::TooLong);
 			let payload = (
 				&category,
 				&label,
@@ -347,16 +347,16 @@ pub mod pallet {
 			}
 		}
 		
-		#[pallet::weight(10_000 + T::DbWeight::get().writes(1))]
+		#[pallet::weight(10_000 + T::DbWeight::get().reads_writes(4, 1))]
 		pub fn update_content(origin: OriginFor<T>, category: [u8; 32], label: Vec<u8>, subject: [u8; 32], dimension: [u8; 32], content: Vec<u8>, hash: [u8; 32]) -> DispatchResult {
 			let sender = ensure_signed(origin)?;
 
 			ensure!(content.len() >= T::ContentMinLength::get() as usize, Error::<T>::TooShort);
 			ensure!(content.len() <= T::ContentMaxLength::get() as usize, Error::<T>::TooLong);
-
+			ensure!(label.len() <= T::LabelMaxLength::get() as usize, Error::<T>::TooLong);
 			match Self::get_content(&hash) {
 				None => {
-					Err(Error::<T>::ContentAlreadyExist)?
+					Err(Error::<T>::ContentNotExist)?
 				},
 				Some(_old) => {
 					// 检查category、label、subject、dimension是否存在，如果不存在则报错
@@ -390,7 +390,7 @@ pub mod pallet {
 			}
 		}
 
-		#[pallet::weight(10_000 + T::DbWeight::get().reads_writes(2, 1))]
+		#[pallet::weight(10_000 + T::DbWeight::get().reads_writes(1, 1))]
 		pub fn cancal_subscribe(origin: OriginFor<T>, subject: [u8; 32]) -> DispatchResult {
 			let sender = ensure_signed(origin)?;
 
