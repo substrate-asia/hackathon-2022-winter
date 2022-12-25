@@ -1,36 +1,51 @@
-## 基本资料
+## Basic information
 
-项目名称：Cumulon Protocol 
+Project Name：Cumulon Protocol 
 
-项目立项日期 (哪年哪月)：2022年10月
+Project approval date：Oct 2022
 
-## 项目整体简介
+Project Video(Click to watch): 
 
-项目简介，英文提交。包括但不限于：
-Cumulon Protocol:   Polkadot生态一站式质押管理平台。 目前波卡生态很多平行链都开启了staking的功能，社区用户通过staking功能，可以参与波卡平行链的运行，治理等活动。Cumulon Protocol 是一个专门针对参与质押的社区用户提供的一站式资产管理协议，
-协议主要有两个功能： 
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/8MCJxVEJyII/0.jpg)](https://www.youtube.com/watch?v=8MCJxVEJyII "Cumulon Protocol")
 
-- 1. 提供一站式资产管理平台，提供给用户一个友好的界面去stake，unstake, track rewards 以及 simulate rewards 的功能； 
-- 2. Cumulon Protocol 底层通过XCM以及平行链，用户通过Cumulon Protocol 质押到各平行链的token，可以在Cumulon Protocol 上mint出相应的cToken。 Cumulon Protocol 设计了一个分级基金，包含一个母基金和两个子基金。用户可以使用相应的cToken，在基金中获得额外的收益。
 
-## 黑客松期间计划完成的事项
+## Project overall introduction
 
-**区块链端**
+As everyone knows, the parachain auction has been going on for more than a year; various project parties have also enabled the staking function on the parachain so that more collators and delegators can participate in governance. We have summarized the following three deficiencies, and hope to solve these problems through the Cumulon protocol to better serve the ecology.
 
-- `pallet-staking
-  - [ ] 完成 Staking Pallet相关代码的分析与研究， index Moonbeam，Oak以及相关平行链的数据
+First, there is currently no tool to manage the staked assets of users on each parachain. If users want to know their staking status in each parachain, there is no unified entrance. Due to the modification of the staking pallet by various project parties, ordinary users do not have the relevant professional knowledge, making them unable to participate in the staking well.
+
+Second, the existing official tool Polkadot.js is very unfriendly to support staking and un-staking, and it is very difficult to use.
+
+Third, the assets staked by users to the parachain are in a dormant state. Its liquidity has not been well utilized again.
+
+To address these issues, we built the Cumulon Protocol: a managed and structured fund protocol based on Polkadot for various Parachain staking assets.
+The Cumulon Protocol consists of two parts:
+The first part is a one-stop management tool for staking assets. We have already developed this part. At present, users can stake and unstake parachain assets through Cumulon’s friendly UI with their own Polkadot accounts, and can view a variety of information, including leaderboard of collator and delegate, APR of each collator, the self-staking information, round information and so on.
+
+The second part is a structured fund based on parachain assets that we designed. The user stakes the corresponding parachain assets through the Cumulon parachain, and a new token will be mint. The token can be exchanged for the corresponding Cumulon token at a ration of 1 to 1. Cumulon token is a parent fund, which can be split into two sub-funds, one sub-fund pursues stable returns, and the other sub-fund provides high-risk leveraged returns.
+
+It can be seen that Cumulon Protocol not only provides a one-stop asset management solution for the Polkadot ecosystem, but also creatively releases staking assets and uses them in a structured fund.
+
+## Things to do during the hackathon
+
+**Blockchain side**
+
+-  pallet-staking
+  - [ ] Complete the analysis and research of Staking Pallet related codes, index Moonbeam, Oak and related parachain data
   
-**客户端**
+**Client side**
 
-- web 端
-  - [ ] Staking dashboard，显示collator， delegator质押量，round数量，总质押量等基本信息
-  - [ ] 提供stake，unstake等基本功能，方便社区用户更方便的参与到stake活动中
-  - [ ] 提供相关的通知功能
+- Web 
+  - [ ] Staking dashboard, showing basic information such as collator, delegator pledge amount, round amount, total pledge amount, etc.
+   - [ ] Provide basic functions such as stake and unstake to facilitate community users to participate in stake activities more conveniently
+   - [ ] provides relevant notification functions
 
-## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
+## Things accomplished during the hackathon
+  The all-in-one staking management tools has been finished: 
+  https://cumulon.cloud/#/home
 
-
-## 队员信息
+## Team members
 
 - Anne Marketing Manager
 - Mingqi CTO
