@@ -4,7 +4,7 @@ Project Name：Cumulon Protocol
 
 Project approval date：Oct 2022
 
-Project Video: 
+Project Video(Click to watch): 
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/8MCJxVEJyII/0.jpg)](https://www.youtube.com/watch?v=8MCJxVEJyII "Cumulon Protocol")
 
