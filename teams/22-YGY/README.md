@@ -116,9 +116,9 @@ DeSign aims to provide customers with decentralized e-signature and contract man
   <tr>
     <td>Tom</td><td>Backend & Smart Contract Engineer</td><td>Backend API & Smart Contract Dev & R&D Project Mgt.</td>
   </tr>
-  <tr>
+<!--   <tr>
     <td>Kaiho</td><td>Substrate Chain Engineer</td><td>Chain Infrastructure Dev.</td>
-  </tr>
+  </tr> -->
   <tr>
     <td>Xing Ai</td><td>Fronted Engineer</td><td>Frontend & e-Signature Dev.</td>
   </tr>
