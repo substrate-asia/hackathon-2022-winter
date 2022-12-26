@@ -18,15 +18,15 @@ At the same time, through the original PLBM intelligent algorithm, it greatly re
 <br><br>
 ### **2.3 The Main Function**
 #### **2.3.1 Encryption Chip**
-Based on financial-grade EAL6+ security chip technology. The BT wallet stores the private key separately and isolates it from the Internet by connecting with the independent security chip on the specific mobile terminal, providing users with the creation, storage, use and recovery of the private key of encrypted assets with high security, and truly realizing the " The hot and cold ends are separated, and the private key never touches the Internet."
-
-
+Based on financial-grade EAL6+ security chip technology. The BT wallet stores the private key separately and isolates it from the Internet by connecting with the independent security chip on the specific mobile terminal, providing users with the creation, storage, use and recovery of the private key of encrypted assets with high security, and truly realizing the " The hot and cold ends are separated, and the private key never touches the Internet."<br>
+<br>
 ![Security Chip Hardware Block Diagram](./docs/pic/002.png)
 
 #### **2.3.2 Polkadot Wallet**
 ![](./docs/pic/003.png)
 #### **2.3.3 Nominator**
 The nominator function of the BT wallet is to obtain the validator and nominator data through the API interface, and encapsulate the data through the original PLBM intelligent recommendation algorithm. Quantity, intelligently recommend 16 optimal verifiers and help users complete nominator operations. The intelligent recommendation system will recommend how much you invest to get rewards, and when the user is about to be out of the nominator candidate list (the first 256 nominators of a validator node have rewards), timely remind the user to replenish the amount to stabilize the ranking and other methods to achieve the least user investment. Earn the most.  
+<br>
 ![BT Wallet VS Other Wallet](./docs/pic/004.png)
 ![Nomination operation process](./docs/pic/005.png)
 ![BT wallet technical architecture diagram](./docs/pic/006.png)
@@ -121,13 +121,15 @@ Block Taker团队，团队主要成员有10年以上开发经验，擅长Golang�
 ### **2.3 主要功能**
 
 #### **2.3.1 安全加密芯片**
-基于金融级EAL6+安全芯片技术。BT钱包通过与特定移动端搭载的独立安全芯片打通，将私钥单独储存，与互联网隔离，为用户提供了高安全性的加密资产私钥的创建、存储、使用和恢复功能，真正实现了"冷热端分离、私钥永不触网”。
+基于金融级EAL6+安全芯片技术。BT钱包通过与特定移动端搭载的独立安全芯片打通，将私钥单独储存，与互联网隔离，为用户提供了高安全性的加密资产私钥的创建、存储、使用和恢复功能，真正实现了"冷热端分离、私钥永不触网”。<br>
+<br>
 ![Security Chip Hardware Block Diagram](./docs/pic/002.png)
 
 #### **2.3.2 Polkadot Wallet**
 ![](./docs/pic/003.png)
 #### **2.3.3 提名人**
 BT钱包的提名人功能是通过API接口获取验证人和提名人数据，通过独创的PLBM智能推荐算法对数据进行封装处理，用户只需要在BT钱包上输入绑定数量，系统会根据用户绑定的数量，智能推荐16个最优的验证者并帮用户完成提名人操作。智能推荐系统会推荐投入多少就可获得奖励、在用户即将处于提名人候选名单外（一个验证者节点的前256个提名人有奖励 ）及时提醒用户补充金额稳住排名等方式实现用户投入最少，收益最大。
+<br><br>
 ![BT Wallet VS Other Wallet](./docs/pic/004.png)
 ![Nomination operation process](./docs/pic/005.png)
 ![BT wallet technical architecture diagram](./docs/pic/006.png)
