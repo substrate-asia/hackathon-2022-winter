@@ -1,0 +1,20 @@
+{
+    "DEV_CONSOLE": true,
+    "DEVELOPMENT_KEYRING": false,
+    "DOLPHIN_PROVIDER_SOCKET": "wss://ws.rococo.dolphin.engineering",
+    "CALAMARI_PROVIDER_SOCKET": "wss://ws.calamari.systems/",
+    "NODES": [{
+            "name": "Calamari",
+            "path": "/calamari",
+            "url": "wss://ws.calamari.systems/",
+            "explorer": "calamari.subscan.io"
+        },
+        {
+            "name": "Dolphin",
+            "path": "/dolphin",
+            "url": "ws://127.0.0.1:9944",
+            "testnet": true,
+            "explorer": "dolphin.subscan.io"
+        }
+    ]
+}

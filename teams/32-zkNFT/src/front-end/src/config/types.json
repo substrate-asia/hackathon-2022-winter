@@ -1,0 +1,25 @@
+{
+    "Checkpoint": {
+        "receiver_index": "[u64; 256]",
+        "sender_index": "u64"
+    },
+    "EncryptedNote": {
+        "ephemeral_public_key": "[u8; 32]",
+        "ciphertext": "[u8; 68]"
+    },
+    "PullResponse": {
+        "should_continue": "bool",
+        "receivers": "Vec<([u8; 32], EncryptedNote)>",
+        "senders": "Vec<[u8; 32]>",
+        "senders_receivers_total": "u128"
+    },
+    "CurrentPath": {
+        "sibling_digest": "[u8; 32]",
+        "leaf_index": "u32",
+        "inner_path": "Vec<[u8; 32]>"
+    },
+    "PalletZknftUtxoMerkleTreePath": {
+        "leaf_digest": "Option<[u8; 32]>",
+        "current_path": "CurrentPath"
+    }
+}

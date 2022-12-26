@@ -1,0 +1,60 @@
+.ag-root-wrapper {
+  border-radius: 8px;
+  box-shadow: 6px 10px 12px rgba(0, 0, 0, 0.3);
+  border: none !important;
+  font-family: 'IBM Plex Mono' !important;
+}
+
+.ag-center-cols-container {
+  font-family: 'IBM Plex Mono';
+}
+
+.ag-body-viewport {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+.ag-row {
+  border: none;
+  height: 60px !important;
+  background-color: var(--color-bg-secondary) !important;
+  color: var(--color-text-secondary);
+}
+
+.ag-row-odd {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+.ag-cell {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ag-header-group-cell-label,
+.ag-header-cell-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-secondary) !important;
+}
+
+.ag-overlay-no-rows-center {
+  color: var(--color-text-secondary) !important;
+}
+
+.ag-header,
+.ag-header-row {
+  height: 80px !important;
+  min-height: 80px !important;
+  background-color: var(--color-bg-secondary) !important;
+  border: none;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+
+.ag-header-cell-text {
+  color: var(--color-text-secondary);
+}
+
+.ag-tooltip {
+  font-family: 'IBM Plex Mono' !important;
+}
