@@ -34,7 +34,7 @@ use sp_runtime::{
 		Duration,
 	},
 	traits::BlockNumberProvider,
-	RuntimeAppPublic, RuntimeDebug,
+	RuntimeAppPublic, RuntimeDebug, SaturatedConversion,
 };
 use sp_std::{
 	cmp::{Eq, PartialEq},
@@ -52,6 +52,7 @@ const LOCK_BLOCK_EXPIRATION: u32 = 3; // in block number
 enum OffchainErr {
 	UnexpectedError,
 	Ineligible,
+	Overflow,
 	Working,
 }
 
@@ -60,6 +61,7 @@ impl sp_std::fmt::Debug for OffchainErr {
 		match *self {
 			OffchainErr::UnexpectedError => write!(fmt, "Should not appear, Unexpected error."),
 			OffchainErr::Ineligible => write!(fmt, "The current node does not have the qualification to execute offline working machines"),
+			OffchainErr::Overflow => write!(fmt, "Calculation data, overflow"),
 			OffchainErr::Working => write!(fmt, "The offline working machine is currently executing work"),
 		}
 	}
@@ -93,6 +95,7 @@ pub mod pallet {
 	use frame_support::pallet_prelude::*;
 	use frame_system::{offchain::SubmitTransaction, pallet_prelude::*};
 	use sha2::{Digest, Sha256};
+	use sp_runtime::traits::CheckedAdd;
 	use sp_std::{borrow::ToOwned, vec::Vec};
 
 	pub const LIMIT: u64 = u64::MAX;
@@ -343,6 +346,7 @@ pub mod pallet {
 		SerializeToStringError,
 		DeserializeToObjError,
 		OffchainUnsignedTxError,
+		Overflow,
 	}
 
 	// Dispatchable functions allows users to interact with the pallet and invoke state changes.
@@ -475,10 +479,12 @@ pub mod pallet {
 
 			let max = Keys::<T>::get().len() as u16;
 			let mut index = CurAuthorityIndex::<T>::get();
-			if index >= max - 1 {
+
+			let maxvalue = max.checked_sub(1).ok_or(Error::<T>::Overflow)?.saturated_into();
+			if index >= maxvalue {
 				index = 0;
 			} else {
-				index = index + 1;
+				index = index.checked_add(1).ok_or(Error::<T>::Overflow)?.saturated_into();
 			}
 			CurAuthorityIndex::<T>::put(index);
 
@@ -981,7 +987,16 @@ pub mod pallet {
 						// we are still waiting for inclusion.
 						Ok(Some(last_block)) => {
 							let lock_time = T::LockTime::get();
-							if last_block + lock_time > *now {
+
+							let rt_lock_end_time =
+								last_block.checked_add(&lock_time).ok_or(OffchainErr::Overflow);
+
+							if rt_lock_end_time.is_err() {
+								log::info!("### rt_lock_end_time error {:?}", rt_lock_end_time);
+								return rt_lock_end_time
+							}
+
+							if rt_lock_end_time.unwrap_or_default() > (*now) {
 								log::info!(
 									"### we are still waiting for inclusion last_block: {:?}, lock_time: {:?}, now: {:?}",
 									last_block,
@@ -990,7 +1005,7 @@ pub mod pallet {
 								);
 								Err(OffchainErr::Working)
 							} else {
-								log::info!("### no last_block in authority_id store");
+								log::info!("### authority_id not in work lock_time");
 								Ok(*now)
 							}
 						},
