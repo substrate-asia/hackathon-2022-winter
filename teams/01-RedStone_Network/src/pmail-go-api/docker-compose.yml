@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  pmail-api:
+    container_name: pmail-api
+    image: baidang201/pmail-api:latest
+    volumes:
+      - '.env:/.env'
+    ports:
+      - "8888:8888"
+    restart: always
