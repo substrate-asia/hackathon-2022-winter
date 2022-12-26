@@ -40,8 +40,8 @@ Demo
 
 Videos
 
-[PPT](https://vertuteam.feishu.cn/file/boxcnXE6ancvdozMLwkAxJHu9ne)
-
+PPT  
+https://vertuteam.feishu.cn/file/boxcnXE6ancvdozMLwkAxJHu9ne
 ## **3 Achievement in hackathon**
 
 **Blockchain**
@@ -138,8 +138,10 @@ BT钱包的提名人功能是通过API接口获取验证人和提名人数据，
 Demo
 
 Videos  
-  
-[PPT](https://vertuteam.feishu.cn/file/boxcnXE6ancvdozMLwkAxJHu9ne)
+
+PPT  
+https://vertuteam.feishu.cn/file/boxcnXE6ancvdozMLwkAxJHu9ne  
+
 ## **3 黑客松期间计划完成的事项**
 **区块链端**
 - 提名人
