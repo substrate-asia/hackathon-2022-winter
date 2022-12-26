@@ -1,0 +1,2 @@
+edition = '2021'              # Needed for direct invocation of rustfmt ourside of cargo fmt
+imports_granularity = "Crate"

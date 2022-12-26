@@ -1,0 +1,8 @@
+{
+    "DEV_CONSOLE": false,
+    "DEVELOPMENT_KEYRING": false,
+    "NODES": [{
+        "name": "Dolphin",
+        "url": "wss://localhost:9800"
+    }]
+}

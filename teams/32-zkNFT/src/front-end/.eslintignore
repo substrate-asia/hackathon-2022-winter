@@ -1,0 +1,5 @@
+.eslintrc.js
+craco.config.js
+postcss.config.js
+tailwind.config.js
+src/components/resources
