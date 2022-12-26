@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AppToolbar">
+        <attr name="title" format="string" />
+        <attr name="color" format="color" />
+        <attr name="backDrawable" format="reference" />
+        <attr name="backButtonColor" format="color" />
+        <attr name="moreDrawable" format="reference" />
+        <attr name="rightText" format="string" />
+        <attr name="rightColor" format="color" />
+        <attr name="rightTextSize" format="dimension" />
+        <attr name="filterColor" format="color" />
+        <attr name="titleGravity" />
+        <attr name="backVisibility">
+            <enum name="visible" value="0x00000000" />
+            <enum name="invisible" value="0x00000004" />
+            <enum name="gone" value="0x00000008" />
+        </attr>
+        <attr name="moreVisibility">
+            <enum name="visible" value="0x00000000" />
+            <enum name="invisible" value="0x00000004" />
+            <enum name="gone" value="0x00000008" />
+        </attr>
+        <attr name="rightVisibility">
+            <enum name="visible" value="0x00000000" />
+            <enum name="invisible" value="0x00000004" />
+            <enum name="gone" value="0x00000008" />
+        </attr>
+        <attr name="titleVisibility">
+            <enum name="visible" value="0x00000000" />
+            <enum name="invisible" value="0x00000004" />
+            <enum name="gone" value="0x00000008" />
+        </attr>
+        <attr name="filterVisibility">
+            <enum name="visible" value="0x00000000" />
+            <enum name="invisible" value="0x00000004" />
+            <enum name="gone" value="0x00000008" />
+        </attr>
+    </declare-styleable>
+
+    <attr name="titleGravity">
+        <flag name="top" value="0x30" />
+        <flag name="bottom" value="0x50" />
+        <flag name="left" value="0x03" />
+        <flag name="right" value="0x05" />
+        <flag name="center_vertical" value="0x10" />
+        <flag name="fill_vertical" value="0x70" />
+        <flag name="center_horizontal" value="0x01" />
+        <flag name="fill_horizontal" value="0x07" />
+        <flag name="center" value="0x11" />
+        <flag name="fill" value="0x77" />
+        <flag name="clip_vertical" value="0x80" />
+        <flag name="clip_horizontal" value="0x08" />
+        <flag name="start" value="0x00800003" />
+        <flag name="end" value="0x00800005" />
+    </attr>
+
+    <declare-styleable name="FunctionItem">
+        <attr name="drawable" format="reference" />
+        <attr name="itemText" format="string" />
+        <attr name="itemColor" format="color" />
+        <attr name="itemTextSize" format="dimension" />
+        <attr name="itemSubText" format="string" />
+        <attr name="itemSubColor" format="color" />
+        <attr name="itemSubTextSize" format="dimension" />
+        <attr name="itemSubTextVisibility">
+            <enum name="visible" value="0x00000000" />
+            <enum name="invisible" value="0x00000004" />
+            <enum name="gone" value="0x00000008" />
+        </attr>
+        <attr name="arrowVisibility">
+            <enum name="visible" value="0x00000000" />
+            <enum name="invisible" value="0x00000004" />
+            <enum name="gone" value="0x00000008" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="NormalItem">
+        <attr name="normalLeftDrawable" format="reference" />
+        <attr name="normalRightDrawable" format="reference" />
+        <attr name="normalTitleText" format="string" />
+        <attr name="normalTitleColor" format="color" />
+        <attr name="normalTitleTextSize" format="dimension" />
+        <attr name="normalContentText" format="string" />
+        <attr name="normalContentColor" format="color" />
+        <attr name="normalContentTextSize" format="dimension" />
+        <attr name="normalContentTextVisibility">
+            <enum name="visible" value="0x00000000" />
+            <enum name="invisible" value="0x00000004" />
+            <enum name="gone" value="0x00000008" />
+        </attr>
+        <attr name="normalLeftVisibility">
+            <enum name="visible" value="0x00000000" />
+            <enum name="invisible" value="0x00000004" />
+            <enum name="gone" value="0x00000008" />
+        </attr>
+        <attr name="normalRightVisibility">
+            <enum name="visible" value="0x00000000" />
+            <enum name="invisible" value="0x00000004" />
+            <enum name="gone" value="0x00000008" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RadioCheckItem">
+        <attr name="logo" format="reference" />
+        <attr name="checkText" format="string" />
+        <attr name="checked" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingView">
+        <attr name="loading_renderer">
+            <!--circle rotate-->
+            <enum name="MaterialLoadingRenderer" value="0"/>
+            <enum name="LevelLoadingRenderer" value="1"/>
+            <enum name="WhorlLoadingRenderer" value="2"/>
+            <enum name="GearLoadingRenderer" value="3"/>
+            <!--circle jump-->
+            <enum name="SwapLoadingRenderer" value="4"/>
+            <enum name="GuardLoadingRenderer" value="5"/>
+            <enum name="DanceLoadingRenderer" value="6"/>
+            <enum name="CollisionLoadingRenderer" value="7"/>
+            <!--Scenery-->
+            <enum name="DayNightLoadingRenderer" value="8"/>
+            <enum name="ElectricFanLoadingRenderer" value="9"/>
+            <!--Animal-->
+            <enum name="FishLoadingRenderer" value="10"/>
+            <enum name="GhostsEyeLoadingRenderer" value="11"/>
+            <!--Goods-->
+            <enum name="BalloonLoadingRenderer" value="12"/>
+            <enum name="WaterBottleLoadingRenderer" value="13"/>
+            <!--ShapeChange-->
+            <enum name="CircleBroodLoadingRenderer" value="14"/>
+            <enum name="CoolWaitLoadingRenderer" value="15"/>
+        </attr>
+    </declare-styleable>
+</resources>

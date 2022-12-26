@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_white_stoke_1_corner_5_bg"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="25dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="请输入资金"
+        android:textColor="#FF3E3E40"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="15dp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_white_stoke_bcbcbc_1_corner_5_bg"
+            android:cursorVisible="false"
+            android:gravity="center"
+            android:inputType="number"
+            tools:text="12345678" />
+
+        <ImageView
+            android:id="@+id/delete_content"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignTop="@id/password"
+            android:layout_alignBottom="@id/password"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:src="@drawable/main_close"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/determine"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="85dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/shape_1b1b1c_corner_5_bg"
+        android:backgroundTint="#FFDCDCE0"
+        android:gravity="center"
+        android:text="@string/determine"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/password" />
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="85dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#FFDCDCE0"
+        android:gravity="center"
+        android:text="@string/cancel"
+        android:textColor="@color/grey_600"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/password" />
+
+</LinearLayout>

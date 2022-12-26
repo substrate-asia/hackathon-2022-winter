@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:paddingBottom="10dp">
+
+    <com.polkadot.bt.custom.AppToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:backVisibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:moreDrawable="@drawable/close_gray"
+        app:title="@string/transfer_detail" />
+
+    <TextView
+        android:id="@+id/money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/colorTitle"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="1 BTC" />
+
+    <TextView
+        android:id="@+id/payment_address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/payment_address"
+        android:textColor="#FF656569"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/money" />
+
+    <TextView
+        android:id="@+id/payment_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="end"
+        android:textColor="@color/colorTitle"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/payment_address_text"
+        app:layout_constraintTop_toBottomOf="@id/money"
+        tools:text="12h31213j123112k3jp1203i1-Oufsihfskj111123456789" />
+
+    <View
+        android:id="@+id/payment_address_filter"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="18dp"
+        android:background="#FFDCDCE0"
+        app:layout_constraintTop_toBottomOf="@id/payment_address" />
+
+    <TextView
+        android:id="@+id/payee_address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/payee_address"
+        android:textColor="#FF656569"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_address_filter" />
+
+    <TextView
+        android:id="@+id/payee_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="end"
+        android:textColor="@color/colorTitle"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/payment_address_text"
+        app:layout_constraintTop_toBottomOf="@id/payment_address_filter"
+        tools:text="12h31213j123112k3jp1203i13112k3jp1203i1-Oufsihfskj123" />
+
+    <View
+        android:id="@+id/payee_address_filter"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="18dp"
+        android:background="#FFDCDCE0"
+        app:layout_constraintTop_toBottomOf="@id/payee_address" />
+
+    <TextView
+        android:id="@+id/absenteeism_fee_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/absenteeism_fee"
+        android:textColor="#FF656569"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payee_address_filter" />
+
+    <TextView
+        android:id="@+id/absenteeism_fee"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="end"
+        android:textColor="@color/colorTitle"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/absenteeism_fee_text"
+        app:layout_constraintTop_toBottomOf="@id/payee_address_filter"
+        tools:text="0.000213 BTC" />
+
+    <View
+        android:id="@+id/absenteeism_fee_filter"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="18dp"
+        android:background="#FFDCDCE0"
+        app:layout_constraintTop_toBottomOf="@id/absenteeism_fee" />
+
+    <TextView
+        android:id="@+id/remark_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/remark"
+        android:textColor="#FF656569"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/absenteeism_fee_filter" />
+
+    <TextView
+        android:id="@+id/remark"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="end"
+        android:textColor="@color/colorTitle"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/remark_text"
+        app:layout_constraintTop_toBottomOf="@id/absenteeism_fee_filter" />
+
+    <TextView
+        android:id="@+id/determine"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/shape_1b1b1c_corner_5_bg"
+        android:gravity="center"
+        android:text="@string/determine"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/remark" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

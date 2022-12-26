@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.create.PrivacyActivity">
+
+    <include
+        android:id="@+id/baseTitle"
+        layout="@layout/base_title" />
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/baseTitle"
+        android:layout_margin="20dp"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/loadingView"
+        style="@style/AVLoadingIndicatorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:indicatorColor="@color/colore"
+        app:indicatorName="LineSpinFadeLoaderIndicator" />
+
+</RelativeLayout>

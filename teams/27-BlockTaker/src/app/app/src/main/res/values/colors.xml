@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="translucent_black">#44000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color3">#FF333333</color>
+    <color name="color6">#FF666666</color>
+    <color name="color9">#FF999999</color>
+    <color name="color_tips">#CF252C</color>
+    <color name="colorTitle">#1B1B1C</color>
+    <color name="background">#F5F5F5</color>
+    <color name="third_text_color">#aaa</color>
+    <color name="circle_background">#DCDCE0</color>
+    <color name="primary_text_color">#1B1B1C</color>
+    <color name="indicator">#B6915B</color>
+    <color name="top_bg">#F0E9DE</color>
+    <color name="colore">#EEEEEE</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="color_bc">#BCBCBC</color>
+    <color name="color_97">#979797</color>
+    <color name="color_value_bg">#404048</color>
+    <color name="color_circle_color">#c7c7c7</color>
+    <color name="color_manage_color">#656569</color>
+    <color name="color_convert_color">#3E3E40</color>
+    <color name="polkadot_accent_color">#E6007A</color>
+</resources>

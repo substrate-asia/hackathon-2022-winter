@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.polkadot.bt.custom.AppToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/white"
+        app:backVisibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/convert"
+        app:moreDrawable="@drawable/convert_history"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="20dp"
+        android:background="@drawable/corners5_graye"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:layout_editor_absoluteX="20dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/link_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transfer_out"
+            android:textColor="@color/color_manage_color"
+            android:textSize="12sp" />
+
+        <com.polkadot.bt.ui.view.CircleImageView
+            android:id="@+id/link_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/link_title"
+            android:layout_marginTop="10dp"
+            android:src="@color/background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/link_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/link_icon"
+            android:layout_alignBottom="@id/link_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/link_icon"
+            android:gravity="center"
+            android:text="ETH"
+            android:textColor="@color/colorTitle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/to_link_select"
+            android:layout_width="24dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@id/link_name"
+            android:layout_alignBottom="@id/link_name"
+            android:layout_toRightOf="@id/link_name"
+            android:paddingLeft="10dp"
+            android:src="@drawable/drop_down" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/convert_balance"
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/link_title"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/convert_balance" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/link_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/convert_balance"
+            android:layout_alignBottom="@id/convert_balance"
+            android:layout_marginRight="2dp"
+            android:layout_toLeftOf="@id/convert_balance"
+            android:layout_toRightOf="@id/link_title"
+            android:gravity="right|center_vertical"
+            android:text="0.00"
+            android:textColor="@color/color_manage_color"
+            android:textSize="11sp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/from_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/link_number"
+            android:layout_alignTop="@id/link_name"
+            android:layout_alignBottom="@id/link_name"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:gravity="right|center_vertical"
+            android:hint="@string/transfer_out_number"
+            android:inputType="numberDecimal"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textColor="@color/color_bc"
+            android:textSize="14sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/corners5_primary_storck"
+        app:layout_constraintTop_toBottomOf="@id/rl_11"
+        tools:layout_editor_absoluteX="20dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/link_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transfer_in"
+            android:textColor="@color/color_manage_color"
+            android:textSize="11sp" />
+
+        <com.polkadot.bt.ui.view.CircleImageView
+            android:id="@+id/link_icon2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/link_title2"
+            android:layout_marginTop="10dp"
+            android:src="@color/background" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/link_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/link_icon2"
+            android:layout_alignBottom="@id/link_icon2"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/link_icon2"
+            android:gravity="center"
+            android:text="USDT"
+            android:textColor="@color/colorTitle"
+            android:textSize="14sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/from_link_select"
+            android:layout_width="24dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@id/link_name2"
+            android:layout_alignBottom="@id/link_name2"
+            android:layout_toRightOf="@id/link_name2"
+            android:paddingLeft="10dp"
+            android:src="@drawable/drop_down" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/link_number2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/link_title2"
+            android:layout_alignBottom="@id/link_title2"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="@string/estimate"
+            android:textColor="@color/color_manage_color"
+            android:textSize="11sp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/to_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/link_number2"
+            android:layout_alignTop="@id/link_name2"
+            android:layout_alignBottom="@id/link_name2"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:gravity="right|center_vertical"
+            android:hint="@string/transfer_in_number"
+            android:inputType="numberDecimal"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textColor="@color/color_bc"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivExchange"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_convert"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_11" />
+     <androidx.appcompat.widget.AppCompatTextView
+         android:id="@+id/tv_hl"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="20dp"
+         android:layout_marginTop="20dp"
+         android:textColor="@color/color_97"
+         android:textSize="11sp"
+         app:layout_constraintTop_toBottomOf="@id/relativeLayout2"
+         app:layout_constraintStart_toStartOf="parent"
+         android:text="@string/estimate_rate"
+         />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_kgf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_97"
+        android:textSize="11sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_hl"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/estimate_fee"
+        />
+     <androidx.appcompat.widget.AppCompatTextView
+         android:id="@+id/tv_rate"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginRight="20dp"
+         android:layout_marginTop="20dp"
+         android:textColor="@color/color_convert_color"
+         android:textSize="11sp"
+         app:layout_constraintTop_toBottomOf="@id/relativeLayout2"
+         app:layout_constraintEnd_toEndOf="parent"
+         android:text="1 ETH≈1646 USDT"
+         />
+     <androidx.appcompat.widget.AppCompatTextView
+         android:id="@+id/tv_fee"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textColor="@color/color_convert_color"
+         android:textSize="11sp"
+         android:layout_marginRight="20dp"
+         android:layout_marginTop="10dp"
+         app:layout_constraintTop_toBottomOf="@id/tv_rate"
+         app:layout_constraintEnd_toEndOf="parent"
+         android:text="0.0000 "
+         />
+
+    <TextView
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_selector"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="@string/convert"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_fee" />
+    <LinearLayout
+        android:id="@+id/ll_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/submit"
+        app:layout_constraintStart_toStartOf="@id/submit"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/convert_error"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:textColor="@color/color_manage_color"
+            android:textSize="11sp"
+            android:text="@string/not_use_service"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
