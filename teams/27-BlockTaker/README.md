@@ -26,12 +26,12 @@ Based on financial-grade EAL6+ security chip technology. The BT wallet stores th
 ![Security Chip Hardware Block Diagram](./docs/pic/002.png)
 
 #### **2.3.2 Polkadot Wallet**
-![](./docs/pic/004.png)
+![](./docs/pic/003.png)
 #### **2.3.3 Nominator**
 The nominator function of the BT wallet is to obtain the validator and nominator data through the API interface, and encapsulate the data through the original PLBM intelligent recommendation algorithm. Quantity, intelligently recommend 16 optimal verifiers and help users complete nominator operations. The intelligent recommendation system will recommend how much you invest to get rewards, and when the user is about to be out of the nominator candidate list (the first 256 nominators of a validator node have rewards), timely remind the user to replenish the amount to stabilize the ranking and other methods to achieve the least user investment. Earn the most.  
-![BT Wallet VS Other Wallet](./docs/pic/005.png)
-![Nomination operation process](./docs/pic/006.png)
-![BT wallet technical architecture diagram](./docs/pic/007.png)
+![BT Wallet VS Other Wallet](./docs/pic/004.png)
+![Nomination operation process](./docs/pic/005.png)
+![BT wallet technical architecture diagram](./docs/pic/006.png)
 
 ### **2.4 See More**
 
@@ -63,7 +63,7 @@ Videos
 - Technical white paper V1 version
 
 ## **4 RoadMap**
-![](./docs/pic/008.png)
+![](./docs/pic/007.png)
 
 
 ## **5 Technology Team**
@@ -126,12 +126,12 @@ Block Taker团队，团队主要成员有10年以上开发经验，擅长Golang�
 ![Security Chip Hardware Block Diagram](./docs/pic/002.png)
 
 #### **2.3.2 Polkadot Wallet**
-![](./docs/pic/004.png)
+![](./docs/pic/003.png)
 #### **2.3.3 提名人**
 BT钱包的提名人功能是通过API接口获取验证人和提名人数据，通过独创的PLBM智能推荐算法对数据进行封装处理，用户只需要在BT钱包上输入绑定数量，系统会根据用户绑定的数量，智能推荐16个最优的验证者并帮用户完成提名人操作。智能推荐系统会推荐投入多少就可获得奖励、在用户即将处于提名人候选名单外（一个验证者节点的前256个提名人有奖励 ）及时提醒用户补充金额稳住排名等方式实现用户投入最少，收益最大。
-![BT Wallet VS Other Wallet](./docs/pic/005.png)
-![Nomination operation process](./docs/pic/006.png)
-![BT wallet technical architecture diagram](./docs/pic/007.png)
+![BT Wallet VS Other Wallet](./docs/pic/004.png)
+![Nomination operation process](./docs/pic/005.png)
+![BT wallet technical architecture diagram](./docs/pic/006.png)
 
 #### **2.3.4 更多**
 Demo
@@ -157,7 +157,7 @@ Videos
 **其它**
 - 技术白皮书V1版本
 ## **4 RoadMap**
-![](./docs/pic/008.png)
+![](./docs/pic/007.png)
 ## **5 团队成员**
 
 **邵海（Captain，Technical Director）**
