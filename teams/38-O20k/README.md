@@ -24,9 +24,9 @@ The core meaning of `Omniverse` is that ***The legitimacy of all on-chain states
 
 ### Introduction
 Based on the philosophy of `Omniverse`, `O20k` consists of a new *token protocol* that is compatible with the current token standards and a corresponding *swap platform*. The main advantages of "O20k" are as follows:  
-* **Pan-Ecological Legitimacy**. Provide decentralized free swapping over different consensus spaces and assets are considered as a whole without being segmented into different blockchains.
-* **Decentralized and Deterministic**. Provide deterministic security based on decentralized and cryptographic-based verification.
-* **Advanced AMM Model**. Provide improved mathematic curves compatible with smooth trading and price sensibility, and specific verifiable computation is brought in to improve efficiency.
+* **Pan-Ecological Legitimacy**. Provided decentralized free swapping over different consensus spaces and assets are considered as a whole without being segmented into different blockchains.
+* **Decentralized and Deterministic**. Provided deterministic security based on decentralized and cryptographic-based verification.
+* **Advanced AMM Model**. Provided improved mathematic curves supporting both smooth trading and price sensibility, and specific verifiable computation is brought in to improve efficiency.
 <!-- We are b named it `Omniverse Protocol Stack` (`O20k` for short) , which can do exchanges for different kinds of tokens distributed in diverse chains.   -->
 The innovation points of `O20k` are shown as below:  
 * First, we provide a brand new standard called `Omniverse Token Protocol`(`OTP` for short), whose legitimacy can be synchronized to any chain where `OTP` is deployed so that it to be accessed and operated anywhere at the same time as a whole, which is unlike being divided into isolated parts by token bridges. Besides, `OTP` is able to be compatible with current single-chain token protocols.  
