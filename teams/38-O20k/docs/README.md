@@ -13,6 +13,7 @@
     * [`O20k` Parachain](#parachain-of-o20k)
     * [EVM chains](#evm-chains)
 * [Smart contracts on EVM Chains](#evm-chains)
+* [Get Gas Token]()
 
 ### Connection
 The Parachain of `O20k` is deployed at `ws://3.74.157.177:9944`, and we recommand using [Polkadot.js](https://polkadot.js.org/apps/#/explorer) to connect to it.  
@@ -24,6 +25,9 @@ If succeed, you can find the related pallets at [Extrinsics](https://polkadot.js
 
 ### Deployment
 To make it convenient, we have already deployed two kinds of Omniverse Tokens, token $X$ and token $Y$, which have been already registered onto the pallet of the Omniverse swap on the `O20k` Parachain of Polkadot.  
+
+***Note that the precision of the Omniverse tokens is $10^{-12}$.***
+
 #### Parachain of `O20k`
 * Pallet `OmniverseFactory` is mainly used to make transactions:  
     * The `tokenId` of Token $X$ is `tobedone`
@@ -62,6 +66,13 @@ As we mentioned before, the Omniverse account is equivalent to the native accoun
 2. Choose `ECDSA (Non BTC/ETH compatible)` in `keypair crypto type`
 3. Record the value of the `secret seed`, which will be used in the Omniverse account tool.
 
+#### Get Gas Tokens
+Before using the new account created by [Create Account](#create-account) in the `Omniverse Tools` below, you need to get some gas tokens first as shown in *Figure.3*.  
+* Use the default account `Alice` of the Parachain to send some gas tokens to your new account directly.
+![img](./assets/get%20gas%20token.png)  
+<p align='center'>Figure.3 Get some Gas Tokens</p>  
+
+
 ### Check the Account
 You can check the information of the account with the `secret seed` mentioned at [previous chapter](#create-account).  
 * Set the `secret seed` in the [configure](to be done).  
@@ -74,9 +85,9 @@ You can check the information of the account with the `secret seed` mentioned at
     ```
 
 ## Omniverse Token Protocol
-The operations related to the Omniverse Token Protocol(`OTP`) include `Free Mint/Claim`, `balance of`, and `transfer`.  
+The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `balance of`, and `transfer`.  
 * [Install](#otp-tools-install)
-* [Claim](#free-mintclaim)
+* [Claim](#claim)
 * [Check the balance](#check-the-balance)
 * [Transaction](#make-transaction-of-omniverse-token)
     * [Initiate on Polkadot](#initiate-transaction-on-polkadot)
@@ -88,12 +99,12 @@ The Omniverse Token tools can be found [here](to be done).
     # to be done
     ```
 
-### Free Mint/Claim
-* `Free Mint/Claim` Token $X$:  
+### Claim
+* `Claim` Token $X$:  
     ```sh
     # to be done
     ```
-* `Free Mint/Claim` Token $Y$:
+* `Claim` Token $Y$:
     ```sh
     # to be done
     ```
@@ -162,7 +173,7 @@ The Omniverse Token tools can be found [here](to be done).
     ```
 
 ## Omniverse Swap Protocol
-The operations related to the Omniverse Swap Protocol(OSP) include `Swap Token X with Token Y` and `Swap Token Y with Token X`. The operations are **just for testing**, so for convenience temporarily we directly provide the interfaces of `X->Y` and `Y->X`.
+The key operation of the Omniverse Swap Protocol(OSP) is `Make exchanges`.  
 * [Install](#osp-tools-install)
 * [Make exchanges](#make-exchanges)
 * [Check the balance](#check-the-balance-after-exchanges)
