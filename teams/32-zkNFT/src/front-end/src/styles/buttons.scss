@@ -1,0 +1,55 @@
+.btn-primary {
+  background: $blue-primary-bgcolor;
+  color: #ffffff;
+  transition: background 3s ease;
+}
+
+.btn-secondary {
+  color: #ffffff;
+  background: $blue-secondary-bgcolor;
+}
+
+.btn-thirdry {
+  color: black;
+  background: transparent;
+  border: 1px solid $blue-secondary-bgcolor;
+}
+
+.dark .btn-thirdry {
+  color: white;
+}
+
+.btn-white {
+  background: #ffffff;
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  color: $blue-primary-color;
+}
+
+.btn-disabled {
+  cursor: not-allowed;
+}
+
+.public-private-toggle {
+  display: flex;
+  justify-content: center;
+}
+
+input[type='radio'] + label span {
+  transition: background 0.2s, transform 0.2s;
+  background-color: white;
+}
+
+input[type='radio'] + label span:hover,
+input[type='radio'] + label:hover span {
+  transform: scale(0.8);
+}
+
+input[type='radio']:checked + label span {
+  background-color: #3490dc; //bg-blue
+  box-shadow: 0px 0px 0px 2px white inset;
+}
+
+input[type='radio']:checked + label {
+  color: #3490dc; //text-blue
+}
