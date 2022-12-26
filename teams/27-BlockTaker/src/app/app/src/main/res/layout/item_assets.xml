@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="20dp"
+    tools:context=".ui.channel.ImportActivity">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.polkadot.bt.ui.view.CircleImageView
+            android:id="@+id/assets_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@color/background" />
+
+        <com.polkadot.bt.ui.view.CircleImageView
+            android:id="@+id/assets_img_link"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignRight="@id/assets_img"
+            android:layout_alignBottom="@id/assets_img"
+             />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        tools:text="BTC"
+        android:textSize="14sp"
+        android:textColor="@color/primary_text_color"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/tvFlag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginStart="10dp"
+        android:textSize="10sp"
+        android:textColor="@color/indicator"
+        android:textStyle="bold"
+        android:paddingHorizontal="2dp"
+        android:background="@drawable/orange_storck"
+        tools:text="OMNI"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="0.0" />
+
+        <TextView
+            android:id="@+id/tvMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/color9"
+            android:textSize="11sp"
+            tools:text="0.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,34 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://jitpack.io' }
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://jitpack.io' }
+        google()
+        mavenCentral()
+//        //wallet-core的仓库
+//        maven {
+//            url = uri("https://maven.pkg.github.com/trustwallet/wallet-core")
+//            credentials {
+//                //username = System.getenv('GITHUB_USER')
+//                username = 'NoahZhao'
+//                //password = System.getenv('GITHUB_TOKEN')
+//                password = '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'//2023/9/25过期
+//            }
+//        }
+    }
+}
+rootProject.name = "Value"
+include ':app'

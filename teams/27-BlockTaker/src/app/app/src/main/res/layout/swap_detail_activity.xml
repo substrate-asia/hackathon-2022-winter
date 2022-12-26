@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp">
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/swap_detail_title"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="22dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/back_left_write" />
+        <ImageView
+            android:id="@+id/iv_swap"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/iv_back"
+            android:layout_marginLeft="23.5dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/swap_success" />
+
+        <TextView
+            android:id="@+id/tv_swap_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_swap"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_swap"
+            android:text="@string/packing_success"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_swap_title"
+            android:layout_alignLeft="@+id/tv_swap_title"
+            android:layout_marginTop="5dp"
+            android:text="@string/place_order"
+            android:textColor="@color/white" />
+
+
+    </RelativeLayout>
+
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/transfer_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:normalContentText="2ETH"
+        app:normalTitleText="@string/transfer_out" />
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/transfer_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/transfer_out"
+        app:normalContentText="1:238"
+        app:normalTitleText="@string/rate" />
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/transfer_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/transfer_rate"
+        app:normalContentText="150.2332 USDT"
+        app:normalTitleText="@string/transfer_in" />
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/transfer_fee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/transfer_in"
+        app:normalContentText="28.12 USDT"
+        app:normalTitleText="@string/fee" />
+
+
+
+    <View
+        android:id="@+id/amount_filter"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="15dp"
+        android:background="#FFF5F5F5"
+        app:layout_constraintTop_toBottomOf="@id/transfer_fee" />
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/amount_filter"
+        app:normalContentText=""
+        app:normalTitleText="@string/trans_time" />
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/payee_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/time"
+        app:normalContentText=""
+        app:normalRightDrawable="@drawable/copy"
+        app:normalTitleText="@string/payee_address" />
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/payment_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/payee_address"
+        app:normalContentText=""
+        app:normalRightDrawable="@drawable/copy"
+        app:normalTitleText="@string/payment_address" />
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/hash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/payment_address"
+        app:normalContentText=""
+        app:normalRightDrawable="@drawable/copy"
+        app:normalTitleText="@string/hash_address" />
+
+
+    <View
+        android:id="@+id/detail_filter"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="15dp"
+        android:background="#FFF5F5F5"
+        app:layout_constraintTop_toBottomOf="@id/hash" />
+
+
+    <com.polkadot.bt.custom.NormalItem
+        android:id="@+id/real"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/detail_filter"
+        app:normalContentText=""
+        app:normalTitleText="@string/actual_credit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.init.VideoActivity">
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
+
+    <ImageView
+        android:id="@+id/ivBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:src="@drawable/video_bg"/>
+
+    <TextView
+        android:id="@+id/tvExplore"
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="50dp"
+        android:visibility="gone"
+        android:background="@drawable/corners5_white_line"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:text="@string/explore"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvIntroduce"
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:visibility="gone"
+        android:background="@drawable/corners5_white_line"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:text="@string/introduce"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvBack"
+        android:layout_width="60dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:drawableStart="@drawable/back"
+        android:drawableTint="@color/white"
+        android:text="@string/back"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvSkip"
+        android:layout_width="60dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:text="@string/jump"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

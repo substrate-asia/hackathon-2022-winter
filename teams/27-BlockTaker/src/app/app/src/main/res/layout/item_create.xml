@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="44dp"
+    android:layout_height="44dp"
+    android:layout_marginTop="20px"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="15dp">
+    <com.polkadot.bt.ui.view.CircleImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@color/background"
+        android:layout_centerInParent="true"/>
+
+    <com.polkadot.bt.ui.view.CircleImageView
+        android:id="@+id/ivIcon1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@color/translucent_black"
+        android:layout_centerInParent="true"/>
+
+    <com.polkadot.bt.ui.view.loadingdrawable.LoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:loading_renderer="LevelLoadingRenderer" />
+
+</RelativeLayout>

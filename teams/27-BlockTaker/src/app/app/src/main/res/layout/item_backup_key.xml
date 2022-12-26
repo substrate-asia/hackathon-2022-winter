@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="20dp"
+    tools:context=".ui.channel.ImportActivity">
+    <com.polkadot.bt.ui.view.CircleImageView
+        android:id="@+id/link_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@color/background"/>
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        tools:text="BTC"
+        android:textSize="14sp"
+        android:textColor="@color/primary_text_color"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/private_key"
+        android:textSize="14sp"
+        android:textColor="@color/primary_text_color"
+        android:textStyle="bold"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_right"/>
+</LinearLayout>

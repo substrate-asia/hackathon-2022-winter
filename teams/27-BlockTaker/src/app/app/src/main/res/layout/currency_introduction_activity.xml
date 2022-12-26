@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.polkadot.bt.custom.AppToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.polkadot.bt.ui.view.CircleImageView
+        android:id="@+id/icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:src="@color/green_a100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/currency_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/btc"
+        android:textStyle="bold"
+        android:textColor="@color/colorTitle"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icon" />
+
+    <TextView
+        android:id="@+id/assets"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="45dp"
+        android:gravity="center"
+        android:text="@string/assets"
+        android:textColor="#656569"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currency_name" />
+
+    <TextView
+        android:id="@+id/money"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="20dp"
+        android:ellipsize="end"
+        android:gravity="center|end"
+        android:maxLines="1"
+        android:text="0.64555555"
+        android:textColor="@color/colorTitle"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/assets"
+        app:layout_constraintTop_toTopOf="@id/assets" />
+
+    <TextView
+        android:id="@+id/address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:text="@string/address"
+        android:textColor="#656569"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/assets" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="12dp"
+        android:ellipsize="end"
+        android:gravity="center|end"
+        android:maxLines="1"
+        android:text="H3LH332******3EUYLH3"
+        android:textColor="@color/colorTitle"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@id/copy"
+        app:layout_constraintStart_toEndOf="@id/address_text"
+        app:layout_constraintTop_toTopOf="@id/address_text" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/copy"
+        android:layout_width="40px"
+        android:layout_height="40px"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/copy"
+        app:layout_constraintBottom_toBottomOf="@id/address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/address"
+        app:layout_constraintTop_toTopOf="@id/address" />
+
+    <View
+        android:id="@+id/filter"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="15dp"
+        android:background="#F5F5F5"
+        app:layout_constraintTop_toBottomOf="@id/address" />
+
+    <TextView
+        android:id="@+id/record"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:text="@string/record"
+        android:textColor="@color/colorTitle"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter" />
+
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/none_data"
+        android:visibility="gone"
+        app:drawableTopCompat="@drawable/none_data"
+        app:layout_constraintBottom_toTopOf="@id/collection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/record"
+        app:layout_constraintVertical_bias="0.515" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/weblink"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="@string/web_link_history"
+        android:visibility="gone"
+        android:padding="5dp"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@id/collection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/record"
+        app:layout_constraintVertical_bias="0.515" />
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/collection"
+        app:layout_constraintTop_toBottomOf="@id/record"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    <TextView
+        android:id="@+id/collection"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_white_stoke_1_corner_5_bg"
+        android:gravity="center"
+        android:text="@string/collection"
+        android:textColor="@color/colorTitle"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/transfer"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/transfer"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_1b1b1c_corner_5_bg"
+        android:gravity="center"
+        android:text="@string/transfer"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/collection" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

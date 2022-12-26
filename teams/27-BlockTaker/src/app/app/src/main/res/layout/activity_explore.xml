@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.init.ExploreActivity"
+    android:paddingBottom="80dp"
+    android:gravity="bottom">
+
+    <TextView
+        android:id="@+id/tvExplore"
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/corners5_primary_storck"
+        android:gravity="center"
+        android:text="@string/explore"
+        android:textColor="@color/primary_text_color"
+        android:textSize="13sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvIntroduce"
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/corners5_primary_storck"
+        android:gravity="center"
+        android:text="@string/introduce"
+        android:textColor="@color/primary_text_color"
+        android:textSize="13sp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>
