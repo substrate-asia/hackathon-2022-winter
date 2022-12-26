@@ -66,12 +66,12 @@ As we mentioned before, the Omniverse account is equivalent to the native accoun
 You can check the information of the account with the `secret seed` mentioned at [previous chapter](#create-account).  
 * Set the `secret seed` in the [configure](to be done).  
 * Check the information of your account with the command below:  
-```sh
-# command to get the account information, including:
-# @Omniverse Account
-# @account on Polkadot
-# account on EVM chains
-```
+    ```sh
+    # command to get the account information, including:
+    # @Omniverse Account
+    # @account on Polkadot
+    # account on EVM chains
+    ```
 
 ## Omniverse Token Protocol
 The operations related to the Omniverse Token Protocol(`OTP`) include `Free Mint/Claim`, `balance of`, and `transfer`.  
@@ -84,66 +84,82 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Free Mint
 
 ### `OTP` Tools Install
 The Omniverse Token tools can be found [here](to be done).  
-```sh
-# to be done
-```
+    ```sh
+    # to be done
+    ```
 
 ### Free Mint/Claim
 * `Free Mint/Claim` Token $X$:  
-```sh
-# to be done
-```
+    ```sh
+    # to be done
+    ```
 * `Free Mint/Claim` Token $Y$:
-```sh
-# to be done
-```
+    ```sh
+    # to be done
+    ```
 
 ### Check the balance
-* Check `balance of` Token $X$:  
-```sh
-# to be done
-```
-* Check `balance of` Token $Y$:  
-```sh
-# to be done
-```
+#### Check balance on Polkadot
+* Check `balance of` Token $X$ of related account on Polkadot:  
+    ```sh
+    # to be done
+    # `token X` of related account on Polkadot
+    ```
+* Check `balance of` Token $Y$ of related account on Polkadot:  
+    ```sh
+    # to be done
+    # `token Y` of related account on Polkadot
+    ```
+
+#### Check balance on EVM chains
+* Check `balance of` Token $X$ of related account on EVM chains:  
+    ```sh
+    # to be done
+    # `token X` of related account
+    ```
+* Check `balance of` Token $Y$ of related account on EVM chains:  
+    ```sh
+    # to be done
+    # `token Y` of related account
+    ```
 
 ### Make transaction of Omniverse Token
 #### Initiate transaction on Polkadot
 * Transfer Token $X$ to another account on Polkadot:
-```sh
-# to be done
-```
-* Check `balance of` Token $X$ of related account on Polkadot:  
-```sh
-# to be done
-# `token X` of sender account on Polkadot
-# `token X` of receiver account  on Polkadot
-```
-* Check `balance of` Token $X$ of related account on EVM chains:  
-```sh
-# to be done
-# `token X` of sender account
-# `token X` of receiver account
-```
+    ```sh
+    # to be done
+    ```
+* Check `balance of` Token $X$ of sender and receiver account as detailed at [Check the balance](#check-the-balance) above.  
+    * Check `balance of` Token $X$ of related account on Polkadot:  
+    ```sh
+    # to be done
+    # `token X` of sender account on Polkadot
+    # `token X` of receiver account  on Polkadot
+    ```
+    * Check `balance of` Token $X$ of related account on EVM chains:  
+    ```sh
+    # to be done
+    # `token X` of sender account
+    # `token X` of receiver account
+    ```
 
 #### Initiate transaction on EVM chains
 * Transfer Token $X$ to another account on EVM chains:
-```sh
-# to be done
-```
+    ```sh
+    # to be done
+    ```
 * Check `balance of` Token $X$ of related account on Polkadot:  
-```sh
-# to be done
-# `token X` of sender account on Polkadot
-# `token X` of receiver account  on Polkadot
-```
+    ```sh
+    # to be done
+    # `token X` of sender account on Polkadot
+    # `token X` of receiver account  on Polkadot
+    ```
 * Check `balance of` Token $X$ of related account on EVM chains:  
-```sh
-# to be done
-# `token X` of sender account
-# `token X` of receiver account
-```
+    ```sh
+    # to be done
+    # `token X` of sender account
+    # `token X` of receiver account
+    ```
 
 ## Omniverse Swap Protocol
 The operations related to the Omniverse Swap Protocol(OSP) include `Swap Token X with Token Y` and `Swap Token Y with Token X`. The operations are **just for testing**, so for convenience temporarily we directly provide the interfaces of `X->Y` and `Y->X`.
@@ -153,30 +169,30 @@ The operations related to the Omniverse Swap Protocol(OSP) include `Swap Token X
 
 ### `OSP` Tools Install
 The Omniverse Swap tools can be found [here](to be done).  
-```sh
-# to be done
-```
+    ```sh
+    # to be done
+    ```
 
 ### Make exchanges
 * Swap Token X with Token Y:  
-```sh
-# to be done
-```
+    ```sh
+    # to be done
+    ```
 * Swap Token Y with Token X:  
-```sh
-# to be done
-```
+    ```sh
+    # to be done
+    ```
 ### Check the Balance after exchanges
 * Check `balance of` Token $X$ of related account on Polkadot:  
-```sh
-# to be done
-# `token X` of related account on Polkadot
-```
+    ```sh
+    # to be done
+    # `token X` of related account on Polkadot
+    ```
 * Check `balance of` Token $Y$ of related account on EVM chains:  
-```sh
-# to be done
-# `token Y` of related account
-```
+    ```sh
+    # to be done
+    # `token Y` of related account
+    ```
 
 We can found that the related states changed simultaneously both on Polkadot and EVM chains.  
  
