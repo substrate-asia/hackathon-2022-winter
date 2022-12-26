@@ -1,0 +1,6 @@
+.gradient-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: var(--gradient-button-primary);
+    color: transparent;
+}

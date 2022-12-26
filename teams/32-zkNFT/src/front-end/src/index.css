@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  height: 100%;
+}
+
+.main-app > div {
+  max-width: 1920px;
+  width: 100%;
+}
+
+.dark {
+  --color-bg-primary: #120a1e;
+  --color-bg-secondary: #1f2231;
+  --color-bg-thirdry: #23284e;
+  --color-bg-fourth: #61abb9;
+  --color-bg-overlay: #101b30;
+  --color-bg-table-row: #1b1f3e;
+  --color-bg-success: #24a148;
+  --color-bg-danger: #fa4d56;
+  --color-bg-manta-gray: #7e7e7e;
+  --color-bg-button: #0d7bc5;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a4a3a7;
+  --color-text-thirdry: #ffffff;
+  --color-text-accent: #ffffff;
+  --color-text-warning: #e96e79;
+  --color-fill-secondary: #ffffff;
+  --color-border-primary: #6eaed7;
+  --color-border-secondary: #595f6d;
+  --gradient-bg-primary: linear-gradient(to bottom right, #00182a, #000011);
+  --gradient-button-primary: linear-gradient(to right, #26c8bf, #1fa2f9);
+}
+
+.light {
+  --color-bg-primary: #f2f2f4;
+  --color-bg-secondary: #ffffff;
+  --color-bg-thirdry: #f2f2f4;
+  --color-bg-fourth: #61abb9;
+  --color-bg-overlay: #e3e4e8;
+  --color-bg-table-row: #f9fbfd;
+  --color-bg-success: #24a148;
+  --color-bg-danger: #fa4d56;
+  --color-bg-manta-gray: #d9e0e6;
+  --color-bg-button: #0d7bc5;
+  --color-text-primary: #104ea1;
+  --color-text-secondary: #212f41;
+  --color-text-thirdry: #070707;
+  --color-text-accent: #33385f;
+  --color-text-warning: #ef9f9f;
+  --color-fill-secondary: #889ebc;
+  --color-border-primary: #6eaed7;
+  --color-border-secondary: #595f6d;
+  --gradient-bg-primary: linear-gradient(to bottom right, #b0d2eb, white);
+  --gradient-button-primary: linear-gradient(to bottom right, #26c8bf, #1fa2f9);
+}
+
+.custom-colors {
+  --color-fill-primary: #4caaac;
+  --color-fill-gray: #889ebc;
+  --color-text-gray: #7e7e7e;
+}
+
+.custom-width {
+  --min-width-layout: 450px;
+  --min-width-table: 1024px;
+  --min-width-md: 700px;
+  --min-width-lg: 1200px;
+}
+
+/* .btn-animation {
+  @apply transition duration-100 ease-in-out transform hover:-translate-y-1;
+} */

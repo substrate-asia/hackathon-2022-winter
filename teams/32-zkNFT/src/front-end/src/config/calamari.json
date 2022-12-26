@@ -1,0 +1,6 @@
+{
+    "NETWORK_NAME": "Calamari",
+    "SS58_FORMAT": 78,
+    "SUBSCAN_URL": "https://calamari.subscan.io",
+    "TWITTER_URL": "https://twitter.com/CalamariNetwork"
+}
