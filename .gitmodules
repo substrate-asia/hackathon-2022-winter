@@ -9,3 +9,7 @@
 [submodule "teams/10-Tenet/src/videown-nft"]
 	path = teams/10-Tenet/src/videown-nft
 	url = https://github.com/lost-inwind/videown-nft
+[submodule "teams/17-team-AdMeta/src/substrate/admeta"]
+	path = teams/17-team-AdMeta/src/substrate/admeta
+	url = https://github.com/AdMetaNetwork/admeta.git
+	branch = feat-nft
