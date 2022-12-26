@@ -11,7 +11,7 @@ Firstly, we want to make a trading pair's "smoothly trading range" wider than Un
 Secondly, we want the marketing curve can be dynamically adapt to different situations, that is, when $x\approx y$ the marketing curve is closing to `Curve` and when $x$ differs from $y$ much we hope the curve is closing to `Uniswap`.  
 The following *equation 1* is the core mechanism of `O-AMM` algorithm:  
 $$\alpha(-(x^2+y^2)+bx+by)+(1-\alpha)C=2xy$$  
-<p align="center">Equation.1 the equation of O-AMM</p>  
+<p id="equation.1" align="center">Equation.1 the equation of O-AMM</p>  
 where,  
 
 $$\alpha =\frac{xy}{(\frac{x+y}{2})^2}$$  
