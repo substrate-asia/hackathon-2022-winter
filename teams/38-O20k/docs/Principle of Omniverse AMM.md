@@ -24,23 +24,23 @@ C = x_{init}\cdot y_{init}\\
 b = 2\sqrt{C}
 \end{array}\right.$$  
 
-The following *Figure 1* shows the difference between `O-AMM` and other AMM mechanisms:  
+The following *Figure 1* shows the difference between `O-AMM` and other AMM mechanisms, the related source code can be found [here](../src/O-AMM/):  
 ![img](./assets/Figure_1.png)  
 <p align="center">Figure.1 the curves of different AMM mechanisms</p>  
 
-The curve of `O-AMM` is symmetric about $x = y$ like other AMM curves, which is a basic feature of AMM because token $X$ and token $Y$ should be treated as the same.  
-The curve of `O-AMM` lies between `Uniswap` and `Curve`, so in general it is able to combine price sensitivity and smoother trading.  
+The curve of `O-AMM` is symmetric about $x = y$ like other AMM curves, which is a basic feature of AMM because token $X$ and token $Y$ should be treated equivalently.  
+The curve of `O-AMM` lies between `Uniswap` and `Curve`, so in general, it is able to make a dynamic balance between price sensitivity and smoother trading.  
 
 ### Gas Mechanism
 Solving *equation 1* on-chain is expensive, and we will provide a verifiable computation<sup>[3]</sup> mechanism to make it.  
-Genaral VC (verifiable computaion) is complex, but in our situation we provide a simple way to solve this customization issue.  
-We just record the expression of *Equation 1* on-chain, calculate $b$ and $C$ every time the liquidity changes. When someone makes swap bwteen token $X$ and token $Y$, he makes `Omniverse Transfer` of one kind of token (take token $X$ for instance) to the contract-account of the Omniverse Swap, who records the value of $\Delta{x}$. Some off-chain VC nodes are listenning the event of the swaps, they calculate $\Delta{y}$ and submit it to the on-chain `Omniverse Swap`. The verification of $\Delta{x}$ and $\Delta{y}$ within *Equation 1* is very easy and cheap, and the off-chain VC node whose submission is accepted will be rewarded.  
+General VC (verifiable computation) is complex, but we provide a simple way to solve this customization issue in our situation.    
+We just record the expression of *Equation 1* on-chain, calculate $b$ and $C$ every time the liquidity changes. When someone makes swap bwteen token $X$ and token $Y$, he makes `Omniverse Transfer` of one kind of token (take token $X$ for instance) to the abstract-account of the Omniverse Swap, who records the value of $\Delta{x}$. Some off-chain VC nodes are listenning the event of the swaps, they calculate $\Delta{y}$ and submit it to the on-chain `Omniverse Swap`. The verification of $\Delta{x}$ and $\Delta{y}$ within *Equation 1* is very easy and cheap, and the off-chain VC node whose submission is accepted will be rewarded.  
 
 ### How O-AMM Comes Out
 The way to make out *Equation 1* is somewhat mathematical skilled, but I don't want to explain the details at this stage because we decided to participate in this hackathon so late that there might not be enough time for us. I will give a detailed idea in the future. In short, it is a combination of two equations that are inverse functions of each other.  
 
 ## Implementation
-In this hackathon, we have designed and made the simulation of our Omniverse AMM algorithm, but until now the on-chain version of O9P is the simplest, that is, we temperarily uses $x\cdot y=k$ as the AMM mechanism to **prove the Omniverse Protocols**.  
+In this hackathon, we have designed and made out a [prototype](../src/O-AMM/) of the Omniverse AMM algorithm. As we decided to participate in this hackathon on about December 8, the time is very limited and until now the on-chain version of O20k is the simplest, that is, we temporarily use $x\cdot y=k$ as the AMM mechanism to **prove the Omniverse Protocols**.  
 * [Detailed explanation of Simple AMM](https://github.com/xiyu1984/Blog/blob/main/docs/AMM/uniswap%20explanation.md)
 
 ## Key points
