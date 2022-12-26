@@ -202,22 +202,22 @@
             app:layout_constraintStart_toEndOf="@+id/view_split_line_horizontal"
             app:layout_constraintVertical_bias="0.32999998" />
 
-        <ImageView
-            android:id="@+id/iv_tips"
-            android:layout_width="11dp"
-            android:layout_height="11dp"
-            android:layout_marginStart="3dp"
-            android:src="@drawable/ic_tips"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_apy_key"
-            app:layout_constraintStart_toEndOf="@+id/tv_apy_key"
-            app:layout_constraintTop_toTopOf="@+id/tv_apy_key" />
+        <!--        <ImageView-->
+        <!--            android:id="@+id/iv_tips"-->
+        <!--            android:layout_width="11dp"-->
+        <!--            android:layout_height="11dp"-->
+        <!--            android:layout_marginStart="3dp"-->
+        <!--            android:src="@drawable/ic_tips"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/tv_apy_key"-->
+        <!--            app:layout_constraintStart_toEndOf="@+id/tv_apy_key"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/tv_apy_key" />-->
 
         <TextView
             android:id="@+id/tv_apy_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="17.89%"
+            android:text="-- %"
             android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -335,7 +335,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="--"
+                android:text="-- %"
                 android:textColor="#3E3E40"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -387,7 +387,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="28天"
+                android:text="@string/twenty_eight_days"
                 android:textColor="#3E3E40"
                 android:textSize="12sp" />
         </LinearLayout>
