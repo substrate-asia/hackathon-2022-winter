@@ -52,12 +52,14 @@ For implementation, we will build a Substrate Parachain to make out `O20k`, whic
 
 * The `O-AMM` is the core mechanism supporting the underlying exchanges of the `OSP`, which has the following features:  
   * Ability to balance smoothness and price sensitivity at the same time.
-  * The curve is as below, and we have provided a [detailed explanation of it](./docs/Principle%20of%20Omniverse%20AMM.md).  
+  * The mathematic curve is as below, and we have provided the [Principle of Omniverse AMM](./docs/Principle%20of%20Omniverse%20AMM.md) for detail.  
 ![img](./docs/assets/Figure_1.png)  
 <p align="center">Figure.3 Mathematic Model of `O-AMM`</p>  
 
 ### Demo
-* You can taste everything mannually through this [detailed tutorial](./docs/README.md).
+* You can taste everything mannually
+  * Omniverse Swap and Token operations can be tried through this [detailed tutorial](./docs/README.md).
+  * The prototype of `O-AMM` can be tried through this [guide](./src/O-AMM/README.md).  
 * The whole workflow also can be found through this [Demo Video](to be done).  
 
 ### Architecture
