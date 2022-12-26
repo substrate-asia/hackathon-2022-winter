@@ -20,6 +20,11 @@ They are using decentralized technologies, but they don't let you know, there ar
 
 Designer uses Gear Smart Contracts which is a new way, and CESS as decentralized storage layer. The front end uses React + gear-js + polkadot-js/extention. 
 
+### Tech
+
+Designer is based on the decentralized storage project CESS and the WASM smart contract platform Gear. 
+
+
 
 ## Plan in Hackathon
 
