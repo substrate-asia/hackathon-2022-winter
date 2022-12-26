@@ -1,0 +1,84 @@
+specVersion: 1.0.0
+name: cicada
+version: 1.0.0
+runner:
+  node:
+    name: "@subql/node"
+    version: ">=1.0.0"
+  query:
+    name: "@subql/query"
+    version: "*"
+description: "data query from cicada services"
+repository: "https://github.com/zengbing15/hackathon-2022-winter"
+schema:
+  file: ./schema.graphql
+network:
+  genesisHash: "0xdc92d75f958c9c0096ab65a699c8c21472f04f88501d06c21bc0a8a52d190aff"
+  endpoint: "ws://127.0.0.1:9944"
+dataSources:
+  - name: runtime
+    kind: substrate/Runtime
+    startBlock: 1
+    mapping:
+      file: ./dist/index.js
+      handlers:
+        - handler: handleCategoryCreatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: CategoryCreated
+        - handler: handleLabelCreatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: LabelCreated
+        - handler: handleSubjectCreatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: SubjectCreated
+        - handler: handleDimensionCreatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: DimensionCreated
+        - handler: handleContentCreatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: ContentCreated
+        - handler: handleCategoryUpdatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: CategoryUpdated
+        - handler: handleLabelUpdatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: LabelUpdated
+        - handler: handleSubjectUpdatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: SubjectUpdated
+        - handler: handleDimensionUpdatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: DimensionUpdated
+        - handler: handleContentUpdatedEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: ContentUpdated
+        - handler: handleSubscribeEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: Subscribe
+        - handler: handleSubscribeCancelEvent
+          kind: substrate/EventHandler
+          filter:
+            module: cicadaModule
+            method: SubscribeCancel
