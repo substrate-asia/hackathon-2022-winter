@@ -1,0 +1,12 @@
+:root {
+  --main-bg-color: #F0F0F0;
+  --side-bg-color: #1A1A1A;
+  --active-side-bg-color: #21207A;
+  --hover-side-bg-color: #1D1C40;
+  --main-text-color: #A1A1A1;
+  --black-text-color: #454545;
+  --white-text-color: #fff;
+  --white: #fff;
+  --gray: '#949494',
+  --gray-gray-btn: '#d5d8dd'
+}

@@ -1,0 +1,31 @@
+@import './theme.css';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .titlebar {
+    -webkit-app-region: drag;
+  }
+}
+.btn {
+  @apply px-2 py-3 rounded bg-gray-100 mr-4;
+}
+.iconBtn {
+  @apply flex items-center justify-center w-8 h-8 text-gray-600 transition rounded-md hover:bg-iconHoverGary mr-2;
+}
+.iconImg {
+  @apply w-5 h-5;
+}
+.btn-login {
+  @apply flex px-9 py-2.5 mx-auto text-lg text-center text-white rounded-full bg-btnBlue hover:bg-btnHoverBlue;
+}
