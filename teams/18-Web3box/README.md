@@ -8,6 +8,14 @@ Start time: 2022.12
 
 > Risk Protocol provides accurate and timely risk management for Polkadot Ecology.
 
+## Details
+
+Details of our project are as below
+
+- [Github Organization](https://github.com/Ericwa0x/hackathon-2022-winter/tree/main/teams/18-Web3box)
+- [Pitch deck](docs/Risk Protocol_Deck V1.2.pdf)
+- [Video](https://youtu.be/jeA_MM3_pyY)
+
 # 1.Introduction
 
 Risk Protocol provides risk assessment scores, risk reports and risk anomaly warnings for the users of Polkadot ecosystem, so that users can get timely and accurate information about Polkadot project risks, and screen out low-risk Polkadot project parties and avoid high-risk Polkadot project parties for investment decisions.
