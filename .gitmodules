@@ -13,3 +13,9 @@
 	path = teams/17-team-AdMeta/src/substrate/admeta
 	url = https://github.com/AdMetaNetwork/admeta.git
 	branch = feat-nft
+[submodule "teams/07-lightm/src/evm"]
+	path = teams/07-lightm/src/evm
+	url = https://github.com/LightmNFT/Lightm-evm.git
+[submodule "teams/07-lightm/src/ui"]
+	path = teams/07-lightm/src/ui
+	url = https://github.com/LightmNFT/lightm.git

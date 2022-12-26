@@ -78,6 +78,46 @@ Lightm optimized the RMRK contract using ERC2535:
 - （持续）优化用户体验:
 
 ## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
+**智能合约端**
+- [x] 以ERC2535方式对RMRK合约的重构已 **基本（处于暂时可用的状态后，就把精力投入在了UI实现，这里依然有细节待优化，以及后续对Equippable实现的测试）** 在黑客松前完成。
+- （持续）跟进RMRK多源Lego EIP-5773以及Nesting Lego的最新改动，并同步更新Lightm代码。
+- [x] 提供可选的验证器Validator合约（后续在docs中补充说明它是什么）。
+- 改进优化链下部署脚本（高自由度，低易用性，更多为开发者准备）以及链上部署工厂（低自由度，高易用性，更多为创作者准备）：
+	- [x] 链下部署脚本
+	- [x] 链上部署工厂
+- [ ] 完整专业的README文档
+- [ ] 基于Sudo Swap的AMM合约部署
+
+**客户端**
+- [x] 支持Nesting（嵌套，即NFT持有NFT）特性，已**基本（仍有细节优化工作，需要跟随可能发生的智能合约的改动）** 于黑客松前完成：
+	- [ ] 针对移动端UI优化
+	- [ ] 支持多选批量（通过LightmInit继承的multicall方法做到）操作Children列表
+- [x] 支持MultiResource（多资源，即NFT可以包含多个输出）特性，已**基本（仍有细节优化工作，需要跟随可能发生的智能合约的改动）** 于黑客松前完成：
+	- [x] 支持在提交Resource Proposal时指定资源覆盖(overwrites)
+- [x] 支持Equippable（可装备，即NFT A持有NFT B情况下，NFT A可以装备NFT B，客户端能够基于链上关系渲染出NFT A装备NFT B的图像或其他表现形式）特性：
+	- [x] UI
+	- [ ] 支持Base创建与配置
+	- [x] 支持BaseRelatedResource添加
+	- 支持装备效果展示：
+		- [x] image
+		- [ ] video
+		- [ ] audio
+		- [ ] 3D model
+- [x] 支持NFT创建：
+	- [x] 支持调用链上部署工厂合约部署Collection，已**基本（仍然需要同步合约端可能存在的改动）** 完成
+	- [x] 允许用户进行常用的NFT Mint策略选择
+- [x] 使用Validator合约对嵌套关系以及装备状态进行校验
+- NFT渲染类型支持：
+	- [x] image
+	- [x] video
+	- [x] audio
+	- [x] PDF
+	- [ ] 3D model
+- [ ] 添加基于SudoSwap lssvm的AMM支持【低优先】
+	- [ ] AMM浏览页
+	- [ ] AMM Pool创建
+	- [ ] AMM Pool详情页
+- （持续）优化用户体验:
 
 - 2022年12月27日前，在本栏列出黑客松期间最终完成的功能点。
 - 把相关代码放在 `src` 目录里，并在本栏列出在黑客松期间打完成的开发工作/功能点。我们将对这些目录/档案作重点技术评审。
