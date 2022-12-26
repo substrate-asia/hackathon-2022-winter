@@ -118,7 +118,7 @@ The bottom is the off-chain synchronizer layer. The synchronizer is a very light
 Our team consists of the following members:  
 |Name|Function|GitHub|Weixin|
 |---------|---------|---------|---------|
-|Jason|CEO|https://github.com/dantenetwork|HopeOfTown|
+|Jason|PM|https://github.com/dantenetwork|HopeOfTown|
 |Xiyu|Tech Guy|https://github.com/xiyu1984|xiyu_meta|
 |Virgil|Tech Guy|https://github.com/virgil2019|cherima|
 |kay404|Tech Guy|https://github.com/kay404|linkai528|
