@@ -18,20 +18,21 @@ With bridges, the assets should be locked on one chain and minted on another cha
 The bridge is just like a bank, issue wrapped tokens, anyway, when you ues the bridge, you just deal the wrapped token, not the really token of your own.
 
 To solve these problems, we will provide a base protocol stack for decentralized transactions, which is named as `Omniverse Protocol Stack` (`O20k` for short).  
-The core meaning of `Omniverse` is that ***The legitimacy of all on-chain states and operations can be verified and recorded simultaneously by different consensus spaces, regardless of where they were initiated.***
+The core meaning of `Omniverse` is that ***The legitimacy of all on-chain states and operations can be equivalently verified and recorded simultaneously over different consensus spaces, regardless of where they were initiated.***
 
  <!-- a brand new Token Protocol compatible with current token standards along with an advanced swap platform, which is absolutely decentralized and cryptographic-based solution, through which the exchange between tokens deployed on different chains can be processed with determining security. Besides, there's no need to divide your assets into different isolated parts, on the contrary, your assets can be accessed from any chain and be treated as a whole. -->
 
 ### Introduction
-Based on the philosophy of `Omniverse`, `O20k` consists of a new *token protocol* that is compatible with the current token standards and a corresponding *swap platform*. The main advantages of "O20k" are as follows:  
-* **Pan-Ecological Legitimacy**. Provided a legitimacy validation mechanism running over different consensus spaces equivalently.  
-* **Free Swapping without Boundaries**: Provided a decentralized swapping platform without assets being segmented into different blockchains but as a whole.
-* **Decentralized and Deterministic**. Provided deterministic security based on decentralized and cryptographic-based verification.
-* **Advanced AMM Model**. Provided an improved mathematic model supporting both smooth trading and price sensibility, and specific verifiable computation is brought in to improve efficiency.
+Based on the philosophy of `Omniverse`, we build `O20k` as a DLT protocol stack built on multiple existing L1 public chains, enabling asset-related operations such as transfers, receptions, and transactions running over different consensus spaces equivalently.
+The main advantages of "O20k" are as follows:  
+* **Efficient Legitimacy Synchronization**. The validation of the equivalent legitimacy over different consensus spaces can complete within one step.  
+* **Free Swapping without Boundaries**: The token exchanges over different blockchains are open and decentralized and related assets are not segmented into different blockchains but as a whole.  
+* **Deterministic**. Security is guaranteed deterministically in a decentralized and trustless environment.  
+* **More Efficient AMM**. Provides an improved mathematic model supporting both smooth trading and price sensibility, and specific verifiable computation is brought in to improve efficiency.
 <!-- We are b named it `Omniverse Protocol Stack` (`O20k` for short) , which can do exchanges for different kinds of tokens distributed in diverse chains.   -->
 The innovation points of `O20k` are shown as below:  
-* First, we provide a brand new standard called `Omniverse Token Protocol`(`OTP` for short), whose legitimacy can be synchronized to any chain where `OTP` is deployed so that it to be accessed and operated anywhere at the same time as a whole, which is unlike being divided into isolated parts by token bridges. Besides, `OTP` is able to be compatible with current single-chain token protocols.  
-* Second, an `Omniverse Swap Protocol` (`OSP` for short) is provided to make exchanges for different kinds of OTP tokens just like a CEX did but in a decentralized way. One `OTP` token can directly exchange with another `OTP` token on Polkadot, and the related states could be verifiable on other `O20k` deployed ecosystems such as Ethereum, NEAR, Flow, Move chains, etc.  
+* First, we provide a brand new standard called `Omniverse Token Protocol`(`OTP` for short), whose legitimacy can be validated equivalently and be synchronized to any chain where `OTP` is deployed so that it to be accessed and operated anywhere at the same time as a whole, which is unlike being divided into isolated parts by token bridges. Besides, `OTP` is able to be compatible with current single-chain token protocols.  
+* Second, an `Omniverse Swap Protocol` (`OSP` for short) is provided to make exchanges for different kinds of `OTP` tokens just like a CEX did but in a decentralized way. One `OTP` token can directly exchange with another `OTP` token on Polkadot, and the related states could be verifiable on other `O20k` deployed chains such as Ethereum, NEAR, Flow, Move chains, etc.  
 * Moreover, AMM is used to make calculations for exchanges and we innovatively worked out a new mathematical model called `O-AMM` to implement it, which can provide a wider "smooth trading range" than state of art and still keep the price sensitivity. 
 
 For implementation, we will build a Substrate Parachain to make out `O20k`, which can connect the other Parachains by `XCM` so that `O20k` could provide services for the whole ecosystem of Polkadot.  
