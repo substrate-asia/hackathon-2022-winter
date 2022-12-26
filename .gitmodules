@@ -9,3 +9,9 @@
 [submodule "teams/10-Tenet/src/videown-nft"]
 	path = teams/10-Tenet/src/videown-nft
 	url = https://github.com/lost-inwind/videown-nft
+[submodule "teams/07-lightm/src/evm"]
+	path = teams/07-lightm/src/evm
+	url = https://github.com/LightmNFT/Lightm-evm.git
+[submodule "teams/07-lightm/src/ui"]
+	path = teams/07-lightm/src/ui
+	url = https://github.com/LightmNFT/lightm.git
