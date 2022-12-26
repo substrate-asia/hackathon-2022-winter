@@ -1,0 +1,134 @@
+.sortable-table-wrapper {
+  max-width: 1290px;
+}
+
+.border-5 {
+  border-width: 5px;
+}
+
+.gradient-border {
+  background: linear-gradient(var(--color-bg-secondary) 0 0) padding-box,
+    /*this is your grey background*/ $blue-primary-bgcolor border-box;
+  border: 3px solid transparent;
+
+  &.error {
+    background: linear-gradient(var(--color-bg-secondary) 0 0) padding-box,
+      $error-primary-bgcolor border-box;
+  }
+}
+
+.frame-box-shadow {
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.03);
+}
+
+.field-box-shadow {
+  box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.17);
+}
+
+.search-box-shadow {
+  box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.09);
+}
+
+.manta-bg-gray {
+  background-color: $body-bgcolor;
+}
+
+.dark .manta-bg-gray {
+  background-color: #151422;
+}
+
+.manta-bg-light-gray {
+  background-color: $gray-light-color;
+}
+
+.manta-bg-secondary {
+  background: $gray-secondary-bgcolor;
+}
+
+.manta-bg-thirdry {
+  background: $blue-thirdry-color;
+}
+
+.manta-bg-blue {
+  background: $blue-light-bgcolor;
+}
+
+.manta-bg-primary-blue {
+  background: $blue-primary-color;
+}
+
+.manta-bg-secondary-blue {
+  background: $green-primary-color;
+}
+
+.rounded-3 {
+  border-radius: 3px;
+}
+
+.rounded-7 {
+  border-radius: 7px;
+}
+
+.btn-hover:hover {
+  background: linear-gradient(180deg, #59b9ae 0%, #398ba8 0%);
+}
+
+.disabled {
+  cursor: not-allowed !important;
+}
+
+input {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-background-clip: text;
+  }
+}
+
+input {
+  &.manta-bg-gray {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 1000px $body-bgcolor inset !important;
+      -webkit-background-clip: text;
+    }
+  }
+
+  &.bg-secondary {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 1000px var(--color-bg-secondary) inset !important;
+      -webkit-background-clip: text;
+    }
+  }
+}
+
+.dark {
+  input {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: white !important;
+    }
+  }
+
+  input {
+    &.manta-bg-gray {
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 1000px $gray-primary-color inset !important;
+        -webkit-background-clip: text;
+      }
+    }
+  }
+}

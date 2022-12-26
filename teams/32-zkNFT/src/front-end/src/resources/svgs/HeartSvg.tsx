@@ -1,0 +1,43 @@
+// @ts-nocheck
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const HeartSvg = ({ className, fill }) => {
+  return (
+    <svg
+      width="38px"
+      height="32px"
+      viewBox="0 0 38 32"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xlink="http://www.w3.org/1999/xlink"
+      className={className}
+      fill={fill}
+    >
+      <title>heart-fill</title>
+      <g
+        id="Page-1"
+        stroke="none"
+        strokeWidth="1"
+        fill="none"
+        fillRule="evenodd"
+      >
+        <image
+          id="heart-fill"
+          x="-9"
+          y="-12"
+          width="56"
+          height="56"
+          href="data:image/png;base64,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"
+        ></image>
+      </g>
+    </svg>
+  );
+};
+
+HeartSvg.propTypes = {
+  className: PropTypes.string,
+  fill: PropTypes.string
+};
+
+export default HeartSvg;
