@@ -92,7 +92,7 @@ Videos
 - Proficient in Polkadot, Solana, EOS
 - Email: leedorn1833@outlook.com
 
-**赵黎明-NoahZhao（Core Developer）**
+**NoahZhao（Core Developer）**
 - Computer Science
 - Front-end development
 - 5 years experience in blockchain development
