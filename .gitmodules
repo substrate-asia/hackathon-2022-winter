@@ -19,3 +19,9 @@
 [submodule "teams/07-lightm/src/ui"]
 	path = teams/07-lightm/src/ui
 	url = https://github.com/LightmNFT/lightm.git
+[submodule "teams/13-SalvadoFinance/src/svfi-frontend"]
+	path = teams/13-SalvadoFinance/src/svfi-frontend
+	url = https://github.com/SalvadoFinance/svfi-frontend.git
+[submodule "teams/13-SalvadoFinance/src/svfi-contracts"]
+	path = teams/13-SalvadoFinance/src/svfi-contracts
+	url = https://github.com/SalvadoFinance/svfi-contracts.git
