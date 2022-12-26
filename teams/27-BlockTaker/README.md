@@ -160,7 +160,7 @@ Videos
 ![](./docs/pic/008.png)
 ## **5 团队成员**
 
-**邵海-Samir（Captain，Technical Director）**
+**邵海（Captain，Technical Director）**
 - 硕士学位，电子科技大学计算机专业
 - 区块链、分布式存储专家
 - 12年工作经验，8年区块链项目工作经历
@@ -168,7 +168,7 @@ Videos
 - 曾就职于区块链前10强公司
 - 邮箱：samirlol@qq.com
 
-**马跃-Sivan（核心开发）**
+**马腾云（核心开发）**
 - 四川大学计算机专业
 - WEB3全栈开发，Ethereum专家
 - 区块链合约开
@@ -176,7 +176,7 @@ Videos
 - 精通Ethereum、Polkadot、BTC、Cosmos
 - 邮箱：kavenLee@protonmail.com
 
-**李栋-Leedorn（核心开发）**
+**李栋（核心开发）**
 - 硕士学位，浙江大学计算机专业
 - 区块链合约开发，7年区块链项目开发经验
 - Ethereum专家
@@ -184,7 +184,7 @@ Videos
 - 精通Polkadot、Solana、EOS
 - 邮箱：leedorn1833@outlook.com
 
-**赵黎明-NoahZhao（核心开发）**
+**赵黎明（核心开发）**
 - 计算机专业
 - 前端开发
 - 5年区块链开发经验
