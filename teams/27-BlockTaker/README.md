@@ -25,8 +25,6 @@ Based on financial-grade EAL6+ security chip technology. The BT wallet stores th
 
 ![Security Chip Hardware Block Diagram](./docs/pic/002.png)
 
-![Security Chip Main Functions](./docs/pic/003.png)
-
 #### **2.3.2 Polkadot Wallet**
 ![](./docs/pic/004.png)
 #### **2.3.3 Nominator**
@@ -127,7 +125,6 @@ Block Taker团队，团队主要成员有10年以上开发经验，擅长Golang�
 基于金融级EAL6+安全芯片技术。BT钱包通过与特定移动端搭载的独立安全芯片打通，将私钥单独储存，与互联网隔离，为用户提供了高安全性的加密资产私钥的创建、存储、使用和恢复功能，真正实现了"冷热端分离、私钥永不触网”。
 ![Security Chip Hardware Block Diagram](./docs/pic/002.png)
 
-![Security Chip Main Functions](./docs/pic/003.png)
 #### **2.3.2 Polkadot Wallet**
 ![](./docs/pic/004.png)
 #### **2.3.3 提名人**
