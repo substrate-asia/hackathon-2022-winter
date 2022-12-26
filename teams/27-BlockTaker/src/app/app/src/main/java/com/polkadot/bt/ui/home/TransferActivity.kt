@@ -256,7 +256,11 @@ class TransferActivity : BaseActivity<TransferActivityBinding>() {
 
         }
         binding.all.setOnClickListener {
-            binding.inputTransferAmount.setText(linkEntityNew?.linkNumber)
+            val amount = if (linkEntityNew!!.link == "DOT")
+                linkEntityNew?.linkNumber!!.split(":")[0]
+            else
+                linkEntityNew?.linkNumber
+            binding.inputTransferAmount.setText(amount)
         }
         binding.inputTransferAmount.addTextChangedListener {
             val regex = "^\\d+.$"

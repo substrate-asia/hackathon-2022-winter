@@ -303,4 +303,7 @@
     <string name="extract">Claim</string>
     <string name="unbound_quantity">Unbundled Quantity</string>
     <string name="unbind_only">Unbind</string>
+    <string name="total_amount_of_bound_accounts_tips">Total binding amount = bound + unbinding + income</string>
+    <string name="redeeming_tips">The unbonded DOT has a 28-day unfreezing period.</string>
+    <string name="retrievable_tips">After the 28-day unbonding period is over, the DOT will become redeemable from being unbonded. At this time, it needs to be manually redeemed to your own wallet.</string>
 </resources>
