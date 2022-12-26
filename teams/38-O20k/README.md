@@ -23,7 +23,7 @@ The core meaning of `Omniverse` is that ***The legitimacy of all on-chain states
  <!-- a brand new Token Protocol compatible with current token standards along with an advanced swap platform, which is absolutely decentralized and cryptographic-based solution, through which the exchange between tokens deployed on different chains can be processed with determining security. Besides, there's no need to divide your assets into different isolated parts, on the contrary, your assets can be accessed from any chain and be treated as a whole. -->
 
 ### Introduction
-Based on the philosophy of `Omniverse`, we build `O20k` as a DLT protocol stack built on multiple existing L1 public chains, enabling asset-related operations such as transfers, receptions, and transactions running over different consensus spaces equivalently.
+Based on the philosophy of `Omniverse`, we build `O20k` as a DLT protocol stack built on multiple existing L1 public chains, enabling asset-related operations such as transfers, receptions, and transactions running over different consensus spaces synchronously and equivalently.  
 The main advantages of "O20k" are as follows:  
 * **Efficient Legitimacy Synchronization**. The validation of the equivalent legitimacy over different consensus spaces can complete within one step.  
 * **Free Swapping without Boundaries**: The token exchanges over different blockchains are open and decentralized and related assets are not segmented into different blockchains but as a whole.  
