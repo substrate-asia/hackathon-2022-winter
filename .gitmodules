@@ -31,3 +31,9 @@
 [submodule "teams/10-Tenet/src/videown-web"]
 	path = teams/10-Tenet/src/videown-web
 	url = https://github.com/fage2022/videown-web.git
+[submodule "teams/22-YGY/src/backend/go"]
+	path = teams/22-YGY/src/backend/go
+	url = https://github.com/tomxiong/design.git
+[submodule "teams/22-YGY/src/ui/javascript"]
+	path = teams/22-YGY/src/ui/javascript
+	url = https://github.com/rubyShilp/sign.git
