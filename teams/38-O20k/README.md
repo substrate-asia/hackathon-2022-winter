@@ -21,7 +21,7 @@ That is, we can hardly processing Token in the multi-chain environment.
 
 Take `exchange` for example.
 
-When we need to exchange tokens from different chains, most of the time ,we choes to ues CEX.
+When we need to exchange tokens from different chains, most of the time ,we need to ues CEX.
 
 CEX is very convenient and efficient, but as we all know, it's and very easy to manipulate under the table. As a user of CEX, you don't really control your own assets, FTX is the best case recently.
 
