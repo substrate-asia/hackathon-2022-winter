@@ -1,59 +1,81 @@
-## 基本资料
+## Basic
 
-项目名称：O20k (Omniverse Protocol Stack)
+Name: O20k (Omniverse Protocol Stack)
 
-项目立项日期 (哪年哪月)：2022.12
+Start Time: 2022.12
 
-## 项目整体简介
+## Introduction
 
 ### Background
-In current technology state of the art, there are two ways to exchange tokens deployed on different public chains, the one is through CEX, the other is transferring through bridges first and then swapping.  
-CEX is very convenient and efficient, but as we all know, it's and very easy to manipulate under the table. As a user of CEX, you don't really control your own assets, FTX is the best case recently. 
+As we all know, Token is a great invention that goes along with blockchain, and it’s the impetus of Web3.
 
-DEX is decentralized，and the assets is on your own hand, we always say that code is law, it means you can handle your assets under the established and transparent rules, no one can manipulate your assets outside of these rules.
-But the fagmentation is a problem that has plagued DEX for a long time, that is, we cannot swap tokens of different chains easily. 
+It has many extrinsic properties, like act as an asset, currency, vote, DID or PFP and so on. These functions vary with different projects.
 
-That's why some token bridges emerge.
-With bridges, the assets should be locked on one chain and minted on another chain so that your assets are cut into different parts on different chains and one part can be only used on one chain at a time. Moreover, many [secure events](https://github.com/xiyu1984/Blog/blob/main/docs/Multi-Chain%20Events.md) happened on current bridges.  
-The bridge is just like a bank, issue wrapped tokens, anyway, when you ues the bridge, you just deal the wrapped token, not the really token of your own.
+Besides, it also has some intrinsic properties, which is invariable, no matter what extrinsic properities it has. These intrinsic properities including `transfer`, `receive`, `exchange` and so on.
 
-To solve these problems, we will provide an absolutely decentralized and cryptographic-based solution, through which the exchange between tokens deployed on different chains can be processed with determining security. Besides, there's no need to divide your assets into different isolated parts, on the contrary, your assets can be accessed from any chain and be treated as a whole.
+Nowerdays, There are some problems with it’s intrinsic properities, and maybe affect the expression of it’s extrinsic properties.
+
+It’s not a big problem when we concentrate on single chain, but it’s serious when we enter into the multichain stage.
+
+That is, we can hardly processing Token in the multi-chain environment.
+
+Take `exchange` for example.
+
+When we need to exchange tokens from different chains, most of the time ,we need to ues CEX.
+
+CEX is very convenient and efficient, but as we all know, it's and very easy to manipulate under the table. As a user of CEX, you don't really control your own assets, FTX is the best case recently.
+
+DEX is decentralized，and the assets is on your own hand, we always say that code is law, it means you can handle your assets under the established and transparent rules, no one can manipulate your assets outside of these rules. But the fagmentation is a problem that has plagued DEX for a long time, that is, we cannot swap tokens of different chains easily.
+
+That's why some token bridges emerge. With bridges, the assets should be locked on one chain and minted on another chain so that your assets are cut into different parts on different chains and one part can be only used on one chain at a time. Moreover, many [secure events](https://github.com/xiyu1984/Blog/blob/main/docs/Multi-Chain%20Events.md) happened on current bridges.The bridge is just like a bank, issue wrapped tokens, anyway, when you ues the bridge, you just deal the wrapped token, not the really token of your own.
+
+There are similiar problems with `transfer` and `receive`.
+
+To solve these problems, we will provide a base protocol stack for decentralized token processing, which is named as `Omniverse Protocol Stack` (`O20k` for short).
+The core meaning of `Omniverse` is that ***The legitimacy of all on-chain states and operations can be equivalently verified and recorded simultaneously over different consensus spaces, regardless of where they were initiated.***
+
+ <!-- a brand new Token Protocol compatible with current token standards along with an advanced swap platform, which is absolutely decentralized and cryptographic-based solution, through which the exchange between tokens deployed on different chains can be processed with determining security. Besides, there's no need to divide your assets into different isolated parts, on the contrary, your assets can be accessed from any chain and be treated as a whole. -->
 
 ### Introduction
-We are building an advanced swap platform with features below:
-1. decentralized
-2. omnichain integrated
-3. efficient and convenient
-4. smooth transaction
+Based on the philosophy of `Omniverse`, we build `O20k` as a DLT protocol stack built on multiple existing L1 public chains, enabling asset-related operations such as transfers, receptions, and transactions running over different consensus spaces synchronously and equivalently.  
+The main advantages of "O20k" are as follows:  
+* **Efficient Legitimacy Synchronization**. The validation of the equivalent legitimacy over different consensus spaces can complete within one step.  
+* **Free Swapping without Boundaries**: The token exchanges over different blockchains are open and decentralized and related assets are not segmented into different blockchains but as a whole.  
+* **Deterministic**. Security is guaranteed deterministically in a decentralized and trustless environment.  
+* **More Efficient AMM**. Provides an improved mathematic model supporting both smooth trading and price sensibility, and specific verifiable computation is brought in to improve efficiency.
+<!-- We are b named it `Omniverse Protocol Stack` (`O20k` for short) , which can do exchanges for different kinds of tokens distributed in diverse chains.   -->
+The innovation points of `O20k` are shown as below:  
+* First, we provide a brand new standard called `Omniverse Token Protocol`(`OTP` for short), whose legitimacy can be validated equivalently and be synchronized to any chain where `OTP` is deployed so that it to be accessed and operated anywhere at the same time as a whole, which is unlike being divided into isolated parts by token bridges. Besides, `OTP` is able to be compatible with current single-chain token protocols.  
+* Second, an `Omniverse Swap Protocol` (`OSP` for short) is provided to make exchanges for different kinds of `OTP` tokens just like a CEX did but in a decentralized way. One `OTP` token can directly exchange with another `OTP` token on Polkadot, and the related states could be verifiable on other `O20k` deployed chains such as Ethereum, NEAR, Flow, Move chains, etc.  
+* Moreover, AMM is used to make calculations for exchanges and we innovatively worked out a new mathematical model called `O-AMM` to implement it, which can provide a wider "smooth trading range" than state of art and still keep the price sensitivity. 
 
-We named it `Omniverse Protocol Stack` (`O20k` for short) , which can do exchanges for different kinds of tokens distributed in diverse chains.  
-First, we provide a brand new token protocol called `Omniverse Token Protocol`(`OTP` for short), whose legality can be synchronized to any chain where `OTP` is deployed so that it to be accessed and operated anywhere at the same time as a whole, which is unlike being divided into isolated parts by token bridges. Besides, `OTP` is able to be compatible with current single-chain token protocols.  
-Second, an `Omniverse Swap Protocol` (`OSP` for short) is provided to make exchanges for different kinds of OTP tokens just like a CEX did but in a decentralized way. One `OTP` token can directly exchange with another `OTP` token on Polkadot, and the related states could be verifiable on other `O20k` deployed ecosystems such as Ethereum, NEAR, Flow, Move chains, etc.  
-Moreover, AMM is used to make calculations for exchanges and we innovatively worked out a new mathematical model called `O-AMM` to implement it, which can provide a wider "smooth trading range" than state of art and still keep the price sensitivity. 
-
-We will build a Substrate Parachain to make out `O20k`, which can connect the other Parachains by `XCM` so that `O20k` could provide services for the whole ecosystem of Polkadot.  
+For implementation, we will build a Substrate Parachain to make out `O20k`, which can connect the other Parachains by `XCM` so that `O20k` could provide services for the whole ecosystem of Polkadot.  
 
 * The `OTP` has the following features:  
-  * The token based on `OTP` deployed on different chains is not separated but as a whole. If someone has one `OT`P based token $X$ on Polkadot, he will have one on Ethereum and other chains at the same time.   
+  * The token based on `OTP` deployed on different chains is not separated but as a whole. If someone has one `OTP`-based token $X$ on Polkadot, he will have an **equivalent** one on Ethereum and other chains at the same time.   
   * The state of the tokens based on `OTP` is synchronous on different chains. If someone sends/receives one token $X$ on Polkadot, he will send/receive one token $X$ on Ethereum and other chains at the same time.  
-  * The `OTP` works as below:  
+  * The `OTP` works as below. ***Note that in an Omniverse token transaction the user only needs to initiate a sending transaction on whatever blockchain he prefers, and the rest things are all processed by the underlying protocols***.  
 ![img](./docs/assets/OTP.png)
 <p align="center">Figure.1 Workflow of OTP</p>
 
 * The `OSP` has the following features:  
-  * `OSP` is a decentralized DEX platform for Omniveser Tokens. Omniverse token $X$ can be exchanged with Omniverse token $Y$ through `OSP`. Similiar to `OTP`, the swap happens as a whole on Polkadot and other blockchains. If someone initiate a swap of $X$ with $Y$, he will give out some amount of $X$ and get related amount of $Y$ on Polkadot and all blockchains where `O20k` deployed.  
+  * `OSP` is a decentralized DEX platform for Omniverse Tokens. Omniverse token $X$ can be exchanged with Omniverse token $Y$ through `OSP`. Similiar to `OTP`, the swap happens as a whole on Polkadot and other blockchains. If someone initiate a swap of $X$ with $Y$, he will give out some amount of $X$ and get corresponding amount of $Y$ on Polkadot and all blockchains where `O20k` deployed.  
   * The Omniverse account of `OSP` is managed by the consensus of the `O20k` Parachain.
-  * The `OSP` works as below:  
+  * The `OSP` works as below. ***Note that in an Omniverse swap operation the user only needs to initiate an exchange transaction of token $X$ to token $Y$ on whatever blockchain he prefers, and the rest things are all processed by the underlying protocols.***  
 ![img](./docs/assets/OSP.png)
 <p align="center">Figure.2 Workflow of OSP</p>
 
-* The [O-AMM](./docs/Principle%20of%20Omniverse%20AMM.md) is the core mechanism supporting the underlying exchanges of the `OSP`, which has the following features:  
+* The `O-AMM` is the core mechanism supporting the underlying exchanges of the `OSP`, which has the following features:  
   * Ability to balance smoothness and price sensitivity at the same time.
-  * The curve is as below:  
+  * The mathematic curve is as below, and we have provided the [Principle of Omniverse AMM](./docs/Principle%20of%20Omniverse%20AMM.md) for detailed explanation.  
 ![img](./docs/assets/Figure_1.png)  
 <p align="center">Figure.3 Mathematic Model of `O-AMM`</p>  
 
 ### Demo
+* You can taste everything mannually
+  * Omniverse Swap and Token operations can be tried through this [detailed tutorial](./docs/README.md).
+  * The prototype of `O-AMM` can be tried through this [guide](./src/O-AMM/README.md).  
+* The whole workflow also can be found through this [Demo Video](to be done).  
 
 ### Architecture
 ![img](./docs/assets/OmniverseProtocolStack.png)  
@@ -73,45 +95,53 @@ The bottom is the off-chain synchronizer layer. The synchronizer is a very light
 ### logo
 ![img](./docs/assets/logo.png)  
 
-## 黑客松期间计划完成的事项
+## Plan
 
 **On-Chain**
 
 - `pallet-OmniverseProtocol`
-  - [ ] Omniverse Account Management
-  - [ ] Omniverse Nonce Synchronization
-  - [ ] Omniverse Commitment Verification
+  - [x] Omniverse Account Management
+  - [x] Omniverse Nonce Synchronization
+  - [x] Omniverse Commitment Verification
 
 - `pallet-OmniverseToken`
-  - [ ] Omniverse Token Factory
-  - [ ] Omniverse Token Processor
+  - [x] Omniverse Token Factory
+  - [x] Omniverse Token Processor
 
 - `pallet-OmniverseSwap`
-  - [ ] Omniverse Swap Platform
+  - [x] Omniverse Swap Platform
 
 **Algorithm**
 - `O-AMM`
-  - [ ] The ptototype of O-AMM (Omniverse AMM) algorithm.
+  - [x] The ptototype of O-AMM (Omniverse AMM) algorithm.
 
 **Client**
 - Command-Line Interface
-  - [ ] Omniverse Transaction Tools
-  - [ ] Omniverse Swap Tools
-  - [ ] Omniverse Account Tools  
+  - [x] Omniverse Transaction Tools
+  - [x] Omniverse Swap Tools
+  - [x] Omniverse Account Tools  
 
-## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
+## Completed
 
-- 2022年12月27日前，在本栏列出黑客松期间最终完成的功能点。
-- 把相关代码放在 `src` 目录里，并在本栏列出在黑客松期间打完成的开发工作/功能点。我们将对这些目录/档案作重点技术评审。
-- 放一段不长于 **5 分钟** 的产品 DEMO 展示视频, 命名为 `团队目录/docs/demo.mp4`。初审时这视频是可选，demo day 这是计分项。
+Everything in the [plan](#plan) has beed finished.
+- **On-Chain**
+  - [pallet-OmniverseProtocol](./src/pallets/omni-protocol/)
+  - [pallet-OmniverseToken](./src/pallets/omni-factory/)
+  - [pallet-OmniverseSwap](./src/pallets/omni-swap/)
+- **Algorithm**
+  - [O-AMM](./src/O-AMM/)
+- **Client**
+  - Source code [Command-Line Interface](./src/omniverse-swap-tools/), and [tutorial](./docs/README.md).
 
-## 队员信息
+- [**Demo Video**]()
+
+## Team
 `Omniverse Labs` was established in December of this year. The first product of our team is [Dante Network](https://github.com/dantenetwork). `O20k` is an Web3 application based on Dante.  
 Our team consists of the following members:  
 |Name|Function|GitHub|Weixin|
 |---------|---------|---------|---------|
-|Jason|CEO|https://github.com/dantenetwork|HopeOfTown|
-|Xiyu|Tech Guy|https://github.com/xiyu1984|xiyu_meta|
+|Jason|PM|https://github.com/dantenetwork|HopeOfTown|
+|Shawn|Tech Guy|https://github.com/xiyu1984|xiyu_meta|
 |Virgil|Tech Guy|https://github.com/virgil2019|cherima|
 |kay404|Tech Guy|https://github.com/kay404|linkai528|
 
