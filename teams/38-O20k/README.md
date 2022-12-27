@@ -75,7 +75,7 @@ For implementation, we will build a Substrate Parachain to make out `O20k`, whic
 * You can taste everything mannually
   * Omniverse Swap and Token operations can be tried through this [detailed tutorial](./docs/README.md).
   * The prototype of `O-AMM` can be tried through this [guide](./src/O-AMM/README.md).  
-* The whole workflow also can be found through this [Demo Video](to be done).  
+* The whole workflow also can be found through this [Demo Video](https://omniverse.oss-cn-hangzhou.aliyuncs.com/omniverse-swap.mov).  
 
 ### Architecture
 ![img](./docs/assets/OmniverseProtocolStack.png)  
@@ -134,7 +134,7 @@ Everything in the [plan](#plan) has beed finished.
   - Source code [Command-Line Interface](./src/omniverse-swap-tools/), and [tutorial](./docs/README.md).
   - Souce code of [EVM Client](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts).
 
-- [**Demo Video**]()
+- [**Demo Video**](https://omniverse.oss-cn-hangzhou.aliyuncs.com/omniverse-swap.mov)
 
 ## Team
 `Omniverse Labs` was established in December of this year. The first product of our team is [Dante Network](https://github.com/dantenetwork). `O20k` is an Web3 application based on Dante.  
