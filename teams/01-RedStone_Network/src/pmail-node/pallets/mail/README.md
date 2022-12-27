@@ -1,10 +1,3 @@
-# Mail Module
-
-Provide binding email address, send email, set alias function.
-
-And synchronize mail between web3 and web2
-
-
 # Mail Module  
 
 This module provides users with email sending and receiving functions. When users send Web3 emails, the front-end submits user content to the blockchain, Runtime is responsible for queue caching of emails, and off-chain working machines periodically poll the task queue to execute sending; When using Web2 mail, the off-chain worker machine identifies and stores the user's Web2 mail. The interface of this module is completely open. Users can use PMail to provide clients, or use clients developed by third parties.
