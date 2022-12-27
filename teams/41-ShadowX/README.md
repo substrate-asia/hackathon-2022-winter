@@ -84,6 +84,7 @@ New way of NFT: solve the rarity, NFT value and transaction-related matters that
 | 拉飞| PM |https://github.com/samlin425 | |
 | 魏小平| Tech | https://github.com/kaiweicai | |
 | 海上明月| Product | https://github.com/Lunalaloca | |
+| 浏言芬宇| UI |  | |
 
 
 
