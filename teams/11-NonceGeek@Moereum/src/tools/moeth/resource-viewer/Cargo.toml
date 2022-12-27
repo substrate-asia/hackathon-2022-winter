@@ -1,0 +1,26 @@
+[package]
+name = "resource-viewer"
+version = "1.2.1"
+authors = []
+edition = "2018"
+
+[dependencies]
+http = "0.2"
+serde = { version = "1.0.125", features = ["derive", "rc"] }
+serde_json = "1.0"
+schemars = { version = "0.8", features = ["default", "derive", "preserve_order"], optional = true }
+
+# diem deps:
+move-resource-viewer = { package = "move-resource-viewer", git = "https://github.com/pontem-network/move.git", branch = "release-1.7.1" }
+move-core-types = { git = "https://github.com/pontem-network/move.git", branch = "release-1.7.1" }
+move-binary-format = { git = "https://github.com/pontem-network/move.git", branch = "release-1.7.1" }
+
+# move-lang deps:
+net = { path = "../net" }
+
+[features]
+default = [
+    "json-schema",
+]
+
+json-schema = ["schemars"]

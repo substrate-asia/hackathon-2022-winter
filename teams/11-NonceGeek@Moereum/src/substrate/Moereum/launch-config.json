@@ -1,0 +1,58 @@
+{
+	"relaychain": {
+		"bin": "data/polkadot",
+		"chain": "rococo-local",
+		"nodes": [
+			{
+				"name": "alice",
+				"wsPort": 9944,
+				"port": 30444
+			},
+			{
+				"name": "bob",
+				"wsPort": 9955,
+				"port": 30555
+			}
+		],
+		"genesis": {
+			"runtime": {
+				"runtime_genesis_config": {
+					"configuration": {
+						"config": {
+							"validation_upgrade_frequency": 1,
+							"validation_upgrade_delay": 15
+						}
+					}
+				}
+			}
+		}
+	},
+	"parachains": [
+		{
+			"bin": "./target/release/moereum",
+			"chain": "local",
+			"nodes": [
+				{
+					"wsPort": 9946,
+					"rpcPort": 8899,
+					"port": 40335,
+					"flags": [
+						"--rpc-cors=all",
+						"--ws-external",
+						"--rpc-external",
+						"--rpc-methods=unsafe",
+						"--alice",
+						"--",
+						"--execution=wasm"
+					]
+				}
+			]
+		}
+	],
+	"simpleParachains": [
+	],
+	"hrmpChannels": [
+	],
+	"types": {},
+	"finalization": false
+}

@@ -1,0 +1,17 @@
+[package]
+authors = ['Moereum Network']
+edition = '2021'
+homepage = 'https://moereum.network'
+license = 'Unlicense'
+name = 'constants'
+repository = 'https://github.com/NonceGeek/Moereum/'
+version = '3.0.0'
+
+[dependencies]
+primitives = { path = "../primitives", default-features = false }
+
+[features]
+default = ['std']
+std = [
+    "primitives/std",
+]
