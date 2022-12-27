@@ -5,16 +5,16 @@ Project name: PMail
 Project approval date (month and year): November 2022
 
 ## Project overall introduction
-
+### Logo
 ![image-20220622110833152](./docs/logo-200.png)
-
+### Background
 Mail service is the longest-surviving means of communication on the Internet today. There are more than 4 billion mailbox users in the world, accounting for more than 50% of the world's total population, and it still maintains an annual growth rate of 3%.
 
 The email product design looks very complete, but there are still 3 main pain points:
 - Information leakage: email content can be monitored/viewed by service providers
 - Information loss: service providers may stop their services, reference: Yahoo Mail.
 - Spam: various kinds of advertising emails/phishing emails.
-
+### introduction
 PMail is the first mail service system based on Web3.0 and Substrate technology, providing users with permanent mail service without centralized service, which contains several features:  
 
 - Aggregate Communication: Support for Web2/Web3 mail communication, cross-chain mail exchange.  
@@ -23,8 +23,9 @@ PMail is the first mail service system based on Web3.0 and Substrate technology,
 - Extended Functionality: Support for decentralized cloud storage.  
 
 Technically, we will develop a decentralized relational index based on Substrate, use off-chain working machines to develop a decentralized mail gateway, and deploy Arweave to achieve permanent front-end operations. Thus providing any user with a secure, trustless and permissionless persistent mail service.
-
+### Technology Architecture
 ![image-20220622110833152](./docs/pmail.jpg)
+
 
 ## Things planned to be done during the hackathon
 
