@@ -1,26 +1,47 @@
-# 基本资料
+# Basic information
 
-项目名称：VIDEOWN
+Project Name：VIDEOWN
 
-项目立项日期：2022.11
+Project Initiation Date：2022.11
 
-## 项目整体简介
+## Overall introduction of the project
 
-### 项目背景
-在web3领域，我们常常讨论创作者经济如何更好地为创作者服务。然而在当下，web3世界中被创造的事物，难以真正地被创作者所拥有。被创造的数据，依然面临中心化存储的困境。诚然，越来越多的项目看到了这一点，开始使用去中心化存储。但由于存储基础设施仍不完善，导致了应用的表现不尽如人意。
+![logo-light-wbg](./assets/logo-light-wbg.png)
 
-### 项目介绍
-VIDEOWN是一个去中心化视频NFT平台，它建立在CESS区块链上，支持良好体验的视频流媒体播放。用户可以在VIDEOWN上传、播放或查找所有标签的视频内容，也可以将内容铸造为NFT。同时，基于CESS区块链，NFT不再是仅仅以智能合约的方式实现，VIDEOWN将实现数据本身就是NFT，用户之间可以交换数据所有权，无论是图片、音乐还是视频。
+![videown-black](./assets/videown-black.png)
 
-### 技术架构
+### The Inspiration
+
+Redirecting monetization opportunities to creators in their best interest in Web3 is the crux the industry has been longing to solve. Content is not truly owned by creators in most cases in Web3, most data is still being stored in centralized storage where the ownership issue prevails. VIDEOWN provides a platform where creators share and trade content with data ownership and privacy protection, bringing creators the unprecedented experience of content creation, sharing and trading in the world of Web3.
+
+### **Project Introduction**
+VIDEOWN is a decentralized video NFT platform, built on the CESS blockchain, to provide users a smooth video streaming experience. Users not only can upload, play or search for all tagged video content on VIDEOWN, but also mint the content as NFT. NFT is no longer just implemented in the form of smart contracts. VIDEOWN realized the concept that NFT is the data itself, and users can exchange data ownership, whether it is pictures, music or videos.
+
+### **Technology Architecture**
 React.js、Polkadot.js、antd UI、golang、cess-sdk-go
 
-## 黑客松期间计划完成的事项
+Please view [videown technology architecture](./docs/videown_technology_artchitect.md) for details；
 
-## 黑客松期间所完成的事项 (2022 年 12 月 27 日初审前提交)
+### Demo Display
 
-## 队员信息
+1. Please refer to [videown operation tutorial](./docs/videown_operation_tutorial.md) for operation tutorial；
+2. Demo video, see  [videown demo video](./docs/videown_demo.mp4)；
 
-| Name        | Role            | GitHub       | Wechat   |
-|-------------|-----------------|--------------|----------|
-| lost-inwind | Substrate + Ink | @lost-inwind |          |
+## Items planned to be completed during hackathon
+
+Please view  [videown dev plan](./docs/videown_technology_artchitect.md) for details;
+
+## Matters completed during hackathon period (submitted before preliminary review on December 27, 2022)
+
+Our team has successfully completed all the contents of the development plan,please view [completed work](./docs/videown_technology_artchitect.md) for details;
+
+## Team member information
+
+| Name     | Role           | Email                                                        | Wechat            |
+| -------- | -------------- | ------------------------------------------------------------ | ----------------- |
+| Luke     | Full stack     | [videown2023@gmail.com](mailto:videown2023@gmail.com)        | meiguofuwuqichuzu |
+| Mar      | Front end      | [shuiguowuhen8@gmail.com](mailto:shuiguowuhen8@gmail.com)    | Videown           |
+| Tony Dai | Smart contract | [waterbrother2022@gmail.com](mailto:waterbrother2022@gmail.com) | o98k              |
+| Young    | Operation      | [onway.yang@gmail.com](mailto:onway.yang@gmail.com)          | onway518          |
+| Han      | Product        | [xuhamid@outlook.com](mailto:xuhamid@outlook.com)            | LeeXuHam          |
+

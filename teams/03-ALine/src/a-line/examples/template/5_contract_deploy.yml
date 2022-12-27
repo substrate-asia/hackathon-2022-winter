@@ -1,0 +1,18 @@
+version: 1.0
+name: contract_deploy
+stages:
+  template-init:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/my-erc20
+
+  contract-deploy:
+    needs:
+      - template-init
+    steps:
+      - name: deploy
+        run: |
+          npm install -g truffle
+          truffle migrate

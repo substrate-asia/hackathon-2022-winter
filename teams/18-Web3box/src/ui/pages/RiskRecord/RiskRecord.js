@@ -59,7 +59,11 @@ const RiskRecord = (props) => {
                        <p className='projectname'>Project Name</p> 
                        <p className='score'>
                         Score
-                        <img src={tip} title='Weekly Update'></img>
+                        <img src={tip}></img>
+
+                        <div className="weekly">
+                                
+                        </div>
                        </p> 
                     </li>
 

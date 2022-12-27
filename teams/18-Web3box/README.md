@@ -4,9 +4,17 @@ Project Name: Risk Protocol
 
 Start time: 2022.12
 
-![](docs/icon.png)
+![](docs/pic/icon.png)
 
 > Risk Protocol provides accurate and timely risk management for Polkadot Ecology.
+
+## Details
+
+Details of our project are as below
+
+- [Github Organization](https://github.com/Ericwa0x/hackathon-2022-winter/tree/main/teams/18-Web3box)
+- [Pitch deck](https://github.com/Ericwa0x/hackathon-2022-winter/blob/main/teams/18-Web3box/docs/Risk%20Protocol_Deck%20V1.2.pdf)
+- [Video](https://youtu.be/jeA_MM3_pyY)
 
 # 1.Introduction
 
@@ -38,7 +46,7 @@ Underlayer: Polkadot Eco Assets Integration, Machine Learning Analytics, AI Algo
 
 # 4.Github
 
-[Github address](https://github.com/Ericwa0x/hackathon-2022-winter/tree/main/teams/18-Web3box)
+[Github link](https://github.com/Ericwa0x/hackathon-2022-winter/tree/main/teams/18-Web3box)
 
 # 5.Deliverables in Hackathon-2022-Winter
 
@@ -46,13 +54,17 @@ Risk Protocol Client Demo (Mac/Win Desktop)
 
 - Wallet Module
   Supports asset management for Polkadot(DOT), Kusama(KSM), Acala(ACA), Astar(ASTR), and Moonbeam(GLMR) networks, including sending assets, receiving assets, viewing asset records, etc.
-- Risk Module 
+- Risk Module
   The first phase of the Risk module will support risk scoring and corresponding indicators report display for 10 Parachains, including Moonbeam, Acala, Astar, Centrifuge, Phala, Efinity, KILT, Litentry, Darwinia, Kylin, etc., and will be updated weekly.
+
+[Sentiment analysis Doc](https://github.com/Ericwa0x/hackathon-2022-winter/blob/main/teams/18-Web3box/docs/Twitter_download%20Readme.md)
 
 > Note: Wallet and Risk modules are interlinked and can be linked in the future for risk assessment of assets, contracts and accounts in Polkadot ecosystem.
 
 - Risk Protocol API
   Polkadot eco-developers can use the project name to call the Risk Protocol API to get the updated risk scores and corresponding metrics by week.
+
+[API_DOC](https://github.com/Ericwa0x/hackathon-2022-winter/blob/main/teams/18-Web3box/docs/API_Doc.md)
 
 The first phase of Risk Protocol API will provide risk scores and corresponding indicators reports of 10 Parachains, including Moonbeam, Acala, Astar, Centrifuge, Phala, Efinity, KILT, Litentry, Darwinia, and Kylin, for free.
 
@@ -87,3 +99,11 @@ Andrii
 - Leader of Oversea mining business
 - Over 5 years experience in Data Science, blockchain and Machine learning industry
 - Full-time in blockchain since 2017
+
+## Alpha Release 
+
+[Windows](https://drive.google.com/file/d/1VgasMZOzVfIzqWZiiYP7dyWOVrvQ5csv/view?usp=share_link)
+
+[MAC OS ](https://drive.google.com/file/d/1TuD6eow_x0NYfiwTHt6ooEtGuXro1YKy/view?usp=share_link)
+
+> Note: For MAC version, please enable the “Open Anyway” opition in the MAC Security & Privacy Setting.

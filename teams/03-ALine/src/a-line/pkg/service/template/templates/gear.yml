@@ -1,0 +1,46 @@
+version: 1.0
+name: my-gear
+stages:
+  clone-code-gear-non-fungible-token:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/workdir/my-gear/non-fungible-token
+      - name: git clone gear non fungible token
+        uses: git-checkout
+        with:
+          url: https://github.com/gear-dapps/non-fungible-token
+          branch: master
+  clone-code-gear-deploy-script:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/workdir/my-gear/gear-deploy
+      - name: git clone gear deploy script
+        uses: git-checkout
+        with:
+          url: https://github.com/jlvihv/gear-deploy
+          branch: main
+
+  gear-code-compile:
+    needs:
+      - clone-code-gear-non-fungible-token
+      - clone-code-gear-deploy-script
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/workdir/my-gear/non-fungible-token
+      - name: make non fungible token
+        run: |
+          make
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/workdir/my-gear/gear-deploy
+      - name: gear deploy
+        run: |
+          npm install
+          npm run code:submit

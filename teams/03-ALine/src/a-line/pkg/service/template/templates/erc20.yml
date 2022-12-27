@@ -1,0 +1,88 @@
+version: 1.0
+name: my-erc20
+stages:
+  template-init:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/my-erc20
+      - name: template init
+        uses: git-checkout
+        with:
+          url: https://github.com/abing258/truffle-moonbeam-MC.git
+          branch: master
+
+  compile:
+    needs:
+      - template-init
+    steps:
+      - name: compile
+        run: |
+          npm install
+          npm install -g truffle
+          truffle compile
+
+  solidity-lint:
+    needs:
+      - compile
+    steps:
+      - name: solidity-check
+        run: |
+          npm install -g ethlint
+          solium --init
+          solium -d contracts/
+
+  ganache:
+    needs:
+      - compile
+    steps:
+      - name: ganache
+        run: |
+          npm install -g ganache
+          if [ -f "command.pid" ]; then
+            kill -9 `cat command.pid`  || (echo 'No such process ')
+          fi
+          nohup ganache > ganache.log 2>&1& echo $! > command.pid
+          sleep 2
+
+  contract-test:
+    needs:
+      - ganache
+    steps:
+      - name: deploy
+        run: |
+          truffle test
+
+  deploy-contract:
+    needs:
+      - template-init
+    steps:
+      - name: deploy-contract
+        uses: deploy-contract
+        with:
+          ## network 的值有：default,rinkeby,goerli,mainnet,moonbeam,moonriver,moonbase
+          network: moonbase
+          private-key: c2790be05286f9f90f43f9fe9e3bf06c1394d480c3bf5233450a8e6b0a748fbe
+
+  compile-node:
+    needs:
+      - deploy-contract
+    steps:
+      - name: compile
+        run: |
+          cd app && npm install
+          npm run build
+
+  deploy-frontend:
+    needs:
+      - compile-node
+    steps:
+      - name: deploy
+        run: |
+          cd app
+          if [ -f "node.pid" ]; then
+            kill -9 `cat node.pid`  || (echo 'No such process ')
+          fi
+          nohup  npm run dev  > node.log 2>&1& echo $! > node.pid
+          sleep 2

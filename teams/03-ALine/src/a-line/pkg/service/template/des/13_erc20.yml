@@ -1,0 +1,18 @@
+#template id
+id: 13
+
+#Template name
+name: "defi erc20"
+
+#Template Description
+descriptionEnglish: "This template is used for DApps written on Truffle framework to fully automate code checkout -> check front-end code quality -> edit front-end code -> deploy front-end code."
+descriptionChinese: "该模版用于基于Truffle框架编写的DApp，实现全自动检出代码 -> 检查前端代码质量 -> 编辑前端代码 -> 部署前端代码。"
+
+#Template classification
+tag: "DAPP_TEMPLATE(Frontend)"
+
+#Corresponding picture name
+imageName: "truffle"
+
+#Affiliate Template
+template: "erc20.yml"

@@ -25,3 +25,15 @@
 [submodule "teams/13-SalvadoFinance/src/svfi-contracts"]
 	path = teams/13-SalvadoFinance/src/svfi-contracts
 	url = https://github.com/SalvadoFinance/svfi-contracts.git
+[submodule "teams/39-PrivaDEX/src/xc_dex_substrate/vendor/openbrush-contracts"]
+	path = teams/39-PrivaDEX/src/xc_dex_substrate/vendor/openbrush-contracts
+	url = git@github.com:Supercolony-net/openbrush-contracts.git
+[submodule "teams/10-Tenet/src/videown-web"]
+	path = teams/10-Tenet/src/videown-web
+	url = https://github.com/fage2022/videown-web.git
+[submodule "teams/22-YGY/src/backend/go"]
+	path = teams/22-YGY/src/backend/go
+	url = https://github.com/tomxiong/design.git
+[submodule "teams/22-YGY/src/ui/javascript"]
+	path = teams/22-YGY/src/ui/javascript
+	url = https://github.com/rubyShilp/sign.git

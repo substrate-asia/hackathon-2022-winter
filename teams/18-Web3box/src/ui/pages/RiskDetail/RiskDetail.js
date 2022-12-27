@@ -167,7 +167,7 @@ function RiskDetail(props) {
                     <li className="">
                        <p className='left'>Twitter Sentiment Index</p> 
                        <p className='right'>
-                       <div className={record.wallet_distribution}></div>
+                       <div className={record.twitter_sentime_index}></div>
                        </p> 
                     </li>
 

@@ -28,7 +28,7 @@ const { UserService }  = require("../../store/user");
 
 const AssetsTab = (props) => {
     const useLocations=useLocation()
-    const {account,keys,address} = props
+    const { account, keys, setUserimg ,setAddress,address,ethAddress,setethAddress} = props;
     const [tabType, setTabType] = useState(true)
     const [userImg, setUserImg] = useState(Dot_IMF);
     const Navigate = useNavigate();
@@ -49,7 +49,6 @@ const AssetsTab = (props) => {
     const [gasfees, setGasfees] = useState('');
     const [loadings, setLoadings] = useState(false);
     const [tokenName,setTokenName]=useState([])
-    
 
     const handleChange = async (value) => {
         if(value === 0){
@@ -104,14 +103,14 @@ const AssetsTab = (props) => {
             chain:rpc
         }
        await postWallet(1,'pol.transferFree',ps1).then(res=>{
-            setLoadings(false)
+             setLoadings(false)
              setIsModalVisible(true);
              setGasfees(res)
        }).catch(err=>{
         console.log(err);
-        message.error('Information filling error.');
+        //message.error('Information filling error.');
         setLoadings(false)
-
+        setIsModalVisible(true);
        });
       };    
       const handleCancel = () => {
@@ -135,7 +134,17 @@ const AssetsTab = (props) => {
 
       const GetBlance =  (value) =>{
         knownSubstrate.map( async(item)=>{
-            if(value == item.prefix){
+            if(value === 1284 &&  value == item.prefix){
+                  const ps2 = {
+                    address:useLocations.state.ethAddress,
+                    chain:item.rpc
+                  }
+                  setDecimal(item.decimals);
+                  setRpc(item.rpc);
+                  setTokenName(item.symbols[0]);
+                  let { data: { free: previousFree }, nonce: previousNonce } = await postWallet(1,'pol.balance',ps2);
+                  setTokenBalance(`${previousFree}`/item.decimals);
+            }else if(value == item.prefix){
                 const ps3 = {
                     'address':account,
                     'prefix':item.prefix
@@ -161,6 +170,7 @@ const AssetsTab = (props) => {
         }else{
             setTabType(false)
         }
+        handleChange(keys);
         GetBlance(keys);
     }, [keys])
       const SendToken= async()=>{
@@ -175,6 +185,10 @@ const AssetsTab = (props) => {
             to:tokenAddress,
             balance:tokenAccount*decimal+'',
             chain:rpc
+        }
+
+        if(keys === 1284){
+            ps2.from = useLocations.state.ethAddress;
         }
         try{
             const promise =  postWallet(1,'pol.transfer',ps2);
@@ -278,7 +292,7 @@ const AssetsTab = (props) => {
 
                             <div className='top_'>
                                 <img className='avatar' src={userImg}></img>
-                                <Select className='select_main' defaultValue='DOT' style={{ width: 200 }} onChange={handleChange}>
+                                <Select className='select_main' defaultValue={useLocations.state.token} style={{ width: 200 }} onChange={handleChange}>
                                 {
                                     knownSubstrate.map(item=>{
                                     return <Option value={item.prefix} key={item.prefix}>{item.symbols[0]}</Option>

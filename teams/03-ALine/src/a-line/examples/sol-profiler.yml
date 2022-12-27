@@ -1,0 +1,21 @@
+version: 1.0
+name: sol-profiler-check
+stages:
+  git-clone:
+    steps:
+      - name: git-clone
+        uses: git-checkout
+        with:
+          url: https://github.com/abing258/solidity_contracts.git
+          branch: main
+  code-compile:
+    needs:
+      - git-clone
+    steps:
+      - name: sol-profiler-install
+        run: |
+          npm install --global sol-profiler
+      - name: sol-profiler-check
+        uses: sol-profiler-check
+        with:
+          path:

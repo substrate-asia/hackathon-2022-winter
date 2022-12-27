@@ -1,0 +1,19 @@
+version: 1.0
+name:
+stages:
+  template-init:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/my-erc20
+
+  contract-check:
+    needs:
+      - template-init
+    steps:
+      - name: solidity-check
+        run: |
+          npm install -g ethlint
+          solium --init
+          solium -d contracts/

@@ -1,0 +1,21 @@
+export default {
+  title: "Select the Pipeline template",
+  titleDesc:
+    "Pipeline is the basic unit of continuous integration. Here you can quickly create a Pipeline for continuous integration. More can be configured in the Pipeline details.",
+  helpDoc: "View Help Doc",
+  cancelBtn: "Cancel",
+  nextBtn: "Next",
+  lastBtn: "Back",
+  submitBtn: "Create",
+  allText: "All",
+  saveBtn: "Save",
+  modalTitle: "Modify PipeLineName",
+  discardChange: "Discard changes",
+  GENERAL_TEMPLATE: "GENERAL_TEMPLATE",
+  SMART_CONTRACT_TEMPLATE: "SMART_CONTRACT_TEMPLATE",
+  DAPP_TEMPLATE: "DAPP_TEMPLATE",
+  DAPP_TEMPLATE_Frontend: "DAPP_TEMPLATE(Frontend)",
+  cannotEmpty: 'Cannot be empty',
+  deletePipeline: 'Delete pipeline',
+  buildAfterCreation: 'Trigger build after creation',
+};
