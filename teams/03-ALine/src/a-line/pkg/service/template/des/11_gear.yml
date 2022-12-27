@@ -1,0 +1,18 @@
+#template id
+id: 11
+
+#Template name
+name: "gear hello world"
+
+#Template Description
+descriptionEnglish: "The template is designed to build Gear smart contracts, enabling fully automated cloning -> token code pulling -> contract compilation -> contract deployment."
+descriptionChinese: "该模版是为了构建Gear智能合约，实现全自动克隆 -> 令牌代码拉取 -> 合约编译 -> 合约部署。"
+
+#Template classification
+tag: "SMART_CONTRACT_TEMPLATE"
+
+#Corresponding picture name
+imageName: "gear"
+
+#Affiliate Template
+template: "gear-hello-world.yml"

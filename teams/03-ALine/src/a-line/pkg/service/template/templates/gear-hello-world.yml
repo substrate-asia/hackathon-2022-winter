@@ -1,0 +1,70 @@
+version: 1.0
+name: my-gear-hello-world
+stages:
+  clone-code-hello-world:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/workdir/my-gear/hello-world
+      - name: git clone gear hello world
+        uses: git-checkout
+        with:
+          url: https://github.com/jlvihv/gear-hello-world
+          branch: main
+  clone-code-deploy:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/workdir/my-gear/gear-deploy
+      - name: git clone gear deploy script
+        uses: git-checkout
+        with:
+          url: https://github.com/jlvihv/gear-deploy
+          branch: hello-world
+
+  compile:
+    needs:
+      - clone-code-hello-world
+      - clone-code-deploy
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/workdir/my-gear/hello-world
+      - name: make hello world
+        run: |
+          make
+
+  upload:
+    needs:
+      - compile
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/workdir/my-gear/gear-deploy
+      - name: gear deploy
+        run: |
+          export MNEMONIC=''
+          npm install
+          npm run code:submit
+
+  frontend:
+    needs:
+      - upload
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/workdir/my-gear/hello-world/frontend
+      - name: make hello world frontend
+        run: |
+          cp .env.example .env
+          cat ../../gear-deploy/programID.txt >> .env
+          echo '' >> .env
+          cat ../../gear-deploy/metaString.txt >> .env
+          yarn
+          yarn add @polkadot/util-crypto
+          yarn run start

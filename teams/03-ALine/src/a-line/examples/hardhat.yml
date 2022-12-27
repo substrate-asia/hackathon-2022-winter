@@ -1,0 +1,45 @@
+version: 1.0
+name: my-hardhat
+stages:
+  git-clone:
+    steps:
+      - name: git-clone
+        uses: git-checkout
+        with:
+          url: https://github.com/mohaijiang/hardhat-example.git
+          branch: main
+  code-compile:
+    needs:
+      - git-clone
+    steps:
+      - name: code-compile
+        run: |
+          npm install --save-dev hardhat
+          npx hardhat compile
+
+  contract-lint:
+    needs:
+      - code-compile
+    steps:
+      - name: solidity-check
+        run: |
+          npm install -g ethlint
+          solium --init
+          solium -d contracts/
+
+  contract-test:
+    needs:
+      - contract-lint
+    steps:
+      - name: contract test
+        run: |
+          npx hardhat test
+
+  deploy:
+    needs:
+      - contract-test
+    steps:
+      - name: contract deploy
+        run: |
+          npx hardhat run scripts/deploy.ts
+
