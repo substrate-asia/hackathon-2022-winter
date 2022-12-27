@@ -6,7 +6,9 @@ Project Approval Date：2022.11
 
 ## **2 Introduction**
 ![LOGO](./docs/pic/001.png)  
-<center><b><font size ='3'>LOGO</font></b></center></font>
+                    LOGO
+
+[//]: # (<center><b><font size ='3'>LOGO</font></b></center></font>)
 
 ### **2.1 Background**
 Vitalik Buterin, the co-founder of Ethereum, recently shared his outlook on the encryption industry in 2023, proposing three "huge" opportunities that have not yet been realized in the cryptocurrency field, the first of which is the adoption of large-scale wallets. With the increasing development of the blockchain industry, the theft of digital assets emerges in an endless stream. Most of the reasons are due to the leakage of private keys or access to the Internet, which gives hackers an opportunity. V God once said at the Latin American Bitcoin Conference that wallet security is one of the biggest problems in the encryption field. At the same time, he also believes that more development can be done on the wallet infrastructure to make cryptocurrencies more accessible to everyday people, and may even attract billions of users. "If you can make a wallet that a billion people will use, that's a huge opportunity," Buterin said.<br><br>
