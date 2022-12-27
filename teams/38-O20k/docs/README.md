@@ -120,12 +120,12 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
     <!-- * [Initiate on EVM chains](#initiate-transaction-on-evm-chains) -->
 
 ### Claim
-* `Claim` Token $X$:  
+* `Claim` Token $X$ to operation Account:  
     ```sh
     # -c, --claim <tokenId>
     node index.js -c X
     ```
-* `Claim` Token $Y$:
+* `Claim` Token $Y$ to operation Account:
     ```sh
     # -c, --claim <tokenId>
     node index.js -c Y
@@ -250,17 +250,19 @@ We temporarily provided a set of very low APIs for adding token liquidity pool c
     * Generate encapsulated data of deposit liquidity of token:  
     ```sh
     # --generateTx <tokenId>,<o-account>,<amount>
-    node index.js -g xiyu,1000
+    node index.js -g shawn01,10000,shawn02,10000
     ```
-    * `xiyu` is a tokenId.
-    * `1000` is the amount to be deposited.
-    ![img](./assets/add-liquidity-1.png)  
+    * `shawn01`, `shawn02` is a tokenId.
+    * `10000` is the amount to be deposited.
+    ![img](./assets/add-liquidity-2.png)  
     <p id='encapsulate' align='center'>Figure.4 Generate encapsulate data</p>  
     
-    * Remember the amount of token `xiyu` to be deposited(`1`)
-    * Remember the encapsulated Tx data of token `xiyu` (`1.1`)
-    * Remember the amount of token `xiyu` to be deposited (`2`)
-    * Remember the encapsulated Tx data of token `xiyu` (`2.1`)
+    * Remember the name of token `shawn01` to be deposited(`1`)
+    * Remember the amount of token `xiyu` to be deposited(`1.1`)
+    * Remember the encapsulated Tx data of token `xiyu` (`1.3`)
+    * Remember the name of token `shawn02` to be deposited(`2`)
+    * Remember the amount of token `xiyu` to be deposited (`2.1`)
+    * Remember the encapsulated Tx data of token `xiyu` (`2.3`)
 
 * `addLiquidity` with [Polkadot.js](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F3.74.157.177%3A9944#/extrinsics)
     ![img](./assets/add-liquidity.png)  
