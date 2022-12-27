@@ -33,13 +33,17 @@ The nominator function of the BT wallet is to obtain the validator and nominator
 
 ### **2.4 See More**
 
-Demo
+**Demo**   
+https://www.pgyer.com/BT_stageEnv_v1
 
+**Videos**
 
-Videos
+BT wallet  
+https://youtu.be/qJgq0pak7ds
 
-PPT  
-https://vertuteam.feishu.cn/file/boxcnXE6ancvdozMLwkAxJHu9ne
+BT wallet demo  
+https://youtu.be/dm98-R1B7m4
+
 ## **3 Achievement in hackathon**
 
 **Blockchain**
@@ -135,12 +139,16 @@ BT钱包的提名人功能是通过API接口获取验证人和提名人数据，
 ![BT wallet technical architecture diagram](./docs/pic/006.png)
 
 #### **2.3.4 更多**
-Demo
+**Demo**  
+https://www.pgyer.com/BT_stageEnv_v1
 
-Videos  
+**Videos**  
 
-PPT  
-https://vertuteam.feishu.cn/file/boxcnXE6ancvdozMLwkAxJHu9ne  
+BT wallet  
+https://youtu.be/qJgq0pak7ds
+
+BT wallet demo  
+https://youtu.be/dm98-R1B7m4
 
 ## **3 黑客松期间计划完成的事项**
 **区块链端**
