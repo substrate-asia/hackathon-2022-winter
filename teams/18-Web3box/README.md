@@ -100,8 +100,8 @@ Andrii
 
 ## Alpha Release 
 
-[Windows](https://drive.google.com/file/d/1VgasMZOzVfIzqWZiiYP7dyWOVrvQ5csv/view?usp=share_link)
+[Windows](https://drive.google.com/file/d/1bPFI1aMH1Y3L1MAXfXrF_1aMzCWwTHbS/view?usp=share_link)
 
-[MAC OS ](https://drive.google.com/file/d/1bPFI1aMH1Y3L1MAXfXrF_1aMzCWwTHbS/view?usp=share_link)
+[MAC OS ](https://drive.google.com/file/d/1TuD6eow_x0NYfiwTHt6ooEtGuXro1YKy/view?usp=share_link)
 
 > Note: For MAC version, please enable the “Open Anyway” opition in the MAC Security & Privacy Setting.
