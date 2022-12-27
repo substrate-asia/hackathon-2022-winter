@@ -57,6 +57,10 @@
                     width: 30%;
                     text-align: left;
                 }
+                .score:hover > div{
+                    display: block;
+                }
+
                 .score{
                     width: 15%;
                     overflow-y: scroll;
@@ -64,6 +68,23 @@
 
                     img {
                         margin-left: 10px;
+                    }
+
+                    .weekly{
+                        position: absolute;
+                        margin-top: -50px;
+                        margin-left: 130px;
+                        width: 122px;
+                        height: 42px;
+                        padding-right: 9px;
+                        background:  url("../../images/weekly.png") no-repeat;
+                        background-size: 98% 98%;
+                        background-repeat: no-repeat;
+                        border-radius: 16px;
+                        overflow: hidden;
+                        padding-bottom: 10px;
+                        display: none;
+                        z-index: 999;
                     }
                 }
                 .Status{
@@ -82,10 +103,8 @@
                 border:none;
                 margin-left: 20px;
                 }
-                img{
-                    // width: 75px;
-                    // height: 33px;
-                }
+               
+
             }
             .title{
             font-size: 20px;

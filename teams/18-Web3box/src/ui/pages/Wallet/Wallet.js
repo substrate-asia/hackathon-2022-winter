@@ -37,14 +37,14 @@ function Wallets(props) {
                     <li onClick={CreatWalletRouter}>
                        <p>
                             <img className="solid_white" src={creat_img}></img> 
-                            <span>Create a wallet</span>
+                            <span>Create Your Wallet</span>
                        </p>
                        <img className="spile proy" src={spile_img}></img> 
                     </li>
                     <li onClick={LoginWalletRouter}>
                        <p>
                             <img className="solid_white" src={import_img}></img> 
-                            <span>Login your Wallet</span>
+                            <span>Login Your Wallet</span>
                        </p>
                        <img className="spile proy" src={spile_img} ></img> 
                     </li>

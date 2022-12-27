@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 const axios = require('axios').default;
+// proxy 
 // const list_url = "/api/list";
 // const detail_url = "/api/byid?name="
 
-const list_url = "http://18.191.17.148:9001/list";
-const detail_url = "http://18.191.17.148:9001/byid?name="
+const list_url = "http://api.web3box.cc:9001/list";
+const detail_url = "http://api.web3box.cc:9001/byid?name="
 
 
 
