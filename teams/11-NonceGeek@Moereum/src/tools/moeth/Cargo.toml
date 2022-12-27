@@ -1,0 +1,16 @@
+[workspace]
+members = [
+    "moeth",
+    "lang",
+    "net",
+    "common/git-hash",
+    "resource-viewer",
+    "pontem/client"
+]
+exclude = [ "pontem/hash_project", "pontem/pontemapi"]
+
+[profile.release]
+lto = "thin"
+opt-level = 's'
+codegen-units = 1
+rpath = false
