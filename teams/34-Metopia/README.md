@@ -12,7 +12,7 @@ In this hackathon we have chosen the following track:
 
 [Documents](https://docs.metopia.xyz)
 
-[Live](https://kusama.metopia.xyz)
+[Live: https://kusama.metopia.xyz](https://kusama.metopia.xyz)
 
 ### About Metopia
 
