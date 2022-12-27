@@ -1,0 +1,43 @@
+.default-avatar-with-round-background {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+    // padding: 2px;
+}
+
+.default-avatar-wrapper {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    // padding-left: 6px;
+    // padding-top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    background-color: #151515;
+    // border:2px solid #00000000;
+    overflow: hidden;
+    transform: translateX(2px) translateY(2px);
+
+    svg {
+        // transform: translateX(-2px);
+    }
+
+}
+
+.default-avatar {
+    background-color: #151515;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img,
+    svg {
+        width: 80%;
+    }
+}

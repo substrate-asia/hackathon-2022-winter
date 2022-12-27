@@ -1,0 +1,76 @@
+@import '../../../global.scss';
+
+.chain-selector {
+    position: relative;
+
+    .chain-selector-option {
+        display: flex;
+        align-items: center;
+
+        padding: 12px 16px 12px 8px;
+        gap: 8px;
+        width: 200px;
+        height: 48px;
+
+        /* 输入框-未输入 */
+
+        border: 1px solid #575861;
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+
+        img {
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+        }
+
+        .text {
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .img-wrapper {
+
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    .drop-down-pane {
+        z-index: 9999;
+        background: #000;
+        top: 100%;
+        padding: 0;
+
+        .chain-selector-option {
+            border: 0;
+        }
+
+        .option {
+            padding: 0;
+
+            &:hover {
+                background: #272642;
+            }
+        }
+    }
+
+    button {
+        padding: 0;
+
+        &::after {
+            content: url("https://oss.metopia.xyz/imgs/chevron.svg");
+            position: absolute;
+            right: 12px;
+            top: 16px
+        }
+    }
+}

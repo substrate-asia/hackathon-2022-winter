@@ -1,0 +1,25 @@
+@import '../../../global.scss';
+
+@mixin profile-title {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: bold;
+    color: $title-color;
+}
+
+@mixin profile-content {
+    font-size: 14px;
+    line-height: 150%;
+    color: $text-color;
+}
+
+@mixin profile-table-head {
+    font-size: 15px;
+    color: #444;
+    font-weight: bold;
+}
+
+@mixin profile-table-cell {
+    color: $text-color;
+    font-size: 14px;
+}

@@ -1,10 +1,10 @@
-## 基本资料
+## Project
 
-项目名称： Metopia
+Name： Metopia
 
-项目立项日期 (哪年哪月)：2022.12
+Start time：2022.12
 
-## 项目整体简介
+## Introduction
 
 In this hackathon we have chosen the following track:
 - Main Track: Blockchain tools.
@@ -13,8 +13,6 @@ In this hackathon we have chosen the following track:
 [Documents](https://docs.metopia.xyz)
 
 [Live](https://kusama.metopia.xyz)
-
-[DEMO video](#)
 
 ### About Metopia
 
@@ -55,41 +53,46 @@ Organizations are able to create spaces and set up two major parameters of the g
 
 For Users, they can join space on Metopia. Users who meet the conditions set by space admins, including requirements such as holding a certain NFT, can create proposals in Space and participate in voting on other proposals, view voting results, etc.
 
-### DEMO
-
-### Architecture
+### Demo videos
+1. [Update user profile.mp4](https://oss.metopia.xyz/video/1.%20update%20user%20profile.mp4)
+2. [Space creation](https://oss.metopia.xyz/video/2.%20space%20creation.mp4)
+3. [Voting strategy setting](https://oss.metopia.xyz/video/3.%20voting%20strategy%20setting.mp4)
+4. [Create proposals & votes](https://oss.metopia.xyz/video/4.%20create%20proposals%20%26%20votes.mp4)
 
 ### LOGO
 
 ![LOGO](https://oss.metopia.xyz/imgs/metopia-logo.svg "LOGO")
 
-## 黑客松期间完成的事项
+## Achievement in hackathon
 
 - `Server`
-  - 基于Kusama网络NFT的链下投票基础功能
-  - 基于波卡钱包的账户管理
+  - Off-chain voting system for Kusama NFT communities
+  - User account control based on Polkadot wallet
 
 - `Client`
-  - 基于Kusama网络NFT的链下投票基础功能前端
-  - 基于波卡钱包的账户管理前端
-  - 历史治理数据查询
+  - Visualization of the off-chain voting system for Kusama NFT communities
+  - Visualization of account control
+  - Governance history on Metopia for Kusama wallet
 
 ## Team
 
 - **Moon**, PM
 
-- **George**, Researcher
+  - Crypto entrepreneur since 2017
+  - Founder of HappyBlock, an Asia-based crypto news platform & has led NFT campaigns for Mask Network, FTX, WooTrade, etc
 
 - **Aden**, UI|UX
 
   Former Tencent senior UX designer
 
 - **Kenny**, Frontend engineer
+  - 8 years of Web 2 software development experience & 3 years in solidity and Web 3 development
 
   [Linkedin](https://www.linkedin.com/in/kenny-ding-305518245/)
 
 - **Lv**, Backend engineer
 
-  Experienced crypto developer.
+  - Experienced crypto developer
+  - Previously at Rabbit Finance
 
   [Github](https://github.com/bengbengle)

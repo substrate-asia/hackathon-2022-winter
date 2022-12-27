@@ -1,0 +1,69 @@
+@import '../../../../global.scss';
+
+.dao-basic-profile-settings-page {
+    width: 1200px;
+    min-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 90px);
+
+    >.body {
+        flex: 1;
+        width: 200vw;
+        padding: 40px 0;
+        margin-left: calc(-50vw + 600px);
+
+        >.container {
+            width: 100%;
+            display: flex;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            transition: 300ms;
+
+            >.subpage-wrapper {
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+
+                >.subpage {
+                    width: 1200px;
+                    max-width: 100%;
+                }
+            }
+        }
+
+        &.page1>.container {
+            margin-left: 0;
+        }
+
+        &.page2>.container,
+        &.page3>.container {
+            margin-left: -100vw;
+        }
+    }
+
+    >.footer {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #555555;
+        width: 100vw;
+        transform: translateX(min(calc(-50vw + 600px), 0px));
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .dao-basic-profile-settings-page {
+        >.head-fixed {
+            margin-left: 0;
+            width: 100vw;
+        }
+    }
+
+    >.footer {
+        width: 1200px;
+        margin-left: 0;
+        transform: translateX(0);
+    }
+}

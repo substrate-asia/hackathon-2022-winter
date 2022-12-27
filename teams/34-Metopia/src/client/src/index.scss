@@ -1,0 +1,245 @@
+@import './global.scss';
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    background: #000000;
+}
+
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.root {
+    min-height: 100vh;
+    overflow-x: hidden;
+    // background: #0F111E;
+
+    .main-bg {
+        width: 1000px;
+        position: absolute;
+        top: 0;
+        left: calc(50% - 500px);
+        user-select: none;
+        z-index: -1;
+    }
+
+}
+
+// @font-face {
+//     font-family: 'Montserrat';
+//     src: url(https://oss.metopia.xyz/Montserrat-VariableFont_wght.ttf);
+// }
+
+// @font-face {
+//     font-family: 'Fjalla One';
+//     src: url(https://oss.metopia.xyz/Fjalla One-Regular.ttf);
+// }
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One:400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900");
+
+.UserNftCardContainer {
+    display: flex;
+    gap: 8px 12px;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.Tip {
+    font-size: 14px;
+    color: $subtitle-color;
+}
+
+.Error {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 24px;
+    color: #C44F4B;
+}
+
+.ErrorHint {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 24px;
+    color: #C44F4B;
+}
+
+
+.Hidden {
+    display: none;
+}
+
+.Button {
+    cursor: pointer;
+    user-select: none;
+}
+
+.Placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #7D809A;
+}
+
+.RichText {
+    * {
+        // margin: 0 !important;
+        line-height: 150% !important;
+        color: #ccc !important;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    a {
+        color: rgb(180, 187, 255);
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.ReactModalPortal {
+    z-index: 9999;
+}
+
+.ReactModal__Overlay {
+    z-index: 9999;
+
+}
+
+
+@keyframes clocking {
+    0% {
+        transform: rotate(0);
+    }
+
+    12% {
+        transform: rotate(45deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    37% {
+        transform: rotate(135deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    62% {
+        transform: rotate(225deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    87% {
+        transform: rotate(315deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+
+    }
+
+    // 88% {
+    //     transform: rotate(-45deg);
+    // }
+}
+
+.r-toast {
+    background: #1B1E31 !important;
+
+    .r-toast-body {
+        font-size: 18px;
+        line-height: 150%;
+        color: #FFFFFF;
+
+        .Toastify__toast-icon {
+            width: 48px;
+        }
+    }
+
+    .Toastify__toast-icon {
+        width: 48px;
+    }
+}
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    // overflow: hidden;
+    display: flex;
+    justify-content: center;
+    z-index: 9990;
+    background: #0F111E33;
+    // rgba(42, 53, 71, 0.2)
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid #51515166;
+    // width: calc(100% - 20px);
+    box-sizing: border-box;
+    // overflow: hidden;
+    // border-bottom:1px solid #F7F8FC;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    >.wrapper {
+        width: 1200px;
+    }
+}
+
+:root {
+    --notify-onboard-z-index: -1;
+    --account-center-z-index: -1;
+    --background-color: #15182b;
+    --text-color: #ffffff;
+    --border-color: #7d809a;
+    --accent-background: #323446;
+    --accent-color: #E6007A;
+    --accent-color-hover: #2c2f3f;
+    --secondary-text-color: #0c0f1d;
+    --onboard-connect-sidebar-background: var(--accent-background);
+    --onboard-close-button-background: var(--accent-background);
+    --onboard-connect-sidebar-color: var(--text-color);
+    --onboard-connect-sidebar-progress-background: var(--secondary-text-color);
+    --onboard-connect-sidebar-progress-color: var(--accent-color);
+    --onboard-connect-header-background: var(--background-color);
+    --onboard-connect-header-color: var(--text-color);
+    --onboard-main-scroll-container-background: var(--background-color);
+    --onboard-link-color: var(--accent-color);
+    --onboard-wallet-button-background: var(--background-color);
+    --onboard-wallet-button-background-hover: var(--accent-color-hover);
+    --onboard-wallet-button-border-color: var(--border-color);
+    --onboard-wallet-app-icon-border-color: var(--border-color);
+    --onboard-wallet-button-color: #fff;
+    --onboard-wallet-button-color-hover: #fff;
+    --onboard-wallet-app-icon-background-transparent: #7d809a;
+    --onboard-close-button-color: #7d809a;
+    // --onboard-wallet-button-background:#2c2f3f;
+}

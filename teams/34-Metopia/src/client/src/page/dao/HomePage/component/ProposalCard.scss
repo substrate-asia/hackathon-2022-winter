@@ -1,0 +1,155 @@
+@import '../../../../global.scss';
+
+.proposal-card {
+    background: #FFFFFF11;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 24px;
+    padding: 24px 32px;
+    margin-top: 24px;
+
+    >.head {
+        display: flex;
+
+        >.user-info {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover>.username {
+                text-decoration: underline;
+            }
+
+            >.avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                margin-right: 16px;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 20px;
+                }
+            }
+
+            >.username {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: #ffffff;
+                margin-right: 12px;
+            }
+
+            >.address {
+                font-size: 12px;
+                line-height: 18px;
+                text-align: center;
+                color: $text-color;
+                background: #ffffff11;
+                border-radius: 8px;
+                padding: 2px 6px;
+                transform: translateY(1px);
+            }
+
+        }
+
+        >.state {
+            margin-left: auto;
+
+            >.left-part {
+                box-sizing: border-box;
+                padding: 8px 16px;
+                display: inline-block;
+                vertical-align: middle;
+                border-radius: 12px 0 0 12px;
+                background: linear-gradient(75.15deg, #06D5CB 10.31%, #00C4BB 126.49%);
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                text-align: center;
+                color: #FFFFFF;
+
+
+                &.closed{
+                    background: #7D809A;
+                    color: #FFFFFF;
+                }
+                &.invalid {
+                    background: linear-gradient(75.15deg, rgb(103, 126, 125) 10.31%, rgb(139, 139, 139) 126.49%);
+                }
+
+                &.against {
+                    background: linear-gradient(75.15deg, #FF6A7D 10.31%, #F5545F 126.49%);
+                }
+
+                &.undecided {
+                    background: linear-gradient(75.15deg, #ffad6a 10.31%, #e49352 126.49%);
+                }
+            }
+
+            >.right-part {
+                box-sizing: border-box;
+                padding: 7px 16px;
+                display: inline-block;
+                vertical-align: middle;
+                border-radius: 0 12px 12px 0;
+                background: #F5F5F5;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 24px;
+                text-align: center;
+                color: #222222;
+                min-width: 105px;
+
+                @include colorful;
+                border: 1px solid #ffffff55;
+                border-left: none;
+            }
+
+        }
+    }
+
+    >.body {
+        margin-top: 16px;
+
+        >.title {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            color: $title-color;
+
+            a {
+                color: $title-color;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        >.content {
+            margin-top: 8px;
+            font-size: 16px;
+            line-height: 24px;
+            color: #dddddd;
+
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            * {
+                margin: 0;
+                font-size: 16px !important;
+                color:#dddddd  !important;
+            }
+            img{
+                max-height: 120px;
+                max-width: 100%;
+            }
+        }
+    }
+}

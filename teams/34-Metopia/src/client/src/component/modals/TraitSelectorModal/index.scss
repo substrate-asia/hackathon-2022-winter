@@ -1,0 +1,175 @@
+.trait-selector-modal-container {
+    padding: 40px;
+    font-family: Montserrat;
+
+
+
+    >.head {
+        border-bottom: 1px solid #7D809A;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        font-size: 24px;
+        font-family: 'Fjalla One';
+        padding-bottom: 30px;
+
+        .text-wrapper {
+            display: flex;
+            color: white;
+            font-size: 24px;
+            font-family: 'Fjalla One';
+            
+            transform: translateY(3px);
+
+            >.text{
+                transform: translateY(-3px);
+            }
+            .contract-metadata-caching-button {
+                margin-left: 16px;
+                height: 24px;
+            }
+        }
+
+        img {
+            height: 20px;
+        }
+    }
+
+    >.body {
+        color: white;
+        padding: 30px 0;
+        display: flex;
+        gap: 12px;
+
+        .left {
+            flex: 1;
+
+            >.title {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+        }
+
+        .right {
+            flex: 1;
+
+            >.title {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+        }
+
+        .trait-tree {
+            border: 1px solid #7D809Aaa;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            height: 420px;
+            gap: 16px;
+            padding: 16px;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+                background: none;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: #ccc;
+                border-radius: 4px;
+            }
+
+            .trait-list {
+                font-size: 16px;
+
+                >.title {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    // width: fit-content;
+
+                    .triangle {
+                        height: 10px;
+                        user-select: none;
+                        cursor: pointer;
+                    }
+
+                    >.value {
+                        cursor: pointer;
+                    }
+
+                    .checkbox {
+                        height: 16px;
+                        width: 16px;
+                        border: 1px solid #7D809Add;
+                        user-select: none;
+                        cursor: pointer;
+
+                        img {
+                            height: 16px;
+                            width: 16px;
+                        }
+                    }
+
+                    .del {
+                        cursor: pointer;
+
+                    }
+                }
+
+                >.value-list {
+                    padding-left: 40px;
+                    margin-top: 12px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    >.value {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        // width: fit-content;
+
+                        .checkbox {
+                            height: 16px;
+                            width: 16px;
+                            border: 1px solid #7D809Add;
+                            cursor: pointer;
+                        }
+
+                        .text {
+                            cursor: pointer;
+                        }
+
+                        .del {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .del {
+                    display: none;
+                }
+
+                &.readonly {
+                    .checkbox {
+                        display: none;
+                    }
+
+                    .del {
+                        display: block;
+                    }
+                }
+            }
+
+        }
+    }
+
+
+    >.button-container {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+}

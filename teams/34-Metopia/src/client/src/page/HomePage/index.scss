@@ -1,0 +1,100 @@
+@import '../../global.scss';
+
+.home-page {
+    width: 1200px;
+    padding: 20px 0;
+
+    >.body {
+        border-radius: 32px;
+        margin-top: 64px;
+        padding-bottom: 40px;
+        filter: drop-shadow(0px 16px 32px rgba(45, 35, 117, 0.02));
+
+        >.head {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+
+            >.title {
+                display: flex;
+                align-items: center;
+                width: auto;
+                gap: 48px;
+
+                .text {
+                    font-weight: 500;
+                    font-size: 32px;
+                    color: $title-color;
+                    font-family: Fjalla One;
+                }
+
+                .hollow-button {
+                    transform: translateY(2px);
+                }
+            }
+
+        }
+
+        .dao-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 30px;
+        }
+    }
+
+    .fifa-head {
+        display: flex;
+        gap: 24px;
+
+        .banner{
+              cursor: pointer;  
+              width: 792px;
+              height: 400px;
+              min-width: 792px;
+              background: lightgrey;
+              border-radius: 18px;
+        }
+
+        .sbt-entrance {
+            position: relative;
+            padding: 64px 40px;
+            background: #15182B;
+            border-radius: 16px;
+            overflow: hidden;
+            background-image: url("https://oss.metopia.xyz/imgs/sbt-entrance-bg.png");
+            background-position: bottom right;
+            background-repeat: no-repeat;
+
+            .bg {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: 0;
+            }
+
+            >.title {
+                font-weight: 700;
+                font-size: 45px;
+                line-height: 120%;
+                letter-spacing: 0.005em;
+                color: #FFFFFF;
+                z-index: 1;
+            }
+
+            >.button {
+                margin-top: 64px;
+                border: 1px solid #FFFFFF;
+                color:#ffffff;
+                &::after {
+                    display: none;
+                }
+                img{
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+}

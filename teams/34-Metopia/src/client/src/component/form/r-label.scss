@@ -1,0 +1,42 @@
+@import '../../global.scss';
+
+.r-label {
+    font-family: 'Montserrat';
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 150%;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+
+    .required{
+        background: rgba(255, 255, 255, 0.12);
+        // padding:4px;
+        border-radius: 8px;
+        height: 16px;
+        width: 16px;
+        transform: translateX(8px);
+        padding: 0  0 0 4px;
+        padding-top: 0px;
+        user-select: none;
+        line-height: 24px;
+    }
+
+    &.required::after {
+        // content: '*';
+        // content: url('https://oss.metopia.xyz/imgs/requiredtip.svg');
+        margin-left: 8px;
+        font-weight: normal;
+        // color: rgb(255, 102, 102);
+        background: rgba(255, 255, 255, 0.12);
+        padding:4px;
+        width: 16px;
+        // height: 16px;
+        border-radius: 8px;
+        // transform: translateY(-8px);
+    }
+
+    * {
+        color: inherit;
+    }
+}

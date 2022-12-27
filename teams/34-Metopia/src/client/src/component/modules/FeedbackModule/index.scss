@@ -1,0 +1,86 @@
+@import '../../../global.scss';
+
+.feedback-module {
+    width: 400px;
+    transition: 500ms;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), #15182A;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 32px;
+    z-index: 9999;
+    position: fixed;
+
+    >.head {
+        display: flex;
+        justify-content: space-between;
+        margin: -32px;
+        padding: 32px;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(99, 79, 255, 0.47) 8.55%, rgba(255, 95, 95, 0) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), #15182A;
+
+        >.text {
+            font-family: Fjalla One;
+            font-size: 32px;
+            color: white
+        }
+
+        >.close-button {
+            cursor: pointer;
+            height: 20px;
+            user-select: none;
+        }
+    }
+
+    >.body {
+        margin-top: 50px;
+
+        input,
+        .r-input,
+        .r-input>.container,
+        textarea {
+            max-width: 100%;
+        }
+    }
+
+    >.footer {
+        margin: 32px -32px -12px -32px;
+        padding: 20px 32px 0 32px;
+        border-top: 1px solid #ffffff22;
+    }
+
+    .image-container {
+        display: flex;
+        // justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        .image-wrapper {
+            border-radius: 4px;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            cursor: pointer;
+            background: #00000044;
+
+            .image {
+                border-radius: 4px;
+                max-width: 100px;
+                max-height: 100px;
+                @include absolute-centered;
+            }
+
+            &:hover {
+                &::after {
+                    content: "X";
+                    color: white;
+                    position: absolute;
+                    font-size: 16px;
+                    font-weight: bold;
+                    right: 10px;
+                    top: 6px;
+                    transform: scaleY(0.8);
+                }
+            }
+        }
+    }
+}
