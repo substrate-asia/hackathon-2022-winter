@@ -122,11 +122,13 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
 ### Claim
 * `Claim` Token $X$:  
     ```sh
-    # to be done
+    # -c, --claim <tokenId>
+    node index.js -c X
     ```
 * `Claim` Token $Y$:
     ```sh
-    # to be done
+    # -c, --claim <tokenId>
+    node index.js -c Y
     ```
 
 ### Check the balance
@@ -200,11 +202,13 @@ The key operation of the Omniverse Swap Protocol(OSP) is `Make exchanges`.
 ### Make exchanges
 * Swap Token X with Token Y:  
     ```sh
-    # to be done
+    # -x2y, --swapX2Y <tradingPair>,<amount>
+    node index.js -x2y X2Y,100000
     ```
 * Swap Token Y with Token X:  
     ```sh
-    # to be done
+    # -y2x, --swapY2X <tradingPair>,<amount>
+    node index.js -y2x X2Y,100000
     ```
 ### Check the Balance after exchanges
 * Check `balance of` Token $X$ of related account on Polkadot:  
