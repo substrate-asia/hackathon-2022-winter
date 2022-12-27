@@ -1,0 +1,277 @@
+.icon {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.icon-notification {
+  @extend .icon;
+  background-image: url("~@/assets/icon-notification.svg");
+}
+.light .icon-notification {
+  @extend .icon;
+  background-image: url("~@/assets/icon-notification-light.svg");
+}
+.icon-language {
+  @extend .icon;
+  background-image: url("~@/assets/icon-language.svg");
+}
+.light .icon-language {
+  @extend .icon;
+  background-image: url("~@/assets/icon-language-light.svg");
+}
+
+.icon-forward-circle {
+  @extend .icon;
+  background-image: url("~@/assets/icon-forward-circle.svg");
+}
+.light .icon-forward-circle {
+  @extend .icon;
+  background-image: url("~@/assets/icon-forward-circle-light.svg");
+}
+
+.icon-msg {
+  @extend .icon;
+  background-image: url("~@/assets/icon-msg.svg");
+}
+.light .icon-msg {
+  @extend .icon;
+  background-image: url("~@/assets/icon-msg-light.svg");
+}
+
+.icon-like {
+  @extend .icon;
+  background-image: url("~@/assets/icon-like.svg");
+}
+.light .icon-like {
+  @extend .icon;
+  background-image: url("~@/assets/icon-like-light.svg");
+}
+
+.icon-coin {
+  @extend .icon;
+  background-image: url("~@/assets/icon-coin.svg");
+}
+.light .icon-coin {
+  @extend .icon;
+  background-image: url("~@/assets/icon-coin-light.svg");
+}
+
+.icon-twitter {
+  @extend .icon;
+  background-image: url("~@/assets/icon-twitter-white.svg");
+}
+.light .icon-twitter {
+  @extend .icon;
+  background-image: url("~@/assets/icon-twitter-white-light.svg");
+}
+.icon-copy {
+  @extend .icon;
+  background-image: url("~@/assets/icon-copy.svg");
+}
+.light .icon-copy {
+  @extend .icon;
+  background-image: url("~@/assets/icon-copy-light.svg");
+}
+.icon-list-no-data {
+  @extend .icon;
+  background-image: url("~@/assets/no-data.svg");
+}
+.light .icon-list-no-data {
+  @extend .icon;
+  background-image: url("~@/assets/no-data-light.svg");
+}
+
+.icon-theme-light {
+  @extend .icon;
+  background-image: url("~@/assets/menu-light.svg");
+}
+.icon-theme-dark {
+  @extend .icon;
+  background-image: url("~@/assets/menu-dark.svg");
+}
+
+.icon-close {
+  @extend .icon;
+  background-image: url("~@/assets/icon-close.svg");
+}
+.light .icon-close {
+  @extend .icon;
+  background-image: url("~@/assets/icon-close-light.svg");
+}
+
+.icon-wallet {
+  @extend .icon;
+  background-image: url("~@/assets/icon-wallet.svg");
+}
+.light .icon-wallet {
+  @extend .icon;
+  background-image: url("~@/assets/icon-wallet-light.svg");
+}
+
+.icon-checked {
+  @extend .icon;
+  background-image: url("~@/assets/icon-checked-green.svg");
+}
+
+.icon-quote-circle {
+  @extend .icon;
+  background-image: url("~@/assets/icon-quote-circle.svg");
+}
+
+.icon-reply-circle {
+  @extend .icon;
+  background-image: url("~@/assets/icon-reply-circle.svg");
+}
+
+.icon-like-circle {
+  @extend .icon;
+  background-image: url("~@/assets/icon-like-circle.svg");
+}
+
+.icon-follow-circle {
+  @extend .icon;
+  background-image: url("~@/assets/icon-follow-circle.svg");
+}
+
+.icon-back {
+  @extend .icon;
+  background-image: url("~@/assets/icon-back.svg");
+}
+.light .icon-back {
+  @extend .icon;
+  background-image: url("~@/assets/icon-back-light.svg");
+}
+
+.icon-add-circle {
+  @extend .icon;
+  background-image: url("~@/assets/icon-add-circle.svg");
+}
+.light .icon-add-circle {
+  @extend .icon;
+  background-image: url("~@/assets/icon-add-circle-light.svg");
+}
+
+.icon-quote-tag {
+  @extend .icon;
+  background-image: url("~@/assets/icon-quote-tag.svg");
+}
+.light .icon-quote-tag {
+  @extend .icon;
+  background-image: url("~@/assets/icon-quote-tag-light.svg");
+}
+
+.icon-reply-tag {
+  @extend .icon;
+  background-image: url("~@/assets/icon-reply-tag.svg");
+}
+.light .icon-reply-tag {
+  @extend .icon;
+  background-image: url("~@/assets/icon-reply-tag-light.svg");
+}
+
+.icon-faq {
+  @extend .icon;
+  background-image: url("~@/assets/menu-faq.svg");
+}
+.light .icon-faq {
+  @extend .icon;
+  background-image: url("~@/assets/menu-faq-light.svg");
+}
+
+.icon-referral {
+  @extend .icon;
+  background-image: url("~@/assets/menu-referral.svg");
+}
+.light .icon-referral {
+  @extend .icon;
+  background-image: url("~@/assets/menu-referral-light.svg");
+}
+
+.icon-logout {
+  @extend .icon;
+  background-image: url("~@/assets/menu-logout.svg");
+}
+.light .icon-logout {
+  @extend .icon;
+  background-image: url("~@/assets/menu-logout-light.svg");
+}
+
+.icon-popups {
+  @extend .icon;
+  background-image: url("~@/assets/icon-popups-white.svg");
+}
+.light .icon-popups {
+  @extend .icon;
+  background-image: url("~@/assets/icon-popups.svg");
+}
+
+.icon-collapse {
+  @extend .icon;
+  background-image: url("~@/assets/icon-collapse-white.svg");
+}
+.light .icon-collapse {
+  @extend .icon;
+  background-image: url("~@/assets/icon-collapse-black.svg");
+}
+
+.icon-selected {
+  @extend .icon;
+  background-image: url("~@/assets/icon-selected-primary.svg");
+}
+
+.icon-unselected {
+  @extend .icon;
+  background-image: url("~@/assets/icon-unselected.svg");
+}
+
+.icon-radio-default {
+  @extend .icon;
+  background-image: url("~@/assets/icon-radio-default.svg");
+}
+
+.icon-radio-primary {
+  @extend .icon;
+  background-image: url("~@/assets/icon-radio-primary.svg");
+}
+
+.btn-icon-quote {
+  @extend .icon;
+  background-image: url("~@/assets/btn-quote.svg");
+}
+
+.btn-icon-quote-active {
+  @extend .icon;
+  background-image: url("~@/assets/btn-quote-active.svg");
+}
+
+.btn-icon-reply {
+  @extend .icon;
+  background-image: url("~@/assets/btn-reply.svg");
+}
+
+.btn-icon-reply-active {
+  @extend .icon;
+  background-image: url("~@/assets/btn-reply-active.svg");
+}
+
+.btn-icon-like {
+  @extend .icon;
+  background-image: url("~@/assets/btn-like.svg");
+}
+
+.btn-icon-like-active {
+  @extend .icon;
+  background-image: url("~@/assets/btn-like-active.svg");
+}
+
+.btn-icon-follow {
+  @extend .icon;
+  background-image: url("~@/assets/btn-follow.svg");
+}
+
+.btn-icon-follow-active {
+  @extend .icon;
+  background-image: url("~@/assets/btn-follow-active.svg");
+}
