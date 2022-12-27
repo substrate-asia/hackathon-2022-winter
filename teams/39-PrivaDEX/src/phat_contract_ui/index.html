@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phat Contracts UI</title>
+    <script>
+      (function(){
+        const now = new Date();
+        const time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+        console.log(`[${time}] [root] Begin loading...`);
+        window.__BEGIN__ = now.getTime();
+      })();
+    </script>
+    <link rel="preconnect" href="https://poc5.phala.network" />
+  </head>
+  <body>
+    <div id="root" style="width:100vw;height:100vh;max-height:100vh;max-width:100vw"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
