@@ -75,7 +75,9 @@ New way of NFT: solve the rarity, NFT value and transaction-related matters that
 
 ## 队员信息
 
-包含参赛者名称及介绍
-在团队中担任的角色
-GitHub 帐号
-微信账号（如有请留下，方便及时联系）
+
+|Name|Function|GitHub|Twitter|
+|---------|---------|---------|---------|
+| seek|Tech|https://github.com/guoshijiang| https://twitter.com/seek_web3|
+
+
