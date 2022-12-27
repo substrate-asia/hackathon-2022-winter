@@ -79,5 +79,12 @@ New way of NFT: solve the rarity, NFT value and transaction-related matters that
 |Name|Function|GitHub|Twitter|
 |---------|---------|---------|---------|
 | seek|Tech|https://github.com/guoshijiang| https://twitter.com/seek_web3|
+| Amy |Tech|https://github.com/sailormillet| https://twitter.com/amyChen_front |
+| frankcai4real|Tech|https://github.com/frankcai4real| |
+| 拉飞| PM |https://github.com/samlin425 | |
+| 魏小平| Tech | https://github.com/kaiweicai | |
+| 海上明月| Product | https://github.com/Lunalaloca | |
+
+
 
 
