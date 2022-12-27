@@ -25,7 +25,9 @@ PMail is the first mail service system based on Web3.0 and Substrate technology,
 Technically, we will develop a decentralized relational index based on Substrate, use off-chain working machines to develop a decentralized mail gateway, and deploy Arweave to achieve permanent front-end operations. Thus providing any user with a secure, trustless and permissionless persistent mail service.
 ### Technology Architecture
 ![image-20220622110833152](./docs/pmail.jpg)
-
+### Details
+- [Pitch Deck](https://docs.google.com/presentation/d/1xbV0amQsXFmjQNh3Usn7QbFRaqF20w8fcYHQaCCPp3E/edit?usp=sharing)
+- [Demo Video](https://drive.google.com/file/d/1dgQFsBm9yTRhd4qoEtt7RvihuNhEp8Cp/view)
 
 ## Things planned to be done during the hackathon
 
