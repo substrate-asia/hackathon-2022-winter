@@ -73,10 +73,10 @@ Details of our Rust documentation please find [here](https://admetanetwork.githu
 **Server**
 
 - Backend application
-  - [x] Save user info
-  - [-] Sync chain info
+  - [x] Sync user info
   - [x] Cliam rewards
-  - [-] Ad push
+  - [] Sync chain info
+  - [] Ad push
 
 ## Tasks done during Hackathon
 
