@@ -34,28 +34,28 @@ In this project, we will provide the following functions:
 **blockchain**
 
 - Runtime Module
-  - [ ] Domain NFT Registration (`fn bind_address()`)
-  - [ ] Set Contact Aliases (`fn send_mail()`)
-  - [ ] Aggregate Mail Queue Cache (`fn set_alias()`)
+  - [x] Domain NFT Registration (`fn bind_address()`)
+  - [x] Set Contact Aliases (`fn send_mail()`)
+  - [x] Aggregate Mail Queue Cache (`fn set_alias()`)
 - Decentralized mail gateway
-  - [ ] Web2 Mail Synchronization Cache (`fn submit_add_mail()`)
-  - [ ] Gateway Node Actuator Polling (`fn submit_update_authority_index()`)
+  - [x] Web2 Mail Synchronization Cache (`fn submit_add_mail()`)
+  - [x] Gateway Node Actuator Polling (`fn submit_update_authority_index()`)
 
 **client**
 - webend
-  - [ ] Mailbox Login & Registration Page
-  - [ ] Mail Index & List Page
-  - [ ] Mail Creation & Delivery Page
-  - [ ] Mailbox Cloud Service Page
+  - [x] Mailbox Login & Registration Page
+  - [x] Mail Index & List Page
+  - [x] Mail Creation & Delivery Page
+  - [x] Mailbox Cloud Service Page
 
 **backend**
 - Mail API Service
-  - [ ] Web2 Mail Proxy Gateway
-  - [ ] Web2 Mail Indexing Service
-  - [ ] Decentralized Storage API Service
+  - [x] Web2 Mail Proxy Gateway
+  - [x] Web2 Mail Indexing Service
+  - [x] Decentralized Storage API Service
 - SubQuery Indexing Service
-  - [ ] On-Chain Mailing List Indexing Service
-  - [ ] On-Chain Mailbox Contact Indexing Service
+  - [x] On-Chain Mailing List Indexing Service
+  - [x] On-Chain Mailbox Contact Indexing Service
 
 ## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
 
