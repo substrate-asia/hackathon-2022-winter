@@ -5,11 +5,12 @@ Project Name：BT Wallet
 Project Approval Date：2022.11
 
 ## **2 Introduction**
-![](./docs/pic/001.png)
+![LOGO](./docs/pic/001.png)  
+<center><b><font size ='3'>LOGO</font></b></center></font>
 
 ### **2.1 Background**
 Vitalik Buterin, the co-founder of Ethereum, recently shared his outlook on the encryption industry in 2023, proposing three "huge" opportunities that have not yet been realized in the cryptocurrency field, the first of which is the adoption of large-scale wallets. With the increasing development of the blockchain industry, the theft of digital assets emerges in an endless stream. Most of the reasons are due to the leakage of private keys or access to the Internet, which gives hackers an opportunity. V God once said at the Latin American Bitcoin Conference that wallet security is one of the biggest problems in the encryption field. At the same time, he also believes that more development can be done on the wallet infrastructure to make cryptocurrencies more accessible to everyday people, and may even attract billions of users. "If you can make a wallet that a billion people will use, that's a huge opportunity," Buterin said.<br><br>
-Block Taker team, the main members of the team have more than 10 years of development experience, good at Golang, Java, Solidity, Kotlin, Substrate and other languages, have been deeply involved in traditional financial security and network security for many years, and have rich experience in security chip algorithms and blockchain development . The team positions the smartphone terminal as the next-generation web3 super entrance, and is committed to creating a wallet that can never be cracked, maximizes user benefits, and has the ultimate user experience with hardware facilities such as mobile terminals and encryption chips.<br><br>
+Block Taker team, the main members of the team have more than 10 years of development experience, good at Golang, Java, Solidity, Kotlin, Rust and other languages, have been deeply involved in traditional financial security and network security for many years, and have rich experience in security chip algorithms and blockchain development . The team positions the smartphone terminal as the next-generation web3 super entrance, and is committed to creating a wallet that can never be cracked, maximizes user benefits, and has the ultimate user experience with hardware facilities such as mobile terminals and encryption chips.<br><br>
 
 ### **2.2 Project Introduction**
 The team positions the smartphone terminal as the next-generation web3 super entrance, and is committed to creating a wallet that can never be cracked, maximizes user benefits, and has the ultimate user experience with hardware facilities such as mobile terminals and encryption chips. BT Wallet is a lightweight, highly secure and multi-functional super wallet DApp application based on Polkadot ecology developed by the team in the first stage, integrating nominators, pledge mining, IPFS, etc. Security issues, and bring users a multi-functional one-click experience such as pledge, as the basic entrance of the web3 world, attracting more ordinary users and even professional users to embrace the Polkadot ecology.<br><br>
@@ -20,20 +21,31 @@ At the same time, through the original PLBM intelligent algorithm, it greatly re
 #### **2.3.1 Encryption Chip**
 Based on financial-grade EAL6+ security chip technology. The BT wallet stores the private key separately and isolates it from the Internet by connecting with the independent security chip on the specific mobile terminal, providing users with the creation, storage, use and recovery of the private key of encrypted assets with high security, and truly realizing the " The hot and cold ends are separated, and the private key never touches the Internet."<br>
 <br>
-![Security Chip Hardware Block Diagram](./docs/pic/002.png)
 
+![Security Chip Hardware Block Diagram](./docs/pic/002.png)  
+<center><b><font size ='3'>Security Chip Hardware Structure Diagram</font></b></center></font>
+
+Security Chip Hardware Block Diagram
 #### **2.3.2 Polkadot Wallet**
 ![](./docs/pic/003.png)
+<center><b><font size ='3'>Polkadot Wallet</font></b></center></font>
+
 #### **2.3.3 Nominator**
 The nominator function of the BT wallet is to obtain the validator and nominator data through the API interface, and encapsulate the data through the original PLBM intelligent recommendation algorithm. Quantity, intelligently recommend 16 optimal verifiers and help users complete nominator operations. The intelligent recommendation system will recommend how much you invest to get rewards, and when the user is about to be out of the nominator candidate list (the first 256 nominators of a validator node have rewards), timely remind the user to replenish the amount to stabilize the ranking and other methods to achieve the least user investment. Earn the most.  
 <br>
 ![BT Wallet VS Other Wallet](./docs/pic/004.png)
+<center><b><font size ='3'>BT Wallet VS Other Wallet</font></b></center></font>
+
 ![Nomination operation process](./docs/pic/005.png)
+<center><b><font size ='3'>Staking Operation Flow Chart</font></b></center></font>
+
 ![BT wallet technical architecture diagram](./docs/pic/006.png)
+<center><b><font size ='3'>TechnicalFramework Of BT Wallet</font></b></center></font>
+
 
 ### **2.4 See More**
 
-**Demo**   
+**APK Download**   
 https://www.pgyer.com/BT_stageEnv_v1
 
 **Videos**
@@ -67,6 +79,7 @@ https://youtu.be/dm98-R1B7m4
 
 ## **4 RoadMap**
 ![](./docs/pic/007.png)
+<center><b><font size ='3'>Road Map</font></b></center></font>
 
 
 ## **5 Technology Team**
@@ -112,10 +125,11 @@ https://youtu.be/dm98-R1B7m4
 
 ## **2 项目简介**
 ![](./docs/pic/001.png)
+<center><b><font size ='3'>LOGO</font></b></center></font>
 ### **2.1 项目背景**
 以太坊联合创始人Vitalik Buterin近期分享了对2023年加密行业的展望，提出加密货币领域尚未实现的三个“巨大”机会，其中第一点就是大规模钱包的采用。随着区块链行业的日益发展，数字资产被盗的情况层出不穷，究其原因多是因为私钥泄露或者触网，给了黑客可乘之机。V神曾在拉丁美洲比特币会议上表示，钱包安全是加密领域最大的问题之一。同时他也认为可以在钱包基础设施上进行更多开发，使得加密货币更容易为日常人们使用，甚至有可能够吸引数十亿用户。Buterin说，“如果能制造出一个十亿人会使用的钱包，这是一个巨大的机会。”<br>
 <br>
-Block Taker团队，团队主要成员有10年以上开发经验，擅长Golang、Java、Solidity、Kotlin、Substrate等语言，在传统金融安全及网络安全领域深耕多年，拥有丰富的安全芯片算法及区块链开发经验。团队将智能手机终端定位为下一代web3超级入口，并致力于移动终端及加密芯片等硬件设施打造一款永不可破解、用户收益最大化、极致用户体验的钱包。
+Block Taker团队，团队主要成员有10年以上开发经验，擅长Golang、Java、Solidity、Kotlin、Rust等语言，在传统金融安全及网络安全领域深耕多年，拥有丰富的安全芯片算法及区块链开发经验。团队将智能手机终端定位为下一代web3超级入口，并致力于移动终端及加密芯片等硬件设施打造一款永不可破解、用户收益最大化、极致用户体验的钱包。
 ### **2.2 项目介绍**
 团队将智能手机终端定位为下一代web3超级入口，并致力于移动终端及加密芯片等硬件设施打造一款永不可破解、用户收益最大化、极致用户体验的钱包。BT钱包是团队第一阶段开发的基于波卡生态的轻量化，高安全并集成提名人，质押挖矿，IPFS等多功能于一体的超级钱包DApp应用程序，目的是解决数字货币加密钱包领域的安全问题，并为使用者带来质押等多功能一键式体验，作为web3世界的基础入口，吸引更多普通用户乃至专业用户转向拥抱波卡生态。<br>
 <br>
@@ -128,18 +142,26 @@ Block Taker团队，团队主要成员有10年以上开发经验，擅长Golang�
 基于金融级EAL6+安全芯片技术。BT钱包通过与特定移动端搭载的独立安全芯片打通，将私钥单独储存，与互联网隔离，为用户提供了高安全性的加密资产私钥的创建、存储、使用和恢复功能，真正实现了"冷热端分离、私钥永不触网”。<br>
 <br>
 ![Security Chip Hardware Block Diagram](./docs/pic/002.png)
+<center><b><font size ='3'>Security Chip Hardware Structure Diagram</font></b></center></font>
 
 #### **2.3.2 Polkadot Wallet**
 ![](./docs/pic/003.png)
+<center><b><font size ='3'>Polkadot Wallet</font></b></center></font>
+
 #### **2.3.3 提名人**
 BT钱包的提名人功能是通过API接口获取验证人和提名人数据，通过独创的PLBM智能推荐算法对数据进行封装处理，用户只需要在BT钱包上输入绑定数量，系统会根据用户绑定的数量，智能推荐16个最优的验证者并帮用户完成提名人操作。智能推荐系统会推荐投入多少就可获得奖励、在用户即将处于提名人候选名单外（一个验证者节点的前256个提名人有奖励 ）及时提醒用户补充金额稳住排名等方式实现用户投入最少，收益最大。
 <br><br>
 ![BT Wallet VS Other Wallet](./docs/pic/004.png)
+<center><b><font size ='3'>BT Wallet VS Other Wallet</font></b></center></font>
+
 ![Nomination operation process](./docs/pic/005.png)
+<center><b><font size ='3'>Staking Operation Flow Chart</font></b></center></font>
+
 ![BT wallet technical architecture diagram](./docs/pic/006.png)
+<center><b><font size ='3'>TechnicalFramework Of BT Wallet</font></b></center></font>
 
 #### **2.3.4 更多**
-**Demo**  
+**APK下载**  
 https://www.pgyer.com/BT_stageEnv_v1
 
 **Videos**  
@@ -171,6 +193,8 @@ https://youtu.be/dm98-R1B7m4
 - 技术白皮书V1版本
 ## **4 RoadMap**
 ![](./docs/pic/007.png)
+<center><b><font size ='3'>Road Map</font></b></center></font>
+
 ## **5 团队成员**
 
 **邵海（队长，技术负责人）**
