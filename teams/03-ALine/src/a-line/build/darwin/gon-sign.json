@@ -1,0 +1,15 @@
+{
+  "source" : ["./aline"],
+  "bundle_id" : "com.tntlingking.hamster.aline",
+  "apple_id": {
+    "username": "lwy521998@126.com",
+    "password": "@env:APPLE_PASSWORD"
+  },
+  "sign" :{
+    "application_identity" : "Developer ID Application: Hubei Tiantian digital chain Technology Co., Ltd (9Z99F74JZM)"
+  },
+  "dmg" :{
+      "output_path":  "aline.dmg",
+      "volume_name":  "aline"
+  }
+}

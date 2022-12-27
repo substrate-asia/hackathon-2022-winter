@@ -1,0 +1,16 @@
+version: 1.0
+name: my-truffle
+stages:
+  git-clone:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: /Users/mohaijiang/IdeaProjects/blockchain/a-line
+  code-compile:
+    needs:
+      - git-clone
+    steps:
+      - name: code-compile
+        run: |
+          yarn build

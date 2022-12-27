@@ -1,0 +1,33 @@
+.ant-pagination {
+  text-align: center;
+}
+.ant-pagination-item-active {
+  background: @color-main;
+  border-color: @color-main;
+
+  & a {
+    color: white;
+  }
+}
+
+.ant-pagination-item:hover a {
+  color: @color-main;
+}
+
+.ant-pagination-prev:hover,
+.ant-pagination-next:hover {
+  .ant-pagination-item-link {
+    color: @color-main;
+  }
+}
+
+.ant-pagination-jump-prev,
+.ant-pagination-jump-next{
+  .ant-pagination-item-container .ant-pagination-item-link-icon {
+    color: @color-main;
+  }
+}
+
+.ant-pagination-item-active:hover a{
+  color: white !important;
+}

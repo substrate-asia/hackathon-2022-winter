@@ -1,0 +1,65 @@
+version: 1.0
+name: my-show
+stages:
+  template-init:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: /Users/mohaijiang/tmp/my-show
+      - name: template init
+        uses: git-checkout
+        with:
+          url: https://github.com/mohaijiang/truffle-webpack.git
+          branch: main
+
+  compile:
+    needs:
+      - template-init
+    steps:
+      - name: compile
+        run: |
+          npm install -g truffle
+          truffle compile
+
+  ganache:
+    needs:
+      - compile
+    steps:
+      - name: ganache
+        run: |
+          npm install -g ganache
+          if [ -f "command.pid" ]; then
+            kill -9 `cat command.pid`  || (echo 'No such process ')
+          fi
+          nohup ganache > ganache.log 2>&1& echo $! > command.pid
+          sleep 2
+
+  deploy-contract:
+    needs:
+      - ganache
+    steps:
+      - name: deploy-contract
+        run: |
+          truffle deploy
+
+  compile-node:
+    needs:
+      - deploy-contract
+    steps:
+      - name: compile
+        run: |
+          cd app && npm install
+          npm run build          
+
+  deploy-frontend:
+    needs:
+      - compile-node
+    steps:
+      - name: deploy to ipfs
+        run: |
+          cd app && ipfs add -r ./dist
+      - name: deploy to nginx
+        run: |
+          cd app && cp dist/* /Users/mohaijiang/app/nginx
+          docker restart some-nginx
