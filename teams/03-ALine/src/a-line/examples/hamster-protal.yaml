@@ -1,0 +1,28 @@
+version: 1.0
+name: portal
+stages:
+  git-clone:
+    steps:
+      - name: git-clone
+        uses: git-checkout
+        with:
+          url: https://github.com/hamster-shared/hamster-portal.git
+          branch: master
+
+  build-image:
+    needs:
+      - git-clone
+    steps:
+      - name: build
+        run: |
+          docker login -u hamstershare -p lt7jiannan
+          docker build -t hamstershare/hamster-portal:latest .
+          docker push hamstershare/hamster-portal:latest
+
+  deploy:
+    needs:
+      - build-image
+    steps:
+      - name: deploy
+        run: |
+          ssh root@137.184.188.49 "cd /root/hamster_portal &&  docker compose pull  && docker compose up -d"

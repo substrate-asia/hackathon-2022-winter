@@ -1,0 +1,18 @@
+version: 1.0
+name: my-test2
+stages:
+  git-clone:
+    steps:
+      - name: git-clone
+        uses: git-checkout
+        with:
+          url: https://gitee.com/mohaijiang/spring-boot-example.git
+          branch: master
+  ipfs:
+    needs:
+      - git-clone
+    steps:
+      - name: upload ipfs
+        uses: hamster-pinata-ipfs
+        with:
+          path: pom.xml

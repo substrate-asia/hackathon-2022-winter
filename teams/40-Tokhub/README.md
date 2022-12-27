@@ -29,7 +29,7 @@ Notion: https://antalpha.notion.site/Tokhub-Carta-for-Web3-41074f2cda714006bb744
   - [ ] Token ownership
   - [ ] Token distribution
   - [ ] Compliance
-
+ 
 **Contract**
 
 - `Token distribution`
@@ -37,11 +37,13 @@ Notion: https://antalpha.notion.site/Tokhub-Carta-for-Web3-41074f2cda714006bb744
   - [ ] Investor Vesting Schedule
   - [ ] Employee Vesting Schedule
 
+
 ## Code finished during Hackathon
 
 Finished the function of token management dashboard & token distribution contract
 
 //Currently deployed on BSC testnet, will deploy on Moonbase Alpha Testnet before demoday
+
 
 ## Team member
 

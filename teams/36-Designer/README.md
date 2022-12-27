@@ -1,77 +1,130 @@
-## 基本资料
+## Project Info
 
-项目名称：Designer
+Name: Designer
 
-项目立项日期 (哪年哪月)：2022年12月
+Found Date: Dec 2022.
 
-## 项目整体简介
+## Overview
 
-项目简介，英文提交。包括但不限于：
+<img src="./docs/designer-logo.svg" style="width:300px" />
 
-- 项目背景/原由/要解决的问题 (如有其他附件，可放到 `docs` 目录内。英文提交)。
-- 项目介绍
-- 项目Demo
-- 技术架构
-- 项目 logo (如有)，这 logo 会印制在文宣，会场海报或贴子上。
+`Designer` is a decentralized coordinate tool for DAO. With Designer, members in DAO can sign agreements with anyone not relying on any centralized services. The agreement content can be encrypted or public as needs. It's your freedom to sign any agreements as you wish in a pure web3 way.
 
-## 黑客松期间计划完成的事项
+Digital agreement is not a new thing. For a long time, digital agreements are supported by centralized services, like `hellosign`, `docusign`. By using those services, we are facing their censorship requirements, and we may lose our treasures if these services providers are broke.
 
-- 请团队在报名那一周 git clone 这个代码库并创建团队目录，在 readme 里列出黑客松期间内打算完成的代码功能点。并提交 PR 到本代码库。例子如下 (这只是一个 nft 项目的例子，请根据团队项目自身定义具体工作)：
+Based on blockchain, smart contract and decentralized storage, we can build decentralized digital agreement platforms or tools. In the past years, there are several other tools saying they are based on decentralized technologies. Is it real? No, they are cheating. 
 
-**区块链端**
+They are using decentralized technologies, but they don't let you know, there are also centralized SaaS/APIs used too. You will lose your treasures again, and you will facing censorship.
+
+`Designer` is a pure decentralized digital agreement tool for DAO, because it's not rely on centralized technologies.
+
+Designer uses Gear Smart Contracts which is a new way, and CESS as decentralized storage layer. The front end uses React + gear-js + polkadot-js/extention. 
+
+![](./docs/graphics/designer-home.png)
+
+### Tech
+
+Designer is based on the decentralized storage project CESS and the WASM smart contract platform Gear.  
+
+The Designer web app is being deployed on CESS, with the help of `OSS` component from CESS.
+
+Anyone can access the web app and agreement files at anytime, without worry about losing them. The Gear Smart Contract provides the abilitiy to store and verify the co-sign information of the agreements, without any other SaaS dependencies, such as `thegraph` in Ethereum ecosystem, nor the `subquery` in Polkadot ecosystem.
+
+The following graph shows the flow of how it works.
+
+<img src="./docs/graphics/flow.png" style="zoom: 25%;" />
+
+It's quite simple to use Designer. 
+
+Firstly, just create agreement with the help of Designer Web App, currently only PDF file supported, later we will have more file formats. 
+
+Secondly, add the co-signers' wallet addresses to the agreement, and submit the agreement to Designer smart contract which is depolyed on Gear Network, currently we use the `workshop nodes` provided by Gear Technologies. 
+
+Thirdly, notify the co-signers through any communitcation tools as you wish. Or when they open the Designer Web App, they will see the agreements waiting for their signatures.
+
+Fourthly, the co-signers sign the agreement using the Designer smart contract.
+
+After all, the co-signers can view the agreements at anytime.
+
+The details can be find [./docs/howto.md](./docs/howto.md).
+
+The demo video can be find  [./docs/Designer-short%20clip.mp4](./docs/Designer-short%20clip.mp4) 
+
+The instructions to build Designer can be find [./docs/build.md](./docs/build.md).
+
+## Plan in Hackathon
+
+**Blockchain**
 
 - `gear contracts`
-  - [ ] Gear合约支持
-  - [ ] 合约验证签名
-  - [ ] 协议内容存储
-  - [ ] 协议权限验证
+  - [ ] Add Gear Smart-Contract support
+  - [ ] Verify signatures in smart contract
+  - [ ] Store agreements in smart contract
+  - [ ] Access control in smart contract
 
 - `CESS`
-  - [ ] CESS存储集成
-  - [ ] 定制化SDK开发
-  - [ ] 定制化Gateway开发
-  - [ ] 权限控制
+  - [ ] Add CESS support
+  - [ ] Customize the CESS SDK
+  - [ ] Customize CESS gateway
+  - [ ] Access control
 
-**客户端**
+**Client**
 
-- Web 端
-  - [ ] 用户注册页面
-  - [ ] 合约创建流程
-  - [ ] 合约签署流程
-  - [ ] 合约分享流程
-  - [ ] 合约验签流程
+- Web App
+  - [ ] User Auth
+  - [ ] Create Agreements
+  - [ ] Sign Agreements
+  - [ ] Share Agreements
+  - [ ] Verify Agreement signature
 
 
+## Things done in Hackathon
 
-## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
+The project is build from scratch in this Hackathon.
 
-- 2022年12月27日前，在本栏列出黑客松期间最终完成的功能点。
-- 把相关代码放在 `src` 目录里，并在本栏列出在黑客松期间打完成的开发工作/功能点。我们将对这些目录/档案作重点技术评审。
-- 放一段不长于 **5 分钟** 的产品 DEMO 展示视频, 命名为 `团队目录/docs/demo.mp4`。初审时这视频是可选，demo day 这是计分项。
+**Blocchain**
+- `gear contracts`
+  - [x] Add Gear Smart-Contract support
+  - [x] Verify signatures in smart contract
+  - [x] Store agreements in smart contract
+  - [x] Access control in smart contract
 
-## 队员信息
+- `CESS`
+  - [x] Add CESS support
+  - [x] Customize the CESS SDK
+  - [x] Customize CESS gateway
+  - [x] Access control
+  - [x] Customize the CESS OSS
+  - [x] Fix issues in CESS code
 
-包含参赛者名称及介绍
-在团队中担任的角色
-GitHub 帐号
-微信账号（如有请留下，方便及时联系）
+**Client**
 
+- Web App
+  - [x] Integrate Gear Smart-Contract
+  - [x] Integrate CESS Storage
+  - [x] User Auth
+  - [x] Create Agreements
+  - [x] Sign Agreements
+  - [x] Share Agreements
+  - [x] Verify Agreement signature
+
+## Team
 
 Hack  
-合约工程师  
+Smart Contract Engineer  
 github id: 0xack4  
 
 Olg  
-产品经理
+Product Manager  
 github id: olgwander  
 
-Wendy
-前端开发工程师
+Wendy  
+Web Engineer  
 github id: wendychaung  
 
 大胡子天使  
-技术顾问  
-github id: N/A
+Tech advisor   
+github id: N/A  
 
 
 

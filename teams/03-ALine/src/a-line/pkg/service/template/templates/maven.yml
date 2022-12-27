@@ -1,0 +1,29 @@
+version: "1.0"
+name: my-test2
+stages:
+  git-clone:
+    steps:
+      - name: git-clone
+        uses: git-checkout
+        with:
+          url: https://gitee.com/mohaijiang/spring-boot-example.git
+          branch: master
+  code-compile:
+    needs:
+      - git-clone
+    steps:
+      - name: code-compile
+        runs-on: maven:3.5-jdk-8
+        run: |
+          mvn clean package -Dmaven.test.skip=true
+      - name: save artifactory
+        uses: hamster-artifactory
+        with:
+          name: some.zip
+          path: target/*.jar
+  build-image:
+    needs:
+      - code-compile
+    steps:
+      - run: |
+          docker build -t mohaijiang/spring-boot-example:latest .

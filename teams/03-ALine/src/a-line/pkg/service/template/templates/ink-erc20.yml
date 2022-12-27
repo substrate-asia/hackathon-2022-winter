@@ -1,0 +1,60 @@
+version: 1.0
+name: ink-erc20
+stages:
+  template-init:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/tmp/ink-erc20
+      - name: template init
+        uses: git-checkout
+        with:
+          url: https://github.com/abing258/ink-erc20.git
+          branch: master
+
+  compile:
+    needs:
+      - template-init
+    steps:
+      - name: compile
+        run: |
+          cargo +nightly contract build
+
+  deploy-contract:
+    needs:
+      - compile
+    steps:
+      - name: deploy-ink-contract
+        uses: deploy-ink-contract
+        with:
+          ## network的值有：Local,Rococo,Shibuya,Shiden
+          network: Local
+          mnemonic:
+
+  frontend-init:
+    needs:
+      - deploy-contract
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/tmp/polkadot
+      - name: frontend init
+        uses: git-checkout
+        with:
+          url: https://github.com/abing258/polkadot-js-apps.git
+          branch: master
+
+  deploy-frontend:
+    needs:
+      - frontend-init
+    steps:
+      - name: deploy-frontend
+        run: |
+          yarn install
+          if [ -f "polkadot_node.pid" ]; then
+            kill -9 `cat polkadot_node.pid`  || (echo 'No such process ')
+          fi
+          nohup yarn run start > node.log 2>&1& echo $! > polkadot_node.pid
+          sleep 2

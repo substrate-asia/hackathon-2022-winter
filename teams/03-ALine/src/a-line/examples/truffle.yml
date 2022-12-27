@@ -1,0 +1,44 @@
+version: 1.0
+name: my-truffle
+stages:
+  git-clone:
+    steps:
+      - name: git-clone
+        uses: git-checkout
+        with:
+          url: https://github.com/mohaijiang/truffle-MetaCoin.git
+          branch: main
+  code-compile:
+    needs:
+      - git-clone
+    steps:
+      - name: code-compile
+        run: |
+          npm install -g truffle
+          truffle compile
+
+  solidity-lint:
+    needs:
+      - code-compile
+    steps:
+      - name: solidity-check
+        run: |
+          npm install -g ethlint
+          solium --init
+          solium --rule 'indentation: ["error", "tab"]' -d contracts/
+
+  contract-test:
+    needs:
+      - code-compile
+    steps:
+      - name: deploy
+        run: |
+          truffle test
+
+  deploy-contract:
+    needs:
+      - contract-test
+    steps:
+      - name: deploy
+        run: |
+          truffle migrate

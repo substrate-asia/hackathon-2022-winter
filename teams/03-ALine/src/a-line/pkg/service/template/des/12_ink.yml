@@ -1,0 +1,18 @@
+#template id
+id: 12
+
+#Template name
+name: "ink erc20"
+
+#Template Description
+descriptionEnglish: "This template is a blockchain smart contract built on the Substrate framework, which realizes automatic contract compilation ->contract deployment."
+descriptionChinese: "该模版是构建在Substrate框架上的区块链智能合约，实现全自动合约编译 -> 合约部署。"
+
+#Template classification
+tag: "SMART_CONTRACT_TEMPLATE"
+
+#Corresponding picture name
+imageName: "ink"
+
+#Affiliate Template
+template: "ink-erc20.yml"

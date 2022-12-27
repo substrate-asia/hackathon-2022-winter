@@ -1,0 +1,24 @@
+version: 1.0
+name: contract_check
+stages:
+  template-init:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/my-erc20
+
+  contract-test:
+    needs:
+      - template-init
+    steps:
+      - name: deploy
+        run: |
+          npm install -g truffle
+          truffle test
+      - name: artifactory meta
+        uses: hamster-artifactory
+        with:
+          name: contract-meta.zip
+          path: |
+            build/contracts/*.json

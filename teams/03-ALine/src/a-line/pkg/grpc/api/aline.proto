@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option go_package = "github.com/hamster-shared/a-line/pkg/grpc/api";
+option java_multiple_files = true;
+option java_package = "com.github.hamster-shared.aline";
+option java_outer_classname = "AlineProto";
+
+package api;
+
+service AlineRPC {
+
+  rpc AlineChat(stream AlineMessage) returns (stream AlineMessage){}
+}
+
+
+message AlineMessage {
+  // 1: register 2: offline 3: heartbeat  4: execute 5: cancel 6: executeResultNotify 7: getLog
+  int64 type = 1 ;
+
+  // registry
+  string address = 2;
+
+  ExecuteReq execReq = 3;
+
+  // execute result
+  string result = 4;
+
+  // log
+  Log log = 5;
+}
+
+message ExecuteReq {
+  // pipeline file
+  string pipelineFile = 1;
+
+  // job exec id
+  int64 jobDetailId = 2;
+}
+
+message ExecuteResult {
+  string jobDetail = 1;
+  string startTime = 2;
+  int64  duration = 3;
+}
+
+message Log {
+  string stage = 1;
+  string content = 2;
+  bool more = 3;
+}

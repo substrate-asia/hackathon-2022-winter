@@ -1,0 +1,22 @@
+version: 1.0
+name: solhint-check
+stages:
+  git-clone:
+    steps:
+      - name: git-clone
+        uses: git-checkout
+        with:
+          url: https://github.com/abing258/solidity_contracts.git
+          branch: main
+  code-compile:
+    needs:
+      - git-clone
+    steps:
+      - name: sol-profiler-install
+        run: |
+          npm install -g solhint
+          solhint --init
+      - name: solhint-check
+        uses: solhint-check
+        with:
+          path:
