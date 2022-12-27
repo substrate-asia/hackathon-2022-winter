@@ -1,0 +1,41 @@
+{
+	"FUJI": {
+		"nodeAddress": "https://api.avax-test.network/ext/bc/C/rpc",
+		"omniverseProtocolAddress": "0x8177cBe1c9a0B08B536C55097b569dfaEc5cb520",
+		"chainId": 43113
+	},
+	"BSCTEST": {
+		"nodeAddress": "https://data-seed-prebsc-1-s1.binance.org:8545",
+		"omniverseProtocolAddress": "0x5950b420377Ac8128485D54307762FC952e14CD4",
+		"chainId": 97
+	},
+	"RINKEBY": {
+		"nodeAddress": "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+		"omniverseProtocolAddress": "0x2999fe13d3CAa63C0bC523E8D5b19A265637dbd2",
+		"chainId": 4,
+		"skywalkerFungibleAddress": "0x63b66c0a293812bcC0F7aE470f577608511BD524"
+	},
+	"PLATONEVMDEV": {
+		"nodeAddress": "https://devnetopenapi2.platon.network/rpc",
+		"chainId": 2203181,
+		"omniverseProtocolAddress": "0x61513E609832E29393cC35229ad28839DCf34870",
+		"skywalkerFungibleAddress": "0x950a980AE663A7B187Db806D5C7D4d7dabe7aAF4",
+		"coolingDown": 10
+	},
+	"MOONBASEALPHA": {
+		"nodeAddress": "https://rpc.api.moonbase.moonbeam.network",
+		"omniverseProtocolAddress": "0x197D00ff70372A48c10cAe8205680c9a9f5F8370",
+		"chainId": 1287
+	},
+	"development": {
+		"omniverseProtocolAddress": "0x7a181d37207D93D0703B51c8d19d57989cDFC39c",
+		"skywalkerFungibleAddress": "0xCeE460f7D2b2444353bBc6158067126b0c9459FA"
+	},
+	"PLATONEVM": {
+		"nodeAddress": "https://openapi.platon.network/rpc",
+		"chainId": 210425,
+		"omniverseProtocolAddress": "0x9e9E6c6006a8570e43c968902DBe84786EbDF7b8",
+		"skywalkerFungibleAddress": "0x7F2607b6Cd8471377CAAF9b73C20936FFbf458CD",
+		"coolingDown": 10
+	}
+}
