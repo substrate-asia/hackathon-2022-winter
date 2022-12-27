@@ -142,23 +142,23 @@ Block Taker团队，团队主要成员有10年以上开发经验，擅长Golang�
 基于金融级EAL6+安全芯片技术。BT钱包通过与特定移动端搭载的独立安全芯片打通，将私钥单独储存，与互联网隔离，为用户提供了高安全性的加密资产私钥的创建、存储、使用和恢复功能，真正实现了"冷热端分离、私钥永不触网”。<br>
 <br>
 ![Security Chip Hardware Block Diagram](./docs/pic/002.png)
-<center><b>(Security Chip Hardware Structure Diagram)</b></center>
+<center><b>(加密芯片架构图)</b></center>  
 
 #### **2.3.2 Polkadot Wallet**
 ![](./docs/pic/003.png)
-<center><b>(Polkadot Wallet)</b></center>
+<center><b>(BT钱包主要功能)</b></center>  
 
 #### **2.3.3 提名人**
 BT钱包的提名人功能是通过API接口获取验证人和提名人数据，通过独创的PLBM智能推荐算法对数据进行封装处理，用户只需要在BT钱包上输入绑定数量，系统会根据用户绑定的数量，智能推荐16个最优的验证者并帮用户完成提名人操作。智能推荐系统会推荐投入多少就可获得奖励、在用户即将处于提名人候选名单外（一个验证者节点的前256个提名人有奖励 ）及时提醒用户补充金额稳住排名等方式实现用户投入最少，收益最大。
 <br><br>
 ![BT Wallet VS Other Wallet](./docs/pic/004.png)
-<center><b>(BT Wallet VS Other Wallet)</b></center>
+<center><b>(BT钱包 VS 其他钱包)</b></center>
 
 ![Nomination operation process](./docs/pic/005.png)
-<center><b>(Staking Operation Flow Chart)</b></center>
+<center><b>(质押流程图)</b></center>
 
 ![BT wallet technical architecture diagram](./docs/pic/006.png)
-<center><b>(TechnicalFramework Of BT Wallet)</b></center>
+<center><b>(技术架构图)</b></center>
 
 
 #### **2.3.4 更多**
