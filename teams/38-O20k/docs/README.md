@@ -177,12 +177,18 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
     # -o, --omniBalance <tokenId>,<omniverse account>
     node index.js -o X,<o-account of receiver>
     ```
+    * You may find outputs as follows:  
+    ![img](./assets/Omniverse-transfer-1.png)  
+    ![Polkadot Scan](./assets/Omniverse-transfer-1-onchain.png)  
+
     * Check `balance of` Token $X$ of related account on EVM chains:  
     ```sh
     # to be done
     # `token X` of sender account
     # `token X` of receiver account
     ```
+    * You can check the transaction on EVM chains [here](to be done), as follows:  
+    ![img](to be done)
 
 ## Omniverse Swap Protocol
 The key operation of the Omniverse Swap Protocol(OSP) is `Make exchanges`.  
