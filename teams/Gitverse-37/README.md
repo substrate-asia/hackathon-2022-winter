@@ -162,4 +162,4 @@ gitverse commit -m comments
 
 - Other Files:
 
-Project Pitch Deck:
+Project Pitch Deck: https://github.com/GitverseEth/hackathon-2022-winter/blob/main/teams/Gitverse-37/GitVerse-deck.pdf
