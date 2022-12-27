@@ -14,7 +14,7 @@
     * [`O20k` Parachain](#parachain-of-o20k)
     * [EVM chains](#evm-chains)
 * [Smart contracts on EVM Chains](#evm-chains)
-* [Get Gas Token]()
+* [Get Gas Token](#get-gas-tokens)
 
 ### Connection
 The Parachain of `O20k` is deployed at `ws://3.74.157.177:9944`, and we recommand using [Polkadot.js](https://polkadot.js.org/apps/#/explorer) to connect to it.  

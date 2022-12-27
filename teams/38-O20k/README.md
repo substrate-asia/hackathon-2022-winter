@@ -1,10 +1,10 @@
-## 基本资料
+## Basic
 
-项目名称：O20k (Omniverse Protocol Stack)
+Name: O20k (Omniverse Protocol Stack)
 
-项目立项日期 (哪年哪月)：2022.12
+Start Time: 2022.12
 
-## 项目整体简介
+## Introduction
 
 ### Background
 As we all know, Token is a great invention that goes along with blockchain, and it’s the impetus of Web3.
@@ -95,39 +95,49 @@ The bottom is the off-chain synchronizer layer. The synchronizer is a very light
 ### logo
 ![img](./docs/assets/logo.png)  
 
-## 黑客松期间计划完成的事项
+## Plan
 
 **On-Chain**
 
 - `pallet-OmniverseProtocol`
-  - [ ] Omniverse Account Management
-  - [ ] Omniverse Nonce Synchronization
-  - [ ] Omniverse Commitment Verification
+  - [x] Omniverse Account Management
+  - [x] Omniverse Nonce Synchronization
+  - [x] Omniverse Commitment Verification
 
 - `pallet-OmniverseToken`
-  - [ ] Omniverse Token Factory
-  - [ ] Omniverse Token Processor
+  - [x] Omniverse Token Factory
+  - [x] Omniverse Token Processor
 
 - `pallet-OmniverseSwap`
-  - [ ] Omniverse Swap Platform
+  - [x] Omniverse Swap Platform
 
 **Algorithm**
 - `O-AMM`
-  - [ ] The ptototype of O-AMM (Omniverse AMM) algorithm.
+  - [x] The ptototype of O-AMM (Omniverse AMM) algorithm.
 
 **Client**
 - Command-Line Interface
-  - [ ] Omniverse Transaction Tools
-  - [ ] Omniverse Swap Tools
-  - [ ] Omniverse Account Tools  
+  - [x] Omniverse Transaction Tools
+  - [x] Omniverse Swap Tools
+  - [x] Omniverse Account Tools  
 
-## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
+## Completed
 
 - 2022年12月27日前，在本栏列出黑客松期间最终完成的功能点。
 - 把相关代码放在 `src` 目录里，并在本栏列出在黑客松期间打完成的开发工作/功能点。我们将对这些目录/档案作重点技术评审。
 - 放一段不长于 **5 分钟** 的产品 DEMO 展示视频, 命名为 `团队目录/docs/demo.mp4`。初审时这视频是可选，demo day 这是计分项。
 
-## 队员信息
+Everything in the [plan](#plan) has beed finished.
+- **On-Chain**
+  - [pallet-OmniverseProtocol]()
+  - [pallet-OmniverseToken]()
+  - [pallet-OmniverseSwap]()
+- **Algorithm**
+  - [O-AMM](./src/O-AMM/)
+- **Client**
+  - [Command-Line Interface]()
+
+## Team
 `Omniverse Labs` was established in December of this year. The first product of our team is [Dante Network](https://github.com/dantenetwork). `O20k` is an Web3 application based on Dante.  
 Our team consists of the following members:  
 |Name|Function|GitHub|Weixin|
