@@ -123,19 +123,17 @@ The bottom is the off-chain synchronizer layer. The synchronizer is a very light
 
 ## Completed
 
-- 2022年12月27日前，在本栏列出黑客松期间最终完成的功能点。
-- 把相关代码放在 `src` 目录里，并在本栏列出在黑客松期间打完成的开发工作/功能点。我们将对这些目录/档案作重点技术评审。
-- 放一段不长于 **5 分钟** 的产品 DEMO 展示视频, 命名为 `团队目录/docs/demo.mp4`。初审时这视频是可选，demo day 这是计分项。
-
 Everything in the [plan](#plan) has beed finished.
 - **On-Chain**
-  - [pallet-OmniverseProtocol]()
-  - [pallet-OmniverseToken]()
-  - [pallet-OmniverseSwap]()
+  - [pallet-OmniverseProtocol](./src/pallets/omni-protocol/)
+  - [pallet-OmniverseToken](./src/pallets/omni-factory/)
+  - [pallet-OmniverseSwap](./src/pallets/omni-swap/)
 - **Algorithm**
   - [O-AMM](./src/O-AMM/)
 - **Client**
-  - [Command-Line Interface]()
+  - Source code [Command-Line Interface](./src/omniverse-swap-tools/), and [tutorial](./docs/README.md).
+
+- [**Demo Video**]()
 
 ## Team
 `Omniverse Labs` was established in December of this year. The first product of our team is [Dante Network](https://github.com/dantenetwork). `O20k` is an Web3 application based on Dante.  
@@ -143,7 +141,7 @@ Our team consists of the following members:
 |Name|Function|GitHub|Weixin|
 |---------|---------|---------|---------|
 |Jason|PM|https://github.com/dantenetwork|HopeOfTown|
-|Xiyu|Tech Guy|https://github.com/xiyu1984|xiyu_meta|
+|Shawn|Tech Guy|https://github.com/xiyu1984|xiyu_meta|
 |Virgil|Tech Guy|https://github.com/virgil2019|cherima|
 |kay404|Tech Guy|https://github.com/kay404|linkai528|
 
