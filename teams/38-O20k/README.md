@@ -132,6 +132,7 @@ Everything in the [plan](#plan) has beed finished.
   - [O-AMM](./src/O-AMM/)
 - **Client**
   - Source code [Command-Line Interface](./src/omniverse-swap-tools/), and [tutorial](./docs/README.md).
+  - Souce code of [EVM Client](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts).
 
 - [**Demo Video**]()
 
