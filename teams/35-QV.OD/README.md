@@ -41,6 +41,13 @@ To creators, they just have two steps:
 To followers, they just have one step:
 - Import the site/channel they like
 
+As shown in above figure, these steps are:
+- step 1 is to create own site/channel, and add media files to the site/channel.
+- step 2 share the subsribe key to public, the public can get the subscribe key anywhere.
+- step 3 the user import the subscribe key to Qv.od app, and he will start to follow the specific site/channel.
+- step 4 the follower try to view the updates from the creator.
+- step 5 the local `Qv.od` fetch the specific updates through the decentralized network.
+
 Currently, for MVP, `Qv.od` is a web application, later it will be implemented as a desktop/mobile application.
 
 ## Plan and complete status in hackathon
