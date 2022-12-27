@@ -1,0 +1,36 @@
+# To improve query performance, we strongly suggest adding indexes to any field that you plan to filter or sort by
+# Add the `@index` or `@index(unique: true)` annotation after any non-key field
+# https://academy.subquery.network/build/graphql.html#indexing-by-non-primary-key-field
+
+type Account @entity {
+  id: ID! # user address
+
+  address: String!
+  contacts: [Contact] @derivedFrom(field: "owner")
+}
+
+type MailAddress @entity {
+  id: ID! #type + mailaddress
+
+  type: String!
+  mailaddress: String!
+
+  mailfroms: [Mail] @derivedFrom(field: "from")
+  mailtos: [Mail] @derivedFrom(field: "to")
+  contacts: [Contact] @derivedFrom(field: "addr")
+}
+
+type Mail @entity {
+  id: ID! #block height + event id
+  from: MailAddress!
+  to: MailAddress!
+  timestamp: Date!
+  hash: String!
+}
+
+type Contact @entity {
+  id: ID! #Accountid + MailAddress id
+  owner: Account
+  addr: MailAddress
+  alias: String
+}
