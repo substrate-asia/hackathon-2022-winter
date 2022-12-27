@@ -81,10 +81,12 @@ DeSign aims to provide customers with decentralized e-signature and contract man
 
 ## Architecture
 1. Deployment diagrame
-![部署图](https://user-images.githubusercontent.com/120092281/209460226-5cc9ac8c-ed96-49a8-bffd-2fe6111b4f2e.png)
+![企业微信截图_16721345262945](https://user-images.githubusercontent.com/120092281/209648379-0e037f63-e6fe-49f2-bde1-f068135043ee.png)
+
 
 2. Funciton call diagrame
-![服务调用关系图](https://user-images.githubusercontent.com/120092281/209460342-c97aeca7-0f22-4423-b859-d0e228af612d.png)
+![企业微信截图_1672134576107](https://user-images.githubusercontent.com/120092281/209648512-b0d0f5f0-34f5-4e59-b254-ae6def33dc3a.png)
+
 
 3. Signing Process & State Machine
 ![DeSign签署流程 (1)](https://user-images.githubusercontent.com/120092281/209460377-f36b056e-b624-4dec-b104-78f10c919ac3.png)
