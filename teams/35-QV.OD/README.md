@@ -1,52 +1,93 @@
-## 基本资料
+## Project Info
 
-项目名称：Qv.od
+Project Name：Qv.od
 
-项目立项日期 (哪年哪月)：2022年12月
+Start date：2022 Dec
 
-## 项目整体简介
+## Introduction
 
-项目简介，英文提交。包括但不限于：
+![](./docs/logo.png)
 
-- 项目背景/原由/要解决的问题 (如有其他附件，可放到 `docs` 目录内。英文提交)。
-- 项目介绍
-- 项目Demo
-- 技术架构
-- 项目 logo (如有)，这 logo 会印制在文宣，会场海报或贴子上。
+Qv.od is a Podcast platform/software based on decentralized storage. By using `Qv.od`, creative producers can focus on their creative works, rather than handle complex relationships with differnt platforms which determine the traffics to them, such as Apple Podcast, Google Podcast, and other similar multimedia platforms like TikTok, and so on.
 
-## 黑客松期间计划完成的事项
+On those centralized platforms, creative producers are facing problems of censorships, traffic manipulation, unreasonable advertise cost, super high split fees etc. 
 
-- 请团队在报名那一周 git clone 这个代码库并创建团队目录，在 readme 里列出黑客松期间内打算完成的代码功能点。并提交 PR 到本代码库。例子如下 (这只是一个 nft 项目的例子，请根据团队项目自身定义具体工作)：
+We may say decentralized solution such `D.tube` can solve these problems in their way, but the fact is it's the perfect solution for the large numbers of creative producers.
 
-**区块链端**
+Imaging, if you are a creative producer, what are the main issues you are facing when you are not the TOP ones in the world? Imaging if you are the fans of some creative producers, what is your biggest suffering when your favor channels are delete or closed?
 
-- `pallet-nft`
-  - [ ] NFT 创建及数据结构定义 (`fn create_nft()`)
-  - [ ] NFT 转帐函数 (`fn transfer()`)
-  - [ ] NFT 销毁函数 (`fn burn_token()`)
+No one can suffer the losing of your favor things, the same as your digital creatives.
 
-**客户端**
-
-- web 端
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
-
-- hybrid (react-native)
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
+Qv.od is designed to solve this issue with the original idea of `RSS`. We produce videos, Podcasts, Musics and other types of works to express our thoughts, we want keep our thoughts live as long as possible, and loved by some people we care. Qv.od provids the plaform/software to handle your own digital things you created or you loved(subscribed).
 
 
-## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
+By using `Qv.od`, you just need import your videos, musics as `sites`, or follow the `sites` from best creative producers you like. Then `Qv.od` will handle the rest to keep syncing with each other. 
 
-- 2022年12月27日前，在本栏列出黑客松期间最终完成的功能点。
-- 把相关代码放在 `src` 目录里，并在本栏列出在黑客松期间打完成的开发工作/功能点。我们将对这些目录/档案作重点技术评审。
-- 放一段不长于 **5 分钟** 的产品 DEMO 展示视频, 命名为 `团队目录/docs/demo.mp4`。初审时这视频是可选，demo day 这是计分项。
+Creators can use `Qv.od` to distribute their works without any cost, thanks to web3 buidlers, and no one can break the connection between the creators and their fans. As the followers of some `channels`, `sites` can get notified when their subscribed `channels` or `sites` have updates, and the followers can PIN the contents locally without worry of lose them, which is the normal case on those centralized multimedia platforms. `Qv.od` brings new potential opportunities for the creator economics environment.
 
-## 队员信息
 
-包含参赛者名称及介绍
-在团队中担任的角色
-GitHub 帐号
-微信账号（如有请留下，方便及时联系）
+### Architecture
+
+With decentralized storage technologies, `Qv.od` has the ability to sync through decentralized storage network, which is `CESS` in current stage.
+
+`Qv.od` contains a local server which acts as an alternative to `CESS OSS`, the local server handles the connection to the decentralized network and serves the web application for `Qv.od`.
+
+![](./docs/arch.png)
+
+To creators, they just have two steps:
+- Create Site/channel
+- Share Site/channel Key
+
+To followers, they just have one step:
+- Import the site/channel they like
+
+As shown in above figure, these steps are:
+- step 1 is to create own site/channel, and add media files to the site/channel.
+- step 2 share the subsribe key to public, the public can get the subscribe key anywhere.
+- step 3 the user import the subscribe key to Qv.od app, and he will start to follow the specific site/channel.
+- step 4 the follower try to view the updates from the creator.
+- step 5 the local `Qv.od` fetch the specific updates through the decentralized network.
+
+Currently, for MVP, `Qv.od` is a web application, later it will be implemented as a desktop/mobile application.
+
+![](./docs/home.png)
+
+## Plan and complete status in hackathon
+
+- `Qv.od Node`
+  - [x] Integrate CESS
+  - [x] Handle Connection to CESS
+  - [x] Fix issue in CESS OSS
+  - [x] Handle video convert
+  - [x] Manage subscription
+  - [x] Import/Export sites
+  - [x] Handle following data
+  - [x] Handle Media Sycning
+
+- `Qv.od Web App`
+  - [x] Mnemonic Management
+  - [x] Create Sites/Channel
+  - [x] Import Sites/Channel
+  - [x] Export Sites/Channel
+  - [x] Handle Import Media
+  - [x] Handle Media Sycning
+  - [x] Handle Share
+  - [x] Handle Media Playing
+
+## Team
+
+Hzmangel  
+Tech Lead / Backend Developer   
+https://github.com/hzmangel  
+
+Frozen  
+Product / Tech Advisor   
+https://github.com/xrdavies   
+
+Noah  
+Backend Developer / Tech support  
+N/A  
+
+晴空女王   
+Front End Developer  
+https://github.com/wendychaung  
