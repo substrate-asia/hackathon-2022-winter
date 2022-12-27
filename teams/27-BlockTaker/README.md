@@ -38,6 +38,7 @@ The nominator function of the BT wallet is to obtain the validator and nominator
 ![BT Wallet VS Other Wallet](./docs/pic/004.png)
 <center>(BT Wallet VS Other Wallet)</center>
 <br><br>
+<br><br>
 
 
 ![Nomination operation process](./docs/pic/005.png)
@@ -167,9 +168,11 @@ BT钱包的提名人功能是通过API接口获取验证人和提名人数据，
 ![BT Wallet VS Other Wallet](./docs/pic/004.png)
 <center>(BT钱包 VS 其他钱包)</center>
 <br><br>
+<br><br>
 
 ![Nomination operation process](./docs/pic/005.png)
 <center>(质押流程图)</center>
+<br><br>
 <br><br>
 
 
