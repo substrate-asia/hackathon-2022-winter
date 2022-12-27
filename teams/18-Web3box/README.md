@@ -57,6 +57,8 @@ Risk Protocol Client Demo (Mac/Win Desktop)
 - Risk Module
   The first phase of the Risk module will support risk scoring and corresponding indicators report display for 10 Parachains, including Moonbeam, Acala, Astar, Centrifuge, Phala, Efinity, KILT, Litentry, Darwinia, Kylin, etc., and will be updated weekly.
 
+[Sentiment analysis Doc](https://github.com/Ericwa0x/hackathon-2022-winter/blob/main/teams/18-Web3box/docs/Twitter_download%20Readme.md)
+
 > Note: Wallet and Risk modules are interlinked and can be linked in the future for risk assessment of assets, contracts and accounts in Polkadot ecosystem.
 
 - Risk Protocol API
