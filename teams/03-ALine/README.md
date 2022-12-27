@@ -55,6 +55,10 @@ With ALine, the following business scenarios can be realized:
 - Know the corresponding service status and health warnings at any time
 - Quickly integrate popular development tools on the page to speed up development
 
+### Project Flow Chart
+
+![Project Flow Chart](docs/FlowChart.png)
+
 ### Technical Solutions
 
 In order to realize our product vision, we use front-end and back-end separation to complete our project, and the design method adopts DDD (Domain-driven Design) domain model design.
@@ -102,17 +106,19 @@ The specific functions included in the currently defined V1 version are
     - Deployment version management
     - Domain management
 
-### UI
-<https://www.figma.com/file/bSiQuWzdHoeSjHn6EZO0ah/ALine?node-id=0%3A1&t=7b7O3nlECA0DF8FE-0>  
-
 
 ## Things Done during the Polkadot Hackathon 2022
 
-The implementation of our overall product functions is relatively complex. At present, we have completed the template addition and rapid deployment sections of the project, provided an operable interface, and open sourced the engine. The functions we have completed include:
+The implementation of our overall product functions is relatively complex. At present, we have completed the template addition and rapid deployment sections of the project, provided an operable interface, and open sourced the engine. The features we plan to accomplish include:
 
 - Build a Pipeline engine, which can complete automated pipeline execution through configuration files and provide log viewing
 - Complete the automatic deployment of smart contracts and front-end automatic deployment functions based on the Pipeline engine
 - Provide front-end pages for visual operations
+
+### UI
+<https://www.figma.com/file/bSiQuWzdHoeSjHn6EZO0ah/ALine?node-id=0%3A1&t=7b7O3nlECA0DF8FE-0>
+
+## Results during the Polkadot Hackathon 2022
 
 Among them, the specific implementation list of our above functions is as follows:
 
@@ -150,6 +156,9 @@ Among them, the specific implementation list of our above functions is as follow
     - Pipeline Execution Process
     - Pipeline Execution Log
 
+## Demo Video
+
+
 
 ## Team
 Abing - Team Lead
@@ -186,6 +195,3 @@ Zhihui
 Qiaoyu
 Zhihao
 Zexun
-
-
-## Demo Video
