@@ -27,7 +27,7 @@ Technically, we will develop a decentralized relational index based on Substrate
 ![image-20220622110833152](./docs/pmail.jpg)
 ### Details
 - [Pitch Deck](https://docs.google.com/presentation/d/1xbV0amQsXFmjQNh3Usn7QbFRaqF20w8fcYHQaCCPp3E/edit?usp=sharing)
-- [Demo Video](https://drive.google.com/file/d/1ITC_CGByH8YwZDNRsgV3z5kui_eJCrS1/view)
+- [Demo Video](https://drive.google.com/file/d/1dgQFsBm9yTRhd4qoEtt7RvihuNhEp8Cp/view)
 
 ## Things planned to be done during the hackathon
 
