@@ -1,7 +1,8 @@
 # Tutorial
 *This document helps beginners taste the basic functions of `O20k` step by step.*  
 
-The full souce code of the related repo of the tools is [here](../src/omniverse-swap-tools/). The original souce code repo is [here](https://github.com/virgil2019/omniverse-swap-tools)
+- The full souce code of the related repo of the tools is [here](../src/omniverse-swap-tools/). The original souce code repo is [here](https://github.com/virgil2019/omniverse-swap-tools)
+- The EVM tools can be found [here](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts), and remember to go there to execute EVM related operetions. This will be integrated into a whole tool.  
 
 ## Index
 * [Prepare Environment](#environment)
@@ -148,17 +149,11 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
     ```
 
 #### Check balance on EVM chains
+* Go to [EVM tools path](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts) first, and follow the tutorial to check what happened on EVM. 
+
 * Check `balance of` Token $X$ of related account on EVM chains:  
-    ```sh
-    # to be done
-    # `token X` of related account
-    ```
     * [Block Scan](https://testnet.bscscan.com/address/0x2fea6b82bAd2999C8Abb0C072363f86f2add5292)
 * Check `balance of` Token $Y$ of related account on EVM chains:  
-    ```sh
-    # to be done
-    # `token Y` of related account
-    ```
     * [Block Scan](https://testnet.bscscan.com/address/0x069c23c166Edff0398958C261D3968713B21139c)
 
 ### Make transaction of Omniverse Token
@@ -186,12 +181,8 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
     ![img](./assets/Omniverse-transfer-1.png)  
     ![Polkadot Scan](./assets/Omniverse-transfer-1-onchain.png)  
 
+    * Go to [EVM tools path](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts) first, and follow the tutorial to check what happened on EVM. 
     * Check `balance of` Token $X$ of related account on EVM chains:  
-    ```sh
-    # to be done
-    # `token X` of sender account
-    # `token X` of receiver account
-    ```
     * You can check the transaction on EVM chains at X [0x2fea6b82bAd2999C8Abb0C072363f86f2add5292](https://testnet.bscscan.com/address/0x2fea6b82bAd2999C8Abb0C072363f86f2add5292) and Y [0x069c23c166Edff0398958C261D3968713B21139c](https://testnet.bscscan.com/address/0x069c23c166Edff0398958C261D3968713B21139c), as follows:  
     ![img](./assets/token-X.png)  
     ![img](./assets/token-Y.png)
@@ -218,11 +209,9 @@ The key operation of the Omniverse Swap Protocol(OSP) is `Make exchanges`.
     # -o, --omniBalance <tokenId>,<omniverse account>
     node index.js -o X,0x256077...
     ```
+
+* Go to [EVM tools path](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts) first, and follow the tutorial to check what happened on EVM. 
 * Check `balance of` Token $Y$ of related account on EVM chains:  
-    ```sh
-    # to be done
-    # `token Y` of related account
-    ```
     * [Block Scan](https://testnet.bscscan.com/address/0x069c23c166Edff0398958C261D3968713B21139c)
 
 We can found that the related states changed simultaneously both on Polkadot and EVM chains.  
