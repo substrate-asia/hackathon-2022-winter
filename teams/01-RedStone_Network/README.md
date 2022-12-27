@@ -27,9 +27,6 @@ Technically, we will develop a decentralized relational index based on Substrate
 ![image-20220622110833152](./docs/pmail.jpg)
 
 ## Things planned to be done during the hackathon
-In this project, we will provide the following functions:
-① the platform adopts wallet login design, no threshold;  
-② Integrate communication channels to realize intercommunication between web2 & web3 emails;
 
 **blockchain**
 
