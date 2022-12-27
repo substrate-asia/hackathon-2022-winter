@@ -1,6 +1,6 @@
 # Description of Demo Video
 
-##Steps:
+## Steps:
 
 - Get the information of the Omniverse accounts: 
     - node index.js -a
@@ -10,7 +10,7 @@
     - node index.js -o X,<account 2>
     - node index.js -o Y,<account 2>
 
-##Swap: 
+## Swap: 
 - Account 1 makes a swap of 100 X to Y:
     - node index.js --swapX2Y X2Y,100
     - Check the balance change on Polkadot:
@@ -18,7 +18,7 @@
     - node index.js -o Y,<account 1>
 - Check the balance change on EVM chains:
 
-##Transfer:
+## Transfer:
 - Account 1 transfer 100 X to account 2:
     - node index.js --transfer X,<account 2>,100
     - Check the balance on Polkadot:
