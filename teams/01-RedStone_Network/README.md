@@ -1,52 +1,58 @@
 ## basic information
 
-Project name: PMail
+Project name: PMail  
+
 Project approval date (month and year): November 2022
 
 ## Project overall introduction
 
-![image-20220622110833152](./docs/logo.png)
+![image-20220622110833152](./docs/logo-200.png)
 
 Mail service is the longest-surviving means of communication on the Internet today. There are more than 4 billion mailbox users in the world, accounting for more than 50% of the world's total population, and it still maintains an annual growth rate of 3%.
 
 The email product design looks very complete, but there are still 3 main pain points:
-① Information leakage: the content of the email can be monitored/peeked by the service provider;
-② Loss of information: the service provider may stop the service at any time, refer to: Yahoo Mail;
-③ Spam.
+- Information leakage: email content can be monitored/viewed by service providers
+- Information loss: service providers may stop their services, reference: Yahoo Mail.
+- Spam: various kinds of advertising emails/phishing emails.
 
+PMail is the first mail service system based on Web3.0 and Substrate technology, providing users with permanent mail service without centralized service, which contains several features:  
+
+- Aggregate Communication: Support for Web2/Web3 mail communication, cross-chain mail exchange.  
+- Privacy Protection: Support for peer-to-peer content encryption, proxy mail relay functionality.  
+- Asset Delivery: Support for mass messaging via on-chain identity and NFT domains.  
+- Extended Functionality: Support for decentralized cloud storage.  
 
 Technically, we will develop a decentralized relational index based on Substrate, use off-chain working machines to develop a decentralized mail gateway, and deploy Arweave to achieve permanent front-end operations. Thus providing any user with a secure, trustless and permissionless persistent mail service.
 
 ![image-20220622110833152](./docs/pmail.jpg)
 
 ## Things planned to be done during the hackathon
-In this project, we will provide the following functions:
-① the platform adopts wallet login design, no threshold;
-② Integrate communication channels to realize intercommunication between web2 & web3 emails;
 
 **blockchain**
 
-- `pallet-mail`
-  - [ ] bind mail address to substrate address (`fn bind_address()`)
-  - [ ] send mail (`fn send_mail()`)
-  - [ ] set contact alias (`fn set_alias()`)
-  - [ ] offchain worker sync mail between web2 and web3
+- Runtime Module
+  - [x] Domain NFT Registration (`fn bind_address()`)
+  - [x] Set Contact Aliases (`fn send_mail()`)
+  - [x] Aggregate Mail Queue Cache (`fn set_alias()`)
+- Decentralized mail gateway
+  - [x] Web2 Mail Synchronization Cache (`fn submit_add_mail()`)
+  - [x] Gateway Node Actuator Polling (`fn submit_update_authority_index()`)
 
 **client**
 - webend
-  - [ ] user login page
-  - [ ] mail list page
-  - [ ] create mail page
-  - [ ] contact list page
+  - [x] Mailbox Login & Registration Page
+  - [x] Mail Index & List Page
+  - [x] Mail Creation & Delivery Page
+  - [x] Mailbox Cloud Service Page
 
 **backend**
-- mail api server
-  - [ ] create web2 mail
-  - [ ] get mail from web2
-  - [ ] upload mail body to Decentralized Storage
-- subql end
-  - [ ] get email list from blockchain
-  - [ ] get contact list from blockchain
+- Mail API Service
+  - [x] Web2 Mail Proxy Gateway
+  - [x] Web2 Mail Indexing Service
+  - [x] Decentralized Storage API Service
+- SubQuery Indexing Service
+  - [x] On-Chain Mailing List Indexing Service
+  - [x] On-Chain Mailbox Contact Indexing Service
 
 ## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
 
