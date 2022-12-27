@@ -6,7 +6,7 @@ Project approval date (month and year): November 2022
 
 ## Project overall introduction
 
-![image-20220622110833152](./docs/logo-80.png)
+![image-20220622110833152](./docs/logo-200.png)
 
 Mail service is the longest-surviving means of communication on the Internet today. There are more than 4 billion mailbox users in the world, accounting for more than 50% of the world's total population, and it still maintains an annual growth rate of 3%.
 
