@@ -165,7 +165,7 @@ ALine以SaaS的模式提供服务，通过ALine，用户可以得到从创建项
     - Pipeline Execution Log
 
 ### Demo 视频
-[ALine_Video](docs/demo/ALine_Video.mp4)
+[ALine_Video](docs/demo/ALine_Video.mov)
 
 
 ## 队员信息
