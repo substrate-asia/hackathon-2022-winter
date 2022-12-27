@@ -46,7 +46,7 @@ Underlayer: Polkadot Eco Assets Integration, Machine Learning Analytics, AI Algo
 
 # 4.Github
 
-[Github address](https://github.com/Ericwa0x/hackathon-2022-winter/tree/main/teams/18-Web3box)
+[Github link](https://github.com/Ericwa0x/hackathon-2022-winter/tree/main/teams/18-Web3box)
 
 # 5.Deliverables in Hackathon-2022-Winter
 
