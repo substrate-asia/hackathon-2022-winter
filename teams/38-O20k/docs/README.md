@@ -131,7 +131,7 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
 #### Check balance on Polkadot
 * Check `balance of` Token $X$ of related account on Polkadot:  
     ```sh
-    # -o, --omniBalance <tokenId>,<pk>
+    # -o, --omniBalance <tokenId>,<omniverse account>
     node index.js -o X,0x256077...
     ```
     * `X` is the tokenId mentioned [above](#parachain-of-o20k).  
@@ -140,6 +140,7 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
 
 * Check `balance of` Token $Y$ of related account on Polkadot:  
     ```sh
+    # -o, --omniBalance <tokenId>,<omniverse account>
     node index.js -o Y,0x256077...
     ```
 
@@ -159,6 +160,7 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
 #### Initiate the Omiverse transaction
 * Transfer Token $X$ to another account on Polkadot:
     ```sh
+    # --transfer <tokenId>,<pk>,<amount> 
     node index.js -t X,0x256077...,66
     ```
     * `X` is the example tokenId of token $X$.
@@ -169,8 +171,10 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
     * Check `balance of` Token $X$ of related account on Polkadot:  
     ```sh
     # sender
+    # -o, --omniBalance <tokenId>,<omniverse account>
     node index.js -o X,<o-account of sender>
     # receiver
+    # -o, --omniBalance <tokenId>,<omniverse account>
     node index.js -o X,<o-account of receiver>
     ```
     * Check `balance of` Token $X$ of related account on EVM chains:  
@@ -197,7 +201,8 @@ The key operation of the Omniverse Swap Protocol(OSP) is `Make exchanges`.
 ### Check the Balance after exchanges
 * Check `balance of` Token $X$ of related account on Polkadot:  
     ```sh
-    node index.js -o <tokenId of X>,<o-account of sender>
+    # -o, --omniBalance <tokenId>,<omniverse account>
+    node index.js -o X,0x256077...
     ```
 * Check `balance of` Token $Y$ of related account on EVM chains:  
     ```sh
