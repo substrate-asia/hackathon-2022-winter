@@ -20,7 +20,8 @@ Unlike traditional ad platforms, who collect users sensitive data(e.g. location,
 
 ### Architecture
 
-
+![Workflow](./docs/workflow.png)
+![Timing](./docs/timing.png)
 
 ### Logo
 
