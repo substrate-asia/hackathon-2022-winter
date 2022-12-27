@@ -30,5 +30,5 @@ dependencyResolutionManagement {
 //        }
     }
 }
-rootProject.name = "Value"
+rootProject.name = "BT"
 include ':app'

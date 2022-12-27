@@ -1,0 +1,161 @@
+@import '../../../global.scss';
+
+.dao-home-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Montserrat;
+
+    >.banner-container {
+        width: 100vw;
+        max-width: 100%;
+        height: min(240px, 16.6vw);
+        overflow: hidden;
+        position: relative;
+        background-color: #151515;
+
+        .banner-image {
+            width: 100%;
+            position: relative;
+            min-height: 100%;
+            -webkit-mask-image: linear-gradient(to bottom, #00000011 0%, black 50%, #000000ff 100%);
+            mask-image: linear-gradient(to bottom, #00000011 0%, black 50%, #00000011 100%);
+
+            @include absolute-centered;
+        }
+    }
+
+    >.profile-container {
+        width: 1200px;
+        max-width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        >.avatar-wrapper {
+            margin-top: -80px;
+            width: 120px;
+            border-radius: 80px;
+            padding-bottom: 120px;
+            // overflow: hidden;
+            // outline: 2px solid #d6aaffaf;
+            position: relative;
+            background: #151515;
+            z-index: 1;
+            transform: translateX(-4px);
+
+            &::after {
+                @include colorfulBorderProperties(4px);
+            }
+
+            .avatar {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+            }
+
+            .avatar,
+            .avatar img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                // background-color: #eee;
+            }
+        }
+
+        >.text-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            align-items: flex-start;
+
+            >.left {
+                width: 50%;
+
+                >.name {
+                    font-weight: 500;
+                    font-size: 40px;
+                    color: $title-color;
+                    font-family: "Fjalla One";
+                    font-weight: bold;
+
+                    &.editable {
+                        // transform: translateX(12px);
+                    }
+
+                    img {
+                        cursor: pointer;
+                        display: inline;
+                        height: 32px;
+                        transform: translate(32px, 0px);
+                    }
+                }
+
+                >.introduction {
+                    font-size: 16px;
+                    line-height: 150%;
+                    // text-align: center;
+                    color: $subtitle-color;
+                    width: 100%;
+                    // display: inline-block;
+                    margin-top: 4px;
+                }
+            }
+
+            >.right {
+                >.link-container {
+                    gap: 16px;
+                    @include flex-centered-container;
+
+                    .Button {
+                        opacity: 0.9;
+                        height: 42px;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+
+                    .share-button-wrapper {
+                        position: relative;
+
+                        .dropdown {
+                            position: absolute;
+                            top: calc(100% + 4px);
+                            right: 0;
+                            border-radius: 8px;
+                            overflow: hidden;
+                            z-index: 8888;
+                            background-color: #15182A;
+                            width: 160px;
+
+                            .option {
+                                cursor: pointer;
+                                padding: 8px 16px;
+                                font-size: 14px;
+                                color: #ffffff;
+                                text-align: right;
+                                @include ellipsis(1);
+                                border-bottom: 1px solid #252a3d;
+
+                                &:last-child {
+                                    border-bottom: 0
+                                }
+
+                                &:hover {
+                                    background: #252a3d;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+
+
+
+}

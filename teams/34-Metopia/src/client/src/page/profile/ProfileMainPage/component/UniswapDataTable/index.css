@@ -1,0 +1,24 @@
+.UniswapDataTable{
+    width: 100%;
+}
+
+.UniswapDataTable th{
+    text-align: left;
+    font-size: 16px;
+    line-height: 32px;
+    color: #666;
+    font-weight: 600;
+}
+
+
+.UniswapDataTable td{
+    text-align: left;
+    color:#888;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.UniswapDataTable th, .UniswapDataTable tr, .UniswapDataTable {
+    border-collapse: collapse;
+    padding: 0
+}

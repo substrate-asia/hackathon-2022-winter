@@ -1,0 +1,349 @@
+@import '../../../global.scss';
+@import './font.scss';
+
+.profile-page {
+    border-radius: 32px;
+    width: 100vw;
+    transform: translateY(-86px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    >.bg {
+        width: 100vw;
+        height: 16.66vw;
+    }
+
+    >.container {
+        width: 1200px;
+        display: flex;
+        gap: 40px;
+
+        >.basic-profile {
+            min-height: 500px;
+            max-height: 800px;
+            width: 272px;
+
+            transform: translateY(max(-120px, -8vw));
+            position: relative;
+            backdrop-filter: blur(64px);
+            border-radius: 4px;
+            background-image: linear-gradient(180deg, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0)),
+                linear-gradient(180deg, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
+            border-top: 1px solid rgba(255, 255, 255, .7);
+            background-size: 1px 100%;
+            background-position: 0 0, 100% 0;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 20px #00000022;
+
+            >.container {
+                width: 100%;
+                background: linear-gradient(180deg, rgba(237, 255, 241, 0.2) 0%, rgba(21, 47, 36, 0) 100%);
+                border-radius: 4px;
+                padding: 24px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 16px;
+
+                >.avatar-wrapper {
+                    height: 96px;
+                    width: 96px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 60px;
+                    position: relative;
+
+                    >.avatar {
+                        height: 96px;
+                        width: 96px;
+                        border-radius: 60px;
+                        overflow: hidden;
+
+                        img {
+                            height: 96px;
+                            width: 96px;
+                            border-radius: 60px;
+                        }
+                    }
+
+                    .writer-button {
+                        display: none;
+                        height: 24px;
+                        right: -10px;
+                        bottom: 0px;
+                        position: absolute;
+                    }
+
+                    &:hover .writer-button {
+                        display: block;
+                    }
+
+
+                    &.editable {
+                        cursor: pointer;
+                    }
+                }
+
+                >.basic-profile {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    align-items: flex-start;
+                    width: 100%;
+
+                    >.name-wrapper {
+                        // display: flex;
+                        gap: 12px;
+                        align-items: center;
+                        max-width: 100%;
+                        width: 100%;
+                        text-align: center;
+
+                        >.name {
+                            max-width: 100%;
+                            font-size: 20px;
+                            font-weight: bold;
+                            color: $title-color;
+                            font-family: montserrat;
+                            @include ellipsis(1);
+                        }
+
+                        img {
+                            height: 30px;
+                        }
+
+                        .ghost-button-group {
+                            margin-left: 16px;
+
+                            .ghost-button {
+                                padding: 6px 13px;
+                            }
+                        }
+                    }
+
+                    >.button-wrapper {
+                        display: flex;
+                        justify-content: center;
+                        gap: 12px;
+                        width: 100%;
+
+                        .main-button {
+                            border-radius: 99px;
+                            font-size: 16px;
+                            background: white;
+                            color: black;
+                            font-weight: bold;
+                            width: 100%;
+                        }
+                    }
+
+
+                }
+
+                >.metopia-info-container {
+                    width: 100%;
+                    margin-top: 12px;
+
+                    .data-wrapper {
+                        display: flex;
+                        justify-content: space-between;
+
+                        >.label {
+                            font-size: 14px;
+                            color: rgba(255, 255, 255, 0.8);
+                        }
+
+                        >.value {
+                            color: #FFFFFF;
+
+                            &.selectable {
+                                cursor: pointer;
+                                img{
+                                    transform: rotate(-90deg) translate(-4px,4px) ;
+                                    opacity: 0.5;
+                                }
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+
+                        margin-bottom: 12px;
+
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+
+
+                    }
+                }
+
+                >.social-container {
+                    width: 100%;
+                    margin-top: 12px;
+
+                    >.title {
+                        font-weight: bold;
+                        font-size: 14px;
+                        color: #ffffff;
+                    }
+
+                    >.content {
+                        border: 1px solid #7D809A;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        margin-top: 12px;
+
+                        >.item {
+                            width: 100%;
+                            border-bottom: 1px solid #7D809A;
+                            padding: 12px 10px;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            line-height: 24px;
+
+                            >.value {
+                                max-width: 90px;
+                                @include ellipsis(1);
+                                margin-left: auto;
+                                color: #7D809A;
+                                line-height: 24px;
+                            }
+
+                            &:last-child {
+                                border-bottom: 0;
+                            }
+
+                            .link {
+                                cursor: pointer;
+                                user-select: none;
+                            }
+                        }
+                    }
+                }
+
+                >.introduction-container {
+                    width: 100%;
+                    margin-top: 12px;
+
+                    >.title {
+                        font-weight: bold;
+                        font-size: 14px;
+                        color: #ffffff;
+                    }
+
+                    >.content {
+                        @include ellipsis(4);
+                        font-size: 14px;
+                        color: rgba(255, 255, 255, 0.67);
+                        margin-top: 12px;
+
+                        * {
+                            margin: 0;
+                        }
+
+                        &.expand {
+                            // overflow: visible;
+                            display: block;
+                            -webkit-box-orient: unset;
+                            -webkit-line-clamp: unset;
+                            // text-overflow: ellipsis;
+                        }
+                    }
+
+                    >.Button {
+                        font-size: 14px;
+                        color: #ffffff;
+                        display: none;
+                        margin-top: 4px;
+
+                        &.display {
+                            display: flex;
+                        }
+
+                        &.expand {
+                            display: none;
+                        }
+                    }
+                }
+
+                .stats-wrapper {
+                    margin-left: auto;
+                    margin-right: 24px;
+                    display: flex;
+
+                    >.group {
+                        text-align: center;
+                        margin-left: max(3.9vw, 56px);
+
+                        .number {
+                            background: linear-gradient(122.65deg, #5A49DE 23.36%, #F7C4D7 132.77%),
+                                linear-gradient(0deg, #222222, #222222);
+                            background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            font-family: Akrobat;
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 2.76vw;
+                            font-size: max(2.76vw, 40px);
+                            text-align: center;
+                        }
+
+                        .text {
+                            font-size: max(1.64vw, 24px);
+                            color: #BBBBBB;
+                            font-family: Akrobat;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        >.body {
+            flex: 1;
+
+            >.main-title {
+                display: flex;
+                padding: 24px 0;
+                border-bottom: $default-border;
+
+                .sub-menu-bar {
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+
+                    .sub-menu-item {
+                        font-style: normal;
+                        font-size: 24px;
+                        line-height: 200%;
+                        color: $subtitle-color;
+                        margin-right: 48px;
+                        cursor: pointer;
+                        font-family: Montserrat;
+                        font-weight: bold;
+
+                        &.selected {
+                            @include colorful;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+
+            >.content-container {
+                margin-top: 24px;
+            }
+
+            .no-content-container {
+                background-color: #ffffff11;
+                border-radius: 20px;
+                padding: 24px 30px;
+                @include profile-title;
+            }
+        }
+    }
+}

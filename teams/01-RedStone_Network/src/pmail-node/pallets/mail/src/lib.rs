@@ -116,28 +116,6 @@ pub mod pallet {
 		pub type AuthorityId = app_sr25519::Public;
 	}
 
-	/*
-	{
-	"code": 0,
-	"data": [
-	  {
-			"subject": "test",
-			"body": "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=GB18030\"><div>hello, boy. how are you.</div><div><br></div><div><div style=\"color:#909090;font-family:Arial Narrow;font-size:12px\">------------------</div><div style=\"font-size:14px;font-family:Verdana;color:#000;\"><a class=\"xm_write_card\" id=\"in_alias\" style=\"white-space: normal; display: inline-block; text-decoration: none !important;font-family: -apple-system,BlinkMacSystemFont,PingFang SC,Microsoft YaHei;\" href=\"https://wx.mail.qq.com/home/index?t=readmail_businesscard_midpage&amp;nocheck=true&amp;name=%E5%B0%8F%E7%99%BD%E9%BE%99&amp;icon=http%3A%2F%2Fthirdqq.qlogo.cn%2Fg%3Fb%3Dsdk%26k%3Diby9h7f0AjE5pUic9pIt3ynw%26s%3D100%26t%3D1556660321%3Frand%3D1650372662&amp;mail=116174160%40qq.com&amp;code=\" target=\"_blank\"><table style=\"white-space: normal;table-layout: fixed; padding-right: 20px;\" contenteditable=\"false\" cellpadding=\"0\" cellspacing=\"0\"><tbody><tr valign=\"top\"><td style=\"width: 40px;min-width: 40px; padding-top:10px\"><div style=\"width: 38px; height: 38px; border: 1px #FFF solid; border-radius:50%; margin: 0;vertical-align: top;box-shadow: 0 0 10px 0 rgba(127,152,178,0.14);\"><img src=\"http://thirdqq.qlogo.cn/g?b=sdk&amp;k=iby9h7f0AjE5pUic9pIt3ynw&amp;s=100&amp;t=1556660321?rand=1650372662\" style=\"width:100%;height:100%;border-radius:50%;pointer-events: none;\"></div></td><td style=\"padding: 10px 0 8px 10px;\"><div class=\"businessCard_name\" style=\"font-size: 14px;color: #33312E;line-height: 20px; padding-bottom: 2px; margin:0;font-weight: 500;\">小白龙</div><div class=\"businessCard_mail\" style=\"font-size: 12px;color: #999896;line-height: 18px; margin:0;\">116174160@qq.com</div></td></tr></tbody></table></a></div></div><div>&nbsp;</div>",
-			"from": [{
-				"Name": "=?gb18030?B?0KGw18H6?=",
-				"Address": "116174160@qq.com"
-			}],
-			"to": [{
-				"Name": "=?gb18030?B?dGVzdDE=?=",
-				"Address": "test1@pmailbox.org"
-			}],
-			"date": "2022-12-04T17:52:21+08:00",
-			"timestampe": 1670147541000
-		}
-		]
-	}
-	*/
-
 	#[derive(Serialize, Deserialize, Default, RuntimeDebug)]
 	struct AddressInfo {
 		#[serde(alias = "name", alias = "Name")]
@@ -163,25 +141,6 @@ pub mod pallet {
 		code: u64,
 		msg: String,
 	}
-
-	// struct TestResponse {
-	// 	data:&'static str,
-	// }
-
-	/*
-	{
-	"emailname": "test1@pmailbox.org",
-	"from": "test1@pmailbox.org",
-	"to": ["admin@pmailbox.org"],
-	"cc": [],
-	"bcc": [],
-	"subject": "this is a title4",
-	"mailtype": "text",
-	"text": "text body",
-	"html": ""
-	"store_hash": ""
-	}
-	*/
 
 	#[derive(Serialize, Deserialize, Default, RuntimeDebug)]
 	struct CreateMailInfo {
@@ -224,9 +183,6 @@ pub mod pallet {
 	where
 		D: Deserializer<'de>,
 	{
-		// let s: &str = Deserialize::deserialize(de)?;
-		// Ok(s.as_bytes().to_vec())
-
 		let s = String::deserialize(de)?;
 		Ok(s.as_bytes().to_vec())
 	}
@@ -724,8 +680,6 @@ pub mod pallet {
 
 			let url = "http://143.198.218.138:8888/api/mails/list?emailname=".to_owned() +
 				username + MAIL_SUFFIX;
-			// let url = "http://mail1.pmailbox.org:8888/api/mails/list?emailname=".to_owned() +
-			// 	username + MAIL_SUFFIX;
 
 			let request = http::Request::get(&url).add_header("content-type", "application/json");
 
@@ -790,7 +744,6 @@ pub mod pallet {
 
 			let url = "http://143.198.218.138:8887/api/storage/".to_owned() +
 				&base58_sig + &(timestamp_now.unix_millis().to_string());
-			// let url = "http://mail1.pmailbox.org:8888/api/mails/create_with_hash";
 
 			let body = vec![buff.as_bytes()];
 
@@ -860,9 +813,7 @@ pub mod pallet {
 		fn send_mail_to_web2(username: &str, to: &str, hash: &str) -> Result<u64, Error<T>> {
 			let deadline = sp_io::offchain::timestamp().add(Duration::from_millis(20_000));
 
-			// let url = "http://127.0.0.1:8888/api/mails/create_with_hash";
 			let url = "http://143.198.218.138:8888/api/mails/create_with_hash";
-			// let url = "http://mail1.pmailbox.org:8888/api/mails/create_with_hash";
 
 			let full_emal_address = username.to_owned() + MAIL_SUFFIX;
 			let mut to_list = Vec::<String>::new();

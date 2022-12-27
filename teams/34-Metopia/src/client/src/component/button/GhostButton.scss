@@ -1,0 +1,72 @@
+@import '../../global.scss';
+
+.ghost-button-group {
+    display: inline-block;
+    position: relative;
+
+    .ghost-button {
+        // border: 1px solid #7D809A;
+        box-sizing: border-box;
+        padding: 12px 0;
+        display: inline-block;
+        vertical-align: top;
+        cursor: pointer;
+        position: relative;
+        user-select: none;
+        background: rgba(125, 128, 154, 0.3);
+
+        .wrapper {
+            padding: 0 12px;
+            height: 20px;
+            border-left: 1px solid #0F111E;
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+            vertical-align: top;
+            filter: brightness(1000%);
+            opacity: 0.9;
+        }
+
+        &:first-of-type {
+            border-top-left-radius: 40px;
+            border-bottom-left-radius: 40px;
+            padding-left: 2px;
+
+            .wrapper {
+                border-left: 0;
+            }
+        }
+
+        &:last-of-type {
+            border-top-right-radius: 40px;
+            border-bottom-right-radius: 40px;
+            padding-right: 2px;
+        }
+
+        &+.ghost-button {
+
+            &:hover,
+            &.active,
+            &.selected {
+                // margin-left: -1px;
+            }
+        }
+
+        &.selected {
+            // filter: brightness(150%);
+            // filter: grayscale(50%);
+        }
+
+        &:hover,
+        &.active {
+            img {
+                opacity: 1;
+            }
+
+            // border: 1px solid $theme-color;
+            // filter: none;
+        }
+    }
+}

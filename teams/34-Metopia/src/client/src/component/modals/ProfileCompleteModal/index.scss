@@ -1,0 +1,60 @@
+@import '../../../global.scss';
+
+.profile-complete-modal-container {
+    padding: 12px 24px;
+
+    >.head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding:24px 0;
+
+        >.text {
+            font-family: 'Fjalla One';
+            font-size: 24px;
+            color: white;
+        }
+
+        .Button {
+            height: 24px;
+        }
+    }
+
+    >.body {
+        padding: 24px 0;
+        font-family: 'Montserrat';
+        >.progress-bar {
+            background-color: #000000;
+            height: 10px;
+            border-radius: 5px;
+
+            >.solid-bar {
+                @include colorfulBg;
+                height: 10px;
+                border-radius: 5px;
+            }
+        }
+
+        >.text {
+            margin-top: 24px;
+            color: rgba(187, 187, 187, 0.8);
+            font-size: 16px;
+            line-height: 28px;
+
+            >.number {
+                font-family: 'Fjalla One';
+                font-size: 22px;
+                color: #E6007A;
+            }
+        }
+
+        >.button-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 36px;
+        }
+    }
+}

@@ -1,52 +1,66 @@
-## 基本资料
+项目名称：DotConnect Wallet
+项目立项日期：2022.11
 
-项目名称：
+项目整体简介：
+Background：
+As more and more people are crazy about NFT, there are super related demand emerged. So a wallet with NFT features is needed.
 
-项目立项日期 (哪年哪月)：
+The problems to be solved: 
+First of all, there are too many NFT phishing websites stealing users’ assets;
+Secondly, to make NFT cross-chain transfer is not easy;
+Thirdly, customized transfer NFT way is not existed;
+Fourthly, NFT cannot be sold easily through wallets;
+Fifthly, DID and wallets lack connection;
+Lastly, transaction without main-net token is not convenient.
 
-## 项目整体简介
+Introduction: 
+DotConnect is an NFT-friendly wallet with multiple chains such as polkadot, web3games and EVM chains. 
+There are several features about the wallet. 
+The following ones have been fulfilled already.
 
-项目简介，英文提交。包括但不限于：
+Firstly, we support multiple chains especially polkadot and web3games. And further, we support transfer through different chains like ETH transferred from ETH chain to BNB chain. 
+Secondly, NFTs are listed according different classification like trend, collection, ranking, game, mint, etc to help users find suitable NFTs.
+Thirdly, users could sell their own NFTs directly to different markets like Opensea, Looksrare, etc with simple set. 
 
-- 项目背景/原由/要解决的问题 (如有其他附件，可放到 `docs` 目录内。英文提交)。
-- 项目介绍
-- 项目Demo
-- 技术架构
-- 项目 logo (如有)，这 logo 会印制在文宣，会场海报或贴子上。
-
-## 黑客松期间计划完成的事项
-
-- 请团队在报名那一周 git clone 这个代码库并创建团队目录，在 readme 里列出黑客松期间内打算完成的代码功能点。并提交 PR 到本代码库。例子如下 (这只是一个 nft 项目的例子，请根据团队项目自身定义具体工作)：
-
-**区块链端**
-
-- `pallet-nft`
-  - [ ] NFT 创建及数据结构定义 (`fn create_nft()`)
-  - [ ] NFT 转帐函数 (`fn transfer()`)
-  - [ ] NFT 销毁函数 (`fn burn_token()`)
-
-**客户端**
-
-- web 端
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
-
-- hybrid (react-native)
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
+However, there are still other features will be fulfilled afterwards.
+One point is security. We will give tips to users towards the phishing websites.
+Another point is customized transfer. It means to send in a regular or customized way. For example, user A wants to send NFTs to a fixed address on a fixed time every week. He may set once without sending every time.
+Another point is DID. DID is an identity data aggregator, powered by smart contract, NFT and privacy protection decentralized protocol, to provide identity services to users. What’s more, it helps to gather people to build the Dao to construct the DID area.
+Last point is no main-net gas fee. No matter where you want to send or exchange your asset, main-net gas fee is never needed. For example, user A wants to buy an NFT on ETH chain, but he only has BNB token. He can still trade successfully by paying BNB as gas fee because, meanwhile, we have exchanged BNB to ETH as gas fee behind.
 
 
-## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
+DEMO：https://share.lanhuapp.com/#/invite?sid=qxVo2nAa
 
-- 2022年12月27日前，在本栏列出黑客松期间最终完成的功能点。
-- 把相关代码放在 `src` 目录里，并在本栏列出在黑客松期间打完成的开发工作/功能点。我们将对这些目录/档案作重点技术评审。
-- 放一段不长于 **5 分钟** 的产品 DEMO 展示视频, 命名为 `团队目录/docs/demo.mp4`。初审时这视频是可选，demo day 这是计分项。
+PPT: https://docs.google.com/presentation/d/1-Ov6EAyXfNrz-eti5c6BpQYQAWkTiKhVxjzLZ4uMXXU/edit#slide=id.p
 
-## 队员信息
+技术架构：https://github.com/funplaygroup/DotConnect/blob/main/architecture.svg
 
-包含参赛者名称及介绍
-在团队中担任的角色
-GitHub 帐号
-微信账号（如有请留下，方便及时联系）
+
+LOGO：
+![image](https://user-images.githubusercontent.com/44957477/209666226-0006fd70-5ebc-4bea-808c-b9932e951d10.png)
+
+
+
+黑客松计划完成是事项：
+1.User Login；
+2. Import and Create wallet;
+3. NFT display in different classification ( trend, collection, ranking, game…);
+4. Support multiple chain(polkadot, web3games, EVM chains);
+5. NFT sold in Opensea, etc;
+6. Warn phishing sites;
+7. Cross-chain transfer;
+8. DID
+9. Customized transfer
+10. No main-net gas fee
+
+
+黑客松期间已完成事项：
+1.User Login；
+2. Import and Create wallet;
+3. NFT display in different classification ( trend, collection, ranking, game…);
+4. Support multiple chain(polkadot, web3games, EVM chains);
+5. Support Token and NFT transfer and transaction;
+
+       
+
+队员信息：jasmine88888888/russell.lrg@gmail.com/min8528@163.com/metalitagtm@gmail.com/532398960@qq.com/shenzhen-arrom

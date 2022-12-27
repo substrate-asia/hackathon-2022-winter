@@ -1,0 +1,111 @@
+@import '../../../global.scss';
+
+.fixedable-page-head {
+    >.head {
+        position: relative;
+        text-align: center;
+        padding: 40px 0;
+
+        >.title {
+            font-family: 'Fjalla One';
+            font-weight: bold;
+            font-size: 60px;
+            text-align: center;
+            color: #FFFFFF;
+
+            >.name {
+                @include colorful;
+            }
+        }
+
+        >.subtitle {
+            // font-family: 'Fjalla One';
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            font-size: 24px;
+            line-height: 150%;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.67);
+
+
+            >.number {
+                background: linear-gradient(122.65deg, #A195FF 23.36%, #FFA9CA 132.77%), #A36FFE;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-size: 48px;
+            }
+        }
+
+        >.back-button {
+            position: absolute;
+            left: 0;
+            top: 60px;
+        }
+    }
+
+    >.head-fixed {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        top: 189px;
+        background: rgba(42, 53, 71, 0.2);
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+        margin-top: -100px;
+        // margin-left: calc(600px - 50vw);
+        width: 100vw;
+
+        &.invisible {
+
+            &,
+            * {
+                user-select: none;
+                cursor: default;
+            }
+        }
+
+        >.container {
+            width: 1200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+
+            >.title {
+                font-family: 'Fjalla One';
+                font-weight: bold;
+                font-size: 32px;
+                text-align: center;
+                color: #FFFFFF;
+                @include ellipsis(1);
+                margin-right: 20px;
+
+                >.name {
+                    @include colorful;
+                }
+            }
+
+            .step-linear-indicator {
+                margin: 0 0 0 auto !important;
+                gap: 12px;
+
+                // margin-left: auto;
+                .step-linker {
+                    width: 40px;
+                }
+
+                .step-icon {
+                    gap: 12px;
+                }
+            }
+
+            >.back-button {
+                cursor: pointer;
+                margin-right: 20px;
+            }
+        }
+    }
+}

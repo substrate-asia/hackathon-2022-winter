@@ -1,0 +1,178 @@
+@import '../../../../../global.scss';
+
+.proposal-authentication-subpage {
+    padding: 32px 24px;
+    width: 1200px;
+    background: #15182B;
+    border-radius: 12px;
+
+    >.title {
+        font-family: 'Montserrat';
+        font-size: 20px;
+        line-height: 30px;
+        color: #FFFFFF;
+        margin-bottom: 24px;
+    }
+
+    .authentication-option {
+        margin-bottom: 10px;
+        min-height: 0;
+
+        >.head {
+            display: flex;
+            justify-content: space-between;
+            background: #1B1E31;
+            border: 1px solid #15182B;
+            backdrop-filter: blur(48px);
+            border-radius: 8px;
+            padding: 24px 40px 24px 100px;
+            border-radius: 8px;
+            transition: 300ms;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            >.text {
+                position: relative;
+
+                >.title {
+                    font-family: 'Fjalla One';
+                    @include colorful;
+                    font-size: 32px;
+                    line-height: 40px;
+                    font-weight: bold;
+                    margin-bottom: 12px;
+                    cursor: pointer;
+                }
+
+                >.introduction {
+                    font-family: 'Montserrat';
+                    font-size: 16px;
+                    line-height: 150%;
+                    color: #FFFFFF;
+                    opacity: 0.8;
+                }
+
+                >.expand-tip {
+                    position: absolute;
+                    left: -40px;
+                    top: 14px;
+                }
+            }
+
+            .react-switch {
+                svg {
+                    opacity: 0;
+                }
+
+                .react-switch-bg {
+                    position: relative;
+                    background: #1B1E31 !important;
+                    // border: 2px solid rgba(125, 128, 154, 0.3) !important;
+
+                    &:before {
+                        @include colorfulBorderProperties(2px);
+
+                        background: linear-gradient(105deg, rgba(125, 128, 154, 0.3), rgba(125, 128, 154, 0.3));
+                        // background: rgba(125, 128, 154, 0.3);
+                    }
+                }
+
+                .react-switch-handle {
+                    background: #7D809A !important;
+                }
+
+                &.checked {
+                    .react-switch-bg:before {
+                        background: linear-gradient(105deg, #634FFF, #FF5F5F);
+                    }
+
+                    .react-switch-handle {
+                        background: #E6007A !important;
+                    }
+                }
+
+
+            }
+        }
+
+        >.body {
+            max-height: 0px;
+            overflow: hidden;
+            margin-top: 4px;
+            background: #1B1E31;
+            border: 1px solid #15182B;
+            -webkit-border-bottom-right-radius: 8px;
+            -webkit-border-bottom-left-radius: 8px;
+            -moz-border-radius-bottomright: 8px;
+            -moz-border-radius-bottomleft: 8px;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            transition: 300ms;
+
+            >.container {
+                padding: 26px 60px;
+            }
+
+            .r-label {
+                font-size: 16px;
+                line-height: 150%;
+                opacity: 0.8;
+            }
+
+        }
+
+        &.expand {
+            // margin-bottom: 40px;
+
+            >.head {
+                -webkit-border-bottom-right-radius: 0;
+                -webkit-border-bottom-left-radius: 0;
+                -moz-border-radius-bottomright: 0;
+                -moz-border-radius-bottomleft: 0;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+
+                .expand-tip {
+                    transform: rotate(90deg);
+                }
+
+                >.text>.title {
+                    cursor: default;
+                }
+            }
+
+
+            &.loyal>.body {
+                max-height: 150px;
+                margin-top: 4px;
+                background: #1B1E31;
+            }
+
+            &.assigned>.body {
+                max-height: 200px;
+                animation: maxHeightUnset 1s infinite;
+                -webkit-animation: maxHeightUnset 1s infinite;
+                animation-delay: 300ms;
+            }
+
+            &.discord>.body {
+                max-height: 200px;
+                animation: maxHeightUnset 1s infinite;
+                -webkit-animation: maxHeightUnset 1s infinite;
+                animation-delay: 300ms;
+            }
+        }
+    }
+}
+
+@keyframes maxHeightUnset {
+    0% {
+        max-height: unset;
+    }
+
+    100% {
+        max-height: unset;
+    }
+}

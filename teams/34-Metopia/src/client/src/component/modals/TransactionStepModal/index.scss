@@ -1,0 +1,151 @@
+.transaction-step-modal-container {
+    padding: 12px 24px;
+    font-family: montserrat;
+
+    >.head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 24px 0;
+
+        >.text {
+            font-family: 'Fjalla One';
+            font-size: 24px;
+            color: white;
+        }
+
+        .Button {
+            height: 24px;
+        }
+
+    }
+
+    >.body {
+        padding: 24px;
+
+        >.introduction {
+            font-size: 16px;
+            line-height: 150%;
+            color: #cfcfcf;
+            margin-bottom: 24px;
+
+            strong {
+                color: #fff;
+            }
+
+            label {
+                width: 128px;
+                display: inline-block;
+            }
+        }
+
+        >.step {
+            margin-bottom: 12px;
+
+            >.title {
+                display: flex;
+                // justify-content: space-between;
+                align-items: center;
+                gap: 16px;
+
+                >.text {
+                    font-size: 20px;
+                    line-height: 24px;
+                    color: #FFFFFF;
+                }
+            }
+
+            >.body {
+                margin-top: 12px;
+                border-left: 1px solid rgba(255, 255, 255, 0.2);
+                padding: 16px 24px 24px 32px;
+                transform: translateX(12.5px);
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                height: auto;
+                transition: 200ms;
+                overflow: hidden;
+
+                .r-input {
+                    width: 200px;
+
+                    >.container:after {
+                        background: linear-gradient(90.83deg, #D7C636 6.96%, #52BB38 71.31%);
+                    }
+                }
+
+                .main-button {
+                    background: linear-gradient(90.83deg, #D7C636 6.96%, #52BB38 71.31%);
+                    opacity: 1;
+                    min-width: 100px;
+                    height: 36px;
+                    padding: 0 16px;
+                    font-size: 15px;
+
+                    img {
+                        margin-right: 8px;
+                    }
+
+                    &.disabled {
+                        background: #7D809A;
+                    }
+
+                    svg {
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+
+            &.done>.body {
+                height: 0;
+                padding: 0;
+            }
+
+            &.undone {
+                >.title {
+                    img {
+                        filter: grayscale(1000%);
+                    }
+                }
+
+                >.body {
+                    height: 0;
+                    padding: 0;
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+
+                >.function {
+                    border: 0
+                }
+            }
+        }
+    }
+}
+
+
+.transaction-step-modal-container .synchronize-step {
+    >.text {
+        font-size: 16px;
+        color: #cfcfcf;
+        margin-bottom: 12px;
+        display: flex;
+
+        label {
+            width: 150px;
+        }
+
+    }
+
+    .main-button {
+        margin-top: 24px;
+
+        svg {
+            transform: unset !important;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+@import '../../../global.scss';
+
+.image-editor-modal-container {
+    padding: 4px 4px 16px 4px;
+
+    >.head {
+        font-size: 28px;
+        font-weight: 500;
+        color: #ffffff;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        font-family: Fjalla One;
+    }
+
+    >.body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        >.main-container {
+            cursor: pointer;
+            position: relative;
+            width: 600px;
+            height: 150px;
+            background-color: #ffffff;
+            margin-top: 24px;
+            border-radius: 8px;
+            overflow: hidden;
+
+            &.empty:hover {
+                background-color: #ffffffdd;
+                .reactEasyCrop_Container{
+                    cursor: pointer;
+
+                }
+            }
+
+            canvas {
+                margin-left: -60px;
+            }
+
+            >.uploader-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                right: auto;
+                bottom: auto;
+                margin-right: -50%;
+                width: 60px;
+                height: 60px;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        >.slider-container {
+            margin-top: 16px;
+            text-align: center;
+
+            .wrapper {
+
+                display: inline-block;
+                width: 343px;
+            }
+        }
+    }
+
+    >.button-container {
+        margin-top: 36px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .rc-slider-disabled {
+        background: none;
+    }
+}
+
+.reactEasyCrop_Contain {
+    max-width: unset !important;
+    max-height: unset !important;
+}
