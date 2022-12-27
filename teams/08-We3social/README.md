@@ -82,7 +82,7 @@ The figma address (https://www.figma.com/file/Vlj722FwD01NUAnxopys3W/Brief_9_18?
 
 ## See more:
 
-- Dapp Demo Online,Please open it in your mobile wallet(http://dapp.w3social.chat)｜TestAccount  123@qq.com｜password 123456｜ 
+- Dapp Demo Online,Please open it in your mobile wallet(http://dapp.w3social.chat) --｜TestAccount  123@qq.com｜password 123456｜ 
 
 - We3social offical website (http://www.w3social.chat)
 
