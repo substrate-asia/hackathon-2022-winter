@@ -25,7 +25,6 @@ Based on financial-grade EAL6+ security chip technology. The BT wallet stores th
 ![Security Chip Hardware Block Diagram](./docs/pic/002.png)  
 <center><b><font size ='3'>Security Chip Hardware Structure Diagram</font></b></center></font>
 
-Security Chip Hardware Block Diagram
 #### **2.3.2 Polkadot Wallet**
 ![](./docs/pic/003.png)
 <center><b><font size ='3'>Polkadot Wallet</font></b></center></font>
@@ -125,7 +124,8 @@ https://youtu.be/dm98-R1B7m4
 
 ## **2 项目简介**
 ![](./docs/pic/001.png)
-<center><b><font size ='3'>LOGO</font></b></center></font>
+<center><b><font size ='3'>LOGO</font></b></center></font>  
+
 ### **2.1 项目背景**
 以太坊联合创始人Vitalik Buterin近期分享了对2023年加密行业的展望，提出加密货币领域尚未实现的三个“巨大”机会，其中第一点就是大规模钱包的采用。随着区块链行业的日益发展，数字资产被盗的情况层出不穷，究其原因多是因为私钥泄露或者触网，给了黑客可乘之机。V神曾在拉丁美洲比特币会议上表示，钱包安全是加密领域最大的问题之一。同时他也认为可以在钱包基础设施上进行更多开发，使得加密货币更容易为日常人们使用，甚至有可能够吸引数十亿用户。Buterin说，“如果能制造出一个十亿人会使用的钱包，这是一个巨大的机会。”<br>
 <br>
