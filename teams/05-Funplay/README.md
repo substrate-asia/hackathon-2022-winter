@@ -33,7 +33,7 @@ DEMO：https://share.lanhuapp.com/#/invite?sid=qxVo2nAa
 
 PPT: https://docs.google.com/presentation/d/1-Ov6EAyXfNrz-eti5c6BpQYQAWkTiKhVxjzLZ4uMXXU/edit#slide=id.p
 
-技术架构：https://github.com/funplaygroup/DotConnect/blob/main/architecture.svg
+技术架构：![image](https://github.com/funplaygroup/DotConnect/blob/main/architecture.svg)
 
 
 LOGO：
