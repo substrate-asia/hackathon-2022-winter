@@ -62,6 +62,8 @@ Risk Protocol Client Demo (Mac/Win Desktop)
 - Risk Protocol API
   Polkadot eco-developers can use the project name to call the Risk Protocol API to get the updated risk scores and corresponding metrics by week.
 
+[API_DOC](https://github.com/Ericwa0x/hackathon-2022-winter/blob/main/teams/18-Web3box/docs/API_Doc.md)
+
 The first phase of Risk Protocol API will provide risk scores and corresponding indicators reports of 10 Parachains, including Moonbeam, Acala, Astar, Centrifuge, Phala, Efinity, KILT, Litentry, Darwinia, and Kylin, for free.
 
 # 6.Team Memebers
@@ -98,6 +100,8 @@ Andrii
 
 ## Alpha Release 
 
-[Windows](https://drive.google.com/file/d/1bPFI1aMH1Y3L1MAXfXrF_1aMzCWwTHbS/view?usp=share_link)
+[Windows](https://drive.google.com/file/d/1VgasMZOzVfIzqWZiiYP7dyWOVrvQ5csv/view?usp=share_link)
 
-[MAC](https://drive.google.com/file/d/1VgasMZOzVfIzqWZiiYP7dyWOVrvQ5csv/view?usp=share_link)
+[MAC OS ](https://drive.google.com/file/d/1bPFI1aMH1Y3L1MAXfXrF_1aMzCWwTHbS/view?usp=share_link)
+
+> Note: For MAC version, please enable the “Open Anyway” opition in the MAC Security & Privacy Setting.
