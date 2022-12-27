@@ -75,8 +75,6 @@ Details of our Rust documentation please find [here](https://admetanetwork.githu
 - Backend application
   - [x] Sync user info
   - [x] Cliam rewards
-  - [] Sync chain info
-  - [] Ad push
 
 ## Tasks done during Hackathon
 
