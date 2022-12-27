@@ -1,4 +1,9 @@
+/* eslint-disable no-inner-declarations */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import request from './request'
+import { saveAs } from 'file-saver'
+import Axios from 'axios'
+
 interface User {
   name: string
   address: string
@@ -27,7 +32,7 @@ export interface MailDetail {
   hash: string
   timestampe: number
 }
-export function uploadMail<T>(
+export function uploadFile<T>(
   filename: string,
   body: MailInfo
 ): Promise<Res<T>> {
@@ -36,6 +41,19 @@ export function uploadMail<T>(
     method: 'POST',
     data: body
   })
+}
+export async function downloadFile(
+  hash: string,
+  name: string
+) {
+  const res = await Axios({
+    url: `/api/storage/raw/${hash}`,
+    method: 'GET',
+    responseType: 'blob',
+  })
+  const blob = new Blob([res.data])
+  saveAs(blob, decodeURIComponent(name), { autoBom: true })
+
 }
 export async function getMailDetail(hash: string): Promise<MailDetail | null> {
   try {
