@@ -4,7 +4,7 @@ Project Name: Risk Protocol
 
 Start time: 2022.12
 
-![](docs/icon.png)
+![](docs/pic/icon.png)
 
 > Risk Protocol provides accurate and timely risk management for Polkadot Ecology.
 

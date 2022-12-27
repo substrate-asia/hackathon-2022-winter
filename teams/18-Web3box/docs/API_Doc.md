@@ -23,19 +23,19 @@ http://api.web3box.cc:9001/byid
 
 Vaule list:
 
-| Vaule | 
-| ------ |
-| Acala     | 
-| Astar     | 
-| Centrifuge     | 
-| Darwinia     | 
-| Efinity     | 
-| KILT     | 
-| Kylin     | 
-| Litentry     | 
-| Moonbeam     | 
-| Phala Network     | 
 
+| Vaule      |
+| ------------ |
+| Acala      |
+| Astar      |
+| Centrifuge |
+| Darwinia   |
+| Efinity    |
+| KILT       |
+| Kylin      |
+| Litentry   |
+| Moonbeam   |
+| Phala      |
 
 **Example**
 

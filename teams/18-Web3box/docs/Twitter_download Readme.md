@@ -41,7 +41,7 @@ for tweet in sntwitter.TwitterSearchScraper(Moonbeam_query).get_items():
 df_moonbeam = pd.DataFrame(tweets, columns=['Date', 'User', 'Tweet', 'FollowersCount', 'likeCount','url'])
 ```
 
-![](F:\我的量化\Risk_protocol\测试\QQ图片20221227122337.png)
+![](pic/pic1.png)
 
 ### Download tweets containing one or more hashtags.
 
@@ -52,7 +52,7 @@ Moonbeam_df = tweet_hashtag_scrapper('(#Moonbeam) since:2022-09-20 until:2022-12
 Moonbeam_df.head(5)
 ```
 
-![](F:\我的量化\Risk_protocol\15个项目的推特\2.png)
+![](pic/pic2.png)
 
 ### Calculate the weekly growth rate of followers
 
@@ -75,7 +75,7 @@ df_moonbeam_weekly.head(10)
 
 output:
 
-![](F:\我的量化\Risk_protocol\15个项目的推特\3.png)
+![](pic/pic3.png)
 
 ### Carry out followers' sentiment analysis
 
