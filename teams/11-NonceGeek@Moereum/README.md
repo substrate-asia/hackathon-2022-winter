@@ -41,7 +41,7 @@ For dApps, the current Solidity contract can call the Move method, so as to atta
 Details of our project are as below: 
 
 * [Github Organization](https://github.com/NonceGeek)
-* [Pitch deck]() # soon coming
+* [Pitch deck](./docs/Moereum.pdf)
 * [Video](./docs/demo.mp4)
 
 ## Plan to Develop
