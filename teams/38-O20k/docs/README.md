@@ -3,6 +3,7 @@
 
 ## Index
 * [Prepare Environment](#environment)
+* [Install](#tools-install)
 * [Omniverse Account](#omniverse-account)
 * [Omniverse Token](#omniverse-token-protocol)
 * [Omniverse Swap](#omniverse-swap-protocol)  
@@ -43,18 +44,24 @@ The Omniverse tokens are also deployed as smart contracts on some EVM chains.
     * Smart contract of Token $X$ address: `0x`
     * Smart contract of Token $Y$ address: `0x`
 
+## Tools Install
+The Omniverse operation tools can be found [here](to be done).  
+* Go to the [repo of the tools](../src/to be done).
+* If you do not clone the whole hackathon repo, you can just clone the repo [here](https://github.com/virgil2019/omniverse-swap-tools/tree/main). 
+* Install the dependent packages.  
+    ```sh
+    npm install
+    ```
+* The explanation of the commands.
+    ```sh
+    node index.js --help
+    ```
+
 ## Omniverse Account
 Omniverse operations are all based on the Omniverse account, which is equivalent to the native address on each chain and is interconvertible. When making an operation on a concrete chain(e.g. `O20k` Parachain on Polkadot), we can use the original Polkadot account/address or the Omniverse account. It's transparent for users.  
 Currently, we have made a specific tool to operate Omniverse Account.  
-* [Install](#oa-tools-install)
 * [Create Account](#create-account)
 * [Check the Account](#check-the-account)
-
-### OA Tools Install
-The Omniverse account tool can be found [here](to be done).  
-```sh
-# to be done
-```
 
 ### Create Account
 As we mentioned before, the Omniverse account is equivalent to the native account. We can create an new account through the [Polkadot.js/apps](https://polkadot.js.org/apps/#/accounts)
@@ -75,29 +82,40 @@ Before using the new account created by [Create Account](#create-account) in the
 
 ### Check the Account
 You can check the information of the account with the `secret seed` mentioned at [previous chapter](#create-account).  
-* Set the `secret seed` in the [configure](to be done).  
+* Set the `secret seed` in the [configure](to be done). The content are something like below:  
+    ```json
+    {
+        "sks": [
+            "b4c88b446aa0923be87ca6e02e4c767bd6xxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "a4c88b446aa0923be87ca6e02e4c767bd6xxxxxxxxxxxxxxxxxxxxxxxxxx"
+        ],
+        "index": 0,
+        "mpc": "0x0c8db4e26ae7a9e48a9d5cca8941698dd1338e037d89a47bf2853d8ef3c1723a3bad2a9916c5ee0ed0aa17396a6b4831352f51ee122b4951b51e20896356175b"
+    }
+    ```
+    * `sks` are secret keys of the Omniverse Accounts. Normally, we need to create two keys that one is the sender and the other is the receiver, as we will do [Omniverse Transferring](#make-transaction-of-omniverse-token) later.
+    * `index` means which account is used to make transactions, which starts from `0` and it is related to the first secret key in `sks`.
+    * `mpc` is the abstract account of the Swap, and just copy it into your `.secret` file as above.  
+
 * Check the information of your account with the command below:  
     ```sh
     # command to get the account information, including:
-    # @Omniverse Account
-    # @account on Polkadot
+    # Omniverse Account
+    # account on Polkadot
     # account on EVM chains
+    # @ -a, --account
+    node index.js -a
     ```
+    * You may see something as follows:  
+![img](./assets/get-account-info.png)  
 
 ## Omniverse Token Protocol
 The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `balance of`, and `transfer`.  
-* [Install](#otp-tools-install)
 * [Claim](#claim)
 * [Check the balance](#check-the-balance)
 * [Transaction](#make-transaction-of-omniverse-token)
     * [Initiate on Polkadot](#initiate-transaction-on-polkadot)
     * [Initiate on EVM chains](#initiate-transaction-on-evm-chains)
-
-### `OTP` Tools Install
-The Omniverse Token tools can be found [here](to be done).  
-    ```sh
-    # to be done
-    ```
 
 ### Claim
 * `Claim` Token $X$:  
@@ -113,13 +131,16 @@ The Omniverse Token tools can be found [here](to be done).
 #### Check balance on Polkadot
 * Check `balance of` Token $X$ of related account on Polkadot:  
     ```sh
-    # to be done
-    # `token X` of related account on Polkadot
+    # -o, --omniBalance <tokenId>,<pk>
+    node index.js -o <tokenId of X>,<o-account>
     ```
+    * `tokenId` is mentioned [above](#parachain-of-o20k).  
+    * `o-account` is the Omniverse Account got by [-a/--account](#check-the-account).  
+    * **Note that** there is `,` between the paremeters.  
+
 * Check `balance of` Token $Y$ of related account on Polkadot:  
     ```sh
-    # to be done
-    # `token Y` of related account on Polkadot
+    node index.js -o <tokenId of Y>,<o-account>
     ```
 
 #### Check balance on EVM chains
@@ -143,9 +164,10 @@ The Omniverse Token tools can be found [here](to be done).
 * Check `balance of` Token $X$ of sender and receiver account as detailed at [Check the balance](#check-the-balance) above.  
     * Check `balance of` Token $X$ of related account on Polkadot:  
     ```sh
-    # to be done
-    # `token X` of sender account on Polkadot
-    # `token X` of receiver account  on Polkadot
+    # sender
+    node index.js -o <tokenId of X>,<o-account of sender>
+    # receiver
+    node index.js -o <tokenId of X>,<o-account of receiver>
     ```
     * Check `balance of` Token $X$ of related account on EVM chains:  
     ```sh
@@ -161,9 +183,10 @@ The Omniverse Token tools can be found [here](to be done).
     ```
 * Check `balance of` Token $X$ of related account on Polkadot:  
     ```sh
-    # to be done
-    # `token X` of sender account on Polkadot
-    # `token X` of receiver account  on Polkadot
+    # sender
+    node index.js -o <tokenId of X>,<o-account of sender>
+    # receiver
+    node index.js -o <tokenId of X>,<o-account of receiver>
     ```
 * Check `balance of` Token $X$ of related account on EVM chains:  
     ```sh
@@ -174,15 +197,8 @@ The Omniverse Token tools can be found [here](to be done).
 
 ## Omniverse Swap Protocol
 The key operation of the Omniverse Swap Protocol(OSP) is `Make exchanges`.  
-* [Install](#osp-tools-install)
 * [Make exchanges](#make-exchanges)
 * [Check the balance](#check-the-balance-after-exchanges)
-
-### `OSP` Tools Install
-The Omniverse Swap tools can be found [here](to be done).  
-    ```sh
-    # to be done
-    ```
 
 ### Make exchanges
 * Swap Token X with Token Y:  
@@ -196,8 +212,7 @@ The Omniverse Swap tools can be found [here](to be done).
 ### Check the Balance after exchanges
 * Check `balance of` Token $X$ of related account on Polkadot:  
     ```sh
-    # to be done
-    # `token X` of related account on Polkadot
+    node index.js -o <tokenId of X>,<o-account of sender>
     ```
 * Check `balance of` Token $Y$ of related account on EVM chains:  
     ```sh
