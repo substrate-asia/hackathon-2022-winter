@@ -28,3 +28,6 @@
 [submodule "teams/39-PrivaDEX/src/xc_dex_substrate/vendor/openbrush-contracts"]
 	path = teams/39-PrivaDEX/src/xc_dex_substrate/vendor/openbrush-contracts
 	url = git@github.com:Supercolony-net/openbrush-contracts.git
+[submodule "teams/10-Tenet/src/videown-web"]
+	path = teams/10-Tenet/src/videown-web
+	url = https://github.com/fage2022/videown-web.git
