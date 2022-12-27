@@ -59,7 +59,24 @@ Details of our Rust documentation please find [here](https://admetanetwork.githu
 **Client**
 
 - Web application
-  - [x] xxx
+  - [x] Connect wallet with polkadot
+  - [x] Verify bot
+  - [x] Communication extension
+  - [x] Mint NFT
+
+- Extension application
+  - [x] Browsing information report
+  - [x] Verify bot
+  - [x] Cliam rewards
+  - [x] Task list
+
+**Server**
+
+- Backend application
+  - [x] Save user info
+  - [-] Sync chain info
+  - [x] Cliam rewards
+  - [-] Ad push
 
 ## Tasks done during Hackathon
 
