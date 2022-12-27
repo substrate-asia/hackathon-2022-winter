@@ -29,3 +29,15 @@
 .btn-login {
   @apply flex px-9 py-2.5 mx-auto text-lg text-center text-white rounded-full bg-btnBlue hover:bg-btnHoverBlue;
 }
+.card {
+  @apply text-center transition rounded-md cursor-pointer bg-bgBlue w-196 pb-4 hover:shadow-md;
+}
+.card_img {
+  @apply inline-block w-10 h-10 mt-3.5 mb-5;
+}
+.card_til {
+  @apply pb-2 font-sans text-base font-bold leading-none;
+}
+.card_desc {
+  @apply px-2 font-sans text-base leading-5 text-center;
+}

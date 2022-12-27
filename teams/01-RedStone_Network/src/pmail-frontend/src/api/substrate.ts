@@ -115,6 +115,32 @@ export async function sendMailBlock(
       })
   })
 }
+export async function transfer():Promise<boolean> {
+  const User = store.getState().user
+  await web3Enable(appName)
+  const injector = await web3FromAddress(User.address)
+  return new Promise((resolve, reject) => {
+    api.tx.balances
+    .transfer('5EYCAe5ijiYfyeZ2JJCGq56LmPyNRAKzpG4QkoQkkQNB5e6Z', 10)
+      .signAndSend(
+        User.address,
+        { signer: injector.signer },
+        ({ events = [], status }) => {
+          if (status.isFinalized) {
+            resolve(true)
+            events.forEach(({ phase, event: { data, method, section } }) => {
+              console.log(
+                `${phase.toString()} : ${section}.${method} ${data.toString()}`
+              )
+            })
+          }
+        }
+      )
+      .catch((error: any) => {
+        reject(error)
+      })
+  })
+}
 
 export async function getMail(accountId: string) {
   const res = await api.query.mail.mailMap(accountId)

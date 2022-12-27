@@ -39,6 +39,7 @@ module.exports = {
       base: ['16px', '24px'],
       lg: ['20px', '28px'],
       xl: ['24px', '32px'],
+      32: ['32px', '48px'],
       50: ['50px', '50px']
     },
     extend: {
