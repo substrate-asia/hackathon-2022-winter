@@ -7,26 +7,42 @@ Started in：2022.2
 ## Project Details
 
 ### Overview
-Avault is a yield aggregator platform that provides aLP/aToken to DeFi users with automated compounding yields at empirically optimal intervals while pooling gas fees through smart contracts and best yield optimization strategies. At the same time, Avault is also a launchpad by using a whole new public sale strategy, which is called ISO.
+Avault is a one-stop omnichain yield platform that aims to lower the threshold for users to use Web 3 DeFi Dapps. Avault’s users can use any asset on any chain supported by Avault to interact with DeFi applications on other chains, truly realizing cross-chain compounding, staking, copy-trading, etc with one click.
 
-### What is aLP/aToken? 
-aLP/aToken is the receipt of your deposited LP/token. At the same time, it is an interest-bearing asset token. Every interest-bearing token will earn interest automatically, even if users only hold it without doing anything. Users can also stake their aLP/aToken into our farm to earn $AVAT.
-
-### Why aLP/aToken?
-The reason why we create the aLP and aToken is trying to rich the ecosystem. Even if the Avault token is all distributed in the future, the LP that users deposited in Avault can still be used by other projects.
-We believe that aLP/aToken can become an essential part of ecosystem. The aLP/aToken can unlock the value of staked assets in the liquidity pools. All the defi projects can do lots of things by using our aLP/aToken. Let's say layer 0 is the asset on the ecosystem, for example the LP and the asset on dex, lending protocol or other dapps. Then the layer 1 will be the aLP/aToken. It is because users can deposit all their layer 0 asset into Avault to receive aLP/aToken. They can still receive their revenue from dex, lending protocol or other dapps. At the same time, users can stake their aLP/aToken to farm AVAT token for higher returns. They can also stake their aLP/aToken to other dapp for more use cases. Such as they can use it as collateral on lending protocol, aLP/aToken will have less risk of liquidation compared with single token, because the value of aLP/aToken continutely increasing. There are many other use cases that aLP/aToken can be applied. aLP/aToken can maximize the asset utilization on Astar ecosystem. So Avault is not only a simple yield aggregator, we are trying to rich the whole Astar defi ecosystem. Every defi user can benefit from this mechanism, and when the XCMP is available, aToken could also benefit all the polkadot users.
-
-### What is ISO?
-ISO means Initial Stake Offering. 50% users' principal will be used for adding initial liquidity with the project's public sale token. 40% users' principal will be used to create an ISO reward pool for the loyal holder award. 10% will be used for team operation and development. With this mechanism, ISO participants are guaranteed to get back at least 40% principal(Calculated by Currency Standard) if they are loyal holders.
-
-### Why ISO?
-Under the bear market, we believe that it would be difficult for the developer to raise the money from IDO. It might be because of the bear market situation and the users’ fear of losing all their money. It is reasonable that users do not want to take that high risk. However, this would be very hard for the builders to get through the bear market without operation fees.
-Therefore, we designed ISO. We hope to rebuild the trust between users and projects via ISO. As we know, there are many users who may lose money on different IDO, especially in this market situation. We can’t guarantee participants must get 2x or 10x revenue, what we can guarantee is that participants would never lose all or even 90% principal.
-
-![](assets/ISOvsIDO.jpeg)
+### What problems does Avault try to solve? What is its value proposition?
+We are now trying to break the current situation of this isolated island between chains. Although there is a lot of cross-chain projects, which help users complete asset bridging and swap, such as Multichain, Celer, XY Fianance, LI.FI, etc. But none of these actually break the isolated island formed between chains. Those protocols are only bridging the assets for users, but the users are still in place. If I want to use my money, I must go to the target chain to proceed to the next step. However, Avault is doing now is different.    
+For the users, we help them achieve one-click bridge + swap + deposit + auto-compounding or even if other functions, which is equivalent to that user only need to stay on their own chain and use the assets they are most familiar with. Directly deposit money into applications on other chains to gain yield and operate. By using Avault, users can simplify the steps of gaining cross-chain yield from at least 6 steps to 3 steps. Users only need to think about their purpose when using the dApps. No longer need to think about how I should use this application, or how I could get to this chain, or what and how much gas fee I need to prepare.    
+This can also better break the barriers between web2 and web3. Web2 users only need to enter the blockchain with their purpose and assets to enjoy the services and dApps of the blockchain, without having to learn the differences and knowledge between different chains first. Lower the threshold for them to use the blockchain.    
+For project & ecosystem: We will be like the portal of project & ecosystem to connect other public chains. Other ecological assets can enter more conveniently through Avault and use easily. At the same time, it can also increase the stickiness of project & ecosystem users. In the previous cross-chain path, if users wanted to use the project or ecosystem on other chains, they needed to transfer assets from one chain to another, and because of the manual and complex cross-chain operations, it is easy to lose users or assets in the process. However, by using Avault, the assets and users will not be lost due to the use of applications on other chains. These users will still stay, and the final export of ecosystem users’ assets is still on the source ecosystem. Avault not only retains ecological users and assets for projects & ecosystems, has also achieved the role of introducing external ecological assets.    
+This is the real way to lower the threshold and break the barriers between chains, let assets and users of different chains circulate. At that time, the rights of all chains and all assets were equal.     
 
 ### Architecture
-![ISO Architecture](assets/ISO%20Architecture.svg)
+![ISO Architecture](assets/111.png)
+
+### Roadmap
+#### 2022 Q4
+- One stop omnichain yield platform V1
+- Realize omnichain compounding function
+- Support gaining yield between ETH, BNB Chain, Arbitrum, Optimism
+- Integrate with lending protocols
+- Develop omnichain copy-trading (GMX)
+- Integrate with AMM Dexes
+- Integrate with LI.FI
+#### 2023 Q1
+- More different kinds of protocols
+- More chains (Avalanche, Polygon, Cronos, Fantom, etc)
+- Develop omnichain governance V1
+- Realize omnichain staking
+- Realize omnichain copy-trading (GMX)
+#### 2023 Q2
+- Support more chains, dapps, assets
+- More chains (Aurora, Oasis, Injective, etc)
+- Develop omnichain farm V1
+#### 2023 Q3
+- Support more chains, dapps, assets
+- Realize omnichain copy-trading (dYdX)
+- Launch omnichain farm
+- Develop the integration between EVM & non-EVM
 
 ### logo
 ![](assets/avatLogo1.png)
@@ -35,41 +51,33 @@ Therefore, we designed ISO. We hope to rebuild the trust between users and proje
 ![](assets/avatLogo4.png)
 
 
-## Code Structure
+### Things planned to be done during the hackathon
 
 
 **Blockchain**
 
-- AVault Basic
-  - [✓] Compound Contracts (`AVaultForMasterChef`)
-  - [✓] Zap Contracts (`ZapArthswap`)
-  - [✓] ISO Contracts - Basic version (`PresaleShidenTest`)
-  - [⍻] ISO Contracts - Platform version (`Presale`)
+  - [ ] Realize Omnichain compounding function between Arbitrum & Optimism
+  - [ ] Support AAVE on Arbitrum & Optimism
+  - [ ] Integrate with LI.FI to support omnichain swap
 
 
 **Client**
 
-- web
-  - [⍻] Home Page
-  - [✓] Compound Page
-  - [✓] Zap Page
-  - [✓] ISO Page - Basic version
-  - [ ] ISO Page - Platform version
-  - [ ] ISO managment Page
-  - [ ] ISO application Page
+  - [ ] Deposit page
+  - [ ] Withdraw page
+  - [ ] The pathway of asset
 
 
-## Tasks done during Hackathon
+### Demo
  - demo video
  
-[![Avault Demo](https://img.youtube.com/vi/Snsf1315Vg0/0.jpg)](https://www.youtube.com/watch?v=Snsf1315Vg0)
+[![Avault Demo](https://img.youtube.com/vi/Snsf1315Vg0/0.jpg)](https://www.youtube.com/watch?v=KasJXQWswP4)
 
 
-## Members
+### Members
 
-- Ericsson: Operation
-- Sam: Smart contract/ Backend
-- Alex: Product manager 
-- Hai: Front-end
-- Lee: UI/UX
-- Edmund: BD
+Ericsson: Operation  
+Sam: Smart contract/ Backend  
+Alex: Product manager  
+Hai: Front-end engineer  
+Lee: UI/UX designer  
