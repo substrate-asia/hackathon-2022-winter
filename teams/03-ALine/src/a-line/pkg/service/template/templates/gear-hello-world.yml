@@ -47,9 +47,9 @@ stages:
           workdir: $HOME/workdir/my-gear/gear-deploy
       - name: gear deploy
         run: |
-          export MNEMONIC=''
+          export NODE_TLS_REJECT_UNAUTHORIZED=0
           npm install
-          npm run code:submit
+          npm run upload
 
   frontend:
     needs:
@@ -67,4 +67,8 @@ stages:
           cat ../../gear-deploy/metaString.txt >> .env
           yarn
           yarn add @polkadot/util-crypto
-          yarn run start
+          if [ -f "gear_node.pid" ]; then
+            kill -9 `cat gear_node.pid`  || (echo 'No such process ')
+          fi
+          nohup yarn run start > node.log 2>&1& echo $! > gear_node.pid
+          sleep 2
