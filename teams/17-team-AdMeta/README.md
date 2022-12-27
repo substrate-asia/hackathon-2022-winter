@@ -24,7 +24,7 @@ Unlike traditional ad platforms, who collect users sensitive data(e.g. location,
 
 ### Logo
 
-![AdMeta Logo](./teams/17-team-AdMeta/docs/admeta_logo_square_transparent.png)
+![AdMeta Logo](./docs/admeta_logo_square_transparent.png)
 
 ## Code Structure
 
