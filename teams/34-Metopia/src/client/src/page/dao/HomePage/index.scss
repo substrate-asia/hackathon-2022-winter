@@ -1,0 +1,138 @@
+@import '../../../global.scss';
+
+.dao-home-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0F111E;
+
+    .dao-reward-banner-wrapper {
+        margin-top: -10px;
+        user-select: none;
+        z-index: 2;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    >.main-container {
+        border-radius: 32px;
+        margin: 40px 0;
+        width: 1200px;
+
+        >.content-container {
+            min-height: 600px;
+
+            >.head {
+                display: flex;
+                padding: 24px 0;
+                border-bottom: $default-border;
+                align-items: center;
+
+                >.submenu {
+                    display: flex;
+                    gap: 40px;
+
+                    >.item {
+                        font-size: 28px;
+                        line-height: 36px;
+                        font-family: "Fjalla One";
+                        cursor: pointer;
+
+                        a {
+                            color: #7D809A;
+                            text-decoration: none;
+                        }
+
+                        &.selected {
+                            @include colorful;
+
+                            a {
+                                @include colorful;
+                            }
+                        }
+                    }
+                }
+
+
+                >.filter-container {
+                    margin-left: auto;
+
+                    >.sub-menu-item {
+                        font-size: 20px;
+                        line-height: 30px;
+                        color: $text-color;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            >.dashboard-container {
+                margin: 40px 0;
+            }
+
+            >.content-wrapper {
+                margin-top: 60px;
+                min-height: 320px;
+            }
+
+            .no-strategies-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0 80px 0;
+
+                >.text {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: rgba(255, 255, 255, 0.67);
+                    margin-top: 16px;
+                    width: 600px;
+                    text-align: center;
+                }
+
+                >.main-button {
+                    margin-top: 32px;
+                }
+            }
+
+
+            .load-next-page-button {
+                margin-top: 32px;
+                cursor: pointer;
+                font-size: 20px;
+                margin-left: 2px;
+            }
+
+            .guidance {
+                color: #ffffff;
+                font-size: 14px;
+                padding: 16px 52px;
+                line-height: 200%;
+                border-radius: 8px;
+                @include colorfulBg;
+                // margin-top: -16px;
+                margin-bottom: -20px;
+                margin-top: 40px;
+
+                >.title {
+                    line-height: 200%;
+
+                    >img {
+                        transform: translate(-8px, 5px);
+                    }
+
+                    >.button{
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

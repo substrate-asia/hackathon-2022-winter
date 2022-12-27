@@ -1,0 +1,72 @@
+@import '../../../global.scss';
+
+.expandable-choice-group {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+
+    >.expandable-choice {
+        flex: 1;
+        position: relative;
+        cursor: pointer;
+        border-radius: 8px;
+        background: #0F111E;
+        z-index: 2;
+        transition: 300ms;
+        transition-timing-function: cubic-bezier(.13, .66, .96, .67);
+
+        >.container {
+            background: #0F111E;
+            border-radius: 8px;
+            padding: 24px 40px;
+
+            >.title {
+                @include colorful;
+                font-family: 'Fjalla One';
+                font-weight: bold;
+                font-size: 34px;
+                line-height: 41px;
+                @include ellipsis(1);
+            }
+
+            >.text {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 150%;
+                color: #FFFFFF;
+                opacity: 0.8;
+                @include ellipsis(1);
+            }
+
+        }
+
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            margin: -1px;
+            /* !importanté */
+            border-radius: inherit;
+            /* !importanté */
+            transition: 300ms;
+            transition-timing-function: cubic-bezier(.13, .66, .96, .67);
+            background: linear-gradient(105deg, #0F111E, #0F111E);
+        }
+
+        &.selected {
+            flex: 999;
+
+            &:before {
+                background: linear-gradient(105deg, #634FFF, #FF5F5F);
+            }
+
+        }
+    }
+}

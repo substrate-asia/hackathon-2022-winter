@@ -1,0 +1,67 @@
+$title-color: #ffffff;
+$text-color: #ffffff;
+$subtitle-color: #dddddd;
+$border-color: #575861;
+$border-color-light: #ECECEC;
+$theme-color: #E6007A;
+$subtheme-color: #5A49DE11;
+$error-color: #f4212e;
+
+$default-border: 1px solid $border-color;
+
+@mixin absolute-centered {
+  position: absolute;
+  margin: auto;
+  left: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  top: -9999px;
+}
+
+@mixin flex-centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin ellipsis($line) {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if $line==1 {
+    white-space: nowrap;
+  }
+
+  @else {
+    display: -webkit-box;
+  }
+}
+
+@mixin colorful($color: linear-gradient(112.94deg, #E6007A 28.07%, #E6007A 108.18%)) {
+  background: $color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+@mixin colorfulBg($color: linear-gradient(106.31deg, #E6007A 29.66%, #E6007A 113.07%)) {
+  background: $color;
+}
+
+@mixin colorfulBorderProperties($width, $color: linear-gradient(106.31deg, #E6007A, #E6007A)) {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -$width;
+  border-radius: inherit;
+  transition: 300ms;
+  transition-timing-function: cubic-bezier(.13, .66, .96, .67);
+  background: $color;
+}

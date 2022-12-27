@@ -1,0 +1,114 @@
+@import '../../global.scss';
+
+.r-input {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+
+    &.focused {
+
+        // border: 1px solid #00000000;
+        // outline: 0;
+        // overflow: visible;
+        // background: #151515;
+
+        >.container {
+
+            // border-radius: 8px;
+            input {
+                background: #151515;
+            }
+
+            &::after {
+                @include colorfulBorderProperties(1px);
+            }
+        }
+
+    }
+
+    >.container {
+        width: auto;
+        border-radius: 8px;
+        border: $default-border;
+        position: relative;
+        z-index: 1;
+        max-width: 100%;
+
+        input {
+            color: #ffffff;
+            outline: 0;
+            width: 400px;
+            padding: 0 14px;
+            font-size: 16px;
+            line-height: 150%;
+            resize: none;
+            height: 48px;
+            background: none;
+            font-family: 'Montserrat';
+            border: 0;
+            border-radius: 8px;
+            max-width: 100%;
+
+            &.focus {
+                border: 0;
+                outline: 0;
+            }
+
+
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.4);
+            }
+
+            &:disabled {
+                color: #bbbbbb;
+            }
+
+            z-index:9999;
+
+            &::after {
+                z-index: 9999;
+            }
+        }
+    }
+
+    &.number input {
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &[type=number] {
+            -moz-appearance: textfield;
+        }
+    }
+
+    .Error {
+        position: absolute;
+        max-width: 100%;
+        bottom: -30px;
+    }
+
+    &.error {
+        >.container {
+            border: 1px solid #C44F4B;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .len-indicator {
+        position: absolute;
+        text-align: right;
+        color: #FFFFFF;
+        opacity: 0.3;
+        right: 8px;
+        top: 17px;
+        z-index: 8888;
+    }
+}

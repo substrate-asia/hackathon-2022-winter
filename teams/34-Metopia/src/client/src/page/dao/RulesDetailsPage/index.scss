@@ -1,0 +1,272 @@
+@import '../../../global.scss';
+
+.rules-details-page {
+    min-height: calc(100vh - 90px);
+    width: 1200px;
+    padding-bottom: 40px;
+
+    >.title {
+        font-size: 28px;
+        line-height: 36px;
+        color: $title-color;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        width: fit-content;
+        font-family: Fjalla One;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .backarrow {
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        .edit-button {
+            margin-left: auto;
+            cursor: pointer;
+        }
+    }
+
+    .info-group {
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 32px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        >.head {
+            background: #1B1E31;
+            padding: 24px 40px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            >.text {
+                @include colorful;
+                font-size: 32px;
+                font-family: Fjalla One;
+            }
+        }
+
+    }
+
+    .rules-container {
+        background: #15182A;
+        margin-bottom: 4px;
+
+        padding: 32px 24px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        >.title {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 16px;
+
+        }
+    }
+
+    .strategy-card {
+        background: #15182A;
+        margin-bottom: 4px;
+        padding: 32px 24px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        >.title {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .basic-info {
+            display: flex;
+            align-items: center;
+
+            .text-wrapper {
+                flex: 1;
+            }
+
+            .nft-wrapper {
+                width: 254px;
+                height: 95px;
+                display: flex;
+                background: #FAF9FC22;
+                border-radius: 8px;
+                overflow: hidden;
+
+                .nft-image {
+                    width: 95px;
+                }
+
+                >.text {
+                    width: 160px;
+                    padding: 16px;
+
+                    >.title {
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: rgba(255, 255, 255, 0.5);
+                        margin-bottom: 8px;
+                    }
+
+                    >.name {
+                        color: #fff;
+                        font-size: 20px;
+                        @include ellipsis(1);
+                    }
+                }
+            }
+        }
+
+        .body {
+            margin-top: 16px;
+        }
+
+
+    }
+
+    .attr-group {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 16px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        >.label {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            width: 120px;
+        }
+
+        >.value {
+            font-size: 16px;
+            color: white;
+            flex: 1;
+
+
+            .bonus-group {
+                background: #1B1E31;
+                border-radius: 8px;
+                padding: 0px 32px;
+
+                >.title {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: rgba(255, 255, 255, 0.6);
+                    padding: 16px 0;
+                }
+
+                >.bonus {
+                    padding: 16px 0;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .author-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 4px;
+
+        .user-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 260px;
+
+            .avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 24px;
+            }
+
+            >.avatar-wrapper {
+                width: 48px;
+                height: 48px;
+                border-radius: 24px;
+                position: relative;
+
+                &::after {
+                    @include colorfulBorderProperties(1px)
+                }
+
+                >.inner-avatar-wrapper {
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 23px;
+                    background: #15182A;
+                    padding: 1px;
+
+                    .avatar {
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 22px;
+                    }
+                }
+            }
+
+            >.name {
+                width: 200px;
+                font-size: 14px;
+                color: white;
+                @include ellipsis(1);
+            }
+
+        }
+    }
+
+    .discord-container {
+        display: flex;
+        gap: 16px;
+
+        >.avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 32px;
+        }
+
+        >.text-wrapper {
+            height: 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            >.name {
+                color: #ffffff;
+                font-size: 16px;
+            }
+
+            >.role-wrapper {
+                display: flex;
+                gap: 8px;
+
+                >.role {
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 4px;
+                    padding: 5px 8px;
+                    font-size: 16px;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}

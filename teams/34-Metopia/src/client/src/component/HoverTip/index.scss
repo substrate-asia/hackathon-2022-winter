@@ -1,0 +1,39 @@
+.r-user-tip {
+    position: relative;
+    z-index: 9999;
+    // display: inline-block;
+
+    .toggle {
+        opacity: 0.8;
+        height: 24px;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .tip-container {
+        position: absolute;
+        margin: auto;
+        height: fit-content;
+        left: calc(100% + 16px);
+        bottom: -9999px;
+        top: -9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+
+        >.text {
+            background: #1B1E31;
+            // background: #ffffff11;
+            border-radius: 8px;
+            padding: 16px;
+            color: rgba(255, 255, 255, 1);
+            width: 400px;
+            font-size: 15px;
+            box-shadow: 16px 0px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter:  opacity(0) ;
+        }
+    }
+}

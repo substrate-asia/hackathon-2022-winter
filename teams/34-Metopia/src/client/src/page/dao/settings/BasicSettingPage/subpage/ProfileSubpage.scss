@@ -1,0 +1,202 @@
+@import '../../../../../global.scss';
+
+.profile-subpage {
+    display: flex;
+    gap: 124px;
+
+    .external-link-input-module {
+        .external-link-input-group {
+            width: 400px;
+
+            height: 48px;
+            display: flex;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            border: $default-border;
+
+            &:last-of-type {
+                border-bottom: $default-border;
+            }
+
+
+            >.label {
+                width: 144px;
+                color: #FFFFFF;
+                font-size: 14px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                border-right: $default-border;
+                font-weight: normal;
+
+                >.text {
+                    width: 66px;
+                }
+            }
+
+            input {
+                width: 256px;
+                font-size: 14px;
+                background: none;
+                border: none;
+                color: #FFFFFF;
+                border-radius: 0;
+                padding: 0 16px;
+                font-family: 'Montserrat';
+
+                &:active,
+                &:focus {
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    .preview-container {
+        min-width: 660px;
+        width: 660px;
+        position: sticky;
+        top: 0;
+        transition: 50ms;
+
+        .preview-wrapper {
+            top: 190px;
+            align-self: flex-start;
+            width: 660px;
+
+            .banner-container {
+                background: #050509;
+            }
+
+            .dao-home-head>.profile-container {
+                background: rgba(0, 0, 0, 0.3);
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+                padding-bottom: 24px;
+
+                >.text-wrapper {
+                    margin-top: 12px;
+
+                    >.left {
+                        >.name {
+                            font-size: 16px;
+                        }
+
+                        >.introduction {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+
+            .ghost-button-group {
+                transform: scale(0.5) translateY(-50%);
+            }
+        }
+    }
+
+    .preview-wrapper {
+        background: #15182Bdd;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        padding: 24px;
+        width: 100%;
+
+        >.title-wrapper {
+            margin-bottom: 24px;
+
+            .title {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+                color: #FFFFFF;
+            }
+
+            .subtitle {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 24px;
+                color: #FFFFFF;
+                opacity: 0.55;
+            }
+        }
+
+        .dao-home-head {
+            border-radius: 0;
+            // border: 1px dashed #ffffff;
+            padding-bottom: 24px;
+
+            .banner-container {
+                border-radius: 0;
+                position: relative;
+            }
+
+            .introduction-container {
+                >.name {
+                    color: #ffffff;
+                }
+
+                >.introduction,
+                >.introduction * {
+                    font-weight: 400;
+                    font-size: 10px;
+                    line-height: 14px;
+                    text-align: center;
+                    color: #BBBBBB;
+                }
+
+            }
+
+            &.banner-not-provided .banner-container::after {
+                content: 'Banner image';
+                color: #fff;
+                @include absolute-centered;
+                width: 240px;
+                text-align: center;
+                font-size: 26px;
+                height: 40px;
+                font-family: "Fjalla One";
+                color: rgba(255, 255, 255, 0.67);
+            }
+
+
+
+            &.avatar-not-provided .avatar-wrapper {
+                background: #15182B;
+
+                .avatar {
+                    background: #15182B;
+
+                    // width: calc(100% - 2px);
+                    // height: calc(100% - 2px);
+                    // transform: translateX(1px) translateY(1px);
+                    &::after {
+                        content: "Avatar";
+                        font-size: 14px;
+                        width: 100%;
+                        height: 100%;
+                        @include flex-centered-container;
+                        @include absolute-centered;
+                        font-family: Fjalla One;
+                        color: rgba(255, 255, 255, 0.67);
+                    }
+                }
+
+                &::after {
+                    @include colorfulBorderProperties(1px);
+                }
+            }
+
+        }
+    }
+
+    .r-input>.container input {
+        background: #0F111E;
+    }
+}

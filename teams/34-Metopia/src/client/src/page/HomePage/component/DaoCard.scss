@@ -1,0 +1,97 @@
+@import '../../../global.scss';
+
+.dao-card {
+    position: relative;
+    border-radius: 8px;
+    flex: 1 1 0px;
+    background: #15182B;
+    width: 384px;
+    max-width: 384px;
+    min-width: 384px;
+    height: 220px;
+    padding: 24px;
+
+    >.head {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        height: 64px;
+        position: relative;
+        cursor: pointer;
+
+        >.avatar {
+            height: 64px;
+            width: 64px;
+            min-width: 64px;
+            border-radius: 32px;
+
+            img {
+                height: 100%;
+                @include absolute-centered;
+            }
+        }
+
+        >.name {
+            font-family: 'Fjalla One';
+            color: #FFFFFF;
+            font-size: 24px;
+            @include ellipsis(1);
+        }
+
+        >.favorite-icon {
+            margin-left: auto;
+            height: 22px;
+        }
+
+        >.verified {
+            position: absolute;
+            bottom: 0;
+            left: 44px;
+        }
+    }
+
+    >.text-container {
+        display: flex;
+        background: #1B1E31;
+        height: 96px;
+        margin-top: 16px;
+        border-radius: 4px;
+        padding: 16px 24px;
+        justify-content: space-between;
+
+        .group {
+            display: flex;
+            margin-bottom: 20px;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+
+            >.title {
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 14px;
+            }
+
+            &:hover>.title {
+                text-decoration: underline;
+            }
+
+            >.value {
+                font-family: 'Fjalla One';
+                font-size: 16px;
+                color: #ffffff;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .active {
+                // display: none;
+                font-size: 12px;
+                line-height: 18px;
+                color: #E6007A;
+            }
+
+        }
+    }
+}

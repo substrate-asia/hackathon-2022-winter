@@ -1,0 +1,84 @@
+.nft-selection-modal-container {
+    padding: 36px 25px;
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+        >.text {
+            font-family: 'Fjalla One';
+            font-size: 24px;
+            color: #FFFFFF;
+        }
+
+        img {
+            height: 20px;
+        }
+    }
+
+    .body {
+        padding-top: 24px;
+        max-height: 350px;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+            // background: #aaa;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            width: 4px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .no-content-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            >.text {
+                font-size: 18px;
+                line-height: 30px;
+                color: rgba(255, 255, 255, 0.6);
+                margin-top: 16px;
+            }
+        }
+
+        .nft-option-card {
+            position: relative;
+
+            &::after {
+                content: '';
+                background: #00000011;
+                height: 20px;
+                width: 20px;
+                border-radius: 12px;
+                border: 1px solid white;
+                position: absolute;
+                right: 5px;
+                top: 5px;
+            }
+
+            &.selected::after {
+                content: url('https://oss.metopia.xyz/imgs/tick-w.svg');
+                background: #E6007A;
+                color: white;
+                display: flex;
+                justify-content: center;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .footer {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+
+        margin-top: 24px;
+    }
+}

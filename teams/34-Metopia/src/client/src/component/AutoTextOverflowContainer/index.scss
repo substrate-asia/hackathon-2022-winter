@@ -1,0 +1,14 @@
+.auto-text-overflow-container {
+    transition: 300ms;
+    position: relative;
+    overflow: hidden;
+
+    >.expand-button {
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 15px;user-select: none;
+    }
+}

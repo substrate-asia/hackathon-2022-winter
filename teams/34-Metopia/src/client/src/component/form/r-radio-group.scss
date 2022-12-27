@@ -1,0 +1,35 @@
+.r-radio-group {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    user-select: none;
+
+    >.radio {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+
+        .symbol {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+            border: 1px solid #ffffff44;
+            overflow: hidden;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        >.text {
+            font-size: 16px;
+            color: #ffffff;
+        }
+    }
+}
