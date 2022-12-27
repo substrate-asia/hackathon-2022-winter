@@ -157,7 +157,8 @@ Among them, the specific implementation list of our above functions is as follow
     - Pipeline Execution Log
 
 ## Demo Video
-[ALine_Video](docs/demo/ALine_Video.mov)
+[ALine_Video](docs/demo/ALine_Video.mov)  
+[ALine_Video_on-line](https://youtu.be/SuYacLHnUJs)
 
 
 ## Team
