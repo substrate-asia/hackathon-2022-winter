@@ -7,6 +7,7 @@
 * [Omniverse Account](#omniverse-account)
 * [Omniverse Token](#omniverse-token-protocol)
 * [Omniverse Swap](#omniverse-swap-protocol)  
+* [Advanced Features](#advanced-features)
 
 ## Environment
 * [Connection](#connection)
@@ -33,7 +34,8 @@ To make it convenient, we have already deployed two kinds of Omniverse Tokens, t
 * Pallet `OmniverseFactory` is mainly used to make transactions:  
     * The `tokenId` of Token $X$ is `X`
     * The `tokenId` of Token $Y$ is `Y`
-* Pallet `OmniverseSwap` is mainly used to make exchanges.  
+* Pallet `OmniverseSwap` is mainly used to make exchanges:
+    * The `tradingPair` of the specific swapping pool is `X2Y`.
 
 #### EVM chains
 The Omniverse tokens are also deployed as smart contracts on some EVM chains.  
@@ -217,4 +219,48 @@ The key operation of the Omniverse Swap Protocol(OSP) is `Make exchanges`.
     ```
 
 We can found that the related states changed simultaneously both on Polkadot and EVM chains.  
- 
+
+## Advanced Features
+We also provided some advanced features including:
+- [create your own Omniverse Token](#create-your-own-omniverse-token)
+- [add swap pools](#add-token-pools)
+
+*Note that these tools are only available on Polkadot as the limitation of time. They will be easily extended to other chains and we will finish them soon.*
+
+### Create your own Omniverse Token
+![img](./assets/create-your-own-Omni-token.png)  
+* `ownerPk` is the [Omniverse Account](#check-the-account) who cen be the owner of the Omniverse token to be created.
+* After the creation, you can use `mint` with the operator Account of the owner to mint any amount of the new token to anyone.
+    ```sh
+    # --mint <tokenId>,<omniverse account>,<amount>
+    node index.js -m <tokenId>,0x5a1...,<amount>
+    ```
+    * `tokenId` is a string naming your token.
+    * `0x5a1...` is the Omniverse Account you want to mint to.
+    * The last parameter is the `amount` you want to mint.
+* After that, you can operate your Omniverse Token as mentioned [above](#omniverse-token-protocol).  
+
+### Add token pools
+We temporarily provided a set of very low APIs for adding token liquidity pool currently, and we will improve these APIs to be more convenient soon.  
+* Generate encapsulated Omniverse Transaction data as follows:
+    * Generate encapsulated data of deposit liquidity of token:  
+    ```sh
+    # --generateTx <tokenId>,<o-account>,<amount>
+    node index.js -g xiyu,1000
+    ```
+    * `xiyu` is a tokenId.
+    * `1000` is the amount to be deposited.
+    ![img](./assets/add-liquidity-1.png)  
+    <p id='encapsulate' align='center'>Figure.4 Generate encapsulate data</p>  
+    
+    * Remember the amount of token `xiyu` to be deposited(`1`)
+    * Remember the encapsulated Tx data of token `xiyu` (`1.1`)
+    * Remember the amount of token `xiyu` to be deposited (`2`)
+    * Remember the encapsulated Tx data of token `xiyu` (`2.1`)
+
+* `addLiquidity` with [Polkadot.js](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F3.74.157.177%3A9944#/extrinsics)
+    ![img](./assets/add-liquidity.png)  
+
+    * `tradingPair` is a string naming the swap pool.
+    *  `amountXDesired` and `amountYDesired` need to be equal to the amount when encapsulating the Tx data mentioned above.  
+    * Copy data in `1.1` and `2.1` in [*Figure.4*](#encapsulate) into `tokenXData` and `tokenYData`.  
