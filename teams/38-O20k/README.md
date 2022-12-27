@@ -7,17 +7,31 @@
 ## 项目整体简介
 
 ### Background
-In current technology state of the art, there are two ways to exchange tokens deployed on different public chains, the one is through CEX, the other is transferring through bridges first and then swapping.  
-CEX is very convenient and efficient, but as we all know, it's and very easy to manipulate under the table. As a user of CEX, you don't really control your own assets, FTX is the best case recently. 
+As we all know, Token is a great invention that goes along with blockchain, and it’s the impetus of Web3.
 
-DEX is decentralized，and the assets is on your own hand, we always say that code is law, it means you can handle your assets under the established and transparent rules, no one can manipulate your assets outside of these rules.
-But the fagmentation is a problem that has plagued DEX for a long time, that is, we cannot swap tokens of different chains easily. 
+It has many extrinsic properties, like act as an asset, currency, vote, DID or PFP and so on. These functions vary with different projects.
 
-That's why some token bridges emerge.
-With bridges, the assets should be locked on one chain and minted on another chain so that your assets are cut into different parts on different chains and one part can be only used on one chain at a time. Moreover, many [secure events](https://github.com/xiyu1984/Blog/blob/main/docs/Multi-Chain%20Events.md) happened on current bridges.  
-The bridge is just like a bank, issue wrapped tokens, anyway, when you ues the bridge, you just deal the wrapped token, not the really token of your own.
+Besides, it also has some intrinsic properties, which is invariable, no matter what extrinsic properities it has. These intrinsic properities including `transfer`, `receive`, `exchange` and so on.
 
-To solve these problems, we will provide a base protocol stack for decentralized transactions, which is named as `Omniverse Protocol Stack` (`O20k` for short).  
+Nowerdays, There are some problems with it’s intrinsic properities, and maybe affect the expression of it’s extrinsic properties.
+
+It’s not a big problem when we concentrate on single chain, but it’s serious when we enter into the multichain stage.
+
+That is, we can hardly processing Token in the multi-chain environment.
+
+Take `exchange` for example.
+
+When we need to exchange tokens from different chains, most of the time ,we choes to ues CEX.
+
+CEX is very convenient and efficient, but as we all know, it's and very easy to manipulate under the table. As a user of CEX, you don't really control your own assets, FTX is the best case recently.
+
+DEX is decentralized，and the assets is on your own hand, we always say that code is law, it means you can handle your assets under the established and transparent rules, no one can manipulate your assets outside of these rules. But the fagmentation is a problem that has plagued DEX for a long time, that is, we cannot swap tokens of different chains easily.
+
+That's why some token bridges emerge. With bridges, the assets should be locked on one chain and minted on another chain so that your assets are cut into different parts on different chains and one part can be only used on one chain at a time. Moreover, many [secure events](https://github.com/xiyu1984/Blog/blob/main/docs/Multi-Chain%20Events.md) happened on current bridges.The bridge is just like a bank, issue wrapped tokens, anyway, when you ues the bridge, you just deal the wrapped token, not the really token of your own.
+
+There are similiar problems with `transfer` and `receive`.
+
+To solve these problems, we will provide a base protocol stack for decentralized token processing, which is named as `Omniverse Protocol Stack` (`O20k` for short).
 The core meaning of `Omniverse` is that ***The legitimacy of all on-chain states and operations can be equivalently verified and recorded simultaneously over different consensus spaces, regardless of where they were initiated.***
 
  <!-- a brand new Token Protocol compatible with current token standards along with an advanced swap platform, which is absolutely decentralized and cryptographic-based solution, through which the exchange between tokens deployed on different chains can be processed with determining security. Besides, there's no need to divide your assets into different isolated parts, on the contrary, your assets can be accessed from any chain and be treated as a whole. -->
