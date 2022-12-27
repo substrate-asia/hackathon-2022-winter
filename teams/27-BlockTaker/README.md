@@ -43,6 +43,7 @@ The nominator function of the BT wallet is to obtain the validator and nominator
 ![Nomination operation process](./docs/pic/005.png)
 <center>(Staking Operation Flow Chart)</center>
 <br><br>
+<br><br>
 
 
 ![BT wallet technical architecture diagram](./docs/pic/006.png)
