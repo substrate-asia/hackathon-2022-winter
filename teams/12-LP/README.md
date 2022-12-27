@@ -31,6 +31,16 @@ With the increasing volume of transactions on the Polkadot ecosystem, especially
   - [ ] 数据查询和检索页面
 
 
+**文件结构**
+```
+  teams
+    L 12-LP/           // 团队目录名称
+      L src/
+        L client/              // 前端相关代码
+      L README.md
+```
+
+
 
 
 ## TODO 黑客松期间所完成的事项 (2022年12月27日初审前提交)
@@ -45,6 +55,6 @@ With the increasing volume of transactions on the Polkadot ecosystem, especially
 
 [@11]() Full Stack Developer: Rust, Typescript, Python
 
-[@Wine]() Front-end Developer: React, Javascript
+[@Wine]() Front-end Developer: React, Typescript
 
 [@lansane]() Back-end Developer: Java, database
