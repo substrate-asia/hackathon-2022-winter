@@ -27,12 +27,12 @@ If succeed, you can find the related pallets at [Extrinsics](https://polkadot.js
 ### Deployment
 To make it convenient, we have already deployed two kinds of Omniverse Tokens, token $X$ and token $Y$, which have been already registered onto the pallet of the Omniverse swap on the `O20k` Parachain of Polkadot.  
 
-***Note that the precision of the Omniverse tokens is $10^{-12}$.***
+<!-- ***Note that the precision of the Omniverse tokens is $10^{0}$.*** -->
 
 #### Parachain of `O20k`
 * Pallet `OmniverseFactory` is mainly used to make transactions:  
-    * The `tokenId` of Token $X$ is `tobedone`
-    * The `tokenId` of Token $Y$ is `tobedone`
+    * The `tokenId` of Token $X$ is `X`
+    * The `tokenId` of Token $Y$ is `Y`
 * Pallet `OmniverseSwap` is mainly used to make exchanges.  
 
 #### EVM chains
@@ -114,8 +114,8 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
 * [Claim](#claim)
 * [Check the balance](#check-the-balance)
 * [Transaction](#make-transaction-of-omniverse-token)
-    * [Initiate on Polkadot](#initiate-transaction-on-polkadot)
-    * [Initiate on EVM chains](#initiate-transaction-on-evm-chains)
+    * [Initiate a transaction](#initiate-the-omiverse-transaction)
+    <!-- * [Initiate on EVM chains](#initiate-transaction-on-evm-chains) -->
 
 ### Claim
 * `Claim` Token $X$:  
@@ -132,15 +132,15 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
 * Check `balance of` Token $X$ of related account on Polkadot:  
     ```sh
     # -o, --omniBalance <tokenId>,<pk>
-    node index.js -o <tokenId of X>,<o-account>
+    node index.js -o X,0x256077...
     ```
-    * `tokenId` is mentioned [above](#parachain-of-o20k).  
-    * `o-account` is the Omniverse Account got by [-a/--account](#check-the-account).  
+    * `X` is the tokenId mentioned [above](#parachain-of-o20k).  
+    * `0x256077...` is the Omniverse Account got by [-a/--account](#check-the-account).  
     * **Note that** there is `,` between the paremeters.  
 
 * Check `balance of` Token $Y$ of related account on Polkadot:  
     ```sh
-    node index.js -o <tokenId of Y>,<o-account>
+    node index.js -o Y,0x256077...
     ```
 
 #### Check balance on EVM chains
@@ -156,39 +156,24 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
     ```
 
 ### Make transaction of Omniverse Token
-#### Initiate transaction on Polkadot
+#### Initiate the Omiverse transaction
 * Transfer Token $X$ to another account on Polkadot:
     ```sh
-    # to be done
+    node index.js -t X,0x256077...,66
     ```
+    * `X` is the example tokenId of token $X$.
+    * `0x256077...` is the receive Omniverse Account. You can get the Omniverse Account by [get account](#check-the-account).
+    * `66` is the amount of transferred token $X$.
+
 * Check `balance of` Token $X$ of sender and receiver account as detailed at [Check the balance](#check-the-balance) above.  
     * Check `balance of` Token $X$ of related account on Polkadot:  
     ```sh
     # sender
-    node index.js -o <tokenId of X>,<o-account of sender>
+    node index.js -o X,<o-account of sender>
     # receiver
-    node index.js -o <tokenId of X>,<o-account of receiver>
+    node index.js -o X,<o-account of receiver>
     ```
     * Check `balance of` Token $X$ of related account on EVM chains:  
-    ```sh
-    # to be done
-    # `token X` of sender account
-    # `token X` of receiver account
-    ```
-
-#### Initiate transaction on EVM chains
-* Transfer Token $X$ to another account on EVM chains:
-    ```sh
-    # to be done
-    ```
-* Check `balance of` Token $X$ of related account on Polkadot:  
-    ```sh
-    # sender
-    node index.js -o <tokenId of X>,<o-account of sender>
-    # receiver
-    node index.js -o <tokenId of X>,<o-account of receiver>
-    ```
-* Check `balance of` Token $X$ of related account on EVM chains:  
     ```sh
     # to be done
     # `token X` of sender account
