@@ -65,11 +65,14 @@ The key point of the implementation of the interface `add pool` is that given $x
 
 #### Note
 We can also provide a liquidity value $\ell$ to calculate $\Delta{x}$ and $\Delta{y}$:  
-$$\left \{ \begin {array}{lcl}
-\frac{y+\Delta{y}}{x+\Delta{x}}=\frac{y}{x}\\
-(x+\Delta{x})(y+\Delta{y})=xy+\ell
+
+$$\left \{ \begin {array}{lcl} 
+\frac{y+\Delta{y}}{x+\Delta{x}}=\frac{y}{x} \\  
+(x+\Delta{x})(y+\Delta{y})=xy+\ell  
 \end{array}\right.$$  
+
 Solving this system of equations yields:  
+
 $$\left \{ \begin {array}{lcl}
 \Delta{x}=\sqrt{\frac{x}{y}(xy+\ell)}-x\\
 \Delta{y}=\sqrt{\frac{y}{x}(xy+\ell)}-y
@@ -77,6 +80,7 @@ $$\left \{ \begin {array}{lcl}
 
 ###  Liquidity Withdraw
 Given the withdraw amount of the liquidity $\ell$, solve the following system of equations to get $\Delta{x}$ and $\Delta{y}$:  
+
 $$\left \{ \begin {array}{lcl}
 \frac{y-\Delta{y}}{x-\Delta{x}}=\frac{y}{x}\\
 (x-\Delta{x})(y-\Delta{y})=xy-\ell
