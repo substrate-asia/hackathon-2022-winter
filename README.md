@@ -44,7 +44,7 @@
 
         Henry Web3Games 业务负责人
 
-        Jiang PNS 技术负责人
+        Jiang PNS
 
         Jessie Dai CESS 联合创始人&COO
 - Workshop#2：2022年12月3日 周六 20:00-22:00
