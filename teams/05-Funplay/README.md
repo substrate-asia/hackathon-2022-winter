@@ -1,8 +1,13 @@
 项目名称：DotConnect Wallet
+--
+
 项目立项日期：2022.11
+--
 
 项目整体简介：
+--
 Background：
+--
 As more and more people are crazy about NFT, there are super related demand emerged. So a wallet with NFT features is needed.
 
 The problems to be solved: 
@@ -29,20 +34,23 @@ Another point is DID. DID is an identity data aggregator, powered by smart contr
 Last point is no main-net gas fee. No matter where you want to send or exchange your asset, main-net gas fee is never needed. For example, user A wants to buy an NFT on ETH chain, but he only has BNB token. He can still trade successfully by paying BNB as gas fee because, meanwhile, we have exchanged BNB to ETH as gas fee behind.
 
 
-DEMO：https://share.lanhuapp.com/#/invite?sid=qxVo2nAa
+DEMO：
+--
+https://share.lanhuapp.com/#/invite?sid=qxVo2nAa
 
-PPT: https://docs.google.com/presentation/d/1-Ov6EAyXfNrz-eti5c6BpQYQAWkTiKhVxjzLZ4uMXXU/edit#slide=id.p
+PPT: 
+--
+https://docs.google.com/presentation/d/1-Ov6EAyXfNrz-eti5c6BpQYQAWkTiKhVxjzLZ4uMXXU/edit#slide=id.p
 
-技术架构：https://github.com/funplaygroup/DotConnect/blob/main/architecture.svg
-
-
-LOGO：
-![image](https://user-images.githubusercontent.com/44957477/209666226-0006fd70-5ebc-4bea-808c-b9932e951d10.png)
+技术架构：
+--
+https://github.com/funplaygroup/DotConnect/blob/main/architecture.svg
 
 
 
 黑客松计划完成是事项：
-1.User Login；
+--
+1. User Login；
 2. Import and Create wallet;
 3. NFT display in different classification ( trend, collection, ranking, game…);
 4. Support multiple chain(polkadot, web3games, EVM chains);
@@ -55,12 +63,6 @@ LOGO：
 
 
 黑客松期间已完成事项：
-1.User Login；
+--
+1. User Login；
 2. Import and Create wallet;
-3. NFT display in different classification ( trend, collection, ranking, game…);
-4. Support multiple chain(polkadot, web3games, EVM chains);
-5. Support Token and NFT transfer and transaction;
-
-       
-
-队员信息：jasmine88888888/russell.lrg@gmail.com/min8528@163.com/metalitagtm@gmail.com/532398960@qq.com/shenzhen-arrom
