@@ -1,121 +1,135 @@
-import React, { useEffect, useState } from "react";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { EditorState, convertToRaw, ContentState } from "draft-js";
-import Cookies from "js-cookie";
-import { useHistory } from "react-router-dom";
-import { Button, notification, Space, Modal, Spin } from "antd";
-import { Editor } from "react-draft-wysiwyg";
-
-import draftToHtml from "draftjs-to-html";
-import htmlToDraft from "html-to-draftjs";
-
+/* eslint-disable jsx-a11y/alt-text */
+import React, { createRef } from "react";
+import { Link } from "react-router-dom";
+import { Pagination } from 'antd';
 import {
-  Form,
-  Input,
+  Container,
+  Dimmer,
+  Loader,
   Grid,
-  Label,
-  Icon,
-  Dropdown,
-  TextArea,
+  Sticky,
+  Message,
+  Menu,
+  Input,
 } from "semantic-ui-react";
-import { useSubstrateState } from "../substrate-lib";
-import { CicadaApi } from "../cicada-lib/index";
-import "../../src/css/index.css";
-export default function Main(props) {
-  const [cicadaState, setCicadaState] = useState({
-    categoryName: "",
-    categoryParent:
-      "0x0000000000000000000000000000000000000000000000000000000000000000",
-    categoryHash: "",
-    active: 1,
-    isModal: false,
-    labelName: "",
-    labelHash: "",
-    isLoading: false, //控制显示隐藏加载
-    subjectName: "",
-    subjectHash: "",
-    list: ["Create Subject", "Select Category", "Edit Content"],
-    dimensionName: "维度1",
-    dimensionHash: "",
-    content: "这是一篇测试内容",
-    contentHash: "",
-    categoryList: [
-      "Math",
-      "Science",
-      "History",
-      "Business",
-      "Arts &  Humanities",
-      "Social Studies",
-      "Engineering &  Technology",
-      "Hobbies",
-      "Arts &  Entertainment",
-      "Sciences",
-      "Humanities",
-      "Sports",
-      "Books and  Literature",
-      "Electronics",
-      "Other",
-    ],
-  });
-  const { api, currentAccount } = useSubstrateState();
-  const cicadaApi = new CicadaApi(currentAccount, api);
-  //   const onChange = (_, data) =>
-  //     setCicadaState((prev) => ({ ...prev, [data.state]: data.value }));
-  let history = useHistory();
-  let {
-    isLoading,
-    categoryName,
+import "semantic-ui-css/semantic.min.css";
+import AccountSelector from "../AccountSelector";
+import { SubstrateContextProvider, useSubstrateState } from "../substrate-lib";
+import { DeveloperConsole } from "../substrate-lib/components";
+import Floor from "../Floor";
+import '../rxd/css.css';
+function Main() {
+  const { apiState, apiError, keyringState } = useSubstrateState();
+  
+  const loader = (text) => (
+    <Dimmer active>
+      <Loader size="small">{text}</Loader>
+    </Dimmer>
+  );
 
-    categoryList,
-    active,
-  } = cicadaState;
+  const message = (errObj) => (
+    <Grid centered columns={2} padded>
+      <Grid.Column>
+        <Message
+          negative
+          compact
+          floating
+          header="Error Connecting to Substrate"
+          content={`Connection to websocket '${errObj.target.url}' failed.`}
+        />
+      </Grid.Column>
+    </Grid>
+  );
 
-  const { keyring } = useSubstrateState();
-  const accounts = keyring.getPairs();
+  if (apiState === "ERROR") return message(apiError);
+  else if (apiState !== "READY") return loader("Connecting to Substrate");
 
-  const availableAccounts = [];
+  if (keyringState !== "READY") {
+    return loader(
+      "Loading accounts (please review any extension's authorization)"
+    );
+  }
 
-  accounts.map((account) => {
-    return availableAccounts.push({
-      key: account.meta.name,
-      text: account.meta.name,
-      value: account.address,
-    });
-  });
+  const contextRef = createRef();
 
   return (
-    <Spin spinning={isLoading} tip="Loading......" size="large">
-      <Grid.Column width={8}>
-        <div style={{ minHeight: "700px" }}>
-          {/* 创建二 */}
-          <div style={{ display: active == 2 ? "block" : "none" }}>
-            <div className="categoryList">
-              {categoryList.map((i) => (
-                <div
-                  className={
-                    i == categoryName ? "category active_category" : "category"
-                  }
-                  onClick={() => clickCategory(i)}
-                >
-                  {i}
-                </div>
-              ))}
-            </div>
+    <div ref={contextRef}>
+      <Sticky context={contextRef}>
+      <AccountSelector />
+     
+      </Sticky>
+      
+      <Container
+        style={{
+          backgroundSize: "100% 100%",
+          //图片的路径
+          // borderColor: "#fff",
+          // paddingTop: "1em",
+          // paddingBottom: "1em",
+          width: "100%",
+          height: "579px",
+        //   marginRight: "-20px",
+        //   backgroundColor:'#40454E',
+          display: "flex",
+        //   alignItems: "center",
+          justifyContent: "center", //中间留白
+        //   color: "#fff",
+          fontFamily: "Arial",
+          fontWeight: "400",
+        //   textAlign: "center",
+        }}
+      >
+        {/* 头 */}
+         
+        <div style={{
+        
+         width:'73%'}}>
 
-            <div
-              className="btnStyle"
-              onClick={function () {
-                setCicadaState((prev) => ({
-                  ...prev,
-                  isLoading: 1,
-                }));
-              }}
-            >
-              CREATE
+		<div style={{float:'left',
+         fontWeight:'bold',
+         fontSize:'30px',
+         marginTop:'60px',
+         
+         width:'100%'
+         }}>SUBSCRIPTION</div>
+        <div style={{
+         marginTop:'110px',
+         color:'#9C9C9C',
+        borderBottom: '2px solid #E2E2E2',
+        paddingBottom:'10px',
+        fontSize:'15px',
+         width:'100%',
+         }}>
+             
+
             </div>
-          </div>
-        </div>
-      </Grid.Column>
-    </Spin>
+          <div style={{ color:'#9C9C9C',marginTop:'15px'}}>Select Subscription Category:</div>
+            <div style={{ width:"85%",marginTop:'15px',height:'65%'}}>
+              <div style={{float:'left' ,paddingTop:'15px', paddingBottom:'15px', paddingLeft:'25px', paddingRight:'25px',background:'#F0F0F0',borderRadius:'10px',border:"1px solid #000"}}> Math</div>
+              <div style={{float:'left' ,paddingTop:'15px', paddingBottom:'15px', paddingLeft:'25px', paddingRight:'25px',background:'#F0F0F0',borderRadius:'10px',border:"1px solid #000" ,marginLeft:'57px'}}> History</div>
+              <div style={{float:'left' ,paddingTop:'15px', paddingBottom:'15px', paddingLeft:'25px', paddingRight:'25px',background:'#F0F0F0',borderRadius:'10px',border:"1px solid #000",marginLeft:'57px'}}> Science</div>
+              <div style={{float:'left' ,paddingTop:'15px', paddingBottom:'15px', paddingLeft:'25px', paddingRight:'25px',background:'#F0F0F0',borderRadius:'10px',border:"1px solid #000",marginLeft:'57px'}}> Business</div>
+              <div style={{float:'left' ,paddingTop:'15px', paddingBottom:'15px', paddingLeft:'25px', paddingRight:'25px',background:'#F0F0F0',borderRadius:'10px',border:"1px solid #000",marginLeft:'57px'}}> Hobbies</div>
+              <div style={{float:'left' ,paddingTop:'15px', paddingBottom:'15px', paddingLeft:'25px', paddingRight:'25px',background:'#F0F0F0',borderRadius:'10px',border:"1px solid #000",marginTop:'10px'}}> Electronics</div>
+              <div style={{float:'left' ,paddingTop:'15px', paddingBottom:'15px', paddingLeft:'25px', paddingRight:'25px',background:'#F0F0F0',borderRadius:'10px',border:"1px solid #000",marginLeft:'57px',marginTop:'10px'}}> Sciences</div>
+            </div>
+        
+         
+           
+		</div>
+      
+      </Container>
+      {/* <Sticky context={contextRef}>
+      </Sticky> */}
+      <Floor />
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <SubstrateContextProvider>
+      <Main />
+    </SubstrateContextProvider>
   );
 }
