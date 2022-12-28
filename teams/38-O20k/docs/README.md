@@ -92,7 +92,7 @@ You can check the information of the account with the `secret seed` mentioned at
             "a4c88b446aa0923be87ca6e02e4c767bd6xxxxxxxxxxxxxxxxxxxxxxxxxx"
         ],
         "index": 0,
-        "mpc": "0x0c8db4e26ae7a9e48a9d5cca8941698dd1338e037d89a47bf2853d8ef3c1723a3bad2a9916c5ee0ed0aa17396a6b4831352f51ee122b4951b51e20896356175b"
+        "mpc": "0x9b0bc430a57fbfab286eaeffd22d1f05bc415c6f3c19d4c4880c3e1f80e5a7a65e36a3f960adda4670a690098a10ad98f03111d4085a937325aa468072dcf294"
     }
     ```
     * `sks` are secret keys of the Omniverse Accounts. Normally, we need to create two keys that one is the sender and the other is the receiver, as we will do [Omniverse Transferring](#make-transaction-of-omniverse-token) later.
