@@ -250,15 +250,15 @@ We temporarily provided a set of very low APIs for adding token liquidity pool c
     <p id='encapsulate' align='center'>Figure.4 Generate encapsulate data</p>  
     
     * Remember the name of token `shawn01` to be deposited(`1`)
-    * Remember the amount of token `xiyu` to be deposited(`1.1`)
-    * Remember the encapsulated Tx data of token `xiyu` (`1.3`)
+    * Remember the amount of token `shawn01` to be deposited(`1.1`)
+    * Remember the encapsulated Tx data of token `shawn01` (`1.3`)
     * Remember the name of token `shawn02` to be deposited(`2`)
-    * Remember the amount of token `xiyu` to be deposited (`2.1`)
-    * Remember the encapsulated Tx data of token `xiyu` (`2.3`)
+    * Remember the amount of token `shawn02` to be deposited (`2.1`)
+    * Remember the encapsulated Tx data of token `shawn02` (`2.3`)
 
 * `addLiquidity` with [Polkadot.js](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F3.74.157.177%3A9944#/extrinsics)
     ![img](./assets/add-liquidity.png)  
 
     * `tradingPair` is a string naming the swap pool.
     *  `amountXDesired` and `amountYDesired` need to be equal to the amount when encapsulating the Tx data mentioned above.  
-    * Copy data in `1.1` and `2.1` in [*Figure.4*](#encapsulate) into `tokenXData` and `tokenYData`.  
+    * Copy data in `1.3` and `2.3` in [*Figure.4*](#encapsulate) into `tokenXData` and `tokenYData`.  
