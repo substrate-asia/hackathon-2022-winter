@@ -84,7 +84,7 @@ Before using the new account created by [Create Account](#create-account) in the
 
 ### Check the Account
 You can check the information of the account with the `secret seed` mentioned at [previous chapter](#create-account).  
-* Create a new file named `.secret` at the same path of [.secret-example](), and set the `secret seed` in it, the content of which is something as below:  
+* Create a new file named `.secret` at the same path of [.secret-example](../src/omniverse-swap-tools/omniverse-helper/.secret-example), and set the `secret seed` in it, the content of which is something as below:  
     ```json
     {
         "sks": [
