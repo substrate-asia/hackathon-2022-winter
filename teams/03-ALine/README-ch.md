@@ -172,34 +172,48 @@ ALine以SaaS的模式提供服务，通过ALine，用户可以得到从创建项
 ## 队员信息
 队长: Abing  
 - 在大型科技公司有6年的软件开发实践经验
+- https://github.com/abing258
+- https://t.me/abing258
 
 Liam - 技术主管
 - 4年以上的加密货币工作经验。
 - 8年以上java/Go/Rust和Solidity DApps、DevOps和云计算方面的软件编码经验。
 - https://www.linkedin.com/in/liam-liang-092950245/
+- https://github.com/lt-liam
+- https://t.me/ltyuanmu
 
 Tom- 开发团队的负责人
 - 超过9年的软件开发经验
 - 熟悉Go/Rust/Java/Python/JavaScript/Typescript，云计算，云原生，和DevOps。
+- https://github.com/mohaijiang
 
 Linda-PM
 - 哈斯顿大学的CS学士学位
 - 5年产品管理经验，包括2年区块链行业经验
+- https://github.com/lindaZX
+- https://t.me/lindaZhang666
 
 Alvis- 运营和业务发展
 - 斯图加特大学、加州大学伯克利分校和图里巴大学的经济学和管理学博士及CS硕士。
 - 曾是Web3Go（Litentry）的联合创始人。
 - 曾任Asto-Telematics（德国）亚太区总裁。
 - https://www.linkedin.com/in/alvis-tsui-69952341/
+- https://github.com/Alvis1998
+- https://t.me/Alvis_Tsui
 
 Nova - 金融与市场
 - 几个加密货币基金的LP。
 - 毕业于上海交通大学。
 - https://www.linkedin.com/in/nova-wong-92b48359/
+- https://t.me/novawonglili
 
 开发团队: 
-建国
+建国  
+- https://github.com/jian-guo-s  
 志辉
+- https://github.com/jlvihv  
 巧钰
+- https://github.com/yuliaye  
 智浩
+- https://github.com/CoderfishGzh  
 泽汛
