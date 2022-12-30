@@ -18,10 +18,13 @@
     - node index.js -o Y,<account 1>
 - Check the balance change on EVM chains:
 
-## Transfer:
+## Transfer(Initiate from Polkadot):
 - Account 1 transfer 100 X to account 2:
     - node index.js --transfer X,<account 2>,100
     - Check the balance on Polkadot:
     - node index.js -o X,<account 1>
     - node index.js -o X,<account 2>
 - Check the balance change on EVM chains:
+
+## Transfer(Initiate From EVM chain)
+- Account 1 transfer 10000 X to account 2
