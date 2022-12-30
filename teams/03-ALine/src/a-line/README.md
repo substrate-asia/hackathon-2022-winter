@@ -153,7 +153,7 @@ Thank you for considering your contribution to ALine!
 - 从远程仓库 clone 代码到本地
 
 ```shell
- git clone -b develop https://github.com/hamster-shared/a-line.git
+ git clone -b Hackathon https://github.com/hamster-shared/a-line.git
 ```
 
 - 编译构建
