@@ -84,7 +84,7 @@ Before using the new account created by [Create Account](#create-account) in the
 
 ### Check the Account
 You can check the information of the account with the `secret seed` mentioned at [previous chapter](#create-account).  
-* Create a new file named `.secret` at the same path of [.secret-example](), and set the `secret seed` in it, the content of which is something as below:  
+* Create a new file named `.secret` at the same path of [.secret-example](../src/omniverse-swap-tools/omniverse-helper/.secret-example), and set the `secret seed` in it, the content of which is something as below:  
     ```json
     {
         "sks": [
@@ -92,7 +92,7 @@ You can check the information of the account with the `secret seed` mentioned at
             "a4c88b446aa0923be87ca6e02e4c767bd6xxxxxxxxxxxxxxxxxxxxxxxxxx"
         ],
         "index": 0,
-        "mpc": "0x0c8db4e26ae7a9e48a9d5cca8941698dd1338e037d89a47bf2853d8ef3c1723a3bad2a9916c5ee0ed0aa17396a6b4831352f51ee122b4951b51e20896356175b"
+        "mpc": "0x9b0bc430a57fbfab286eaeffd22d1f05bc415c6f3c19d4c4880c3e1f80e5a7a65e36a3f960adda4670a690098a10ad98f03111d4085a937325aa468072dcf294"
     }
     ```
     * `sks` are secret keys of the Omniverse Accounts. Normally, we need to create two keys that one is the sender and the other is the receiver, as we will do [Omniverse Transferring](#make-transaction-of-omniverse-token) later.
@@ -250,15 +250,15 @@ We temporarily provided a set of very low APIs for adding token liquidity pool c
     <p id='encapsulate' align='center'>Figure.4 Generate encapsulate data</p>  
     
     * Remember the name of token `shawn01` to be deposited(`1`)
-    * Remember the amount of token `xiyu` to be deposited(`1.1`)
-    * Remember the encapsulated Tx data of token `xiyu` (`1.3`)
+    * Remember the amount of token `shawn01` to be deposited(`1.1`)
+    * Remember the encapsulated Tx data of token `shawn01` (`1.3`)
     * Remember the name of token `shawn02` to be deposited(`2`)
-    * Remember the amount of token `xiyu` to be deposited (`2.1`)
-    * Remember the encapsulated Tx data of token `xiyu` (`2.3`)
+    * Remember the amount of token `shawn02` to be deposited (`2.1`)
+    * Remember the encapsulated Tx data of token `shawn02` (`2.3`)
 
 * `addLiquidity` with [Polkadot.js](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F3.74.157.177%3A9944#/extrinsics)
     ![img](./assets/add-liquidity.png)  
 
     * `tradingPair` is a string naming the swap pool.
     *  `amountXDesired` and `amountYDesired` need to be equal to the amount when encapsulating the Tx data mentioned above.  
-    * Copy data in `1.1` and `2.1` in [*Figure.4*](#encapsulate) into `tokenXData` and `tokenYData`.  
+    * Copy data in `1.3` and `2.3` in [*Figure.4*](#encapsulate) into `tokenXData` and `tokenYData`.  

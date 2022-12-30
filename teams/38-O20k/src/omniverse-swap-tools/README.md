@@ -14,3 +14,4 @@ This project provides tools to make the Omniverse perations.
     ```sh
     node index.js --help
     ```
+***Note that the mpc account needs to be the one in [.secret-example](./omniverse-helper/.secret-example#L7)***
