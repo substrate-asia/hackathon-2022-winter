@@ -200,13 +200,18 @@ Nova - Finance & Marketing
 - https://www.linkedin.com/in/nova-wong-92b48359/
 - https://t.me/novawonglili
 
-Dev Team:
-Jianguo
+Dev Team:  
+
+Jianguo  
 - https://github.com/jian-guo-s  
-Zhihui
+
+Zhihui  
 - https://github.com/jlvihv  
-Qiaoyu
+
+Qiaoyu  
 - https://github.com/yuliaye  
-Zhihao
+
+Zhihao  
 - https://github.com/CoderfishGzh  
+
 Zexun

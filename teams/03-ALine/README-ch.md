@@ -207,13 +207,18 @@ Nova - 金融与市场
 - https://www.linkedin.com/in/nova-wong-92b48359/
 - https://t.me/novawonglili
 
-开发团队: 
+开发团队:   
+
 建国  
 - https://github.com/jian-guo-s  
+
 志辉
 - https://github.com/jlvihv  
+
 巧钰
 - https://github.com/yuliaye  
+
 智浩
 - https://github.com/CoderfishGzh  
+
 泽汛
