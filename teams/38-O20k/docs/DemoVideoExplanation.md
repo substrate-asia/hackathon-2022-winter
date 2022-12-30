@@ -28,3 +28,4 @@
 
 ## Transfer(Initiate From EVM chain)
 - Account 1 transfer 10000 X to account 2
+- Check the balance change on Polkadot
