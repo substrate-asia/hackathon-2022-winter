@@ -9,7 +9,7 @@ import Details from "./views/details";
 import Proposed from "./views/proposed";
 import Governance from "./views/governance";
 import Subscription from "./views/Subscription";
-
+import MORTGAGE from "./views/MORTGAGE";
 import { Router, Route, Routes, Link } from "react-router-dom";
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
       <Route exact component={Governance} path="/Governance"></Route>
       <Route exact component={Details} path="/Details"></Route>
       <Route exact component={Subscription} path="/Subscription"></Route>
+      <Route exact component={MORTGAGE} path="/MORTGAGE"></Route>
     </div>
   );
 }
