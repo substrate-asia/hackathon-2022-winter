@@ -118,6 +118,10 @@ The implementation of our overall product functions is relatively complex. At pr
 ### UI
 <https://www.figma.com/file/bSiQuWzdHoeSjHn6EZO0ah/ALine?node-id=0%3A1&t=7b7O3nlECA0DF8FE-0>
 
+
+### Pipeline Architecture diagram
+![Pipeline Architecture diagram](docs/Pipeline_TechnicalArchitectureDiagram.png)  
+
 ## Results during the Polkadot Hackathon 2022
 
 Among them, the specific implementation list of our above functions is as follows:

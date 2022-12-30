@@ -125,6 +125,10 @@ ALine以SaaS的模式提供服务，通过ALine，用户可以得到从创建项
 
 <https://www.figma.com/file/bSiQuWzdHoeSjHn6EZO0ah/ALine?node-id=0%3A1&t=7b7O3nlECA0DF8FE-0>
 
+### Pipeline 架构图
+
+![pipeline 架构图](docs/Pipeline_TechnicalArchitectureDiagram.png)  
+
 
 ## 黑客松期间的成果
 
