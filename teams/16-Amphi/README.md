@@ -5,11 +5,12 @@ A community-driven intelligent language service dapp
 
 Project born：2022.10
 
-## Industry problem & translators' problem
-**Industry problem**
+
+## Problems and opportunity
+
 ![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/Industry%20problem.png)
 
-**Translators' problem**
+
 ![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/Translator%E2%80%98s%20problem.png)
 
 ## Amphi can do
