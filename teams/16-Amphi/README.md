@@ -1,13 +1,13 @@
 ![image](https://github.com/Amphi-lab/hackathon-2022-winter-1/blob/main/teams/16-Amphi/Docs/frog-logo_light.png)
 
-## 项目名称：amphi
+## Project：amphi
 A community-driven intelligent language service dapp
 
 项目立项日期 (哪年哪月)：2022.10
 
-## 黑客松期间计划完成的事项
+## What we did in hachthon
 
-区块链端
+smart contract
 * amphi pass nft
     *  NFT mint
 * post bounty
@@ -42,18 +42,20 @@ Demo
 
 ## web2 translation company model vs amphi model
 
+**web2 translation company model
+![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/%E5%9B%BE%E7%89%877.png)
+compare with web2 language service, The centralized PM is the limitation workload.
+
+**amphi model**
 ![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/%E5%9B%BE%E7%89%876.png)
 there is no limitation workload here. translator and validator stand the same side to serve buyer in web2 translation company, amphi's smart contract separate their responsibility that validator should control the quality of translator for  himself/herself, because the under standard quality will affect only validator's revenue not translator's. So the quality will be control between these two party. Additionally, amphi DAO member can vote for the better quality if there is proposal related.
 
-![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/%E5%9B%BE%E7%89%877.png)
-compare with web2 language service, The centralized PM is the limitation workload.
 
 ## Architecture 
 
 ![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/%E5%9B%BE%E7%89%875.png)
 
 Except business is onchain, we also provide opensource translation intelligent tools.
-
 
 
 ## Team
