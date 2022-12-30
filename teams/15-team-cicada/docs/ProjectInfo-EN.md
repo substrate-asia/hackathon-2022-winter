@@ -89,3 +89,4 @@ The ultimate goals of Cicada are:
 | kongbai | Developer | back-end |lxinyuhn
 |zhangdong | UI/UX | UI/UX |
 |Bella | PM | materials preparation,etc. |zengbing15
+| yota | Developer | back-end |snsin09
