@@ -165,34 +165,53 @@ Among them, the specific implementation list of our above functions is as follow
 Abing - Team Lead
 - Master degree in Computing Science Direction from Tsinghua University
 - 6 years practical experience in Software Development in big Tech Companies
+- https://github.com/abing258
+- https://t.me/abing258
 
 Liam - Head of Tech
 - 4+ years’ experience in crypto.
 - 8+ years software coding experience in java/Go/Rust and Solidity DApps, DevOps and Cloud Computing.
 - https://www.linkedin.com/in/liam-liang-092950245/
+- https://github.com/lt-liam
+- https://t.me/ltyuanmu
 
 Tom- Lead of Dev Team
 - over 9 years of software development experience
 - being familiar with Go/Rust/Java/Python/JavaScript/Typescript, cloud computing, cloud native, and DevOps.
+- https://github.com/mohaijiang
 
 Linda- PM
 - Bachelor of CS from University of Huston
 - 5 years in product management, incl. 2 years in blockchain industry
+- https://github.com/lindaZX
+- https://t.me/lindaZhang666
 
 Alvis- Operation & BD
 - PhD in Economics and Management & Master in CS from Uni Stuttgart, UC Berkeley and Turiba University.
 - Previous Co-Founder of Web3Go (Litentry).
 - Previous president of Asto-Telematics (Germany) in the Asia Pacific region.
 - https://www.linkedin.com/in/alvis-tsui-69952341/
+- https://github.com/Alvis1998
+- https://t.me/Alvis_Tsui
 
 Nova - Finance & Marketing
 - LP of several crypto funds.
 - Graduated from Shanghai Jiaotong University.
 - https://www.linkedin.com/in/nova-wong-92b48359/
+- https://t.me/novawonglili
 
-Dev Team:
-Jianguo
-Zhihui
-Qiaoyu
-Zhihao
+Dev Team:  
+
+Jianguo  
+- https://github.com/jian-guo-s  
+
+Zhihui  
+- https://github.com/jlvihv  
+
+Qiaoyu  
+- https://github.com/yuliaye  
+
+Zhihao  
+- https://github.com/CoderfishGzh  
+
 Zexun
