@@ -1,6 +1,6 @@
 # Description of Demo Video
 
-## Steps:
+## Begin:
 
 - Get the information of the Omniverse accounts: 
     - node index.js -a
