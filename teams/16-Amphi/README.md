@@ -16,13 +16,6 @@ Project born：2022.10
 ## Amphi can do
 ![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/Amphi%20do.png)
 
-**Lower cost for buyers.** when buyer publish a bounty on amphi, they will recognize they do not need to negotiate with the sales and bargain price, get translation service is easy like order a takeout.
-
-**High quality service.** amphi have tripartite supervision mechanism and DAO to supervise the high quality of translation.
-
-**More efficient transaction.** the translator and validator will feel they can get payment much faster than previous, they get paid 1 month a time once they finished, and now just 1 minute.
-
-**Increase translators' revenure.** the translator and validator will find they can work more than usual and more efficient  and the AI tools are free.
 
 ## web2 translation company model vs amphi model
 
