@@ -33,21 +33,21 @@ Demo
 ## 项目整体简介
 
 项目简介，英文提交。包括但不限于：
-![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/%E5%9B%BE%E7%89%871.png "Title" {width=100px height=100px})
+
 Lower cost for buyers. when buyer publish a bounty on amphi, they will recognize they do not need to negotiate with the sales and bargain price, get translation service is easy like order a takeout. 
-![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/%E5%9B%BE%E7%89%871.png)
+
 Lower cost for buyers. when buyer publish a bounty on amphi, they will recognize they do not need to negotiate with the sales and bargain price, get translation service is easy like order a takeout. 
-![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/%E5%9B%BE%E7%89%871.png)
+
 More efficient transaction. the translator and validator will feel they can get payment much faster than previous, they get paid 1 month a time once they finished, and now just 1 minute.
-![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/%E5%9B%BE%E7%89%871.png)
+
 Increase translators' revenure. the translator and validator will find they can work more than usual and more efficient  and the AI tools are free.
 
 
 - 项目背景/原由/要解决的问题 (如有其他附件，可放到 `docs` 目录内。英文提交)。
-
+![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/%E5%9B%BE%E7%89%876.png)
 there is no limitation workload here. translator and validator stand the same side to serve buyer in web2 translation company, amphi's smart contract separate their responsibility that validator should control the quality of translator for  himself/herself, because the under standard quality will affect only validator's revenue not translator's. So the quality will be control between these two party. Additionally, amphi DAO member can vote for the better quality if there is proposal related.
 
-
+![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/%E5%9B%BE%E7%89%877.png)
 compare with web2 language service, The centralized PM is the limitation workload.
 
 
@@ -56,7 +56,7 @@ compare with web2 language service, The centralized PM is the limitation workloa
 - 项目Demo
 
 - 技术架构
-
+![image](https://github.com/Amphi-lab/hackathon-2022-winter/blob/main/teams/16-Amphi/Doc/%E5%9B%BE%E7%89%875.png_
 - 项目 logo (如有)，这 logo 会印制在文宣，会场海报或贴子上。
 
 ## 黑客松期间计划完成的事项
