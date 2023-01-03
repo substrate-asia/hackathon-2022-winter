@@ -113,20 +113,24 @@ DeSign aims to provide customers with decentralized e-signature and contract man
   <th>Name</th><th>Role</th><th>Responsibility</th>
   </tr>
   <tr>
-    <td>Terry</td><td>Team Leader & PO</td><td>Idea Generation, Product Design, Team Mgt.</td>
+    <td>Terry Tian</td><td>Team Leader & PO</td><td>Idea Generation, Product Design, Team Mgt.</td>
   </tr>
   <tr>
-    <td>Tom</td><td>Backend & Smart Contract Engineer</td><td>Backend API & Smart Contract Dev & R&D Project Mgt.</td>
+    <td>Tom Xiong</td><td>Backend & Smart Contract Engineer</td><td>Tech Architecture Design / Backend Dev. / Project Mgt.</td>
   </tr>
-<!--   <tr>
-    <td>Kaiho</td><td>Substrate Chain Engineer</td><td>Chain Infrastructure Dev.</td>
-  </tr> -->
   <tr>
     <td>Xing Ai</td><td>Fronted Engineer</td><td>Frontend & e-Signature Dev.</td>
+  </tr>
+   <tr>
+    <td>Jack Jiang</td><td>Smart Contract Engineer</td><td>CESS Storage Dev.</td>
+  </tr>
+   <tr>
+    <td>Soy Wang</td><td>Smart Contract Engineer</td><td>Kilt Did Dev.</td>
   </tr>
   <tr>
     <td>Nick</td><td>UI Designer</td><td>UI Design</td>
   </tr>
 </table>
+
 
 
