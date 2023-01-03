@@ -1,0 +1,60 @@
+type Category @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  name: String!
+  parent: String
+  lastAuthor: String
+  lastDate: Date
+  flag: Boolean
+}
+
+type Label @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  name: String!
+  category: Category!
+  lastAuthor: String
+  lastDate: Date
+  flag: Boolean
+}
+
+type Subject @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  name: String!
+  category: Category!
+  lastAuthor: String
+  lastDate: Date
+  flag: Boolean
+}
+
+type Dimension @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  name: String!
+  subject: Subject!
+  lastAuthor: String
+  lastDate: Date
+  flag: Boolean
+}
+
+type Content @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  content: String!
+  category: Category!
+  label: String
+  dimension: Dimension!
+  lastAuthor: String
+  lastDate: Date
+  flag: Boolean
+}
+
+type Subscribe @entity {
+  id: ID! #id is a required field
+  blockHash: String!
+  subscriber: String!
+  subscribeDate: Date
+  subject: Subject!
+  flag: Boolean
+}

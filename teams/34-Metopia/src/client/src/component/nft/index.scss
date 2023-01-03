@@ -1,0 +1,37 @@
+@import '../../global.scss';
+
+.nft-selection-pane {
+    
+    .nft-collection-name-button-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+
+        .nft-collection-name-button-wrapper {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+
+            .nft-collection-name-button {
+                user-select: none;
+                padding: 5px 8px;
+                cursor: pointer;
+                font-size: 14px;
+                line-height: 22px;
+                // color: #bbb;
+                color: #E6007A;
+                font-family: montserrat;
+            }
+
+            &.selected {
+                // background: #151515;
+                background: #E6007A;
+                .nft-collection-name-button {
+                    // @include colorful;
+                    // color: $theme-color;
+                    color: white;
+                }
+            }
+
+        }
+    }
+}

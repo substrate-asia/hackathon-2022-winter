@@ -44,7 +44,7 @@
 
         Henry Web3Games 业务负责人
 
-        Jiang PNS 技术负责人
+        Jiang PNS
 
         Jessie Dai CESS 联合创始人&COO
 - Workshop#2：2022年12月3日 周六 20:00-22:00
@@ -65,12 +65,26 @@
 
   1.构建一个面向用户的Polkadot钱包
 
-    Nam Pham SubWallet高级软件工程师
+      Nam Pham SubWallet高级软件工程师
 
   2.面向Substrate链的数据索引与分析
 
-    Yakio Liu Subscan负责人
+      Yakio Liu Subscan负责人
 - Workshop#4：2022年12月17日 周六 15:00-17:00
+
+  如何做一份 Web3 Startup 的 Pitchdeck
+
+      Alan Li Ausvic Capital 区块链投资负责人
+  
+  深熊视角下的 Web3 投资观
+
+      Frost QimingVC 投资人
+
+      Alan Li Ausvic Capital 区块链投资负责人
+
+      Zixi Matrix Partners 投资人
+
+      Ray IOSG Ventures 高级总监
 
 ## 项目报名
 1. 由即日起，fork 这个代码仓库，到你们团队成员 repo 里。
@@ -115,9 +129,9 @@
 
 - 商业价值 (30%): 能解决问题，创新性，能放在你所知的行业场景中使用，以及当前项目发展的进度；立意新颖，具备突破性，打破常规思维。
 
-- 现场表现 (30%): 产品展示/录播，很好反映做出的功能点及流程，演说清晰，项目背景及项目规划交待清楚明确。
+- 创新性 (30%): 立意新颖，具备突破性，打破常规思维。
 
-**最终每队分数： 技术评审 (40%) + 商业评审 (30%) + 现场表现 (30%)**
+**最终每队分数： 技术评审 (40%) + 商业评审 (30%) + 创新性 (30%)**
 
 ### 备注
 

@@ -1,52 +1,106 @@
-## 基本资料
+## Project
 
-项目名称：
+Project Name: Moereum
 
-项目立项日期 (哪年哪月)：
+Start time: 2022.11
 
-## 项目整体简介
+## Project Introduction
 
-项目简介，英文提交。包括但不限于：
+### Intro
 
-- 项目背景/原由/要解决的问题 (如有其他附件，可放到 `docs` 目录内。英文提交)。
-- 项目介绍
-- 项目Demo
-- 技术架构
-- 项目 logo (如有)，这 logo 会印制在文宣，会场海报或贴子上。
+	 Bridge EVM to MoveVM
 
-## 黑客松期间计划完成的事项
+Moereum Network provides the infrastructure for building dApps using EVM and MoveVM smart contracts, providing developers with true cross-consensus messaging (XCM) and cross-virtual machine (XVM) interoperability, and building a bridge between the EVM tether chain and the MoveVM chain. Moereum plans to become a parachain to serve developers on Polkadot.
 
-- 请团队在报名那一周 git clone 这个代码库并创建团队目录，在 readme 里列出黑客松期间内打算完成的代码功能点。并提交 PR 到本代码库。例子如下 (这只是一个 nft 项目的例子，请根据团队项目自身定义具体工作)：
+### Background
 
-**区块链端**
+Solidity's design has limitations and historical issues in many ways.
+Therefore, just as Rust tries to fundamentally solve the limitations and historical legacy of C++, Move tries to break through the limitations of Solidity through the "new resource-oriented smart contract paradigm" and bring more blockchain and Web3 usage scenarios. Imagine more.
+However, the development of the new paradigm requires a long process, and the new paradigm does not intend to replace the old paradigm. It is very likely that the two paradigms will coexist for a long time in the future. Therefore, the combination and communication between Solidity and Move contracts will be one of the important propositions in the future.
+As a building block blockchain architecture design, both Substrate-based EVM and Substrate-based MoveVM designs have been developed to a certain extent. At the same time, we can also see some multi-virtual machine chain designs from previous cases, such as the design of EVM + WASM.
 
-- `pallet-nft`
-  - [ ] NFT 创建及数据结构定义 (`fn create_nft()`)
-  - [ ] NFT 转帐函数 (`fn transfer()`)
-  - [ ] NFT 销毁函数 (`fn burn_token()`)
+##### In this case, designing a Substrate parachain with EVM and MoveVM dual virtual machines -- Moereum is a reasonable and interesting exploration.
 
-**客户端**
+For Move-based Chains and EVM-Based Chains, with the help of Substrate's communication mechanism, Moereum can become a bridge between the two types of chains.
+For dApps, the current Solidity contract can call the Move method, so as to attach the concept of resources to the Solidity contract, and explore more interesting ways to play smart contracts and dApps.
 
-- web 端
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
+### Product
 
-- hybrid (react-native)
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
+* Operating environment layer - Rust environment and browser environment, corresponding to the chain and dApp respectively.
+* Blockchain layer - including the Substrate blockchain framework, EVM virtual machine, MoveVM virtual machine, XCM communication pallet and other pallet sets that need to be used.
+* Smart contract layer - pure Solidity smart contract, pure Move smart contract, Solidity smart contract with Move Resource 
+* Cross-chain system - Cross-chain from Move chain to Moereum, cross-chain from EVM chain to Moereum, cross-virtual machine communication inside Moereum.
+* dApps —— Based on three dApp frameworks, eth-scaffold, move-scaffold and move-eth hybrid framework.
+
+### Architecture
+
+![WechatIMG48](./docs/tech.png)
+
+### Details
+
+Details of our project are as below: 
+
+* [Github Organization](https://github.com/NonceGeek)
+* [Pitch deck](./docs/Moereum.pdf)
+* [Video](./docs/demo.mp4)
+
+## Plan to Develop
+
+* 2022 Q4: Support evm and movevm and xcm
+* 2023 Q1: Improve the chain tool collection and document ecology and conduct security audits
+* 2023 Q2: Launch community testnet
+* 2023 Q3: Final comprehensive security audit
+* 2023 Q4: Ready to shoot Kusama Parachain
+
+### Things to accomplish during the hackathon:
+
+-   Moereum dual virtual machine chain implementation
+-   Communication between Moereum EVM and Move virtual machine
+-   Realization of Solidity with Move Resource smart contract and dApp Demo
+    **Blockchain side**
+-   `pallet-mvm`
+    - [x] Move contract deployment (fn publishModule())
+    - [x] Move contract method call (`fn execute()`)
+    - [x] View Resource resource information (`fn view()`)
+-   `pallet-evm`
+    - [x] evm contract deployment
+    - [x] evm contract method call
+    - [x] eth api implementation
+    - [ ] Precompiled method: call move contract method
+      **Dapp side**
+-   Realization of dapp demo
+
+## Achievement in hackathon
+
+Completed:
+**Blockchain side**
+
+- `pallet-mvm`
+  - [x] Move contract deployment (fn publishModule())
+  - [x] Move contract method call (`fn execute()`)
+  - [x] View Resource resource information (`fn view()`)
+- `pallet-evm`
+  - [x] evm contract deployment
+  - [x] evm contract method call
+  - [x] eth api implementation
 
 
-## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
+## Technology Team
 
-- 2022年12月27日前，在本栏列出黑客松期间最终完成的功能点。
-- 把相关代码放在 `src` 目录里，并在本栏列出在黑客松期间打完成的开发工作/功能点。我们将对这些目录/档案作重点技术评审。
-- 放一段不长于 **5 分钟** 的产品 DEMO 展示视频, 命名为 `团队目录/docs/demo.mp4`。初审时这视频是可选，demo day 这是计分项。
+Leeduckgo - NonceGeek Cofounder
 
-## 队员信息
+Kei - NonceGeek Cofounder
 
-包含参赛者名称及介绍
-在团队中担任的角色
-GitHub 帐号
-微信账号（如有请留下，方便及时联系）
+kevin - substrate dev
+
+Karl -  Frontend developer
+
+Tomas - Substrate developer
+
+- 4+ years’ experience in crypto.
+- 4+years software coding experience in java/Go/Rust and Solidity DApps
+- Polkadot senior ambassador, Substrate Evangelist, and early participants in the Polkadot ecosystem.
+
+Dream4ever - Web developer
+
+Fefe - product manager, web3 independent researcher,SEEDAO Contributor

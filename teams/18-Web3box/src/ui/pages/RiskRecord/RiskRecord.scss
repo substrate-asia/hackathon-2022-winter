@@ -1,0 +1,127 @@
+.RiskRecord{
+    // width: 80%;
+    padding-top: 0px;
+    max-height: 102vh;
+    overflow-y:scroll;
+    .RiskRecord_c{
+        margin: 0 50px;
+        padding-top: 30px;
+        .risk_head{
+            background: url('../../images/risk_head.png');
+            background-size: 100% 100%;
+            margin-bottom: 20px;
+            height: 150px;
+        }
+        p{
+            font-size: 24px;
+            font-weight: 400;
+            color: #FFFFFF;
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 28px;
+            padding-bottom: 10px;
+        }
+        ul{
+            border-radius: 16px;
+            padding-top: 10px;
+            border: 1px solid #666666;
+            padding-bottom: 10px;
+            li{
+                overflow: hidden;
+                height: 65px;
+                margin: 0 auto;
+                border-radius: 5px;
+                // padding-top: 15px;
+                // padding-top: 15px;
+                line-height: 65px;
+                .tokenHidden{
+                    display: none;
+                }
+                p{
+                    padding: 0;
+                    font-size: 14px;
+                    color: #fff;
+                    float: left;
+                    text-align: center;
+                    border-bottom: 1px solid #ccc;
+                    
+                }
+                .rank{
+                    width: 25%;     
+                    white-space: nowrap;
+                    text-align: left;
+                    margin-left: 20px;
+
+                }
+                .projectname{
+                    width: 30%;
+                    text-align: left;
+                }
+                .score:hover > div{
+                    display: block;
+                }
+
+                .score{
+                    width: 15%;
+                    overflow-y: scroll;
+                    cursor: pointer;
+
+                    img {
+                        margin-left: 10px;
+                    }
+
+                    .weekly{
+                        position: absolute;
+                        margin-top: -50px;
+                        margin-left: 130px;
+                        width: 122px;
+                        height: 42px;
+                        padding-right: 9px;
+                        background:  url("../../images/weekly.png") no-repeat;
+                        background-size: 98% 98%;
+                        background-repeat: no-repeat;
+                        border-radius: 16px;
+                        overflow: hidden;
+                        padding-bottom: 10px;
+                        display: none;
+                        z-index: 999;
+                    }
+                }
+                .Status{
+                    width: 25%;
+                    text-align: right;
+                    padding-right: 25px;
+                    cursor: pointer;
+                }
+                .button{
+                height: 37px;
+                background: #14191D;
+                box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+                opacity: 1;
+                color: #fff;
+                border-radius: 15px;
+                border:none;
+                margin-left: 20px;
+                }
+               
+
+            }
+            .title{
+            font-size: 20px;
+            background: rgba(0,0,0,0);
+            p{
+            //    width: 20%; 
+               font-size: 20px;
+                color: #FFFFFF;
+            }
+            }
+
+            .line{
+                border-bottom: 1px solid #2A2D32;
+            }
+        }
+    
+
+    }
+    
+}

@@ -1,0 +1,228 @@
+@import '../../../../../global.scss';
+@import '../../font.scss';
+
+.donation-subpage {
+    margin-top: 20px;
+    padding-bottom: 40px;
+
+    .gitcoin-container {
+        >.head {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+
+            .gitcoin-summary-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 36px;
+                background-color: #ffffff11;
+                border-radius: 20px;
+                padding: 24px 30px;
+                flex: 1;
+
+                >.title {
+                    @include profile-title;
+                }
+
+                .data-wrapper {
+                    transform: translateY(1px);
+
+                    .data {
+                        @include profile-content;
+                        line-height: 36px;
+                        display: flex;
+                        align-items: center;
+
+                        .number {
+                            font-family: Akrobat;
+                            font-size: 30px;
+                            color: $theme-color;
+                            margin-left: 24px;
+                        }
+                    }
+                }
+            }
+
+            .gitcoin-reference-container {
+                background-color: #ffffff11;
+                border-radius: 20px;
+                padding: 24px 30px;
+                flex: 1;
+
+                .profile-reference {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 0;
+
+                    img {
+                        margin: 0;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .gitcoin-detail-container {
+        // margin-top: 24px;
+        // background-color: #ffffff;
+        border-radius: 20px;
+        // box-shadow: 0 0 10px #e5e5e5;
+        overflow: hidden;
+
+        .gitcoin-table {
+            width: 100%;
+            // margin-top: 20px;
+
+            &,
+            th,
+            td,
+            tr {
+                border-collapse: collapse;
+            }
+
+
+
+            thead {
+                border-bottom: $default-border;
+
+                th {
+                    @include profile-table-head;
+                    text-align: left;
+                    border-right: 1px solid #f4f4f4;
+
+                    padding: 24px 50px;
+
+                    &:last-of-type {
+                        border-right: 0;
+                    }
+                }
+            }
+
+            tbody {
+                tr:nth-child(even) {
+                    background-color: #151515;
+                    // background-color: #F9F9FE;
+                }
+
+                td {
+                    @include profile-table-cell;
+                    text-align: left;
+                    border-right: 1px solid #f4f4f4;
+                    padding: 24px 50px;
+
+                    &:last-of-type {
+                        border-right: 0;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.gitcoin-table-logo {
+    height: 40px;
+    width: 40px;
+}
+
+
+.gitcoin-table-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.donation-content-modal {
+    padding: 0 40px;
+
+    >.head {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: $default-border;
+        align-items: center;
+
+        img {
+            height: 28px;
+            cursor: pointer;
+        }
+
+        >.title {
+            @include profile-title;
+            padding: 24px 0;
+            font-size: 24px;
+        }
+    }
+
+    >.body {
+        padding: 40px 0;
+        display: flex;
+        gap: 30px;
+
+        >.container {
+            &.right {
+                width: 100%;
+            }
+
+            .avatar {
+                .wrapped-lazy-load-image {
+                    overflow: hidden;
+                    height: 300px;
+                    width: 300px;
+
+                    img {
+                        height: 300px;
+                        @include absolute-centered;
+                    }
+                }
+            }
+
+            .group {
+                display: flex;
+                gap: 20px;
+                font-size: 14px;
+                border: 1px solid $border-color-light;
+                border-collapse: collapse;
+                padding: 20px;
+                margin-top: -1px;
+
+                &:first-of-type {
+                    margin-top: 0;
+                }
+
+
+                img {
+                    width: 100%;
+                    max-width: 100%;
+                    border-radius: 3px;
+                }
+
+                >.title {
+                    font-weight: bold;
+                    width: 90px;
+                    min-width: 90px;
+                }
+
+                .description-area {
+
+                    max-height: 80px;
+                    overflow-y: auto;
+
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                        border-radius: 5px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+
+                        background-color: #ccc;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

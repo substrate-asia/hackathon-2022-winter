@@ -1,52 +1,27 @@
-## 基本资料
+## Basic Information
 
-项目名称：
+Project Name: MetaCity
 
-项目立项日期 (哪年哪月)：
+Project initiation date: 2022-10
 
-## 项目整体简介
+## Project overall introduction
 
-项目简介，英文提交。包括但不限于：
+<img src='./docs/img/logo-metacity.png'></img>
 
-- 项目背景/原由/要解决的问题 (如有其他附件，可放到 `docs` 目录内。英文提交)。
-- 项目介绍
-- 项目Demo
-- 技术架构
-- 项目 logo (如有)，这 logo 会印制在文宣，会场海报或贴子上。
+MetaCity is a graphic-text mmorpg onchain game. Players can play as different characters, have different skill points, and can interact with other players. The ultimate goal is to build a virtual city on the blockchain, so we call it MetaCity.
 
-## 黑客松期间计划完成的事项
+Some of the game inspiration is coming from a game called: [TornCity](https://www.torn.com/), one of the advantage for this type of game is that you only need a few minutes of an hour or a day to play, and get pretty much returns in the game. So it's a healthy game for people who want to save their time.
 
-- 请团队在报名那一周 git clone 这个代码库并创建团队目录，在 readme 里列出黑客松期间内打算完成的代码功能点。并提交 PR 到本代码库。例子如下 (这只是一个 nft 项目的例子，请根据团队项目自身定义具体工作)：
+Another advantage for the game is that it doesn't need a quick feedback and doesn't need frequent operations, so it minimizes the disadvantage of blockchain's latency and gas fee. At the same time it shares the data transparency and security of blockchain. So I think it make best use of the advantages and bypass the disadvantages of blockchain, and it's maybe the most suitable type of onchain game.
 
-**区块链端**
+## What was accomplished during the hackathon
 
-- `pallet-nft`
-  - [ ] NFT 创建及数据结构定义 (`fn create_nft()`)
-  - [ ] NFT 转帐函数 (`fn transfer()`)
-  - [ ] NFT 销毁函数 (`fn burn_token()`)
+During the hackathon, we just made a proof of concept demo of the game using ink! language, We plan to further build the game after ink! become more robust.
 
-**客户端**
+In this demo, users can choose different strategies to maximize their returns in the game. Generally speaking, we provided 3 different modes, if an user want to pay only a little time to play the game, She/He can choose the mode that provide loweset per unit time return but highest valid duration time, otherwise the opposite. That way, users can totally enjoy the game, without paying too much time on it.
 
-- web 端
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
+## Player information
 
-- hybrid (react-native)
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
-
-
-## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
-
-- 2022年12月27日前，在本栏列出黑客松期间最终完成的功能点。
-- 把相关代码放在 `src` 目录里，并在本栏列出在黑客松期间打完成的开发工作/功能点。我们将对这些目录/档案作重点技术评审。
-- 放一段不长于 **5 分钟** 的产品 DEMO 展示视频, 命名为 `团队目录/docs/demo.mp4`。初审时这视频是可选，demo day 这是计分项。
-
-## 队员信息
-
-包含参赛者名称及介绍
-在团队中担任的角色
-GitHub 帐号
-微信账号（如有请留下，方便及时联系）
+Name: peilin;  
+Github: rusty-peilin;  
+Wechat: peilin567;

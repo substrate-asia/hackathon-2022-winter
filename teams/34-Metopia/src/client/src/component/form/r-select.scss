@@ -1,0 +1,280 @@
+@import '../../global.scss';
+
+.r-select-v2 {
+    position: relative;
+    overflow: visible;
+    font-family: 'Montserrat';
+
+    .r-input {
+        // background-color: #ffffff;
+
+    }
+
+    .drop-down-pane {
+        display: none;
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0px;
+        border: $default-border;
+        border-radius: 12px;
+        width: 100%;
+        // background-color: white;
+        box-shadow: 0px 4px 8px rgba(45, 35, 117, 0.1);
+        max-height: 240px;
+        overflow-y: scroll;
+        color: #fff;
+        background: inherit;
+        z-index: 9999;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        &.display {
+            display: block;
+            // flex-direction: column;
+        }
+
+        .option {
+            padding: 12px 14px;
+            cursor: pointer;
+
+            &:first-of-type {
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+            }
+
+            &:last-of-type {
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        &.upwards {
+            top: unset;
+            bottom: calc(100% + 4px);
+        }
+    }
+
+}
+
+
+.r-multi-select-v2 {
+    position: relative;
+    overflow: visible;
+    font-family: 'Montserrat';
+
+    >.value-container {
+        height: 48px;
+        width: 100%;
+        border: 1px solid #575861;
+        border-radius: 8px;
+        gap: 8px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+        cursor: pointer;
+
+        >.value-card {
+            height: 32px;
+            font-size: 16px;
+            line-height: 24px;
+            color: #E6007A;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 8px;
+            gap: 4px;
+
+            >div {
+                @include ellipsis(1);
+            }
+
+            img {
+                // height: 16px;
+                cursor: pointer;
+                opacity: 0.8;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .drop-down-pane {
+        display: none;
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0px;
+        border: $default-border;
+        border-radius: 12px;
+        width: 100%;
+        // background-color: white;
+        box-shadow: 0px 4px 8px rgba(45, 35, 117, 0.1);
+        max-height: 240px;
+        overflow-y: scroll;
+        color: #fff;
+        background: inherit;
+        z-index: 9999;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        &.display {
+            display: block;
+            // flex-direction: column;
+        }
+
+        .option {
+            padding: 12px 14px;
+            cursor: pointer;
+
+            &:first-of-type {
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+            }
+
+            &:last-of-type {
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        &.upwards {
+            top: unset;
+            bottom: calc(100% + 4px);
+        }
+    }
+
+}
+
+.r-select {
+    display: block;
+    font-family: 'Montserrat';
+    border-radius: 12px;
+    border: $default-border;
+    color: $title-color;
+    outline: 0;
+    width: 100%;
+    padding: 0 14px;
+    font-size: 16px;
+    line-height: 24px;
+    height: 48px;
+    background: none;
+
+    * {
+        background-color: #0F111E;
+    }
+}
+
+.simple-select {
+    background: inherit;
+
+    button {
+        font-family: "Montserrat";
+        color: #BBBBBB;
+        background: none;
+        font-size: 16px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+    }
+
+    .drop-down-pane {
+        display: none;
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0px;
+        border: $default-border;
+        border-radius: 12px;
+        box-shadow: 0px 4px 8px rgba(45, 35, 117, 0.1);
+        max-height: 240px;
+        overflow-y: scroll;
+        background: inherit;
+
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        &.display {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .option {
+            padding: 8px 14px;
+            cursor: pointer;
+            background: inherit;
+
+            &:first-of-type {
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+            }
+
+            &:last-of-type {
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
+
+            &:hover {
+                background-color: #00000055;
+            }
+        }
+    }
+}
+
+.r-multi-select {
+    font-family: 'Montserrat';
+
+    >.card-wrapper {
+        display: flex;
+        gap: 8px 12px;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+
+        >.card {
+            @include flex-centered-container;
+            background-color: $subtheme-color;
+            color: $theme-color;
+            // border: 1px solid $theme-color;
+            border-radius: 8px;
+            padding: 4px 8px;
+            gap: 4px;
+            user-select: none;
+
+            img {
+                height: 16px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    >.selector {
+        display: block;
+        border-radius: 12px;
+        border: 1px solid #DDDDDD;
+        color: #222222;
+        outline: 0;
+        width: 100%;
+        padding: 0 14px;
+        font-size: 16px;
+        line-height: 24px;
+        height: 48px;
+    }
+}
+
+
+.r-multi-select-v2 {}

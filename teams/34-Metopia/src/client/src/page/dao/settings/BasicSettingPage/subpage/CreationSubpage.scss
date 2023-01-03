@@ -1,0 +1,77 @@
+@import '../../../../../global.scss';
+
+.dao-basic-profile-settings-page .creation-subpage {
+    >.option-container {
+        display: flex;
+        gap: 40px;
+        margin-top: 2px;
+
+        >.option {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            min-height: 300px;
+            flex-direction: column;
+            background: #0C0F1Dee;
+            position: relative;
+            border-radius: 12px;
+
+            .main-button{
+                transition: 300ms;
+            }
+
+            >.bg-wrapper {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 388px;
+                height: 295px;
+                overflow: hidden;
+                text-align: right;
+
+                .bg {
+                    opacity: 0.3;
+                    transition: 300ms;
+                    transform: translateX(40px);
+                }
+
+            }
+
+            >.head {
+                >.title {
+                    font-weight: 600;
+                    font-size: 28px;
+                    @include colorful;
+                    font-family: 'Fjalla One';
+                    font-size: 34px;
+                }
+
+                >.subtitle {
+                    font-family: 'Montserrat';
+                    margin-top: 12px;
+                    font-size: 16px;
+                    color: rgba(255, 255, 255, 0.67);
+                    opacity: 0.9;
+                }
+            }
+
+            &:hover {
+                &:before {
+                    @include colorfulBorderProperties(2px);
+                }
+
+                .main-button{
+                    opacity: 1;
+                }
+
+                >.bg-wrapper {
+
+                    .bg {
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }
+                }
+            }
+        }
+    }
+}

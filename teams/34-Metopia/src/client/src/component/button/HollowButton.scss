@@ -1,0 +1,29 @@
+@import '../../global.scss';
+
+.hollow-button {
+    color: #E6007A;
+    cursor: pointer;
+    width: fit-content;
+    max-width: 100%;
+    user-select: none;
+    border-radius: 24px;
+    position: relative;
+    z-index: 1;
+
+    >.container {
+        display: flex;
+        justify-content: center;
+        background: #000000;
+        border-radius: 24px;
+        padding: 8px 20px;
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        @include ellipsis(1);
+    }
+
+    &::after {
+        @include colorfulBorderProperties(2px);
+    }
+}

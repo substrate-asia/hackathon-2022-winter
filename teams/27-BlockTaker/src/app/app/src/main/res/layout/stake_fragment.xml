@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/ll_stake_in_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="-20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_top_tab_bk">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/layout_stake_in"
+                layout="@layout/layout_stake_in" />
+
+            <include
+                android:id="@+id/layout_stake_out"
+                layout="@layout/layout_stake_out" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/view_top_tab_bk"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/shape_white_solid_bottom_raidus"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_tab_stake_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="115dp"
+        android:elevation="1dp"
+        android:gravity="center"
+        android:lineHeight="15dp"
+        android:text="@string/binding_dot"
+        android:textColor="#111111"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_top_tab_bk"
+        app:layout_constraintStart_toStartOf="@+id/view_top_tab_bk"
+        app:layout_constraintTop_toTopOf="@+id/view_top_tab_bk" />
+
+    <TextView
+        android:id="@+id/tv_tab_stake_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="115dp"
+        android:elevation="1dp"
+        android:gravity="center"
+        android:lineHeight="15dp"
+        android:text="@string/unbind"
+        android:textColor="#111111"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_top_tab_bk"
+        app:layout_constraintEnd_toEndOf="@+id/view_top_tab_bk"
+        app:layout_constraintTop_toTopOf="@+id/view_top_tab_bk" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_tips"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/view_top_tab_bk"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_success"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="@string/transaction_submitted"
+                android:textColor="@color/primary_text_color"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_look_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="@string/view_ons_subscan"
+                android:textColor="#D8C9B4"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView3" />
+
+            <TextView
+                android:id="@+id/tv_hash"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="#D8C9B4"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_look_at"
+                tools:text="0X123123123123123123123123123123123123123123123123123123" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:padding="20dp"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/toolbar">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_amount_all"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="可用余额:" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_amount_bound"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:text="已绑定:" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_amount_unbinding"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:text="解绑中:" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_amount_retrievable"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:text="可取回:" />-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal">-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/btn_binding"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="绑定" />-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/btn_unbinding"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="解绑" />-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/btn_retrieve"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="取回" />-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/btn_claim"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="认领奖励" />-->
+    <!--        </LinearLayout>-->
+    <!--    </LinearLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

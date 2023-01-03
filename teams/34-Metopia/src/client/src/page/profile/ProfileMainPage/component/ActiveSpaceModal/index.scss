@@ -1,0 +1,108 @@
+.active-space-modal {
+    >.container {
+        padding: 12px 24px 36px 24px;
+
+        >.head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 0;
+            border-bottom: 1px solid #ffffff22;
+
+            >.title {
+                font-family: 'Fjalla One';
+                font-size: 24px;
+                line-height: 30px;
+                color: #FFFFFF;
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+
+        >.body {
+            padding-top: 24px;
+            max-height: calc(80vh - 120px);
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                width: 4px;
+                background-color: #aaa;
+            }
+
+            .active-dao-card {
+                padding: 16px;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 8px;
+                margin-bottom: 24px;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                >.head {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    >.dao-info {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+
+                        .avatar {
+                            height: 32px;
+                            width: 32px;
+                            border-radius: 16px;
+                            // border: 1px solid #ffffff22;
+                        }
+
+                        >.name {
+                            font-size: 20px;
+                            line-height: 24px;
+                            color: #FFFFFF;
+                        }
+                    }
+
+                    >.vp-wrapper {
+                        font-family: 'Fjalla One';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 23px;
+                        text-align: right;
+                        background: linear-gradient(0deg, #E6007A, #E6007A), linear-gradient(106.31deg, #634FFF 29.66%, #FF5F5F 113.07%), #FFFFFF;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-fill-color: transparent;
+
+                        img {
+                            margin-right: 4px;
+                        }
+                    }
+                }
+
+                >.image-container {
+                    margin-top: 24px;
+
+                    .wrapped-lazy-load-image {
+                        border-radius: 8px;
+                        overflow: hidden;
+                        height: 68px;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}

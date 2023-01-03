@@ -1,0 +1,71 @@
+@import '../../global.scss';
+
+.nft-option-card {
+    min-width: 90px;
+    max-width: 120px;
+    width: 120px;
+    cursor: pointer;
+    position: relative;
+    cursor: pointer;
+    flex: 1 1 auto;
+    border-radius: 3px;
+    overflow: hidden;
+    flex: 1 1 0px;
+    background-color: #fff;
+
+    &::before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+
+    >.content {
+        // @include absolute-centered;
+        height: 100%;
+        max-height: 100%;
+        width: 100%;
+        max-width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+
+        >.checked-icon {
+            display: none;
+            position: absolute;
+            width: 24px !important;
+            height: 24px !important;
+            top: 8px !important;
+            right: 8px !important;
+
+        }
+
+        >.unchecked-icon {
+            display: block;
+            position: absolute;
+            width: 24px !important;
+            height: 24px !important;
+            top: 8px !important;
+            right: 8px !important;
+        }
+    }
+
+    &:hover,
+    &.selected {
+        .checked-icon {
+            display: block
+        }
+        .unchecked-icon{
+            display: none
+        }
+    }
+}

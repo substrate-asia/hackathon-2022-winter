@@ -1,0 +1,39 @@
+[submodule "teams/10-Tenet/src/cmps"]
+	path = teams/10-Tenet/src/cmps
+	url = https://github.com/0xdadaking/cmps.git
+	branch = dev
+[submodule "teams/10-Tenet/src/videown-server"]
+	path = teams/10-Tenet/src/videown-server
+	url = https://github.com/Jiuqu3239/videown-server
+	branch = dev
+[submodule "teams/10-Tenet/src/videown-nft"]
+	path = teams/10-Tenet/src/videown-nft
+	url = https://github.com/lost-inwind/videown-nft
+[submodule "teams/17-team-AdMeta/src/substrate/admeta"]
+	path = teams/17-team-AdMeta/src/substrate/admeta
+	url = https://github.com/AdMetaNetwork/admeta.git
+	branch = feat-nft
+[submodule "teams/07-lightm/src/evm"]
+	path = teams/07-lightm/src/evm
+	url = https://github.com/LightmNFT/Lightm-evm.git
+[submodule "teams/07-lightm/src/ui"]
+	path = teams/07-lightm/src/ui
+	url = https://github.com/LightmNFT/lightm.git
+[submodule "teams/13-SalvadoFinance/src/svfi-frontend"]
+	path = teams/13-SalvadoFinance/src/svfi-frontend
+	url = https://github.com/SalvadoFinance/svfi-frontend.git
+[submodule "teams/13-SalvadoFinance/src/svfi-contracts"]
+	path = teams/13-SalvadoFinance/src/svfi-contracts
+	url = https://github.com/SalvadoFinance/svfi-contracts.git
+[submodule "teams/39-PrivaDEX/src/xc_dex_substrate/vendor/openbrush-contracts"]
+	path = teams/39-PrivaDEX/src/xc_dex_substrate/vendor/openbrush-contracts
+	url = git@github.com:Supercolony-net/openbrush-contracts.git
+[submodule "teams/10-Tenet/src/videown-web"]
+	path = teams/10-Tenet/src/videown-web
+	url = https://github.com/fage2022/videown-web.git
+[submodule "teams/22-YGY/src/backend/go"]
+	path = teams/22-YGY/src/backend/go
+	url = https://github.com/tomxiong/design.git
+[submodule "teams/22-YGY/src/ui/javascript"]
+	path = teams/22-YGY/src/ui/javascript
+	url = https://github.com/rubyShilp/sign.git

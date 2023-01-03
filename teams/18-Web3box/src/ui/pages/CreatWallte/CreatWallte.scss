@@ -1,0 +1,137 @@
+.CreatWallet{
+    // width: 80%;
+    padding-top: 48px;
+    overflow-y:scroll;
+    .singe{
+        display: none;
+    }
+    .top_{
+        margin: 0 50px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 12px;
+        img{
+            width:40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        span{
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+    }
+    .CreatWallet_c{
+        // height: 222px;
+        margin: 0 50px;
+        background: #23262A;
+        background-size: 100% 100%;
+        .networks{
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        img{
+            width: 28px;
+            margin-right: 10px;
+        }
+        span{
+        font-size: 20px;
+        color: #FFD271;
+        }
+
+        .select_main{
+            width: 150px;
+            height: 40px;
+            border: 1px solid #AAAAAA;
+            opacity: 1;
+            border-radius: 16px;
+            .ant-select-selector{
+            height: 40px;
+            font-size:12px;
+            background: rgba(0,0,0,0);
+            border:none;
+            color: #fff;
+            &:after{
+                color: #fff;
+            }
+            }
+            .ant-select-selection-item{
+            font-size:14px;
+            height: 40px;
+            line-height:40px;
+            }
+            .ant-select-arrow{
+            color: #fff;
+            }
+            .ant-select-suffix{
+            font-size:12px;
+
+            }
+        }
+        }
+        p{
+            font-size: 24px;
+            font-weight: 400;
+            color: #FFFFFF;
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 28px;
+            padding-bottom: 10px;
+        }
+        input{
+            width: 90%;
+            height: 50px;
+            margin: 0 auto;
+            display: block;
+            padding-left: 10px;
+            background: #111315;
+            opacity: 1;
+            border-radius: 16px;
+            border:none;
+            color: #fff;
+        }
+        h6{
+            width: 90%;
+            margin: 0 auto;
+            font-size: 16px;
+            color: #AAAAAA;
+            padding-top: 16px;
+            padding-bottom: 40px;
+            img{
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+        }
+        .Confirm_c{
+            display: flex;
+            justify-content: center;
+            padding-bottom: 30px;
+            .Cancel{
+                width: 400px;
+                height: 48px;
+                border: 1px solid #FE5266;
+                opacity: 1;
+                border-radius: 16px;
+                background: rgba(0,0,0,0);
+                color: #FE5266;
+                margin-right: 10px;
+            }
+            .Confirm{
+                width: 400px;
+                height: 48px;
+                background: #FE5266;
+                opacity: 1;
+                border-radius: 16px;
+                color: #fff;
+                border:none;
+                margin-left: 10px;
+                color: #FFFFFF;
+
+            }
+        }
+    }
+    
+}

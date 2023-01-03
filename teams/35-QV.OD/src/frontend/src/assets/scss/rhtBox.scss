@@ -1,0 +1,137 @@
+
+
+.folder {
+  overflow: hidden;
+}
+
+.shared-user {
+  align-items: center;
+  color: #6a696a;
+  display: inline-flex;
+  font-weight: 500;
+  margin-left: 5px;
+  outline: none;
+  text-decoration: none;
+
+  &__avatar {
+    width: 15px;
+    height: 15px;
+    margin-right: 3px;
+  }
+}
+
+
+.folder-summary {
+  cursor: pointer;
+  display: flex;
+  padding-bottom: 10px;
+  position: relative;
+
+  &__start {
+    position: relative;
+  }
+
+  &__file-count {
+    position: absolute;
+    top: 2px;
+    .lettered-avatar{
+      font-size: 12px!important;
+    }
+  }
+
+  &__details {
+    padding: 2px 0 0 5px;
+    position: relative;
+    &__name {
+      color: #fff;
+      font-size: 16px;
+      font-family: "Poppins-Regular";
+    }
+  }
+
+  &__end {
+    margin-left: auto;
+
+    img {
+      width: 16px;
+      margin-top: 3px;
+    }
+  }
+
+  &::after {
+    background: #333;
+    bottom: -2px;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+
+// ------- CHEVRON BUTTON
+
+.folder-collapse-button {
+  appearance: none;
+  background: transparent;
+  border-radius: 30px;
+  border: 0;
+  cursor: pointer;
+  height: 30px;
+  opacity: 0;
+  outline: none;
+  position: relative;
+  width: 30px;
+  z-index: 1;
+
+
+
+  img {
+    width: 18px;
+  }
+}
+
+// ------------ FOLDER ITEM
+
+.folder-item {
+  align-items: flex-start;
+  display: flex;
+  line-height: 1;
+  opacity: 0;
+  padding: 20px 20px 0;
+  position: relative;
+
+  &__icon img {
+    display: block;
+    height: 14px;
+    width: auto;
+    margin-top: 3px;
+  }
+
+  &__details {
+    padding: 1px 0 0 15px;
+
+    &__name {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      position: relative;
+      cursor: pointer;
+    }
+
+  }
+
+  &__size {
+    color: #6a696a;
+    font-weight: 500;
+    margin-left: auto;
+    margin-top: 2px;
+  }
+}
+.w100{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

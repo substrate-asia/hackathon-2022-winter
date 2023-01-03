@@ -1,0 +1,53 @@
+@import '../../font.scss';
+
+.profile-table {
+    width: 100%;
+    backdrop-filter: blur(12px);
+
+    &,
+    th,
+    td,
+    tr {
+        border-collapse: collapse;
+    }
+
+    thead {
+        th {
+            @include profile-table-head;
+            text-align: left;
+            color:#fff;
+            padding: 24px 0;
+            font-size: 20px;
+            font-family: "Fjalla One";
+            font-weight: normal;
+            &:last-of-type {
+                border-right: 0;
+                text-align: right;
+            }
+        }
+    }
+
+    tbody {
+        tr.selectable{
+            cursor: pointer;
+        }
+        
+        tr:nth-child(even) {
+            // background-color: #151515;
+        }
+
+
+        td {
+            @include profile-table-cell;
+            text-align: left;
+            padding: 24px 0;
+            min-width: 120px;
+
+            &:last-of-type {
+                border-right: 0;
+                text-align: right;
+            }
+
+        }
+    }
+}

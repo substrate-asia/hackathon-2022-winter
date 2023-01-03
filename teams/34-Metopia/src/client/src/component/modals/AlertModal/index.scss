@@ -1,0 +1,59 @@
+.alert-modal-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 32px 24px 32px;
+    background: #15182A;
+
+    >.title {
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        gap: 18px;
+
+        >.text {
+            font-family: 'Fjalla One';
+            font-size: 32px;
+            transform: translateY(2px);
+        }
+
+        img {
+            // display: none;
+        }
+    }
+
+    >.body {
+        font-size: 16px;
+        margin-top: 12px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+
+        .main-button {
+            font-size: 15px;
+            width: 120px;
+            height: 36px;
+            font-weight: bold;
+        }
+    }
+
+    &.warning {
+        >.title {
+            img {
+                display: block;
+            }
+
+            >.text {
+                font-size: 24px;
+            }
+        }
+
+        >.body {
+            padding-left: 58px;
+            margin-top: 0;
+        }
+    }
+}

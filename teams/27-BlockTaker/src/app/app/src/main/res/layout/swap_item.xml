@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/out_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ETH"
+        android:textSize="14sp"
+        android:textColor="@color/colorTitle"
+        />
+        <ImageView
+         android:layout_width="20dp"
+         android:layout_height="20dp"
+         android:layout_marginHorizontal="12dp"
+         android:src="@drawable/arrow"/>
+        <TextView
+            android:id="@+id/in_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BLZ"
+            android:textSize="14sp"
+            android:textColor="@color/colorTitle"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/packing_success"
+            android:textSize="14sp"
+            android:textColor="@color/colorTitle"
+            />
+
+
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_content"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_margin="20dp"
+        android:padding="15dp"
+        android:background="@drawable/corners5_graye"
+        app:layout_constraintTop_toBottomOf="@id/item_title">
+        <TextView
+            android:id="@+id/out_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/transfer_out"
+            android:textSize="12sp"
+            android:textColor="@color/color_97"
+            />
+        <TextView
+            android:id="@+id/out_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/out_title"
+            android:layout_marginLeft="24dp"
+            android:text="4 ETH"
+            android:textSize="12sp"
+            android:textColor="@color/color_97"
+            />
+        <TextView
+            android:id="@+id/in_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/out_title"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="12dp"
+            android:text="@string/transfer_in"
+            android:textSize="12sp"
+            android:textColor="@color/color_97"
+            />
+        <TextView
+            android:id="@+id/in_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/in_title"
+            app:layout_constraintStart_toStartOf="@id/out_num"
+            android:text="1528 BLZ"
+            android:textSize="12sp"
+            android:textColor="@color/color_97"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/arrow_right"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="30px"
+        android:background="#F5F5F5"
+        app:layout_constraintTop_toBottomOf="@id/item_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

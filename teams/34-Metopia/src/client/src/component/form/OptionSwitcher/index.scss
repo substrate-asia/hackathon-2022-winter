@@ -1,0 +1,35 @@
+@import '../../../global.scss';
+.react-switch {
+    svg {
+        opacity: 0;
+    }
+
+    .react-switch-bg {
+        position: relative;
+        background: #1B1E31 !important;
+        // border: 2px solid rgba(125, 128, 154, 0.3) !important;
+
+        &:before {
+            @include colorfulBorderProperties(2px);
+
+            background: linear-gradient(105deg, rgba(125, 128, 154, 0.3), rgba(125, 128, 154, 0.3));
+            // background: rgba(125, 128, 154, 0.3);
+        }
+    }
+
+    .react-switch-handle {
+        background: #7D809A !important;
+    }
+
+    &.checked {
+        .react-switch-bg:before {
+            background: linear-gradient(105deg, #634FFF, #FF5F5F);
+        }
+
+        .react-switch-handle {
+            background: #E6007A !important;
+        }
+    }
+
+
+}

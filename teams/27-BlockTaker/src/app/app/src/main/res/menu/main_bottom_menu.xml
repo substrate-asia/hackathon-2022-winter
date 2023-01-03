@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/value"
+        android:icon="@drawable/tab_value_black"
+        android:title="@string/value" />
+
+    <!--    <item-->
+    <!--        android:id="@+id/convert"-->
+    <!--        android:icon="@drawable/tab_convert_black"-->
+    <!--        android:title="@string/convert" />-->
+
+    <item
+        android:id="@+id/stake"
+        android:icon="@drawable/tab_stake_black"
+        android:title="@string/nomination" />
+
+        <item
+            android:id="@+id/dapp"
+            android:icon="@drawable/ic_tab_dappk"
+            android:title="@string/dapp" />
+
+    <item
+        android:id="@+id/mine"
+        android:icon="@drawable/tab_mine_gray"
+        android:title="@string/mine" />
+</menu>

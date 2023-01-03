@@ -1,0 +1,9 @@
+version: 1.0
+name: ganache
+stages:
+  ganache:
+    steps:
+      - name: ganache
+        run: |
+          npm install -g ganache
+          ganache

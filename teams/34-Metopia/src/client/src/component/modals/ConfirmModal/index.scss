@@ -1,0 +1,154 @@
+.confirm-modal container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px 36px;
+
+    color: white;
+
+    position: absolute;
+    width: 500px;
+    height: 326px;
+    margin-left: -250px;
+    margin-top: -163px;
+    top: 50%;
+    left: 50%;
+
+    background: #15182B;
+    box-shadow: 10px 20px 48px rgba(0, 0, 0, 0.4);
+
+    >.head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 24px 0;
+
+        >.text {
+            font-family: 'Fjalla One';
+            font-size: 24px;
+            color: white;
+        }
+
+        .Button {
+            height: 24px;
+        }
+    }
+
+}
+
+.confirm-title {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    border-bottom: solid gray 0.1px;
+    width: 452px;
+    height: 78px;
+
+    font-family: 'Fjalla One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+
+    h1 {
+        margin: auto 0 auto 0;
+        height: 30px;
+    }
+}
+
+.close {
+    margin: auto 0 auto 0;
+    width: 30px;
+    height: 30px;
+    opacity: 0.3;
+    cursor: pointer;
+    text-align: center;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+.close:before,
+.close:after {
+    resize: both;
+    position: absolute;
+    content: "\00d7";
+    color: white;
+}
+
+.confirm-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    isolation: isolate;
+    width: 452px;
+    height: 100px;
+    background: #1E2238;
+    margin-top: 24px;
+
+    font-family: 'Fjalla One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 36px;
+}
+
+.button-confirm {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 24px;
+    gap: 8px;
+
+    width: 113px;
+    height: 40px;
+
+    background: linear-gradient(106.31deg, #634FFF 29.66%, #FF5F5F 113.07%);
+    border-radius: 28px;
+}
+
+.button-cancel {
+    box-sizing: border-box;
+    padding: 2px;
+    gap: 8px;
+
+    width: 102px;
+    height: 40px;
+
+    border-radius: 28px;
+
+    background: linear-gradient(106.31deg, #634FFF 29.66%, #FF5F5F 113.07%);
+
+    >.container {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border-radius: 28px;
+        background: rgba(0, 0, 0, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

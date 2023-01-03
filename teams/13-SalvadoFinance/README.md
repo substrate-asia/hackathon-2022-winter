@@ -1,52 +1,135 @@
-## 基本资料
+##### Translate to: [简体中文](README_zh.md)
 
-项目名称：
+## Project
 
-项目立项日期 (哪年哪月)：
+Project Name：**Salvado Finance**
 
-## 项目整体简介
+Project Approval Date：_2022.11_
 
-项目简介，英文提交。包括但不限于：
+## Introduction
 
-- 项目背景/原由/要解决的问题 (如有其他附件，可放到 `docs` 目录内。英文提交)。
-- 项目介绍
-- 项目Demo
-- 技术架构
-- 项目 logo (如有)，这 logo 会印制在文宣，会场海报或贴子上。
+### Background
 
-## 黑客松期间计划完成的事项
+The cryptocurrency market is melting down in 2022 and entering into the crypto winter. The collapse of FTX, the world's second largest DEX, has deepened investors' panic in the sector, and also exposed the current security problems of the crypto market where DEXes are popular in use. Therefore, the process of comprehensive decentralization is unstoppable.
 
-- 请团队在报名那一周 git clone 这个代码库并创建团队目录，在 readme 里列出黑客松期间内打算完成的代码功能点。并提交 PR 到本代码库。例子如下 (这只是一个 nft 项目的例子，请根据团队项目自身定义具体工作)：
+It has been 14 years since Satoshi Nakamoto released the Bitcoin whitepaper on November 1, 2008, the ecosystem of blockchain industry has undergone huge changes. However, the high threshold, high risk, and lack of understanding of Web3 have limited many Web2 users into entering Web3 world.
 
-**区块链端**
+Salvado Finance is designed to create a secure, non-custodial, and accessible decentralized investment platform, similar to a decentralized version of [Pionex](https://www.pionex.com/).
 
-- `pallet-nft`
-  - [ ] NFT 创建及数据结构定义 (`fn create_nft()`)
-  - [ ] NFT 转帐函数 (`fn transfer()`)
-  - [ ] NFT 销毁函数 (`fn burn_token()`)
+We are in the name of the country, Salvado, to pay tribute to the initiative in buying Bitcoin daily advocated on Twitter by cryptocurrency enthusiasts, represented by Nayib Bukele, the President of El Salvador.
 
-**客户端**
+![img](./docs/twitter.png)
+Origin: https://twitter.com/nayibbukele/status/1593113857261965312
 
-- web 端
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
+### Introduction
 
-- hybrid (react-native)
-  - [ ] 用户注册页面
-  - [ ] NFT 产品创建流程
-  - [ ] NFT 产品购买流程
+For individual investors, automatic investment in regular intervals is the best investment strategy to avoid risks for beginners and experienced investors.
+
+Salvado Finance provides users with one-stop automatic investment services:
 
 
-## 黑客松期间所完成的事项 (2022年12月27日初审前提交)
+1. Historical ROI Analysis of Assets
 
-- 2022年12月27日前，在本栏列出黑客松期间最终完成的功能点。
-- 把相关代码放在 `src` 目录里，并在本栏列出在黑客松期间打完成的开发工作/功能点。我们将对这些目录/档案作重点技术评审。
-- 放一段不长于 **5 分钟** 的产品 DEMO 展示视频, 命名为 `团队目录/docs/demo.mp4`。初审时这视频是可选，demo day 这是计分项。
+   We have performed analysis on the historical ROI(return on investment) of core assets on multiple chains including Ethereum and Moonbeam. Users can clearly see the ROI and trend chart of different assets in a certain period of time, which helps users find out assets with a relatively high ROI and make the right investment decision.
+2. Automatic investment strategies
 
-## 队员信息
+   We have implemented four automatic investment strategies with smart contracts:
+   - Dollar-cost averaging (DCA)
+   - Mean automatic investment 
+   - BL automatic investment 
+   - Portfolio automatic investment
 
-包含参赛者名称及介绍
-在团队中担任的角色
-GitHub 帐号
-微信账号（如有请留下，方便及时联系）
+3. Group Auto-Investment
+
+   Users can create a group auto-investment contract, and specify investment strategies, participation conditions, investment goals and withdrawal strategies in the contract. If other users are optimistic about the strategy, they can join the investment group and make investment together.
+4. Auto-Invest as a Mining
+
+   Investing on Salvado Finance is non-custodial, so the investment assets stay in their own wallet. Users can choose to custody their assets in the platform contract to help them stake, lend, add liquidity, and etc. to earn additional interests.
+5. Investment Graph
+
+   All investment behaviors on Salvado Finance will be recorded through SBT. The platform analyzes users’ investment behaviors and judge their investment experience, so as to make better investment decisions and let users learn through investment.
+6. Auto-investing market maker
+
+   In Salvado V1,  relayer helps users purchase target tokens from DEX or aggregators to make investment. In Salvado V2, auto-investing market makers will be added to help users invest with zero slippage in the form of orderbook, while market makers can also get incentives.
+
+### Project Demo
+
+Demo for experience(only supports beta network): http://salvado.finance/
+![img](./docs/tokens.png)
+![img](./docs/auto-invest.png)
+![img](./docs/active-positions.png)
+![img](./docs/closed-positions.png)
+![img](./docs/position-activity.png)
+
+### Architecture
+
+![img](./docs/architecture.png)
+
+The Salvado protocol mainly consists of the following five roles:
+1. Broker (Controller)
+
+   The Broker contract is the entry point for creating/executing the auto-investment strategy, responsible for verifying whether the auto-investment transaction is legal.
+2. Strategy
+
+   The Strategy contract provides users with different auto-investment strategies, such as DCA strategy. We have implemented the IStrategy.sol standard interface, so users can also deploy/share their customized strategies and use them on Salvado Finance. The composability of strategies is the key elements of the Salvado protocol.
+3. Exchange
+
+   The Exchange contract implements the logic of token exchanging. For example, to exchange ETH on Uniswap with USDT, users have multiple ways: Dex, Dex Aggregator, Market Maker, among which, via Market Maker it can achieve zero slippage exchange.
+4. Oracle
+
+   The Oracle contract provides the pricing function for the Salvado protocol, ensuring the security of assets and keeping the token price from the Exchange with little deviation from the actual price. At the same time, Oracle provides with more investment methods, such as: limited auto-investment, grid trading, etc.
+5. Position
+
+   The Position contract manages all auto-investment, so users can create, update, suspend, and terminate their investment at any time.
+6. Relayer Service
+
+   Relayer service can be performed by anyone to help users pay gas fees and complete investment transactions, while they can get a 0.2% gas fee reward.
+
+## Project Logo
+
+![img](./docs/logos/logo_white_128.png)
+
+![img](./docs/logos/logo_black_128.png)
+
+![img](./docs/logos/Frame2.png)
+
+## Deliverables in Hackathon
+
+**On-Chain: Contracts**
+
+- `Broker`
+  - [x] Create Auto-Invest Position (`fn createPosition()`)
+  - [x] Execute Auto-Invest Position (`fn autoMatchPosition()`)
+- `Strategy`
+  - [x] DCA Strategy (`fn mintPositionNFT()`)
+- `Exchange`
+  - [x] Support dex Swap (eg.Uniswap) (`fn swapExactTokensForTokens()`)
+- `Position`
+  - [x] create Position (`fn createPosition()`)
+  - [x] Pause/Unpause Position (`fn rotatePosition()`)
+  - [x] Edit Position (`fn editPosition()`)
+  - [x] stop Position (`fn rotatePosition()`)
+
+**Off-Chain**
+- [x] Multi-chain high-value token historical price synchronization, analysis of historical return on investment
+- [x] Management of user position List
+- [x] Relayer Service
+
+**web frontend (react-native)**
+- [x] Tokens List
+- [x] Auto-investment creation process
+- [x] Auto-investment management process
+- [x] History of auto-investment
+
+## Team
+
+|Name|Function|GitHub|Twitter|
+|---------|---------|---------|---------|
+|Tyler|Tech|https://github.com/tyler2sv||
+|Muniz|Tech|https://github.com/1160007652||
+|Lester|Tech|https://github.com/HinadaC||
+|Walter|Tech|https://github.com/walter1129||
+|Jessica|UI/UX||@BFlAMbF1oUST0Bm|
+|Wendy|Operations||@CryptoWendyz|
+|Judis|Operations||@nft_sofa|
+|Hannah|Operations||@morninghannah_|

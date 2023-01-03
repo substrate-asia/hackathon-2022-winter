@@ -1,0 +1,13 @@
+server:
+  port: 8888
+
+#配置日志
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
+  file: D:\\logs\\cicada.log   #输出INFO ERROR WARN三个级别的日志信息
+

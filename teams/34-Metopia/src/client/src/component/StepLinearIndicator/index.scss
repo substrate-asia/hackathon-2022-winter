@@ -1,0 +1,51 @@
+@import '../../global.scss';
+
+.step-linear-indicator {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+
+    .step-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+
+        >.icon {
+            opacity: 0.3;
+            filter: brightness(1000%);
+        }
+
+        >.text {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 28px;
+            color: rgba(255, 255, 255, 0.3);
+            @include ellipsis(1);
+        }
+
+        .step-linker {
+            height: 2px;
+            width: 160px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        &.active {
+            >.icon {
+                opacity: 1;
+                filter: none;
+            }
+
+            >.text {
+                color: rgba(255, 255, 255);
+            }
+        }
+
+        &:last-of-type .step-linker {
+            display: none;
+        }
+    }
+}

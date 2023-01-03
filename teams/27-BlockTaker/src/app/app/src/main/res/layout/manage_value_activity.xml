@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.polkadot.bt.custom.AppToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/manager_wallet" />
+
+    <com.polkadot.bt.custom.FunctionItem
+        android:id="@+id/wallet_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:visibility="visible"
+        app:itemText="@string/wallet_name" />
+  <!--  <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/colorTitle"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="@string/wallet_name" />
+
+        <EditText
+            android:id="@+id/value_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@null"
+            android:gravity="right|center_vertical"
+            android:imeOptions="actionSend"
+            android:inputType="text"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:text="测试"
+            android:textColor="@color/black"
+            android:textColorHint="@color/colorTitle"
+            android:textSize="14sp" />
+
+    </RelativeLayout>-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="#DCDCE0"
+       />
+    <com.polkadot.bt.custom.FunctionItem
+        android:id="@+id/changepassword"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:itemSubTextVisibility="gone"
+        app:itemText="@string/change_password"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="#DCDCE0"
+        />
+    <com.polkadot.bt.custom.FunctionItem
+        android:id="@+id/backup_mnemonic"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:itemSubTextVisibility="gone"
+        app:itemText="@string/backup_mnemonic"
+        />
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="#DCDCE0"
+        />
+    <com.polkadot.bt.custom.FunctionItem
+        android:id="@+id/backup_key"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:itemSubTextVisibility="gone"
+        app:itemText="@string/backup_key"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="#DCDCE0"
+        />
+    <View
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        />
+    <TextView
+        android:id="@+id/tv_delete"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/delete_value"
+        android:layout_margin="20dp"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/corners5_primary"
+        android:gravity="center"/>
+
+</LinearLayout>

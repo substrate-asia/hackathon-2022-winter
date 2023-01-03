@@ -1,0 +1,42 @@
+.chain{
+    // width: 80%;
+    // margin-top: 48px;
+    .login_wallet{
+        // width: 90%;
+        // width: 800px;
+        height: 222px;
+        margin: 0 50px;
+        background-size: 100% 100%;
+    }
+    h6{
+        margin: 0 auto;
+        font-size: 32px;
+        color: #FFFFFF;
+        padding-top: 25px;
+        padding-bottom: 18px;
+
+        // padding-left: 40px;
+    }
+    ul{
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        li{
+            width: 18%;
+            display: flex;
+            height: 80px;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            border-radius:0px !important;
+            &:hover{
+                border:1px dashed #707070;
+            }
+            img{
+                width: 80%;
+                height: auto;
+                margin:  0;
+            }
+        }
+    }
+}

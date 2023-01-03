@@ -1,0 +1,187 @@
+.RiskDetail{
+    // width: 80%;
+    padding-top: 48px;
+    max-height: 102vh;
+    // overflow-y:scroll;
+    overflow-y:scroll;
+    .singe{
+        display: none;
+    }
+
+    .top_{
+        margin: 0 50px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 12px;
+        .po{
+            height: 24px;
+            background: #2A2D32;
+            border-radius: 8px 8px 8px 8px;
+            opacity: 1;
+            margin: 10px 10px;
+            color: #FFFFFF;
+        }
+        .mm{
+            margin-top: 8px;
+        }
+        img{
+            width:40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        span{
+            border-radius: 8px 8px 8px 8px;
+            color: #000000;
+            background: #FFD271;
+            margin-left: 50px;
+            opacity: 1;
+            width: 280px;
+            padding-left: 5px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+    }
+    .RiskDetail_title{
+        // height: 222px;
+        margin: 0 50px;
+        background: #1D2126;
+        background-size: 100% 100%;
+        color: #BEBEBE;
+        border-radius: 16px;
+        border: 1px solid #666666;
+        .title{
+            margin: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            padding-top: 10px;;
+        }
+    }
+    .RiskDetail_c{
+        // height: 222px;
+        margin: 0 50px;
+        background: #1D2126;
+        background-size: 100% 100%;
+        color: #BEBEBE;
+        border-radius: 16px;
+        border: 1px solid #666666;
+        padding-bottom: 50px;
+        .rug_pull{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 30px;
+            margin: 0 40px;
+            img {
+                // width: 160px;
+                height: 34px;;
+            }
+            span{
+                font-size: 20px;
+                font-weight: bold;
+                color: #FFFFFF;
+            }
+        }
+
+        ul{
+            border-radius: 16px;
+            border: 1px solid #666666;
+            padding-bottom: 10px;
+            background: #1D2126;
+            margin: 0 40px;
+            li{
+                overflow: hidden;
+                height: 50px;
+                margin: 0 auto;
+                border-radius: 5px;
+                // padding-top: 15px;
+                // padding-top: 15px;
+                line-height: 50px;
+                p{
+                    padding: 0;
+                    font-size: 14px;
+                    color: #fff;
+                    float: left;
+                    text-align: center;
+                    
+                }
+                .left{
+                    width: 85%;     
+                    white-space: nowrap;
+                    text-align: left;
+                    margin-left: 20px;
+
+                }
+                .right{
+                    // width: 10%;
+                    // text-align: right;
+
+                    .high  {
+                        line-height: 45px;
+                        width: 30px;
+                        height: 30px;
+                        background: #FE5266;
+                        opacity: 1;
+                        border-radius: 50%;
+                        margin-top: 10px;
+                        margin-left: 35px;
+                    }
+                    .middle  {
+                        line-height: 45px;
+                        width: 30px;
+                        height: 30px;
+                        background: #FFD271;
+                        opacity: 1;
+                        border-radius: 50%;
+                        margin-top: 10px;
+                        margin-left: 35px;
+                    }
+                    .low  {
+                        line-height: 45px;
+                        width: 30px;
+                        height: 30px;
+                        background: #2190A3;
+                        opacity: 1;
+                        border-radius: 50%;
+                        margin-top: 10px;
+                        margin-left: 35px;
+                    }
+                }
+               
+            }
+            .line{
+                border-bottom: 1px solid #2A2D32;
+            }
+           
+        }
+    }
+    
+
+    .risk_report_{
+        // height: 222px;
+        margin: 0 50px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 12px;
+        color:#FFFFFF;
+        padding: 20px 0px;
+        .span{
+            margin: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            padding-top: 10px;;
+        }
+        img{
+            width: 82px;
+            height: 32px;
+            margin: 0 5px;
+        }
+        
+        
+    }
+
+
+}

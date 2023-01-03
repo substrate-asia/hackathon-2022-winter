@@ -1,0 +1,15 @@
+version: 1.0
+name:
+stages:
+  template-init:
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/my-erc20
+      - name: template init
+        uses: git-checkout
+        with:
+          url: https://github.com/mohaijiang/truffle-webpack.git
+          branch: main
+

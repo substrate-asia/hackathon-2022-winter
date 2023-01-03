@@ -1,0 +1,16 @@
+@import '../../font.scss';
+
+.profile-reference {
+    margin-top: 40px;
+
+    >.title {
+        @include profile-title;
+    }
+
+    >.source-wrapper {
+        img {
+            height: 40px;
+            margin-top: 20px;
+        }
+    }
+}

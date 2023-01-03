@@ -1,0 +1,75 @@
+.FungiblesSubpage {
+    margin-top: 20px;
+}
+
+.FungiblesSubpageFooter {
+    margin-top: 40px;
+}
+
+.FungiblesSubpageFooterTitle {
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.FungiblesSubpageFooterImgWrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.FungiblesSubpageFooter img {
+    height: 40px;
+    margin-top: 20px;
+}
+
+.UniswapV3SummaryTitle {
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 36px;
+}
+
+.Portfolio table {
+    width: 100%;
+    text-align: left;
+}
+
+
+.Portfolio table th, .Portfolio table tr,.Portfolio table td, .Portfolio table {
+    border-collapse: collapse;
+    padding:0
+}
+
+.Portfolio table th {
+    text-align: left;
+    color: #666;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+
+.Portfolio table td {
+    text-align: left;
+    color: #888;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.FungiblesGroup {
+    margin-bottom: 20px;
+}
+
+.FungiblesStatsGroup{
+    display: flex;
+    gap:20px;
+    color: #888;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.FavTokenStats{
+    display: flex;
+    gap:40px;
+}
