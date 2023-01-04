@@ -106,8 +106,7 @@ object Utils {
     fun isMeta(): Boolean {
         val mtype = Build.MODEL // 手机型号
         val mtyb = Build.BRAND//手机品牌
-//        return "$mtyb&$mtype" == "VERTU&VTL-202201"
-        return false
+        return "$mtyb&$mtype" == "VERTU&VTL-202201"
     }
 
     /*

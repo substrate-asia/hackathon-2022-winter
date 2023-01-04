@@ -1,5 +1,6 @@
 package com.polkadot.bt.ui.dapp
 
+import android.content.Intent
 import android.text.TextUtils
 import android.view.View
 import com.bumptech.glide.Glide
@@ -26,6 +27,11 @@ class WalletConnectSessionActivity : BaseActivity<ActivityWalletConnectSessionBi
         override fun onFailure(throwable: Throwable) {
             setupView()
         }
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        setupView()
     }
 
     override fun initBinding(): ActivityWalletConnectSessionBinding = ActivityWalletConnectSessionBinding.inflate(layoutInflater)
