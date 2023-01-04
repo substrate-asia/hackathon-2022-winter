@@ -25,7 +25,7 @@ b = 2\sqrt{C}
 \end{array}\right.$$  
 
 The following *Figure 1* shows the difference between `O-AMM` and other AMM mechanisms, the related source code can be found [here](../src/O-AMM/):  
-![img](./assets/Figure_1.png)  
+![img](./assets/o-amm-curve.gif)  
 <p align="center">Figure.1 the curves of different AMM mechanisms</p>  
 
 The curve of `O-AMM` is symmetric about $x = y$ like other AMM curves, which is a basic feature of AMM because token $X$ and token $Y$ should be treated equivalently.  
