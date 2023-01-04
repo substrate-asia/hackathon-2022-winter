@@ -10,7 +10,7 @@ Our solution is different from the above. I will explain our solution just in th
 Firstly, we want to make a trading pair's "smoothly trading range" wider than Uniswap. As we know, the marketing curve $xy=k$ is very easy to go into the steep area.  
 Secondly, we want the marketing curve can be dynamically adapt to different situations, that is, when $x\approx y$ the marketing curve is closing to `Curve` and when $x$ differs from $y$ much we hope the curve is closing to `Uniswap`.  
 The following *equation 1* is the core mechanism of `O-AMM` algorithm:  
-$$\alpha(-(x^2+y^2)+bx+by)+(1-\alpha)C=2xy$$  
+$$\alpha(-(x^2+y^2)+bx+by)+2(1-\alpha)C=2xy$$  
 <p id="equation.1" align="center">Equation.1 the equation of O-AMM</p>  
 where,  
 
