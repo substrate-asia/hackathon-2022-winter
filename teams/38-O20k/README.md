@@ -92,6 +92,8 @@ The commitment verification protocol and consensus are underly mechanisms. The f
 
 The bottom is the off-chain synchronizer layer. The synchronizer is a very light off-chain procedure, and it just listens to the Omniverse events happening on-chain and makes the information synchronization. As everything in Omniverse paradigm is along with a commitment and is verified by cryptographic algorithms, there's no need to worry about synchronizers doing malicious things. So the off-chain part of `O20k` is indeed trust-free. Everyone can launch a synchronizer to get rewards by helping synchronize information.  
 
+In addition, we provide a [proof for the ultimate consistency](https://github.com/xiyu1984/o-amm/blob/main/docs/Proof-of-ultimate-consistency.md) for better understanding of the Omniverse Protocol.  
+
 ### logo
 ![img](./docs/assets/logo.png)  
 
