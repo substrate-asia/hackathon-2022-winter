@@ -81,11 +81,13 @@ DeSign aims to provide customers with decentralized e-signature and contract man
 
 ## Architecture
 1. Deployment diagrame
-![企业微信截图_16721345262945](https://user-images.githubusercontent.com/120092281/209648379-0e037f63-e6fe-49f2-bde1-f068135043ee.png)
+![企业微信截图_16728001355251](https://user-images.githubusercontent.com/120092281/210496402-b6aa72c0-f4e4-430e-a5b8-e7f58843f8d0.png)
+
 
 
 2. Funciton call diagrame
-![企业微信截图_1672134576107](https://user-images.githubusercontent.com/120092281/209648512-b0d0f5f0-34f5-4e59-b254-ae6def33dc3a.png)
+![企业微信截图_16728000583811](https://user-images.githubusercontent.com/120092281/210496310-50ab51da-e32d-4581-a692-0bdaee31dc2e.png)
+
 
 
 3. Signing Process & State Machine
@@ -113,20 +115,24 @@ DeSign aims to provide customers with decentralized e-signature and contract man
   <th>Name</th><th>Role</th><th>Responsibility</th>
   </tr>
   <tr>
-    <td>Terry</td><td>Team Leader & PO</td><td>Idea Generation, Product Design, Team Mgt.</td>
+    <td>Terry Tian</td><td>Team Leader & PO</td><td>Idea Generation, Product Design, Team Mgt.</td>
   </tr>
   <tr>
-    <td>Tom</td><td>Backend & Smart Contract Engineer</td><td>Backend API & Smart Contract Dev & R&D Project Mgt.</td>
+    <td>Tom Xiong</td><td>Backend & Smart Contract Engineer</td><td>Tech Architecture Design / Backend Dev. / Project Mgt.</td>
   </tr>
-<!--   <tr>
-    <td>Kaiho</td><td>Substrate Chain Engineer</td><td>Chain Infrastructure Dev.</td>
-  </tr> -->
   <tr>
     <td>Xing Ai</td><td>Fronted Engineer</td><td>Frontend & e-Signature Dev.</td>
+  </tr>
+   <tr>
+    <td>Jack Jiang</td><td>Smart Contract Engineer</td><td>CESS Storage Dev.</td>
+  </tr>
+   <tr>
+    <td>Soy Wang</td><td>Smart Contract Engineer</td><td>Kilt Did Dev.</td>
   </tr>
   <tr>
     <td>Nick</td><td>UI Designer</td><td>UI Design</td>
   </tr>
 </table>
+
 
 
