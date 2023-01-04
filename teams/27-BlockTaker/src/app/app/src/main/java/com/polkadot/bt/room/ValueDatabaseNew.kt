@@ -24,7 +24,7 @@ import kotlinx.coroutines.withContext
     version = 1,
     exportSchema = false
 )
-abstract class ValueDatabaseNew: RoomDatabase() {
+abstract class ValueDatabaseNew : RoomDatabase() {
     abstract fun valueDao(): ValueDaoNew
     abstract fun linkDao(): LinkDaoNew
 
@@ -41,13 +41,13 @@ abstract class ValueDatabaseNew: RoomDatabase() {
         }
     }
 
-    suspend fun isValueExist(info: String, type: String,link: String): Boolean {
+    suspend fun isValueExist(info: String, type: String, link: String): Boolean {
         return withContext(Dispatchers.IO) {
             val values = getAllValue()
             var isValueExist = false
             if (type == MNEMONIC) {
                 val infoList = info.split(" ").toMutableList()
-                values.forEach{
+                values.forEach {
                     val wordList = it.mnemonic.split(" ").toMutableList()
                     if (infoList.containsAll(wordList)) {
                         isValueExist = true
@@ -57,17 +57,17 @@ abstract class ValueDatabaseNew: RoomDatabase() {
             } else {
                 values.forEach {
                     it.linkList.forEach { it0 ->
-                        var key=String(it0.privateKey)
-                        var inputKey=info
-                        if (link!="BTC"){
-                           if (!key.startsWith("0x")) {
-                               key="0x$key"
-                           }
-                            if (!info.startsWith("0x")){
-                                inputKey="0x$inputKey"
+                        var key = String(it0.privateKey)
+                        var inputKey = info
+                        if (link != "BTC") {
+                            if (!key.startsWith("0x")) {
+                                key = "0x$key"
+                            }
+                            if (!info.startsWith("0x")) {
+                                inputKey = "0x$inputKey"
                             }
                         }
-                        if (key == inputKey&&it0.link==link) {
+                        if (key == inputKey && it0.link == link) {
                             isValueExist = true
                             return@forEach
                         }
@@ -90,16 +90,18 @@ abstract class ValueDatabaseNew: RoomDatabase() {
             setValue(id)
         }
     }
+
     suspend fun updateValueName(entity: ValueNameEntity) {
         withContext(Dispatchers.IO) {
             valueDao().updateValue(entity)
         }
     }
+
     suspend fun updateValuePassword(entity: ValuePasswordEntity) {
         withContext(Dispatchers.IO) {
             entity.password = AesUtil.Encrypt(String(entity.password)).toByteArray()
-            if (Utils.isMeta())
-                entity.password = VebZteKeyService.instance()?.service?.Encrypt(entity.password, Constants.INDEX_PWD)?: byteArrayOf()
+            if (VebZteKeyService.instance().isEnable())
+                entity.password = VebZteKeyService.instance().service?.Encrypt(entity.password, Constants.INDEX_PWD) ?: byteArrayOf()
             valueDao().updateValuePassword(entity)
         }
     }
@@ -122,9 +124,9 @@ abstract class ValueDatabaseNew: RoomDatabase() {
             valueDao().queryValueEntity(id)?.let { valueEntity ->
                 var password = valueEntity.password
                 var mnemonic = valueEntity.mnemonic
-                if (Utils.isMeta()) {
-                    password = VebZteKeyService.instance()?.service?.Decrypt(password, Constants.INDEX_PWD)?: byteArrayOf()
-                    mnemonic = VebZteKeyService.instance()?.service?.Decrypt(mnemonic, Constants.INDEX_MNEMONIC)?: byteArrayOf()
+                if (VebZteKeyService.instance().isEnable()) {
+                    password = VebZteKeyService.instance().service?.Decrypt(password, Constants.INDEX_PWD) ?: byteArrayOf()
+                    mnemonic = VebZteKeyService.instance().service?.Decrypt(mnemonic, Constants.INDEX_MNEMONIC) ?: byteArrayOf()
                 }
                 password = AesUtil.Decrypt(String(password)).toByteArray()
                 mnemonic = AesUtil.Decrypt(String(mnemonic)).toByteArray()
@@ -136,9 +138,9 @@ abstract class ValueDatabaseNew: RoomDatabase() {
                 value.isBackup = valueEntity.isBackup
                 linkDao().queryLinkEntitiesByValueId(valueEntity.id).let { list ->
                     list.forEach {
-                        if (Utils.isMeta()) {
-                            it.privateKey = VebZteKeyService.instance()?.service?.Decrypt(it.privateKey, Constants.INDEX_PRIVATE_KEY)?: byteArrayOf()
-                            it.mnemonic = VebZteKeyService.instance()?.service?.Decrypt(it.mnemonic, Constants.INDEX_MNEMONIC)?: byteArrayOf()
+                        if (VebZteKeyService.instance().isEnable()) {
+                            it.privateKey = VebZteKeyService.instance().service?.Decrypt(it.privateKey, Constants.INDEX_PRIVATE_KEY) ?: byteArrayOf()
+                            it.mnemonic = VebZteKeyService.instance().service?.Decrypt(it.mnemonic, Constants.INDEX_MNEMONIC) ?: byteArrayOf()
                         }
                         it.mnemonic = AesUtil.Decrypt(String(it.mnemonic)).toByteArray()
                         it.privateKey = AesUtil.Decrypt(String(it.privateKey)).toByteArray()
@@ -155,17 +157,17 @@ abstract class ValueDatabaseNew: RoomDatabase() {
         withContext(Dispatchers.IO) {
             link.privateKey = AesUtil.Encrypt(String(link.privateKey)).toByteArray()
             link.mnemonic = AesUtil.Encrypt(String(link.mnemonic)).toByteArray()
-            if (Utils.isMeta()) {
-                link.privateKey = VebZteKeyService.instance()?.service?.Encrypt(link.privateKey, Constants.INDEX_PRIVATE_KEY)?: byteArrayOf()
-                link.mnemonic = VebZteKeyService.instance()?.service?.Encrypt(link.mnemonic, Constants.INDEX_MNEMONIC)?: byteArrayOf()
+            if (VebZteKeyService.instance().isEnable()) {
+                link.privateKey = VebZteKeyService.instance().service?.Encrypt(link.privateKey, Constants.INDEX_PRIVATE_KEY) ?: byteArrayOf()
+                link.mnemonic = VebZteKeyService.instance().service?.Encrypt(link.mnemonic, Constants.INDEX_MNEMONIC) ?: byteArrayOf()
             }
             linkDao().insertLinkEntity(link)
         }
     }
 
-    suspend fun deleteCurrency(coinAddress:String,valueId: Long,channel:String){
-        withContext(Dispatchers.IO){
-            linkDao().deleteByCoinAddress(coinAddress,valueId,channel)
+    suspend fun deleteCurrency(coinAddress: String, valueId: Long, channel: String) {
+        withContext(Dispatchers.IO) {
+            linkDao().deleteByCoinAddress(coinAddress, valueId, channel)
         }
     }
 
@@ -177,11 +179,11 @@ abstract class ValueDatabaseNew: RoomDatabase() {
                 Log.e("ValeDatabase", "加密前${value.mnemonic}")
                 var password = AesUtil.Encrypt(value.password).toByteArray()
                 var mnemonic = AesUtil.Encrypt(value.mnemonic).toByteArray()
-                Log.e("ValeDatabase", "1加密后${String(mnemonic)}")
-                if (Utils.isMeta()) {
-                    password = VebZteKeyService.instance()?.service?.Encrypt(password, Constants.INDEX_PWD)?: byteArrayOf()
-                    mnemonic = VebZteKeyService.instance()?.service?.Encrypt(mnemonic, Constants.INDEX_MNEMONIC)?: byteArrayOf()
-                    Log.e("ValeDatabase", "2加密后${String(mnemonic)}")
+                Log.e("ValeDatabase", "step 1 加密后${String(mnemonic)}")
+                if (VebZteKeyService.instance().isEnable()) {
+                    password = VebZteKeyService.instance().service?.Encrypt(password, Constants.INDEX_PWD) ?: byteArrayOf()
+                    mnemonic = VebZteKeyService.instance().service?.Encrypt(mnemonic, Constants.INDEX_MNEMONIC) ?: byteArrayOf()
+                    Log.e("ValeDatabase", "step 2 加密后${String(mnemonic)}")
                 }
                 val id = valueDao().insertValueEntity(
                     ValueEntityNew(
@@ -195,11 +197,11 @@ abstract class ValueDatabaseNew: RoomDatabase() {
                 value.linkList.forEach {
                     it.privateKey = AesUtil.Encrypt(String(it.privateKey)).toByteArray()
                     it.mnemonic = AesUtil.Encrypt(String(it.mnemonic)).toByteArray()
-                    if (Utils.isMeta()) {
-                        val asd = VebZteKeyService.instance()?.service?.Test(123)?:999
+                    if (VebZteKeyService.instance().isEnable()) {
+                        val asd = VebZteKeyService.instance().service?.Test(123) ?: 999
                         ToastUtils.showShort(asd.toString())
-                        it.privateKey = VebZteKeyService.instance()?.service?.Encrypt(it.privateKey, Constants.INDEX_PRIVATE_KEY)?: byteArrayOf()
-                        it.mnemonic = VebZteKeyService.instance()?.service?.Encrypt(it.mnemonic, Constants.INDEX_MNEMONIC)?: byteArrayOf()
+                        it.privateKey = VebZteKeyService.instance().service?.Encrypt(it.privateKey, Constants.INDEX_PRIVATE_KEY) ?: byteArrayOf()
+                        it.mnemonic = VebZteKeyService.instance().service?.Encrypt(it.mnemonic, Constants.INDEX_MNEMONIC) ?: byteArrayOf()
                     }
                     linkDao().insertLinkEntity(
                         LinkEntityNew(
@@ -214,7 +216,7 @@ abstract class ValueDatabaseNew: RoomDatabase() {
                             fileName = it.fileName,
                             linkNumber = it.linkNumber,
                             linkPrice = it.linkPrice,
-                            coinAddress=""    ,
+                            coinAddress = "",
                             isSelect = true,
                             channel = it.channel,
                             decimals = it.decimals
@@ -229,17 +231,18 @@ abstract class ValueDatabaseNew: RoomDatabase() {
             1L
         }
     }
+
     @Transaction
-    suspend fun updateValueLink(valueId :Long,list: List<LinkEntityNew>) {
+    suspend fun updateValueLink(valueId: Long, list: List<LinkEntityNew>) {
         return withContext(Dispatchers.IO) {
             try {
 //                linkDao().deleteByValueId(valueId)
                 list.forEach {
                     it.privateKey = AesUtil.Encrypt(String(it.privateKey)).toByteArray()
                     it.mnemonic = AesUtil.Encrypt(String(it.mnemonic)).toByteArray()
-                    if (Utils.isMeta()) {
-                        it.privateKey = VebZteKeyService.instance()?.service?.Encrypt(it.privateKey, Constants.INDEX_PRIVATE_KEY)?: byteArrayOf()
-                        it.mnemonic = VebZteKeyService.instance()?.service?.Encrypt(it.mnemonic, Constants.INDEX_MNEMONIC)?: byteArrayOf()
+                    if (VebZteKeyService.instance().isEnable()) {
+                        it.privateKey = VebZteKeyService.instance().service?.Encrypt(it.privateKey, Constants.INDEX_PRIVATE_KEY) ?: byteArrayOf()
+                        it.mnemonic = VebZteKeyService.instance().service?.Encrypt(it.mnemonic, Constants.INDEX_MNEMONIC) ?: byteArrayOf()
                     }
                     linkDao().insertLinkEntity(
                         LinkEntityNew(
@@ -254,7 +257,7 @@ abstract class ValueDatabaseNew: RoomDatabase() {
                             fileName = it.fileName,
                             linkNumber = it.linkNumber,
                             linkPrice = it.linkPrice,
-                            coinAddress=""    ,
+                            coinAddress = "",
                             isSelect = true,
                             channel = ""
                         )
