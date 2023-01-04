@@ -31,6 +31,40 @@ The following *Figure 1* shows the difference between `O-AMM` and other AMM mech
 The curve of `O-AMM` is symmetric about $x = y$ like other AMM curves, which is a basic feature of AMM because token $X$ and token $Y$ should be treated equivalently.  
 The curve of `O-AMM` lies between `Uniswap` and `Curve`, so in general, it is able to make a dynamic balance between price sensitivity and smoother trading.  
 
+#### General Situation
+For a more general situation, there will be arbitrary number of assets in one pool. Suppose $N$ assets $\mathbf{x}=\{x_1,x2,...,x_n\}$ are in a pool. *Equation 1* changes to *Equation 2* as follow:  
+
+$$MS={\alpha}MS+{\alpha}MSn(b-S)+(1-{\alpha})CS$$   
+<p id="equation.2" align="center">Equation.2 More general expression of O-AMM</p> 
+
+where:  
+* variables $M$, $S$ and $\alpha$ are as below:  
+
+$$\left \{ \begin {array}{lcl}
+{\alpha}=\frac{\prod{x_i}}{(\frac{\sum{x_i}}{n})^n}=\frac{M}{(\frac{S}{n})^n} \\  
+M=\prod{x_i} \\  
+S=\sum{x_i} \\  
+\end{array}\right.$$
+
+* constans $C$ and $b$ are as below, which are only determined by the initial value of the reserves and every time the liquidity is deposited or withdrawn:  
+
+$$\left \{ \begin {array}{lcl}
+C=\prod{x_{i}^{init}} \\ 
+b=n\sqrt[n]{C} 
+\end{array}\right.$$
+
+**Note that:**  
+* When a swap happens(suppose we use $x_i$ to exchange $x_j$), according to the [equation.2](#equation.2), we can express $M$ and $S$ with just one variable $x_j$, and solving against $x_j$ will be a very easy procedure, just one step. Much easier than what happened in [curve V2](https://classic.curve.fi/files/crypto-pools-paper.pdf).  
+* Calculate the price pairs in this pool will be easy too. Note that we have  
+
+    $$F(\mathbf{x})=({\alpha}-1)MS+{\alpha}MSn(b-S)+(1-{\alpha})CS$$  
+
+    and then:  
+
+    $$\frac{dx_i}{dx_j}=-\frac{F_{x_j}}{F_{x_i}}$$  
+
+    and due to the symmetry of $F(\mathbf{x})$, we only need to perform the derivation process once.  
+
 ### Gas Mechanism
 Solving *equation 1* on-chain is expensive, and we will provide a verifiable computation<sup>[3]</sup> mechanism to make it.  
 General VC (verifiable computation) is complex, but we provide a simple way to solve this customization issue in our situation.    
