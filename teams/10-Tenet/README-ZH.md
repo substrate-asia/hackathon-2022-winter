@@ -4,7 +4,7 @@
 
 项目立项日期：2022.11
 
-## 项目整体简介
+## 项目整体简介 &nbsp;&nbsp;&nbsp;&nbsp;👉[videown演示视频](http://13.212.109.154/play/9854db7502bf5c69af6a1890f440f71f1c3700637f918c116f702d270f16c20a)
 
 ![logo-light-wbg](./assets/logo-light-wbg.png)
 
@@ -25,7 +25,7 @@ React.js、Polkadot.js、antd UI、golang、cess-sdk-go
 ### Demo展示
 
 1. 操作教程，请参见 [videown操作教程](./docs/videown操作教程.md)；
-2. 演示视频，请参见 [videown演示视频](./docs/videown_demo.mp4)；
+2. 演示视频，请参见 [videown演示视频](http://13.212.109.154/play/9854db7502bf5c69af6a1890f440f71f1c3700637f918c116f702d270f16c20a)；
 
 ## 黑客松期间计划完成的事项
 
