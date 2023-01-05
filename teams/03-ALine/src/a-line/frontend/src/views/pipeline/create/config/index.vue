@@ -53,6 +53,10 @@
                     <DeployContract :stage="data.stage" :index="index" :network="item.eleValues.network"
                       :privateKey="(item.eleValues['private-key'])" @setYamlCode="setYamlCode"></DeployContract>
                   </div>
+                  <div v-else-if="item.eleName === 'deploy-ink-contract'">
+                    <DeployInkContract :stage="data.stage" :index="index" :network="item.eleValues.network"
+                      :privateKey="(item.eleValues['mnemonic'])" @setYamlCode="setYamlCode"></DeployInkContract>
+                  </div>
                   <div v-else-if="item.eleName === 'shell'">
                     <Shell :stage="data.stage" :index="index" :run="item.eleValues.run" :runsOn="item.eleValues.runsOn"
                       @setYamlCode="setYamlCode"></Shell>
@@ -79,10 +83,10 @@
       </div>
       <div class="mt-8 text-center">
         <a-button @click="lastStep" class="normal-button">{{
-            $t("template.lastBtn")
+          $t("template.lastBtn")
         }}</a-button>
         <a-button type="primary" @click="submitData" class="ml-4">{{
-            $t("template.submitBtn")
+          $t("template.submitBtn")
         }}</a-button>
       </div>
     </div>
@@ -100,6 +104,7 @@ import Artifactory from "./components/Artifactory.vue";
 import Checkbox from './components/Checkbox.vue'
 import Workdir from "./components/Workdir.vue";
 import DeployContract from "./components/DeployContract.vue";
+import DeployInkContract from "./components/DeployInkContract.vue";
 import Shell from "./components/Shell.vue";
 import { message } from "ant-design-vue";
 

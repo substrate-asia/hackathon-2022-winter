@@ -78,7 +78,7 @@ func (a *TruffleDeployAction) Hook() (*model.ActionResult, error) {
 	}
 	command := "truffle deploy"
 	if a.network != "default" {
-		command = fmt.Sprintf("truffle migrate --network  %s", a.network)
+		command = fmt.Sprintf("truffle migrate --reset --network  %s", a.network)
 	}
 	out, err := a.ExecuteStringCommand(command, workdir)
 	a.output.WriteLine(out)

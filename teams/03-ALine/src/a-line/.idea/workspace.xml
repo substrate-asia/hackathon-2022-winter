@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1daf49dc-58f7-4e2e-9ec3-b17c3d8498ee" name="Changes" comment="Template modification" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///opt/homebrew/Cellar/go/1.19.3/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="v2/online-api" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HwpUKCC7ZdCt9vOa7KLRDelq2i" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;configurable..is.expanded&quot;: &quot;false&quot;,
+    &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/abing&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/abing/Develop/GO/GOPATH/src/github.com/Hamster/a-line/frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/engine/consts" />
+      <recent name="$PROJECT_DIR$/engine/model" />
+      <recent name="$PROJECT_DIR$/pkg/service/template/des" />
+      <recent name="$PROJECT_DIR$/pkg/service/template/templates" />
+      <recent name="$PROJECT_DIR$/pkg/action" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.Web">
+    <configuration name="引擎" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="a-line" />
+      <working_directory value="$PROJECT_DIR$" />
+      <parameters value="--file examples/slither.yml" />
+      <kind value="PACKAGE" />
+      <package value="github.com/hamster-shared/a-line" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Web" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="a-line" />
+      <working_directory value="$PROJECT_DIR$" />
+      <parameters value="daemon" />
+      <kind value="DIRECTORY" />
+      <package value="github.com/hamster-shared/a-line" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_GetRedundantPath in github.com/hamster-shared/a-line/pkg/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="a-line" />
+      <working_directory value="$PROJECT_DIR$/pkg/utils" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/hamster-shared/a-line/pkg/utils" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTest_GetRedundantPath\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="job | build#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test/job.http" index="25" requestIdentifier="build#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="job | check" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test/job.http" index="24" requestIdentifier="check" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="job | create projects" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test/job.http" index="31" requestIdentifier="create projects" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.Web" />
+      <item itemvalue="Go Build.引擎" />
+      <item itemvalue="Go Test.Test_GetRedundantPath in github.com/hamster-shared/a-line/pkg/utils" />
+      <item itemvalue="HTTP Request.job | build#2" />
+      <item itemvalue="HTTP Request.job | check" />
+      <item itemvalue="HTTP Request.job | create projects" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.job | create projects" />
+        <item itemvalue="HTTP Request.job | check" />
+        <item itemvalue="HTTP Request.job | build#2" />
+        <item itemvalue="Go Test.Test_GetRedundantPath in github.com/hamster-shared/a-line/pkg/utils" />
+        <item itemvalue="Go Build.引擎" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="engine uses modify" />
+    <MESSAGE value="Compressed file type" />
+    <MESSAGE value="Artifactory url" />
+    <MESSAGE value="Artifactory save path" />
+    <MESSAGE value="ipfs upload" />
+    <MESSAGE value="ipfs upload file" />
+    <MESSAGE value="sol-profiler engine" />
+    <MESSAGE value="solhint engine" />
+    <MESSAGE value="mythril engine" />
+    <MESSAGE value="slither engine" />
+    <MESSAGE value="moonbeam" />
+    <MESSAGE value="ink" />
+    <MESSAGE value="gear" />
+    <MESSAGE value="solhint check update" />
+    <MESSAGE value="check result Standardization" />
+    <MESSAGE value="Template Update" />
+    <MESSAGE value="check result save db" />
+    <MESSAGE value="--reset" />
+    <MESSAGE value="Template modification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Template modification" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/a_line$Test_GetRedundantPath_in_github_com_hamster_shared_a_line_pkg_utils.out" NAME="Test_GetRedundantPath in github.com/hamster-shared/a-line/pkg/utils Coverage Results" MODIFIED="1670918150980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

@@ -1,21 +1,21 @@
 version: 1.0
 name: my-erc20
 stages:
-  template-init:
+  Initialization:
     steps:
       - name: set workdir
         uses: workdir
         with:
-          workdir: $HOME/my-erc20
+          workdir: $HOME/tmp/my-erc20
       - name: template init
         uses: git-checkout
         with:
           url: https://github.com/abing258/truffle-moonbeam-MC.git
           branch: master
 
-  compile:
+  Build Contract:
     needs:
-      - template-init
+      - Initialization
     steps:
       - name: compile
         run: |
@@ -23,9 +23,9 @@ stages:
           npm install -g truffle
           truffle compile
 
-  solidity-lint:
+  Check Solidity Contract:
     needs:
-      - compile
+      - Build Contract
     steps:
       - name: solidity-check
         run: |
@@ -33,9 +33,9 @@ stages:
           solium --init
           solium -d contracts/
 
-  ganache:
+  Start Local Chain:
     needs:
-      - compile
+      - Check Solidity Contract
     steps:
       - name: ganache
         run: |
@@ -46,17 +46,17 @@ stages:
           nohup ganache > ganache.log 2>&1& echo $! > command.pid
           sleep 2
 
-  contract-test:
+  Test Contract:
     needs:
-      - ganache
+      - Start Local Chain
     steps:
       - name: deploy
         run: |
           truffle test
 
-  deploy-contract:
+  Deploy Contract:
     needs:
-      - template-init
+      - Test Contract
     steps:
       - name: deploy-contract
         uses: deploy-contract
@@ -65,18 +65,18 @@ stages:
           network: moonbase
           private-key: c2790be05286f9f90f43f9fe9e3bf06c1394d480c3bf5233450a8e6b0a748fbe
 
-  compile-node:
+  Build Front-End:
     needs:
-      - deploy-contract
+      - Deploy Contract
     steps:
       - name: compile
         run: |
           cd app && npm install
           npm run build
 
-  deploy-frontend:
+  Deploy Front-End:
     needs:
-      - compile-node
+      - Build Front-End
     steps:
       - name: deploy
         run: |
@@ -85,4 +85,5 @@ stages:
             kill -9 `cat node.pid`  || (echo 'No such process ')
           fi
           nohup  npm run dev  > node.log 2>&1& echo $! > node.pid
+          echo 'frontend url is http://localhost:8081'
           sleep 2
