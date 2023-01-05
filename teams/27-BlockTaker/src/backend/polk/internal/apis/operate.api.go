@@ -22,7 +22,7 @@ func (t *ApiOperate) SaveNominator(c *gin.Context) {
 	}
 
 	if len(req.ValidatorAddress) == 0 {
-		c.JSON(200, resp.Error(0, errors.New("choose validators")))
+		c.JSON(200, resp.Error(0, errors.New("请选择验证者")))
 		return
 	}
 	var res define.ModelNominator
@@ -31,7 +31,7 @@ func (t *ApiOperate) SaveNominator(c *gin.Context) {
 			StashAddress:     req.StashAddress,
 			ValidatorAddress: strings.Join(req.ValidatorAddress, ","),
 		}).Error; err != nil {
-			c.JSON(200, resp.Error(0, errors.New("save fail")))
+			c.JSON(200, resp.Error(0, errors.New("信息保存失败")))
 			return
 		}
 	} else {
@@ -39,7 +39,7 @@ func (t *ApiOperate) SaveNominator(c *gin.Context) {
 			StashAddress:     req.StashAddress,
 			ValidatorAddress: strings.Join(req.ValidatorAddress, ","),
 		}).Error; err != nil {
-			c.JSON(200, resp.Error(0, errors.New("save fail")))
+			c.JSON(200, resp.Error(0, errors.New("信息保存失败")))
 			return
 		}
 	}
@@ -54,7 +54,7 @@ func (t *ApiOperate) CancelNominator(c *gin.Context) {
 		return
 	}
 	if err := define.Db.Delete(&define.ModelNominator{}, "stash_address = ?", req.StashAddress).Error; err != nil {
-		c.JSON(200, resp.Error(0, errors.New("del fail")))
+		c.JSON(200, resp.Error(0, errors.New("信息删除失败")))
 		return
 	}
 	c.JSON(200, resp.Success(0))
@@ -68,7 +68,7 @@ func (t *ApiOperate) NominatorOwnValidators(c *gin.Context) {
 	}
 	var res define.ModelNominator
 	if err := define.Db.Where("stash_address = ?", req.StashAddress).Find(&res).Error; err != nil {
-		c.JSON(200, resp.Error(0, errors.New("del fail")))
+		c.JSON(200, resp.Error(0, errors.New("信息删除失败")))
 		return
 	}
 	c.JSON(200, resp.Success(0, gin.H{
@@ -90,3 +90,18 @@ func (t *ApiOperate) FindNominator(c *gin.Context) {
 		"nominator_256":  v3,
 	}))
 }
+
+// 验证者排行
+//func (t *ApiOperate) ValidatorRank(c *gin.Context) {
+//	var req validatorsRankReq
+//	if err := c.ShouldBind(&req); err != nil {
+//		c.JSON(200, resp.Error(0, err))
+//		return
+//	}
+//	res, err := t.operate.ValidatorRank(req.Balance)
+//	if err != nil {
+//		c.JSON(200, resp.Error(0, err))
+//		return
+//	}
+//	c.JSON(200, resp.Success(0, res))
+//}

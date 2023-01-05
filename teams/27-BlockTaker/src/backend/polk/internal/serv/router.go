@@ -30,6 +30,7 @@ func (t *Router) setRouter(r *gin.Engine) {
 			g.POST("save_nominator", t.apiOperate.SaveNominator)
 			g.GET("cancel_nominator", t.apiOperate.CancelNominator)
 			g.GET("find_nominator", t.apiOperate.FindNominator)
+			//g.GET("validator_rank", t.apiOperate.ValidatorRank)
 		}
 	}
 
