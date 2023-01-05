@@ -4,7 +4,7 @@ Project Name：VIDEOWN
 
 Project Initiation Date：2022.11
 
-## Overall introduction of the project
+## Overall introduction of the project &nbsp;&nbsp;&nbsp;&nbsp;👉[videown demo video](http://13.212.109.154/play/9854db7502bf5c69af6a1890f440f71f1c3700637f918c116f702d270f16c20a)
 
 ![logo-light-wbg](./assets/logo-light-wbg.png)
 
@@ -25,7 +25,7 @@ Please view [videown technology architecture](./docs/videown_technology_artchite
 ### Demo Display
 
 1. Please refer to [videown operation tutorial](./docs/videown_operation_tutorial.md) for operation tutorial；
-2. Demo video, see  [videown demo video](./docs/videown_demo.mp4)；
+2. Demo video, see  [videown demo video](http://13.212.109.154/play/9854db7502bf5c69af6a1890f440f71f1c3700637f918c116f702d270f16c20a)；
 
 ## Items planned to be completed during hackathon
 
