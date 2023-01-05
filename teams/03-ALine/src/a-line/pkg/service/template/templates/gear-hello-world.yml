@@ -1,64 +1,63 @@
 version: 1.0
 name: my-gear-hello-world
 stages:
-  clone-code-hello-world:
+  Initialization:
     steps:
       - name: set workdir
         uses: workdir
         with:
-          workdir: $HOME/workdir/my-gear/hello-world
+          workdir: $HOME/tmp/my-gear/hello-world
       - name: git clone gear hello world
         uses: git-checkout
         with:
           url: https://github.com/jlvihv/gear-hello-world
-          branch: main
-  clone-code-deploy:
-    steps:
+          branch: develop
       - name: set workdir
         uses: workdir
         with:
-          workdir: $HOME/workdir/my-gear/gear-deploy
+          workdir: $HOME/tmp/my-gear/gear-deploy
       - name: git clone gear deploy script
         uses: git-checkout
         with:
           url: https://github.com/jlvihv/gear-deploy
-          branch: hello-world
+          branch: hello-world-use-mnemonic
 
-  compile:
+  Build Contract:
     needs:
-      - clone-code-hello-world
-      - clone-code-deploy
+      - Initialization
     steps:
       - name: set workdir
         uses: workdir
         with:
-          workdir: $HOME/workdir/my-gear/hello-world
+          workdir: $HOME/tmp/my-gear/hello-world
       - name: make hello world
         run: |
           make
 
-  upload:
+  Upload Contract:
     needs:
-      - compile
+      - Build Contract
     steps:
       - name: set workdir
         uses: workdir
         with:
-          workdir: $HOME/workdir/my-gear/gear-deploy
+          workdir: $HOME/tmp/my-gear/gear-deploy
       - name: gear deploy
         run: |
           export NODE_TLS_REJECT_UNAUTHORIZED=0
+          export MNEMONIC=//Alice
+          export PROVIDER_ADDRESS=wss://rpc-node.gear-tech.io
           npm install
           npm run upload
 
-  frontend:
+  Build Front-End:
     needs:
-      - upload
+      - Upload Contract
     steps:
       - name: set workdir
         uses: workdir
         with:
-          workdir: $HOME/workdir/my-gear/hello-world/frontend
+          workdir: $HOME/tmp/my-gear/hello-world/frontend
       - name: make hello world frontend
         run: |
           cp .env.example .env
@@ -67,8 +66,20 @@ stages:
           cat ../../gear-deploy/metaString.txt >> .env
           yarn
           yarn add @polkadot/util-crypto
+          
+  Deploy Front-End:
+    needs:
+      - Build Front-End
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/tmp/my-gear/hello-world/frontend
+      - name: make hello world frontend
+        run: |
           if [ -f "gear_node.pid" ]; then
             kill -9 `cat gear_node.pid`  || (echo 'No such process ')
           fi
           nohup yarn run start > node.log 2>&1& echo $! > gear_node.pid
+          echo 'frontend url is http://localhost:3000'
           sleep 2

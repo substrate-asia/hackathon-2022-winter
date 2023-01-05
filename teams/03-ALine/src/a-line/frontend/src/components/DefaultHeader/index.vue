@@ -1,7 +1,7 @@
 <template>
   <div class="default-header h-[64px] bg-[#ccc] flex justify-between">
     <div>
-      <img src="@/assets/images/logo.jpg" class="h-[28px] mt-[18px] mb-[18px] cursor-pointer" @click="goHome" />
+      <img src="@/assets/images/logo.png" class="h-[28px] mt-[18px] mb-[18px] cursor-pointer" @click="goHome" />
     </div>
     <div>
       <a-button @click="changeLangZh" class="align-middle" :class="languageZhClick == 'true' ? 'changeZh' : 'changeEn'">

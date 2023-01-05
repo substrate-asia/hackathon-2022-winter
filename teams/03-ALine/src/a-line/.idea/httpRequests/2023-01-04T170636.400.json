@@ -1,0 +1,5 @@
+{
+  "code": 400,
+  "message": "POST https://api.github.com/repos/jian-guo-s/truffle-webpack/generate: 422 Unprocessable Entity [{Resource: Field: Code: Message:Could not clone: Name already exists on this account}]",
+  "data": null
+}

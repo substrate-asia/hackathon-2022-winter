@@ -1,7 +1,7 @@
 version: 1.0
 name: ink-erc20
 stages:
-  template-init:
+  Initialization:
     steps:
       - name: set workdir
         uses: workdir
@@ -12,30 +12,6 @@ stages:
         with:
           url: https://github.com/abing258/ink-erc20.git
           branch: master
-
-  compile:
-    needs:
-      - template-init
-    steps:
-      - name: compile
-        run: |
-          cargo +nightly contract build
-
-  deploy-contract:
-    needs:
-      - compile
-    steps:
-      - name: deploy-ink-contract
-        uses: deploy-ink-contract
-        with:
-          ## network的值有：Local,Rococo,Shibuya,Shiden
-          network: Local
-          mnemonic:
-
-  frontend-init:
-    needs:
-      - deploy-contract
-    steps:
       - name: set workdir
         uses: workdir
         with:
@@ -46,15 +22,51 @@ stages:
           url: https://github.com/abing258/polkadot-js-apps.git
           branch: master
 
-  deploy-frontend:
+
+  Build Contract:
     needs:
-      - frontend-init
+      - Initialization
     steps:
-      - name: deploy-frontend
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/tmp/ink-erc20
+      - name: Build Contract
+        run: |
+          cargo +nightly contract build
+
+  Deploy Contract:
+    needs:
+      - Build Contract
+    steps:
+      - name: Deploy Contract
+        uses: deploy-ink-contract
+        with:
+          ## network的值有：Local,Rococo,Shibuya,Shiden
+          network: Local
+          mnemonic: laptop lyrics puppy only conduct frog little test tail atom foil wolf
+
+  Build Front-End:
+    needs:
+      - Deploy Contract
+    steps:
+      - name: set workdir
+        uses: workdir
+        with:
+          workdir: $HOME/tmp/polkadot
+      - name: Build Front-End
         run: |
           yarn install
+
+  Deploy Front-End:
+    needs:
+      - Build Front-End
+    steps:
+      - name: Deploy Front-End
+        run: |
           if [ -f "polkadot_node.pid" ]; then
             kill -9 `cat polkadot_node.pid`  || (echo 'No such process ')
           fi
           nohup yarn run start > node.log 2>&1& echo $! > polkadot_node.pid
+          echo 'frontend url is http://localhost:3000'
           sleep 2
