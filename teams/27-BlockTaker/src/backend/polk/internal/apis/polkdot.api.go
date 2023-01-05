@@ -8,21 +8,20 @@ import (
 
 type ApiPolkdot struct {
 	subScan utils.SubScan
+	operate utils.Operate
 }
 
 func (t *ApiPolkdot) GetValidators(c *gin.Context) {
-	var req getValidatorsReq
+	var req validatorsRankReq
 	if err := c.ShouldBind(&req); err != nil {
 		c.JSON(200, resp.Error(0, err))
 		return
 	}
-
-	res, err := t.subScan.GetValidators(req.Balance)
+	res, err := t.operate.ValidatorRank(req.Balance)
 	if err != nil {
 		c.JSON(200, resp.Error(0, err))
 		return
 	}
-
 	c.JSON(200, resp.Success(0, res))
 }
 

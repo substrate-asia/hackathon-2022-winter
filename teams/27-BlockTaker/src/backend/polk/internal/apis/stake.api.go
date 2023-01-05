@@ -5,7 +5,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"polk-p2/define"
 	"polk-p2/internal/utils"
-	"strconv"
 	"time"
 	"tools/resp"
 )
@@ -22,14 +21,15 @@ func (a *ApiStake) SaveStake(c *gin.Context) {
 	}
 	if err := define.Db.Create(&define.ModelBonded{
 		StashAddress: req.StashAddress,
-		Amount:       strconv.FormatFloat(req.Amount, 'f', -1, 64),
+		Amount:       req.Amount,
 		TxHash:       req.TxHash,
 		Status:       0,
 	}).Error; err != nil {
-		c.JSON(200, resp.Error(0, errors.New("save fail")))
+		c.JSON(200, resp.Error(0, errors.New("info save failed")))
 		return
 	}
 	c.JSON(200, resp.Success(0))
+	return
 }
 
 func (a *ApiStake) GetStake(c *gin.Context) {
@@ -40,7 +40,7 @@ func (a *ApiStake) GetStake(c *gin.Context) {
 	}
 	var res []define.ModelBonded
 	if err := define.Db.Where("stash_address = ? and status = 1", req.StashAddress).Find(&res).Error; err != nil {
-		c.JSON(200, resp.Error(0, errors.New("save fail")))
+		c.JSON(200, resp.Error(0, errors.New("info save failed")))
 		return
 	}
 	total := "0"
@@ -62,7 +62,7 @@ func (a *ApiStake) DelWithdrawBonded(c *gin.Context) {
 	}
 	t := time.Now().Add(-12 * time.Hour).Unix()
 	if err := define.Db.Where("created_at <= ? and stash_address = ? and status = 1", t, req.StashAddress).Delete(&define.ModelBonded{}).Error; err != nil {
-		c.JSON(200, resp.Error(0, errors.New("del fail")))
+		c.JSON(200, resp.Error(0, errors.New("info delete failed")))
 		return
 	}
 	c.JSON(200, resp.Success(0))

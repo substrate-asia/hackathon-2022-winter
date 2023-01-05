@@ -65,14 +65,14 @@ type PolkValidatorItem struct {
 }
 
 type CustomValidator struct {
-	Address             string  `json:"address"`
-	BondedTotal         float64 `json:"bonded_total"`
-	Identity            bool    `json:"identity"`
-	ValidatorPrefsValue float64 `json:"validator_prefs_value"`
-	CountNominators     int     `json:"count_nominators"`
-	NominatorsMin       float64 `json:"nominators_min"`
-	RewardPoint         int     `json:"reward_point"`
-	Reward              float64 `json:"reward"`
+	Address             string  `json:"address"`               //质押账户
+	BondedTotal         string  `json:"bonded_total"`          //质押总额
+	Identity            bool    `json:"identity"`              //是否认证
+	ValidatorPrefsValue string  `json:"validator_prefs_value"` //佣金
+	CountNominators     int     `json:"count_nominators"`      //提名人数量
+	NominatorsMin       float64 `json:"nominators_min"`        //最小提名人质押
+	RewardPoint         int     `json:"reward_point"`          //评分
+	Reward              float64 `json:"reward"`                //收益算法
 }
 
 type PolkNominatorRes struct {
@@ -306,4 +306,33 @@ type PolkExtrinsicInfoResData struct {
 	Nonce              int    `json:"nonce"`
 	ExtrinsicHash      string `json:"extrinsic_hash"`
 	Success            bool   `json:"success"`
+}
+
+// 收益模型
+type PolkRewardRes struct {
+	Code        int    `json:"code"`
+	Message     string `json:"message"`
+	GeneratedAt int    `json:"generated_at"`
+	Data        struct {
+		Count int              `json:"count"`
+		List  []PolkRewardItem `json:"list"`
+	} `json:"data"`
+}
+
+// 收益条目
+type PolkRewardItem struct {
+	Account        string `json:"account"`
+	Amount         string `json:"amount"`
+	BlockNum       int    `json:"block_num"`
+	BlockTimestamp int    `json:"block_timestamp"`
+	EventId        string `json:"event_id"`
+	EventIdx       int    `json:"event_idx"`
+	EventIndex     string `json:"event_index"`
+	EventMethod    string `json:"event_method"`
+	ExtrinsicHash  string `json:"extrinsic_hash"`
+	ExtrinsicIdx   int    `json:"extrinsic_idx"`
+	ExtrinsicIndex string `json:"extrinsic_index"`
+	ModuleId       string `json:"module_id"`
+	Params         string `json:"params"`
+	Stash          string `json:"stash"`
 }

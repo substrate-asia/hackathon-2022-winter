@@ -4,6 +4,10 @@ type getValidatorsReq struct {
 	Balance float64 `json:"balance" form:"balance"`
 }
 
+type validatorsRankReq struct {
+	Balance float64 `json:"balance" form:"balance"`
+}
+
 type getNominatorInfoReq struct {
 	Address string `json:"address" form:"address" binding:"required"`
 }
@@ -30,9 +34,9 @@ type getValidatorInfoReq struct {
 }
 
 type saveUnbondedReq struct {
-	StashAddress string  `json:"stash_address" binding:"required"`
-	Amount       float64 `json:"amount"`
-	TxHash       string  `json:"tx_hash"`
+	StashAddress string `json:"stash_address" binding:"required"`
+	Amount       string `json:"amount"`
+	TxHash       string `json:"tx_hash"`
 }
 
 type findUnbondNumsReq struct {
