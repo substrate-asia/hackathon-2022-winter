@@ -131,9 +131,11 @@ Everything in the [plan](#plan) has beed finished.
   - [pallet-OmniverseToken](./src/pallets/omni-factory/)
   - [pallet-OmniverseSwap](./src/pallets/omni-swap/)
 - **Algorithm**
-  - [O-AMM](./src/O-AMM/)
+  - [O-AMM source](./src/O-AMM/)
+  - In this stage, we have designed and made out an intuitive [prototype](https://github.com/xiyu1984/o-amm/blob/main/solving.py) of the Omniverse AMM algorithm.  
+  - Besides, we also provide an [on-chain prototype](https://github.com/xiyu1984/o-amm) for the `off-chain calculation, and on-chain verification` based on a specific verifiable computation, which can be tested manually through an [operation tutorial](https://github.com/xiyu1984/O-AMM-ParaSim/tree/main/off-chain-calc).
 - **Client**
-  - Source code [Command-Line Interface](./src/omniverse-swap-tools/), and [tutorial](./docs/README.md).
+  - Source code [Command-Line Interface](https://github.com/virgil2019/omniverse-swap-tools), and [tutorial](./docs/README.md).
   - Souce code of [EVM Client](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts).
 
 - [**Demo Video**](https://omniverse.oss-cn-hangzhou.aliyuncs.com/omniverse-swap.mp4)
