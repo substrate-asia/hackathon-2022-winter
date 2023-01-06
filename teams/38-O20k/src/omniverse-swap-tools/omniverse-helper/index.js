@@ -31,8 +31,6 @@ const TransferTokenOp = Struct({
     amount: u128,
 });
 
-const TOKEN_ID = [4];
-
 const TRANSFER = 1;
 const MINT = 3;
 
@@ -126,7 +124,7 @@ async function mint(tokenId, to, amount) {
     console.log(txData.signature);
     // test end
 
-    let result = await api.tx.omniverseFactory.sendTransaction(tokenId, txData).signAndSend(sender);
+    let result = await api.tx.assets.sendTransaction(tokenId, txData).signAndSend(sender);
     console.log(result.toJSON());
 }
 
@@ -146,11 +144,13 @@ async function swapX2Y(tradingPair, tokenSold) {
         return;
     }
     let [reverseX, reverseY] = pair;
+    reverseX = BigInt(reverseX);
+    reverseY = BigInt(reverseY);
     let [tokenXIdHex, ] = (await api.query.omniverseSwap.tokenId(tradingPair)).toJSON();
-    let bought = parseInt((tokenSold * reverseY) / (parseInt(tokenSold) + reverseX));
+    let bought = (tokenSold * reverseY) / (tokenSold + reverseX);
     let tokenId = Buffer.from(tokenXIdHex.replace('0x', ''), 'hex').toString('utf8');
     let remainBalance = await omniverseBalanceOf(tokenId, publicKey);
-    if(remainBalance.toJSON() < Number(tokenSold)){
+    if(BigInt(remainBalance.toJSON()) < tokenSold){
         console.log('Token not enough.');
         return;
     }
@@ -261,7 +261,7 @@ async function transfer(tokenId, to, amount) {
 }
 
 async function omniverseBalanceOf(tokenId, pk) {
-    let amount = await api.query.omniverseFactory.tokens(tokenId, pk);
+    let amount = await api.query.assets.tokens(tokenId, pk);
     return amount;
 }
 
@@ -336,7 +336,7 @@ async function accountInfo() {
             return;
         }
         let tx = await transfer(program.opts().transfer[0], program.opts().transfer[1], program.opts().transfer[2]);
-        let result = await api.tx.omniverseFactory.sendTransaction(program.opts().transfer[0], tx).signAndSend(sender);
+        let result = await api.tx.assets.sendTransaction(program.opts().transfer[0], tx).signAndSend(sender);
         console.log(result.toJSON());
     }
     else if (program.opts().mint) {
@@ -390,7 +390,7 @@ async function accountInfo() {
             return;
         }
 
-        await swapX2Y(program.opts().swapX2Y[0], program.opts().swapX2Y[1]);
+        await swapX2Y(program.opts().swapX2Y[0], BigInt(program.opts().swapX2Y[1]));
     }
     else if (program.opts().swapY2X) {
         if (program.opts().swapY2X.length != 2) {
@@ -406,7 +406,7 @@ async function accountInfo() {
     }
     else if (program.opts().generateTx) {
         if (program.opts().generateTx.length != 4) {
-            console.log('2 arguments are needed, but ' + program.opts().generateTx.length + ' provided');
+            console.log('4 arguments are needed, but ' + program.opts().generateTx.length + ' provided');
             return;
         }
         

@@ -68,14 +68,14 @@ For implementation, we will build a Substrate Parachain to make out `O20k`, whic
 * The `O-AMM` is the core mechanism supporting the underlying exchanges of the `OSP`, which has the following features:  
   * Ability to balance smoothness and price sensitivity at the same time.
   * The mathematic curve is as below, and we have provided the [Principle of Omniverse AMM](./docs/Principle%20of%20Omniverse%20AMM.md) for detailed explanation.  
-![img](./docs/assets/Figure_1.png)  
+![img](./docs/assets/o-amm-curve.gif)  
 <p align="center">Figure.3 Mathematic Model of `O-AMM`</p>  
 
 ### Demo
 * You can taste everything mannually
   * Omniverse Swap and Token operations can be tried through this [detailed tutorial](./docs/README.md).
   * The prototype of `O-AMM` can be tried through this [guide](./src/O-AMM/README.md).  
-* The whole workflow also can be found through this [Demo Video](https://omniverse.oss-cn-hangzhou.aliyuncs.com/omniverse-swap.mp4).  
+* The whole workflow also can be found through this [Demo Video](https://o20k.s3.us-west-2.amazonaws.com/omniverse-swap.mp4).  
 
 ### Architecture
 ![img](./docs/assets/OmniverseProtocolStack.png)  
@@ -91,6 +91,8 @@ The implementation of the `Omniverse Account Protocol` is not very hard, and we 
 The commitment verification protocol and consensus are underly mechanisms. The former provides an absolute cryptographic way to make verifications for special designed operations of `OTP`, in which malicious things could be found out determinedly. The latter is provided by the framework of `Substrate`, and an EIP-4337 like abstract account and a [verifiable computation for `O-AMM` calculation](./docs/Principle%20of%20Omniverse%20AMM.md#gas-mechanism) is made out along with the consensus mechanism.
 
 The bottom is the off-chain synchronizer layer. The synchronizer is a very light off-chain procedure, and it just listens to the Omniverse events happening on-chain and makes the information synchronization. As everything in Omniverse paradigm is along with a commitment and is verified by cryptographic algorithms, there's no need to worry about synchronizers doing malicious things. So the off-chain part of `O20k` is indeed trust-free. Everyone can launch a synchronizer to get rewards by helping synchronize information.  
+
+In addition, we provide a [proof for the ultimate consistency](https://github.com/xiyu1984/o-amm/blob/main/docs/Proof-of-ultimate-consistency.md) for better understanding of the Omniverse Protocol.  
 
 ### logo
 ![img](./docs/assets/logo.png)  
@@ -125,16 +127,19 @@ The bottom is the off-chain synchronizer layer. The synchronizer is a very light
 
 Everything in the [plan](#plan) has beed finished.
 - **On-Chain**, Full Source code of the Substrate node can be found [here](https://github.com/virgil2019/omniverse-swap)
-  - [pallet-OmniverseProtocol](./src/pallets/omni-protocol/)
-  - [pallet-OmniverseToken](./src/pallets/omni-factory/)
-  - [pallet-OmniverseSwap](./src/pallets/omni-swap/)
+  - [pallet-OmniverseProtocol](./src/omniverse-swap/pallets/omni-protocol/)
+  - [pallet-OmniverseToken](./src/omniverse-swap/pallets/assets/)
+  - [pallet-OmniverseSwap](./src/omniverse-swap/pallets/omni-swap/)
 - **Algorithm**
-  - [O-AMM](./src/O-AMM/)
+  - [O-AMM source](./src/O-AMM/)
+  - In this stage, we have designed and made out an intuitive [prototype](https://github.com/xiyu1984/o-amm/) of the Omniverse AMM algorithm.  
+  - Besides, we also provide an [on-chain prototype](https://github.com/xiyu1984/O-AMM-ParaSim) for the `off-chain calculation, and on-chain verification` based on a specific verifiable computation, which can be tested manually through an [operation tutorial](https://github.com/xiyu1984/O-AMM-ParaSim/tree/main/off-chain-calc).
 - **Client**
-  - Source code [Command-Line Interface](./src/omniverse-swap-tools/), and [tutorial](./docs/README.md).
+  - Source code [Command-Line Interface](https://github.com/virgil2019/omniverse-swap-tools), and [tutorial](./docs/README.md).
   - Souce code of [EVM Client](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts).
 
-- [**Demo Video**](https://omniverse.oss-cn-hangzhou.aliyuncs.com/omniverse-swap.mp4)
+- [**Demo Video**](https://o20k.s3.us-west-2.amazonaws.com/omniverse-swap.mp4)
+  - [Address 2](https://omniverse.oss-cn-hangzhou.aliyuncs.com/omniverse-swap.mp4)
 
 ## Team
 `Omniverse Labs` was established in December of this year. The first product of our team is [Dante Network](https://github.com/dantenetwork). `O20k` is an Web3 application based on Dante.  

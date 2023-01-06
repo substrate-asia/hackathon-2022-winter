@@ -3,6 +3,9 @@
 
 - The full souce code of the related repo of the tools is [here](../src/omniverse-swap-tools/). The original souce code repo is [here](https://github.com/virgil2019/omniverse-swap-tools)
 - The EVM tools can be found [here](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts), and remember to go there to execute EVM related operetions. This will be integrated into a whole tool.  
+- In this stage, we have designed and made out an intuitive [prototype](https://github.com/xiyu1984/o-amm/blob/main/solving.py) of the Omniverse AMM algorithm.  
+- Besides, we also provide an [on-chain prototype](https://github.com/xiyu1984/o-amm) for the `off-chain calculation, and on-chain verification` based on a specific verifiable computation, which can be tested manually through an [operation tutorial](https://github.com/xiyu1984/O-AMM-ParaSim/tree/main/off-chain-calc).
+
 
 ## Index
 * [Prepare Environment](#environment)
