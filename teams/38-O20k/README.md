@@ -127,9 +127,9 @@ In addition, we provide a [proof for the ultimate consistency](https://github.co
 
 Everything in the [plan](#plan) has beed finished.
 - **On-Chain**, Full Source code of the Substrate node can be found [here](https://github.com/virgil2019/omniverse-swap)
-  - [pallet-OmniverseProtocol](./src/pallets/omni-protocol/)
-  - [pallet-OmniverseToken](./src/pallets/omni-factory/)
-  - [pallet-OmniverseSwap](./src/pallets/omni-swap/)
+  - [pallet-OmniverseProtocol](./src/omniverse-swap/pallets/omni-protocol/)
+  - [pallet-OmniverseToken](./src/omniverse-swap/pallets/assets/)
+  - [pallet-OmniverseSwap](./src/omniverse-swap/pallets/omni-swap/)
 - **Algorithm**
   - [O-AMM source](./src/O-AMM/)
   - In this stage, we have designed and made out an intuitive [prototype](https://github.com/xiyu1984/o-amm/) of the Omniverse AMM algorithm.  
