@@ -14,7 +14,8 @@ Details of our project are as below
 
 - [Github Organization](https://github.com/Ericwa0x/hackathon-2022-winter/tree/main/teams/18-Web3box)
 - [Pitch deck](https://github.com/Ericwa0x/hackathon-2022-winter/blob/main/teams/18-Web3box/docs/Risk%20Protocol_Deck%20V1.2.pdf)
-- [Video](https://youtu.be/jeA_MM3_pyY)
+- [Deck video](https://youtu.be/jeA_MM3_pyY)
+- [Demo video list](https://drive.google.com/drive/folders/1PkRGH_Z_B_3bT1rmvJomjdlhomwJsJeQ)
 
 # 1.Introduction
 
