@@ -3,6 +3,8 @@
 /// Contains runtime primitvies and types to resolve currrencies.
 use sp_runtime::{generic, MultiSignature, OpaqueExtrinsic as UncheckedExtrinsic};
 use sp_runtime::traits::{Verify, IdentifyAccount, BlakeTwo256};
+use sp_std::vec::Vec;
+use frame_support::dispatch::DispatchResultWithPostInfo;
 
 pub mod currency;
 
@@ -40,3 +42,7 @@ pub type Hash = sp_core::H256;
 
 /// Digest item type.
 pub type DigestItem = generic::DigestItem;
+
+pub trait SpMVM<AccountId> {
+    fn raw_execute_script(who : &[AccountId], tx_bc: Vec<u8>, gas_limit: u64, root_signed: bool, dry_run: bool) -> DispatchResultWithPostInfo;
+}

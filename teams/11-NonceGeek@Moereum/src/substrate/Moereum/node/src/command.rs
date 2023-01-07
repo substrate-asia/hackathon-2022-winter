@@ -283,7 +283,7 @@ pub fn run() -> sc_cli::Result<()> {
                     }
                 );
 
-                crate::service::start_node(config, polkadot_config,collator_options, id)
+                crate::service::start_node(config, polkadot_config, collator_options, id)
                     .await
                     .map(|r| r.0)
                     .map_err(Into::into)
@@ -363,8 +363,8 @@ impl sc_cli::CliConfiguration<Self> for RelayChainCli {
         _logger_hook: F,
         _config: &sc_service::Configuration,
     ) -> Result<()>
-        where
-            F: FnOnce(&mut sc_cli::LoggerBuilder, &sc_service::Configuration),
+    where
+        F: FnOnce(&mut sc_cli::LoggerBuilder, &sc_service::Configuration),
     {
         unreachable!("PolkadotCli is never initialized; qed");
     }

@@ -31,6 +31,7 @@ extern crate bcs_alt as bcs;
 #[cfg(feature = "runtime-benchmarks")]
 mod benchmarking;
 
+use frame_support::dispatch::DispatchResultWithPostInfo;
 pub use pallet::*;
 pub mod addr;
 pub mod balance;
@@ -88,6 +89,7 @@ pub mod pallet {
     extern crate alloc;
     #[cfg(not(feature = "std"))]
     use alloc::format;
+    use primitives::{AccountId, SpMVM};
 
     /// Configure the pallet by specifying the parameters and types on which it depends.
     #[pallet::config]
@@ -105,6 +107,9 @@ pub mod pallet {
 
         /// Describes weights for Move VM extrinsics.
         type WeightInfo: WeightInfo;
+
+        /// Describes weights for Move VM extrinsics.
+        type SpMVM: SpMVM<AccountId>;
 
         /// The treasury's pallet id, used for deriving its sovereign account ID.
         #[pallet::constant]
@@ -395,6 +400,10 @@ pub mod pallet {
             // T::BlockNumber: UniqueSaturatedInto<u64>,
             T::BlockNumber: TryInto<u64>,
         {
+            log::info!("signers ---- {:?}",signers);
+            log::info!("{:?}",tx_bc);
+            log::info!("{:?}",gas_limit);
+            log::info!("{:?}",root_signed);
             // TODO: some minimum gas for processing transaction from bytes?
             let transaction = Transaction::try_from(&tx_bc[..])
                 .map_err(|_| Error::<T>::TransactionValidationError)?;
@@ -417,15 +426,15 @@ pub mod pallet {
                     signers
                 };
 
-                // Is it really necessary? VM will throw an error if it caused.
-                if transaction.signers_count() as usize != signers.len() {
-                    error!(
-                        "Transaction signers num isn't eq signers: {} != {}",
-                        transaction.signers_count(),
-                        signers.len()
-                    );
-                    return Err(Error::<T>::TransactionSignersNumError.into());
-                }
+                // // Is it really necessary? VM will throw an error if it caused.
+                // if transaction.signers_count() as usize != signers.len() {
+                //     error!(
+                //         "Transaction signers num isn't eq signers: {} != {}",
+                //         transaction.signers_count(),
+                //         signers.len()
+                //     );
+                //     return Err(Error::<T>::TransactionSignersNumError.into());
+                // }
 
                 let signers = signers
                     .iter()
@@ -1014,6 +1023,9 @@ pub mod pallet {
 
 #[cfg(feature = "std")]
 use frame_support::traits::GenesisBuild;
+use move_vm::types::VmResult;
+pub use primitives::SpMVM;
+
 #[cfg(feature = "std")]
 impl<T: Config> GenesisConfig<T> {
     /// Direct implementation of `GenesisBuild::build_storage`.
@@ -1028,5 +1040,14 @@ impl<T: Config> GenesisConfig<T> {
     /// Kept in order not to break dependency.
     pub fn assimilate_storage(&self, storage: &mut sp_runtime::Storage) -> Result<(), String> {
         <Self as GenesisBuild<T>>::assimilate_storage(self, storage)
+    }
+}
+
+impl<T: Config> SpMVM<T::AccountId> for Pallet<T> {
+    fn raw_execute_script(who: &[T::AccountId], tx_bc: sp_std::vec::Vec<u8>, gas_limit: u64, root_signed: bool, dry_run: bool) -> DispatchResultWithPostInfo {
+        let vm_result = Self::raw_execute_script(&who, tx_bc, gas_limit, root_signed, dry_run)?;
+        // produce result with spended gas:
+        let result = result::from_vm_result::<T>(vm_result)?;
+        Ok(result)
     }
 }
