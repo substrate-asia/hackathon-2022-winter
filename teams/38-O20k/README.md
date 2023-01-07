@@ -74,7 +74,8 @@ For implementation, we will build a Substrate Parachain to make out `O20k`, whic
 ### Demo
 * You can taste everything mannually
   * Omniverse Swap and Token operations can be tried through this [detailed tutorial](./docs/README.md).
-  * The prototype of `O-AMM` can be tried through this [guide](./src/O-AMM/README.md).  
+  - In this stage, we have designed and made out an intuitive [prototype](https://github.com/xiyu1984/o-amm/) of the Omniverse AMM algorithm.  
+  - Besides, we also provide an [on-chain prototype](https://github.com/xiyu1984/O-AMM-ParaSim) for the `off-chain calculation, and on-chain verification` based on a specific verifiable computation, which can be tested manually through an [operation tutorial](https://github.com/xiyu1984/O-AMM-ParaSim/tree/main/off-chain-calc).
 * The whole workflow also can be found through this [Demo Video](https://o20k.s3.us-west-2.amazonaws.com/omniverse-swap.mp4).  
 
 ### Architecture
