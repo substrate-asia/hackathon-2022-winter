@@ -70,8 +70,8 @@ This is the real way to lower the threshold and break the barriers between chain
 
 ### Demo
  - demo video
- 
-[![Avault Demo](https://img.youtube.com/vi/Snsf1315Vg0/0.jpg)](https://www.youtube.com/watch?v=KasJXQWswP4)
+
+[![Avault Demo](https://img.youtube.com/vi/lw7tqEBcVN4/0.jpg)](https://www.youtube.com/watch?v=lw7tqEBcVN4)
 
 
 ### Members
