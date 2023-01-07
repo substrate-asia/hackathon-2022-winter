@@ -46,8 +46,8 @@ To make it convenient, we have already deployed two kinds of Omniverse Tokens, t
 #### EVM chains
 The Omniverse tokens are also deployed as smart contracts on some EVM chains.  
 - BSCTEST:
-    - "X": [0x2fea6b82bAd2999C8Abb0C072363f86f2add5292](https://testnet.bscscan.com/address/0x2fea6b82bAd2999C8Abb0C072363f86f2add5292),
-    - "Y": [0x069c23c166Edff0398958C261D3968713B21139c](https://testnet.bscscan.com/address/0x069c23c166Edff0398958C261D3968713B21139c),
+    - "X": [0xaEE4e542d1EFF40F67143A342d1FB74ee88A9d28](https://testnet.bscscan.com/address/0xaEE4e542d1EFF40F67143A342d1FB74ee88A9d28),
+    - "Y": [0x8dA9C5742B5244bBE2f412708057Ddc613F6A2C5](https://testnet.bscscan.com/address/0x8dA9C5742B5244bBE2f412708057Ddc613F6A2C5),
 
 ## Tools Install
 The Omniverse operation tools can be found [here](https://github.com/virgil2019/omniverse-swap-tools).  
@@ -155,9 +155,9 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
 * Go to [EVM tools path](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts) first, and follow the tutorial to check what happened on EVM. 
 
 * Check `balance of` Token $X$ of related account on EVM chains:  
-    * [Block Scan](https://testnet.bscscan.com/address/0x2fea6b82bAd2999C8Abb0C072363f86f2add5292)
+    * [Block Scan](https://testnet.bscscan.com/address/0xaEE4e542d1EFF40F67143A342d1FB74ee88A9d28)
 * Check `balance of` Token $Y$ of related account on EVM chains:  
-    * [Block Scan](https://testnet.bscscan.com/address/0x069c23c166Edff0398958C261D3968713B21139c)
+    * [Block Scan](https://testnet.bscscan.com/address/0x8dA9C5742B5244bBE2f412708057Ddc613F6A2C5)
 
 ### Make transaction of Omniverse Token
 #### Initiate the Omiverse transaction
@@ -186,7 +186,7 @@ The operations related to the Omniverse Token Protocol(`OTP`) include `Claim`, `
 
     * Go to [EVM tools path](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts) first, and follow the tutorial to check what happened on EVM. 
     * Check `balance of` Token $X$ of related account on EVM chains:  
-    * You can check the transaction on EVM chains at X [0x2fea6b82bAd2999C8Abb0C072363f86f2add5292](https://testnet.bscscan.com/address/0x2fea6b82bAd2999C8Abb0C072363f86f2add5292) and Y [0x069c23c166Edff0398958C261D3968713B21139c](https://testnet.bscscan.com/address/0x069c23c166Edff0398958C261D3968713B21139c), as follows:  
+    * You can check the transaction on EVM chains at X [0xaEE4e542d1EFF40F67143A342d1FB74ee88A9d28](https://testnet.bscscan.com/address/0xaEE4e542d1EFF40F67143A342d1FB74ee88A9d28) and Y [0x8dA9C5742B5244bBE2f412708057Ddc613F6A2C5](https://testnet.bscscan.com/address/0x8dA9C5742B5244bBE2f412708057Ddc613F6A2C5), as follows:  
     ![img](./assets/token-X.png)  
     ![img](./assets/token-Y.png)
 
@@ -215,7 +215,7 @@ The key operation of the Omniverse Swap Protocol(OSP) is `Make exchanges`.
 
 * Go to [EVM tools path](https://github.com/virgil2019/omniverse-evm/tree/feature-substrate-no-payload/contracts) first, and follow the tutorial to check what happened on EVM. 
 * Check `balance of` Token $Y$ of related account on EVM chains:  
-    * [Block Scan](https://testnet.bscscan.com/address/0x069c23c166Edff0398958C261D3968713B21139c)
+    * [Block Scan](https://testnet.bscscan.com/address/0x8dA9C5742B5244bBE2f412708057Ddc613F6A2C5)
 
 We can found that the related states changed simultaneously both on Polkadot and EVM chains.  
 
