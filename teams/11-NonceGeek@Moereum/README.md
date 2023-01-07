@@ -6,6 +6,12 @@ Start time: 2022.11
 
 ## Project Introduction
 
+Moereum HomePage: https://moereum.hewei.in/
+
+Moereum Chain Repo: https://github.com/NonceGeek/Moereum
+
+Moereum dApp Repo:  https://github.com/NonceGeek/moereum-dapp
+
 ### Intro
 
 	 Bridge EVM to MoveVM
@@ -43,6 +49,7 @@ Details of our project are as below:
 * [Github Organization](https://github.com/NonceGeek)
 * [Pitch deck](./docs/Moereum.pdf)
 * [Video](./docs/demo.mp4)
+* [Contract Demo Video](./docs/Moereum_Demo.mp4)
 
 ## Plan to Develop
 

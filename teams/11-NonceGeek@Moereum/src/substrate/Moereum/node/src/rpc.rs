@@ -22,19 +22,22 @@ use sp_runtime::traits::{BlakeTwo256, Block as BlockT};
 use sc_client_api::{
     backend::{AuxStore, Backend, StateBackend, StorageProvider},
     client::BlockchainEvents,
-    BlockOf
+    BlockOf,
 };
 use sc_transaction_pool::{ChainApi, Pool};
 use fc_rpc_core::types::{FeeHistoryCache, FeeHistoryCacheLimit, FilterPool};
 use jsonrpc_pubsub::manager::SubscriptionManager;
 use fp_storage::EthereumStorageSchema;
-use fc_rpc::{EthBlockDataCacheTask, EthTask, OverrideHandle, RuntimeApiStorageOverride, SchemaV1Override, SchemaV2Override, StorageOverride};
+use fc_rpc::{
+    EthBlockDataCacheTask, EthTask, OverrideHandle, RuntimeApiStorageOverride, SchemaV1Override,
+    SchemaV2Override, StorageOverride,
+};
 use futures::StreamExt;
 use sc_rpc::SubscriptionTaskExecutor;
 use sc_service::TaskManager;
 
 /// Full client dependencies.
-pub struct FullDeps<C, P,A: ChainApi> {
+pub struct FullDeps<C, P, A: ChainApi> {
     /// The client instance to use.
     pub client: Arc<C>,
     /// Transaction pool instance.
@@ -64,15 +67,15 @@ pub struct FullDeps<C, P,A: ChainApi> {
 }
 
 pub fn overrides_handle<C, BE>(client: Arc<C>) -> Arc<OverrideHandle<Block>>
-    where
-        C: ProvideRuntimeApi<Block> + StorageProvider<Block, BE> + AuxStore,
-        C: HeaderBackend<Block> + HeaderMetadata<Block, Error=BlockChainError>,
-        C: Send + Sync + 'static,
-        C::Api: sp_api::ApiExt<Block>
-            + fp_rpc::EthereumRuntimeRPCApi<Block>
-            + fp_rpc::ConvertTransactionRuntimeApi<Block>,
-        BE: Backend<Block> + 'static,
-        BE::State: StateBackend<BlakeTwo256>,
+where
+    C: ProvideRuntimeApi<Block> + StorageProvider<Block, BE> + AuxStore,
+    C: HeaderBackend<Block> + HeaderMetadata<Block, Error = BlockChainError>,
+    C: Send + Sync + 'static,
+    C::Api: sp_api::ApiExt<Block>
+        + fp_rpc::EthereumRuntimeRPCApi<Block>
+        + fp_rpc::ConvertTransactionRuntimeApi<Block>,
+    BE: Backend<Block> + 'static,
+    BE::State: StateBackend<BlakeTwo256>,
 {
     let mut overrides_map = BTreeMap::new();
     overrides_map.insert(
@@ -95,29 +98,29 @@ pub fn overrides_handle<C, BE>(client: Arc<C>) -> Arc<OverrideHandle<Block>>
 /// Instantiate all full RPC extensions.
 pub fn create_full<C, P, BE, A>(
     deps: FullDeps<C, P, A>,
-    subscription_task_executor: SubscriptionTaskExecutor) -> jsonrpc_core::IoHandler<sc_rpc::Metadata>
-    where
-        BE: Backend<Block> + 'static,
-        BE::State: StateBackend<BlakeTwo256>,
-        C: ProvideRuntimeApi<Block> + StorageProvider<Block, BE> + AuxStore,
-        C: BlockchainEvents<Block>,
-        C: HeaderBackend<Block> + HeaderMetadata<Block, Error=BlockChainError>,
-        C: Send + Sync + 'static,
-        C::Api: substrate_frame_rpc_system::AccountNonceApi<Block, AccountId, Index>,
-        C::Api: pallet_transaction_payment_rpc::TransactionPaymentRuntimeApi<Block, Balance>,
-        C::Api: BlockBuilder<Block>,
-        C::Api: MVMApiRuntime<Block, AccountId>,
-        C::Api: fp_rpc::ConvertTransactionRuntimeApi<Block>,
-        C::Api: fp_rpc::EthereumRuntimeRPCApi<Block>,
-        P: TransactionPool<Block=Block> + Sync + Send + 'static,
-        A: ChainApi<Block=Block> + 'static,
+    subscription_task_executor: SubscriptionTaskExecutor,
+) -> jsonrpc_core::IoHandler<sc_rpc::Metadata>
+where
+    BE: Backend<Block> + 'static,
+    BE::State: StateBackend<BlakeTwo256>,
+    C: ProvideRuntimeApi<Block> + StorageProvider<Block, BE> + AuxStore,
+    C: BlockchainEvents<Block>,
+    C: HeaderBackend<Block> + HeaderMetadata<Block, Error = BlockChainError>,
+    C: Send + Sync + 'static,
+    C::Api: substrate_frame_rpc_system::AccountNonceApi<Block, AccountId, Index>,
+    C::Api: pallet_transaction_payment_rpc::TransactionPaymentRuntimeApi<Block, Balance>,
+    C::Api: BlockBuilder<Block>,
+    C::Api: MVMApiRuntime<Block, AccountId>,
+    C::Api: fp_rpc::ConvertTransactionRuntimeApi<Block>,
+    C::Api: fp_rpc::EthereumRuntimeRPCApi<Block>,
+    P: TransactionPool<Block = Block> + Sync + Send + 'static,
+    A: ChainApi<Block = Block> + 'static,
 {
     use substrate_frame_rpc_system::{FullSystem, SystemApi};
     use pallet_transaction_payment_rpc::{TransactionPayment, TransactionPaymentApi};
     use fc_rpc::{
-        Eth, EthApi, EthFilter, EthFilterApi, EthPubSub,
-        EthPubSubApi, HexEncodedIdProvider, Net, NetApi, Web3,
-        Web3Api,
+        Eth, EthApi, EthFilter, EthFilterApi, EthPubSub, EthPubSubApi, HexEncodedIdProvider, Net,
+        NetApi, Web3, Web3Api,
     };
 
     let mut io = jsonrpc_core::IoHandler::default();
@@ -160,7 +163,7 @@ pub fn create_full<C, P, BE, A>(
             is_authority,
             block_data_cache.clone(),
             fee_history_cache,
-            fee_history_limit
+            fee_history_limit,
         )));
         if let Some(filter_pool) = filter_pool {
             io.extend_with(EthFilterApi::to_delegate(EthFilter::new(
@@ -209,17 +212,17 @@ pub struct SpawnTasksParams<'a, B: BlockT, C, BE> {
 
 /// Spawn the tasks that are required to run Moonbeam.
 pub fn spawn_essential_tasks<B, C, BE>(params: SpawnTasksParams<B, C, BE>)
-    where
-        C: ProvideRuntimeApi<B> + BlockOf,
-        C: HeaderBackend<B> + HeaderMetadata<B, Error = BlockChainError> + 'static,
-        C: BlockchainEvents<B> + StorageProvider<B, BE>,
-        C: Send + Sync + 'static,
-        C::Api: fp_rpc::EthereumRuntimeRPCApi<B>,
-        C::Api: BlockBuilder<B>,
-        B: BlockT<Hash = H256> + Send + Sync + 'static,
-        B::Header: HeaderT<Number = u32>,
-        BE: Backend<B> + 'static,
-        BE::State: StateBackend<BlakeTwo256>,
+where
+    C: ProvideRuntimeApi<B> + BlockOf,
+    C: HeaderBackend<B> + HeaderMetadata<B, Error = BlockChainError> + 'static,
+    C: BlockchainEvents<B> + StorageProvider<B, BE>,
+    C: Send + Sync + 'static,
+    C::Api: fp_rpc::EthereumRuntimeRPCApi<B>,
+    C::Api: BlockBuilder<B>,
+    B: BlockT<Hash = H256> + Send + Sync + 'static,
+    B::Header: HeaderT<Number = u32>,
+    BE: Backend<B> + 'static,
+    BE::State: StateBackend<BlakeTwo256>,
 {
     // Frontier offchain DB task. Essential.
     // Maps emulated ethereum data to substrate native data.
@@ -236,7 +239,7 @@ pub fn spawn_essential_tasks<B, C, BE>(params: SpawnTasksParams<B, C, BE>)
             0,
             SyncStrategy::Parachain,
         )
-            .for_each(|()| futures::future::ready(())),
+        .for_each(|()| futures::future::ready(())),
     );
 
     // Frontier `EthFilterApi` maintenance.

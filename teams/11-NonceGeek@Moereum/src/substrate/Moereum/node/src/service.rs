@@ -16,9 +16,7 @@ use sp_keystore::SyncCryptoStorePtr;
 use cumulus_client_consensus_common::ParachainConsensus;
 use cumulus_client_network::BlockAnnounceValidator;
 use nimbus_primitives::NimbusId;
-use nimbus_consensus::{
-    BuildNimbusConsensusParams, NimbusConsensus,
-};
+use nimbus_consensus::{BuildNimbusConsensusParams, NimbusConsensus};
 use primitives::Block;
 use sc_executor::NativeElseWasmExecutor;
 use sp_runtime::Percent;
@@ -32,7 +30,7 @@ use std::{collections::BTreeMap, sync::Mutex};
 
 type FullBackend = TFullBackend<Block>;
 type FullClient =
-TFullClient<Block, RuntimeApi, NativeElseWasmExecutor<ParachainRuntimeExecutor>>;
+    TFullClient<Block, RuntimeApi, NativeElseWasmExecutor<ParachainRuntimeExecutor>>;
 type MaybeSelectChain = Option<sc_consensus::LongestChain<FullBackend, Block>>;
 
 pub type HostFunctions = frame_benchmarking::benchmarking::HostFunctions;
@@ -63,7 +61,9 @@ pub fn frontier_database_dir(config: &Configuration) -> std::path::PathBuf {
     config_dir.join("frontier").join("db")
 }
 
-pub fn open_frontier_backend(config: &Configuration) -> Result<Arc<fc_db::Backend<Block>>, String> {
+pub fn open_frontier_backend(
+    config: &Configuration,
+) -> Result<Arc<fc_db::Backend<Block>>, String> {
     Ok(Arc::new(fc_db::Backend::<Block>::new(
         &fc_db::DatabaseSettings {
             source: fc_db::DatabaseSettingsSrc::RocksDb {
@@ -89,11 +89,7 @@ pub fn new_partial(
         sc_consensus::DefaultImportQueue<Block, FullClient>,
         sc_transaction_pool::FullPool<Block, FullClient>,
         (
-            FrontierBlockImport<
-                Block,
-                Arc<FullClient>,
-                FullClient,
-            >,
+            FrontierBlockImport<Block, Arc<FullClient>, FullClient>,
             Option<FilterPool>,
             Option<Telemetry>,
             Option<TelemetryWorkerHandle>,
@@ -235,10 +231,10 @@ async fn start_node_impl(
         telemetry_worker_handle,
         &mut task_manager,
     )
-        .map_err(|e| match e {
-            RelayChainError::ServiceError(polkadot_service::Error::Sub(x)) => x,
-            s => s.to_string().into(),
-        })?;
+    .map_err(|e| match e {
+        RelayChainError::ServiceError(polkadot_service::Error::Sub(x)) => x,
+        s => s.to_string().into(),
+    })?;
 
     let client = params.client.clone();
     let backend = params.backend.clone();
@@ -318,7 +314,7 @@ async fn start_node_impl(
                 block_data_cache: block_data_cache.clone(),
             };
 
-            let io = crate::rpc::create_full(deps,subscription_task_executor);
+            let io = crate::rpc::create_full(deps, subscription_task_executor);
             Ok(io)
         })
     };
@@ -423,7 +419,7 @@ fn build_consensus(
                     &validation_data,
                     id,
                 )
-                    .await;
+                .await;
 
             let time = sp_timestamp::InherentDataProvider::from_system_time();
 
@@ -457,5 +453,5 @@ pub async fn start_node(
     collator_options: CollatorOptions,
     id: ParaId,
 ) -> sc_service::error::Result<(TaskManager, Arc<FullClient>)> {
-    start_node_impl(parachain_config, polkadot_config,collator_options, id).await
+    start_node_impl(parachain_config, polkadot_config, collator_options, id).await
 }

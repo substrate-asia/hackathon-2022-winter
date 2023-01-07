@@ -10,7 +10,8 @@ use moereum_runtime::{
     GenesisConfig, SudoConfig, SystemConfig, BalancesConfig, WASM_BINARY, ParachainInfoConfig,
     VestingConfig, MvmConfig, TransactionPauseConfig, ParachainStakingConfig, InflationInfo,
     Range, AuthorFilterConfig, AuthorMappingConfig, TreasuryConfig, TokensConfig,
-    DemocracyConfig, PolkadotXcmConfig, EligibilityValue,EvmConfig, EthereumConfig,EthereumChainIdConfig,GenesisAccount
+    DemocracyConfig, PolkadotXcmConfig, EligibilityValue, EvmConfig, EthereumConfig,
+    EthereumChainIdConfig, GenesisAccount,
 };
 use primitives::{currency::CurrencyId, AccountId, Signature, Balance, BlockNumber};
 use constants::SS58_PREFIX;
@@ -153,25 +154,45 @@ pub fn local_testnet_config() -> Result<ChainSpec, String> {
                 parachain_id,
                 vec![
                     // Alith
-                    H160::from(hex_literal::hex!["f24FF3a9CF04c71Dbc94D0b566f7A27B94566cac"]),
+                    H160::from(hex_literal::hex![
+                        "f24FF3a9CF04c71Dbc94D0b566f7A27B94566cac"
+                    ]),
                     // Baltathar
-                    H160::from(hex_literal::hex!["3Cd0A705a2DC65e5b1E1205896BaA2be8A07c6e0"]),
+                    H160::from(hex_literal::hex![
+                        "3Cd0A705a2DC65e5b1E1205896BaA2be8A07c6e0"
+                    ]),
                     // Charleth
-                    H160::from(hex_literal::hex!["798d4Ba9baf0064Ec19eB4F0a1a45785ae9D6DFc"]),
+                    H160::from(hex_literal::hex![
+                        "798d4Ba9baf0064Ec19eB4F0a1a45785ae9D6DFc"
+                    ]),
                     // Dorothy
-                    H160::from(hex_literal::hex!["773539d4Ac0e786233D90A233654ccEE26a613D9"]),
+                    H160::from(hex_literal::hex![
+                        "773539d4Ac0e786233D90A233654ccEE26a613D9"
+                    ]),
                     // Ethan
-                    H160::from(hex_literal::hex!["Ff64d3F6efE2317EE2807d223a0Bdc4c0c49dfDB"]),
+                    H160::from(hex_literal::hex![
+                        "Ff64d3F6efE2317EE2807d223a0Bdc4c0c49dfDB"
+                    ]),
                     // Faith
-                    H160::from(hex_literal::hex!["C0F0f4ab324C46e55D02D0033343B4Be8A55532d"]),
+                    H160::from(hex_literal::hex![
+                        "C0F0f4ab324C46e55D02D0033343B4Be8A55532d"
+                    ]),
                     // Goliath
-                    H160::from(hex_literal::hex!["7BF369283338E12C90514468aa3868A551AB2929"]),
+                    H160::from(hex_literal::hex![
+                        "7BF369283338E12C90514468aa3868A551AB2929"
+                    ]),
                     // Heath
-                    H160::from(hex_literal::hex!["931f3600a299fd9B24cEfB3BfF79388D19804BeA"]),
+                    H160::from(hex_literal::hex![
+                        "931f3600a299fd9B24cEfB3BfF79388D19804BeA"
+                    ]),
                     // Ida
-                    H160::from(hex_literal::hex!["C41C5F1123ECCd5ce233578B2e7ebd5693869d73"]),
+                    H160::from(hex_literal::hex![
+                        "C41C5F1123ECCd5ce233578B2e7ebd5693869d73"
+                    ]),
                     // Judith
-                    H160::from(hex_literal::hex!["2898FE7a42Be376C8BC7AF536A940F7Fd5aDd423"]),
+                    H160::from(hex_literal::hex![
+                        "2898FE7a42Be376C8BC7AF536A940F7Fd5aDd423"
+                    ]),
                 ],
             )
         },
@@ -210,7 +231,8 @@ pub fn genesis(
     let move_stdlib =
         include_bytes!("../../move/move-stdlib/build/MoveStdlib/bundles/MoveStdlib.pac").to_vec();
     let pont_framework =
-        include_bytes!("../../move/moereum-stdlib/build/MoereumStdlib/bundles/MoereumStdlib.pac").to_vec();
+        include_bytes!("../../move/moereum-stdlib/build/MoereumStdlib/bundles/MoereumStdlib.pac")
+            .to_vec();
 
     GenesisConfig {
         tokens: TokensConfig { balances: vec![] },

@@ -12,6 +12,11 @@
 				"name": "bob",
 				"wsPort": 9955,
 				"port": 30555
+			},
+			{
+				"name": "dave",
+				"wsPort": 9966,
+				"port": 30666
 			}
 		],
 		"genesis": {

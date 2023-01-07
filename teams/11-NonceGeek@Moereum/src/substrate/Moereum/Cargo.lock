@@ -5579,6 +5579,7 @@ dependencies = [
  "pallet-ethereum",
  "pallet-ethereum-chain-id",
  "pallet-evm",
+ "pallet-evm-precompile-dispatch",
  "pallet-evm-precompile-modexp",
  "pallet-evm-precompile-sha3fips",
  "pallet-evm-precompile-simple",
@@ -6707,6 +6708,16 @@ dependencies = [
  "sp-io",
  "sp-runtime",
  "sp-std",
+]
+
+[[package]]
+name = "pallet-evm-precompile-dispatch"
+version = "2.0.0-dev"
+source = "git+https://github.com/NonceGeek/frontier?branch=polkadot-v0.9.18#bc48234c893ef70353e752bd322e438b63524673"
+dependencies = [
+ "fp-evm",
+ "frame-support",
+ "pallet-evm",
 ]
 
 [[package]]
@@ -8952,6 +8963,7 @@ dependencies = [
 name = "primitives"
 version = "3.0.0"
 dependencies = [
+ "frame-support",
  "parity-scale-codec 3.1.2",
  "scale-info",
  "serde",
@@ -12591,7 +12603,7 @@ dependencies = [
  "chrono",
  "lazy_static",
  "matchers",
- "parking_lot 0.11.2",
+ "parking_lot 0.10.2",
  "regex",
  "serde",
  "serde_json",

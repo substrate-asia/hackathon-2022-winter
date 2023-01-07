@@ -130,9 +130,7 @@ macro_rules! def_currencies {
     };
 }
 
-pub const NATIVE_SYM: &'static [u8] = {
-    b"MOETH"
-};
+pub const NATIVE_SYM: &'static [u8] = { b"MOETH" };
 
 def_currencies! {
     /// Currencies id.
