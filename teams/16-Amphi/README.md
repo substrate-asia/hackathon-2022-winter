@@ -5,6 +5,7 @@ A community-driven intelligent language service dapp
 
 Project born：2022.10
 
+## please read the 16-Amphi(latest version) ppt in Docs,thanks so much
 
 ## Problems and opportunity
 
