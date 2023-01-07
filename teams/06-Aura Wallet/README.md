@@ -152,7 +152,7 @@ All in all, we believe that if the mainstream billions of Internet users in the 
   - [Official Website](https://aura-wallet-v2.vercel.app/)
   - [Demo Video](https://youtu.be/wFP-HDbFB_U)
   - [UI Design Draft](https://www.figma.com/file/6ISEfhm1aKs13CQUVguhYq/%E9%92%B1%E5%8C%85app?node-id=0%3A1&t=kl2UrCFLu0RbmpIm-1/)
-  - [PPT](https://github.com/ParityAsia/hackathon-2022-winter/tree/main/teams/06-Aura%20Wallet/docs/Aura_Wallet_Introduction_EN.pdf)
+  - [Deck](https://github.com/ParityAsia/hackathon-2022-winter/tree/main/teams/06-Aura%20Wallet/docs/Aura_Wallet_Introduction_EN.pdf)
 
 
 

@@ -159,7 +159,7 @@ Aura Wallet基于Flutter框架和原生混合技术开发，这不仅保证了�
   - [项目官网](https://aura-wallet-v2.vercel.app/)
   - [Demo视频](https://youtu.be/_g40goaPxNU/)
   - [UI设计稿](https://www.figma.com/file/6ISEfhm1aKs13CQUVguhYq/%E9%92%B1%E5%8C%85app?node-id=0%3A1&t=kl2UrCFLu0RbmpIm-1/)
-  - [PPT](https://github.com/ParityAsia/hackathon-2022-winter/tree/main/teams/06-Aura%20Wallet/docs/Aura_Wallet_Introduction_CN.pdf)
+  - [Deck](https://github.com/ParityAsia/hackathon-2022-winter/tree/main/teams/06-Aura%20Wallet/docs/Aura_Wallet_Introduction_CN.pdf)
 
 ## 团队信息
 
