@@ -1,40 +1,39 @@
 #!/usr/bin/env zx
 
-import {$} from "zx";
-import { Command } from 'commander';
-import * as gitversefile from './src/utils/file.js'
+import {Command} from 'commander';
+import * as gitverse from './src/utils/file.js'
 
 const program = new Command();
 
 program.command('init')
-      .description('Initialized empty GitVerse repository')
-      .action(async()=>{
-         gitversefile.InitGitRepo()
-         console.log('Initialized empty GitVerse repository success')
-      })
+    .description('Initialize empty gitverse repository')
+    .action(async () => {
+        const repo = await gitverse.InitGitRepo()
+        console.log(`Initialized empty gitverse repository (${repo})`)
+    })
 program.command('add <pathlist...>')
-      .description('add code to gitverse repo')
-      .action(async(pathlist)=>{
-         gitversefile.AddGitCode(pathlist)
-         console.log('add code to gitverse repo success')
-      })
+    .description('add code to gitverse repository')
+    .action(async (pathlist) => {
+        const result = await gitverse.AddGitCode(pathlist)
+        if (result) {
+            console.log(`add file to gitverse repository`)
+        }
+    })
 program.command('tag <tagName>')
-      .description('upload tag code to gitverse repo')
-      .action(async(tagName)=>{
-      gitversefile.UploadGitCodeByTag(tagName)
-      console.log('upload tag code from gitverse repo success')
-      })
+    .description('upload tag code to gitverse repository')
+    .action(async (tagName) => {
+        await gitverse.UploadGitCodeByTag(tagName)
+    })
 program.command('commit')
-      .option('-m, --comments [comments]')
-      .description('commit code to gitverse repo')
-      .parse(process.argv)
-      .action(async(comments)=>{
-         let default_comment = "commit code"
-         if (process.argv.length == 5) {
+    .option('-m, --comments [comments]')
+    .description('commit code to gitverse repository')
+    .parse(process.argv)
+    .action(async (comments) => {
+        let default_comment = "commit code"
+        if (process.argv.length == 5) {
             default_comment = process.argv[4]
-         }
-         gitversefile.UploadGitCodeByCommitID(default_comment)
-         console.log('commit code to gitverse repo success')
-      })
+        }
+        await gitverse.UploadGitCodeByCommitID(default_comment)
+    })
 
 program.parse(process.argv)

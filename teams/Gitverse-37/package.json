@@ -10,14 +10,10 @@
   "bin": {
     "gitverse": "./gitverse.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GitverseEth/gitverse/issues"
-  },
-  "homepage": "https://github.com/GitverseEth/gitverse",
   "dependencies": {
+    "axios": "^1.2.2",
     "commander": "^9.4.1",
     "ethers": "^5.7.2",
     "file-type": "^18.0.0",

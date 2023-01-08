@@ -9,12 +9,11 @@
 Project name：Gitverse
 
 Starting time：2022-12-15
-
-Code Address：https://github.com/GitverseEth/gitverse
+Code address：https://github.com/GitverseEth/gitverse
 
 # Project Description
 
-![Untitled](Readme/Untitled.png)
+![Untitled](image/logo.png)
 
 # Vision and Mission
 
@@ -52,7 +51,7 @@ Without violating the spirit of open source, the ecology of Web3 may bring new s
 
 Gitverse supports open-source projects to mint programmable NFTs to realize project copyright tracking, value accumulation, and developer ecological incentives.
 
-![image](Readme/274609.png)
+![image](image/core.png)
 
 ## Smart Contract Design
 
@@ -98,15 +97,15 @@ Submit the code in the temporary storage area to the gitverse warehouse area. Cu
 
 # How it works
 
-![image](Readme/181940.png)
+![image](image/workflow.png)
 
 # How Ecosystem Works
 
-![截屏2022-12-27 18.20.30.png](Readme/182030.png)
+![截屏2022-12-27 18.20.30.png](image/ecosystem.png)
 
 # **Technical Architecture**
 
-![Untitled](Readme/Untitled1.png)
+![Untitled](image/architecture.png)
 
 # Functions completed during hackathon delivery黑客松期间完成的事项
 
@@ -126,21 +125,24 @@ ERC721 represents the value of the project.
 
 - [ ]  **Implement the Gitverse command-line**
 
-gitverse init
+node gitverse.js init : create a bucket named gitverse on the cess system and deploy a ERC1155 contract to manage this project
 
-![Untitled](Readme/Untitled2.png)
+![Untitled](image/init.png)
+![Untitled](image/createbucket.png)
 
-gitverse add <pathlist...>
+node gitverse.js add <pathlist...>
 
-![Untitled](Readme/Untitled3.png)
+![Untitled](image/add.png)
 
-gitverse tag <tagName>
+node gitverse.js commit -m comments : add a "fid" file to the cess system and record the fid in contract
 
-![Untitled](Readme/Untitled5.png)
+![Untitled](image/commit.png)
+![Untitled](image/bucketFile.png)
 
-gitverse commit -m comments
+node gitverse.js tag <tagName> : release new version and mint a ERC1155 NFT
 
-![Untitled](Readme/Untitled4.png)
+![Untitled](image/tag.png)
+
 
 - [ ]  Support version and branch management of project files stored in IPFS/CESS
 - [ ]  Find out the content of each new submission in the .git directory
@@ -162,4 +164,4 @@ gitverse commit -m comments
 
 - Other Files:
 
-Project Pitch Deck: https://github.com/GitverseEth/hackathon-2022-winter/blob/main/teams/Gitverse-37/GitVerse-deck.pdf
+Project Pitch Deck: https://github.com/GitverseEth/gitverse/blob/main/Readme/GitVerse-deck.pdf
